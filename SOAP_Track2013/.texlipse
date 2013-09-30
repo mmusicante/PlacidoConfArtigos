@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Wed Sep 12 09:39:18 BRT 2012
+builderNum=2
+outputDir=out
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=paperSOAP_tosubmit.tex
+outputFile=paperSOAP_tosubmit.pdf
+langSpell=en
+markDer=true
+srcDir=src

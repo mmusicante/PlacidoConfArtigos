@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paperCM_tosubmit.aux
+The style file: abbrv.bst
+Database file #1: biblio.bib
+Repeated entry---line 6659 of file biblio.bib
+ : @inproceedings{And79
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 7257 of file biblio.bib
+ : @article{daCosta2010
+ :                     ,
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "NepalFGJKS05"
+refers to entry "DBLP:conf/otm/2005-3", which doesn't exist
+A bad cross reference---entry "Espinosa-OviedoVZC09"
+refers to entry "DBLP:conf/ideas/2009", which doesn't exist
+A bad cross reference---entry "Meyer98a"
+refers to entry "DBLP:conf/tools/26-1998", which doesn't exist
+A bad cross reference---entry "PiresBM02"
+refers to entry "DBLP:conf/jit/2002", which doesn't exist
+A bad cross reference---entry "Hernandez-BaruchPZ07"
+refers to entry "DBLP:conf/enc/2007", which doesn't exist
+A bad cross reference---entry "BaAM06"
+refers to entry "DBLP:conf/ecows/2006", which doesn't exist
+A bad cross reference---entry "PortillaHE08"
+refers to entry "DBLP:conf/icde/2008w", which doesn't exist
+A bad cross reference---entry "MorseBPMTM04"
+refers to entry "DBLP:conf/dsrt/2004", which doesn't exist
+A bad cross reference---entry "KoutsoukosKANS06"
+refers to entry "DBLP:conf/monterey/2006", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/enc/2007"
+Warning--I didn't find a database entry for "DBLP:conf/jit/2002"
+Warning--I didn't find a database entry for "DBLP:conf/dsrt/2004"
+Warning--I didn't find a database entry for "DBLP:conf/monterey/2006"
+Warning--I didn't find a database entry for "DBLP:conf/ideas/2009"
+Warning--I didn't find a database entry for "DBLP:conf/icde/2008w"
+Warning--I didn't find a database entry for "DBLP:conf/ecows/2006"
+Warning--I didn't find a database entry for "DBLP:conf/tools/26-1998"
+Warning--I didn't find a database entry for "DBLP:conf/otm/2005-3"
+Warning--empty booktitle in submited
+Warning--empty year in submited
+You've used 34 entries,
+            2118 wiz_defined-function locations,
+            760 strings with 11486 characters,
+and the built_in function-call counts, 14544 in all, are:
+= -- 1373
+> -- 793
+< -- 23
++ -- 319
+- -- 276
+* -- 1045
+:= -- 2294
+add.period$ -- 104
+call.type$ -- 34
+change.case$ -- 239
+chr.to.int$ -- 0
+cite$ -- 36
+duplicate$ -- 561
+empty$ -- 1065
+format.name$ -- 282
+if$ -- 3140
+int.to.chr$ -- 0
+int.to.str$ -- 34
+missing$ -- 29
+newline$ -- 172
+num.names$ -- 75
+pop$ -- 275
+preamble$ -- 1
+purify$ -- 205
+quote$ -- 0
+skip$ -- 457
+stack$ -- 0
+substring$ -- 822
+swap$ -- 203
+text.length$ -- 21
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 135
+warning$ -- 2
+while$ -- 119
+width$ -- 36
+write$ -- 374
+(There were 11 error messages)

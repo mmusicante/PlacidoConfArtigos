@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.7)
+The top-level auxiliary file: paperToSubmit.aux
+The style file: abbrv.bst
+Database file #1: biblio.bib
+A bad cross reference---entry "CholletL09"
+refers to entry "DBLP:conf/icws/2009", which doesn't exist
+A bad cross reference---entry "GutierrezRF10"
+refers to entry "DBLP:conf/jisbd/2010", which doesn't exist
+A bad cross reference---entry "XiaoCZBOLH08"
+refers to entry "DBLP:conf/icws/2008", which doesn't exist
+A bad cross reference---entry "TsadimasNA12"
+refers to entry "DBLP:conf/sac/2012", which doesn't exist
+A bad cross reference---entry "DAmbrogio06"
+refers to entry "DBLP:conf/icws/2006", which doesn't exist
+A bad cross reference---entry "SchmelingCM11"
+refers to entry "DBLP:conf/icws/2011", which doesn't exist
+A bad cross reference---entry "ThissenW06"
+refers to entry "DBLP:conf/iscc/2006", which doesn't exist
+Warning--I didn't find a database entry for "Umberto1"
+Warning--I didn't find a database entry for "Umberto2"
+Warning--I didn't find a database entry for "DBLP:conf/sac/2012"
+Warning--I didn't find a database entry for "DBLP:conf/icws/2008"
+Warning--I didn't find a database entry for "DBLP:conf/icws/2006"
+Warning--I didn't find a database entry for "DBLP:conf/icws/2009"
+Warning--I didn't find a database entry for "DBLP:conf/icws/2011"
+Warning--I didn't find a database entry for "DBLP:conf/iscc/2006"
+Warning--I didn't find a database entry for "DBLP:conf/jisbd/2010"
+Warning--there's a number but no volume in Fabra2011
+You've used 32 entries,
+            2118 wiz_defined-function locations,
+            727 strings with 11055 characters,
+and the built_in function-call counts, 13741 in all, are:
+= -- 1300
+> -- 760
+< -- 14
++ -- 307
+- -- 266
+* -- 1034
+:= -- 2206
+add.period$ -- 100
+call.type$ -- 32
+change.case$ -- 232
+chr.to.int$ -- 0
+cite$ -- 33
+duplicate$ -- 501
+empty$ -- 994
+format.name$ -- 266
+if$ -- 2938
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 29
+newline$ -- 166
+num.names$ -- 64
+pop$ -- 229
+preamble$ -- 1
+purify$ -- 197
+quote$ -- 0
+skip$ -- 394
+stack$ -- 0
+substring$ -- 838
+swap$ -- 163
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 128
+warning$ -- 1
+while$ -- 105
+width$ -- 34
+write$ -- 363
+(There were 7 error messages)

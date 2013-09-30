@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paperRE_tosubmit.aux
+The style file: abbrv.bst
+Database file #1: biblio.bib
+Repeated entry---line 714 of file biblio.bib
+ : @article{CysneirosLN01
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1338 of file biblio.bib
+ : @book{sommerville08
+ :                    ,
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "CholletL09"
+refers to entry "DBLP:conf/icws/2009", which doesn't exist
+A bad cross reference---entry "GutierrezRF10"
+refers to entry "DBLP:conf/jisbd/2010", which doesn't exist
+A bad cross reference---entry "XiaoCZBOLH08"
+refers to entry "DBLP:conf/icws/2008", which doesn't exist
+A bad cross reference---entry "TsadimasNA12"
+refers to entry "DBLP:conf/sac/2012", which doesn't exist
+A bad cross reference---entry "MairizaZN10"
+refers to entry "DBLP:conf/sac/2010", which doesn't exist
+A bad cross reference---entry "DAmbrogio06"
+refers to entry "DBLP:conf/icws/2006", which doesn't exist
+A bad cross reference---entry "SchmelingCM11"
+refers to entry "DBLP:conf/icws/2011", which doesn't exist
+A bad cross reference---entry "ThissenW06"
+refers to entry "DBLP:conf/iscc/2006", which doesn't exist
+A bad cross reference---entry "Cleland-HuangSZS06"
+refers to entry "DBLP:conf/re/2006", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/sac/2012"
+Warning--I didn't find a database entry for "DBLP:conf/sac/2010"
+Warning--I didn't find a database entry for "DBLP:conf/icws/2008"
+Warning--I didn't find a database entry for "DBLP:conf/icws/2006"
+Warning--I didn't find a database entry for "DBLP:conf/icws/2009"
+Warning--I didn't find a database entry for "DBLP:conf/icws/2011"
+Warning--I didn't find a database entry for "DBLP:conf/iscc/2006"
+Warning--I didn't find a database entry for "DBLP:conf/re/2006"
+Warning--I didn't find a database entry for "DBLP:conf/jisbd/2010"
+Warning--empty year in ieee_1998
+Warning--there's a number but no volume in Fabra2011
+You've used 28 entries,
+            2118 wiz_defined-function locations,
+            697 strings with 9337 characters,
+and the built_in function-call counts, 11151 in all, are:
+= -- 1061
+> -- 535
+< -- 12
++ -- 218
+- -- 182
+* -- 792
+:= -- 1759
+add.period$ -- 85
+call.type$ -- 28
+change.case$ -- 173
+chr.to.int$ -- 0
+cite$ -- 30
+duplicate$ -- 449
+empty$ -- 881
+format.name$ -- 182
+if$ -- 2427
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 30
+newline$ -- 143
+num.names$ -- 56
+pop$ -- 193
+preamble$ -- 1
+purify$ -- 147
+quote$ -- 0
+skip$ -- 342
+stack$ -- 0
+substring$ -- 698
+swap$ -- 143
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 108
+warning$ -- 2
+while$ -- 95
+width$ -- 30
+write$ -- 309
+(There were 11 error messages)

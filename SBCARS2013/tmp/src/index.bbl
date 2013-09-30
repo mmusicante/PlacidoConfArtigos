@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{valeriaThesis}
+M.~V. de~Castro.
+\newblock {\em Aproximac\'ion MDA para el Desarrollo Orientado a Servicios de
+  Sistemas de Informac\'ion Web: Del Modelo de Negocio al Modelo de
+  Composic\'ion de Servicios Web}.
+\newblock PhD thesis, Universidad Rey Juan Carlos - Escuela T\'ecnica Superior
+  de Ingenier\'ia de Telecomunicaci\'on, 2007.
+
+\bibitem{CastroMV11}
+M.~V. De~Castro, E.~Marcos, and J.~M. Vara.
+\newblock Applying cim-to-pim model transformations for the service-oriented
+  development of information systems.
+\newblock {\em Inf. Softw. Technol.}, 53(1):87--105, January 2011.
+
+\bibitem{Espinosa-OviedoVZC09}
+J.~A. Espinosa-Oviedo, G.~Vargas-Solar, J.~L. Zechinelli-Martini, and
+  C.~Collet.
+\newblock Non-functional properties and services coordination using contracts.
+\newblock In {\em Proceedings of the 2009 International Database Engineering \&
+  Applications Symposium}, IDEAS '09, pages 307--310, New York, NY, USA, 2009.
+  ACM.
+
+\bibitem{Espinosa-Oviedo2011a}
+J.~A. Espinosa-Oviedo, G.~Vargas-Solar, J.~L. Zechinelli-Martini, and
+  C.~Collet.
+\newblock {P}olicy driven services coordination for building social networks
+  based applications.
+\newblock In {\em {I}n {P}roc. of the 8th {I}nt. {C}onference on {S}ervices
+  {C}omputing ({SCC}'11), {W}ork-in-{P}rogress {T}rack}, Washington, DC, USA,
+  July 2011. IEEE.
+
+\bibitem{placido2012}
+P.~A. Souza~Neto.
+\newblock {\em A Methodology for Building Service-Oriented Applications in the
+  Presence of Non-Functional Properties}.
+\newblock PhD thesis, Universidade Federal do Rio Grande do Norte (UFRN) --
+  Natal-RN, 2012.
+
+\bibitem{Placido2010LTPD}
+P.~A. Souza~Neto, M.~A. Musicante, G.~Vargas-Solar, and J.~L.
+  Zechinelli-Martini.
+\newblock Adding {C}ontracts to a {W}eb {S}ervice {C}omposition {L}anguage.
+\newblock {\em {LTPD} - 4th {W}orkshop on {L}anguages and {T}ools for
+  {M}ultithreaded, {P}arallel and {D}istributed {P}rogramming}, September 2010.
+
+\end{thebibliography}

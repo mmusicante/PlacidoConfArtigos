@@ -1,0 +1,201 @@
+\begin{thebibliography}{10}
+
+\bibitem{Allen83}
+J.~F. Allen.
+\newblock Maintaining knowledge about temporal intervals.
+\newblock {\em Commun. ACM}, 26(11):832--843, 1983.
+
+\bibitem{alonso99wise}
+G.~Alonso, U.~Fiedler, C.~Hagen, A.~Lazcano, H.~Schuldt, and N.~Weiler.
+\newblock Wise: Business to business e-commerce.
+\newblock In {\em Research Issues on Data Engineering: Information Technology
+  for Virtual Enterprises}, pages 132--139, 1999.
+
+\bibitem{And79}
+S.~Andler.
+\newblock Predicate path expressions.
+\newblock In {\em Sixth Annual ACM Symposium on Principles of Programming
+  Languages (6th POPL'79)}, pages 226--236, 1979.
+
+\bibitem{BaCAM05}
+C.~Ba, M.~A. Carrero, M.~Halfeld-Ferrari, and M.~A. Musicante.
+\newblock {PEWS}: {A} {N}ew {L}anguage for {B}uilding {W}eb {S}ervice
+  {I}nterfaces.
+\newblock {\em J. UCS}, 11(7):1215--1233, 2005.
+
+\bibitem{BaH08}
+C.~Ba and M.~H. Ferrari.
+\newblock Dependence graphs for verifications of web service compositions with
+  pews.
+\newblock In Wainwright and Haddad \cite{DBLP:conf/sac/2008}, pages 2387--2391.
+
+\bibitem{BaAM06}
+C.~Ba, M.~Halfeld-Ferrari, and M.~A. Musicante.
+\newblock Composing web services with pews: A trace-theoretical approach.
+\newblock In {\em ECOWS}, pages 65--74, 2006.
+
+\bibitem{BeVaC00}
+K.~Belhajjame, C.~Collet, and G.~Vargas-Solar.
+\newblock A flexible workflow model for process-oriented applications.
+\newblock In {\em WISE (1)}, pages 72--, 2001.
+
+\bibitem{samy}
+S.~Bhiri, C.~Godart, and O.~Perrin.
+\newblock Reliable web services composition using a transactional approach.
+\newblock In I.~International, editor, {\em O. e-Technology, e-Commerce and
+  e-Service}, volume~1 of {\em eee}, pages 15--21, March 2005.
+
+\bibitem{ws-ra}
+R.~Bilorusets, D.~Box, L.~F. Cabrera, D.~Davis, D.~Ferguson, C.~Ferris,
+  T.~Freund, M.~A. Hondo, J.~Ibbotson, L.~Jin, C.~Kaler, D.~Langworthy,
+  A.~Lewis, R.~Limprecht, S.~Lucco, D.~Mullen, A.~Nadalin, M.~Nottingham,
+  D.~Orchard, J.~Roots, S.~Samdarshi, J.~Shewchuk, and T.~Storey.
+\newblock Web services reliable messaging protocol (ws-reliablemessaging).
+\newblock Technical specification, BEA Systems, International Business Machines
+  Corporation, Microsoft Corporation Inc., TIBCO Software Inc., February 2005.
+
+\bibitem{burdy:05}
+L.~Burdy, Y.~Cheon, D.~R. Cok, M.~D. Ernst, J.~R. Kiniry, G.~T. Leavens,
+  K.~R.~M. Leino, and E.~Poll.
+\newblock An overview of {JML} tools and applications.
+\newblock {\em Int. J. Softw. Tools Technol. Transf.}, 7(3):212--232, 2005.
+
+\bibitem{ChengGCM09}
+B.~Cheng, J.~Guo, J.~Chen, and X.~Meng.
+\newblock The communication model for real-time web service in telecom domain.
+\newblock {\em Int. J. Communication Systems}, 22(6):773--787, 2009.
+
+\bibitem{jcml09}
+U.~S. da~Costa, A.~M. Moreira, M.~A. Musicante, and P.~A.~S. Neto.
+\newblock Specification and runtime verification of java card programs.
+\newblock {\em Electron. Notes Theor. Comput. Sci.}, 240:61--78, 2009.
+
+\bibitem{daCosta2010}
+U.~S. da~Costa, A.~M. Moreira, M.~A. Musicante, and P.~A.~S. Neto.
+\newblock Jcml: A specification language for the runtime verification of java
+  card programs.
+\newblock {\em Sci. Comput. Program.}, 77(4):533--550, 2012.
+
+\bibitem{Dustdar05}
+S.~Dustdar and W.~Schreiner.
+\newblock A survey on web services composition.
+\newblock {\em Int. J. Web Grid Serv.}, 1(1):1--30, 2005.
+
+\bibitem{Espinosa-OviedoVZC09}
+J.-A. Espinosa-Oviedo, G.~Vargas-Solar, J.-L. Zechinelli-Martini, and
+  C.~Collet.
+\newblock Non-functional properties and services coordination using contracts.
+\newblock In {\em IDEAS}, pages 307--310, 2009.
+
+\bibitem{Haddad08}
+J.~E. Haddad, M.~Manouvrier, G.~Ramirez, and M.~Rukoz.
+\newblock Qos-driven selection of web services for transactional composition.
+\newblock In {\em ICWS '08: Proceedings of the 2008 IEEE International
+  Conference on Web Services}, pages 653--660, Washington, DC, USA, 2008. IEEE
+  Computer Society.
+
+\bibitem{HL05TACoS}
+R.~Heckel and M.~Lohmann.
+\newblock Towards contract-based testing of web services.
+\newblock In M.~Pezz\'e, editor, {\em Proceedings of the International Workshop
+  on Test and Analysis of Component Based Systems (TACoS 2004)}, volume 116,
+  pages 145--156, 2005.
+
+\bibitem{Hernandez-BaruchPZ07}
+V.~Hernandez-Baruch, A.~Portilla, and J.-L. Zechinelli-Martini.
+\newblock Rose: A transactional services coordination engine.
+\newblock In {\em ENC}, pages 123--130, 2007.
+
+\bibitem{KoutsoukosKANS06}
+X.~D. Koutsoukos, M.~Kushwaha, I.~Amundson, S.~Neema, and J.~Sztipanovits.
+\newblock Oasis: A service-oriented architecture for ambient-aware sensor
+  networks.
+\newblock In {\em Monterey Workshop}, pages 125--149, 2006.
+
+\bibitem{LacknerKP02}
+M.~Lackner, A.~Krall, and F.~Puntigam.
+\newblock Supporting design by contract in java.
+\newblock {\em Journal of Object Technology}, 1(3):57--76, 2002.
+
+\bibitem{lazcano00wise}
+A.~Lazcano, G.~Alonso, H.~Schuldt, and C.~Schuler.
+\newblock The {WISE} approach to electronic commerce.
+\newblock {\em International Journal of Computer Systems Science and
+  Engineering}, 15(5), 2000.
+
+\bibitem{LeS92}
+S.~K. Lellahi and N.~Spyratos.
+\newblock A graph-based data model: query language and semantics.
+\newblock Technical Report 742, LRI, Universit\'e Paris-Sud, 1992.
+
+\bibitem{Meyer98a}
+B.~Meyer.
+\newblock Design by contract: The eiffel method.
+\newblock In {\em TOOLS (26)}, page 446, 1998.
+
+\bibitem{MorseBPMTM04}
+K.~L. Morse, R.~Brunton, J.~M. Pullen, P.~M. McAndrews, A.~Tolk, and
+  J.~Muguira.
+\newblock An architecture for web-services based interest management in real
+  time distributed simulation.
+\newblock In {\em DS-RT}, pages 108--115, 2004.
+
+\bibitem{MPC08}
+M.~A. Musicante, E.~Potrich, and M.~A. Carrero.
+\newblock A programming environment for web services.
+\newblock In Wainwright and Haddad \cite{DBLP:conf/sac/2008}, pages 2363--2367.
+
+\bibitem{NepalFGJKS05}
+S.~Nepal, A.~Fekete, P.~Greenfield, J.~Jang, D.~Kuo, and T.~Shi.
+\newblock A service-oriented workflow language for robust interacting
+  applications.
+\newblock In {\em OTM Conferences (1)}, pages 40--58, 2005.
+
+\bibitem{submited}
+P.~A.~S. Neto, G.~Vargas-Solar, V.~de~Castro, E.~Marcos, M.~A. Musicante, J.~A.
+  Espinosa-Oviedo, C.~Collet, and J.-L. Zechinelli-Martini.
+\newblock Generating reliable service composition using a-policies: a
+  model-driven approach.
+\newblock Paper Submitted.
+
+\bibitem{Bonita}
+OW2-Consortium.
+\newblock Bonita, April 2007.
+\newblock http://forge.objectweb.org/projects/bonita.
+
+\bibitem{PiresBM02}
+P.~F. Pires, M.~R.~F. Benevides, and M.~Mattoso.
+\newblock Building reliable web services compositions.
+\newblock In {\em Web, Web-Services, and Database Systems}, pages 59--72, 2002.
+
+\bibitem{PortillaHE08}
+A.~Portilla, T.~Hanh, and J.-A. Espinosa-Oviedo.
+\newblock Building reliable mobile services based applications.
+\newblock In {\em ICDE Workshops}, pages 121--128, 2008.
+
+\bibitem{pullen09}
+J.~M. Pullen, D.~Corner, S.~S. Singapogu, and P.~McAndrews.
+\newblock Interpreted web services as a tool for development of command and
+  control interoperability with simulations.
+\newblock In {\em DS-RT '09: Proceedings of the 2009 13th IEEE/ACM
+  International Symposium on Distributed Simulation and Real Time
+  Applications}, pages 131--135, Washington, DC, USA, 2009. IEEE Computer
+  Society.
+
+\bibitem{schuldt-etal-TODS}
+H.~Schuldt, G.~Alonso, C.~Beeri, and H.-J. Schek.
+\newblock Atomicity and {I}solation for {T}ransactional {P}rocesses.
+\newblock {\em ACM Transactions on Database Systems (TODS)}, 27(1):63--116,
+  Mar. 2002.
+
+\bibitem{W3C}
+W3C.
+\newblock World wide web consortium.
+\newblock Online http://www.w3.org/, April 2005.
+
+\bibitem{DBLP:conf/sac/2008}
+R.~L. Wainwright and H.~Haddad, editors.
+\newblock {\em Proceedings of the 2008 ACM Symposium on Applied Computing
+  (SAC), Fortaleza, Ceara, Brazil, March 16-20, 2008}. ACM, 2008.
+
+\end{thebibliography}

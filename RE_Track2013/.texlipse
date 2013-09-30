@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Wed Sep 12 09:38:16 BRT 2012
+builderNum=2
+outputDir=out/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=paperRE_tosubmit.tex
+outputFile=paperRE_tosubmit.pdf
+langSpell=en
+markDer=true
+srcDir=src/

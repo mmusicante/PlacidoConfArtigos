@@ -1,0 +1,117 @@
+\begin{thebibliography}{10}
+
+\bibitem{Bhorkar}
+Abhay Bhorkar.
+\newblock A run-time assertion checker for java using jml.
+\newblock Technical report, Department of Computer Science, Iowa State
+  University, 2000.
+
+\bibitem{Cacho:2008b}
+Nelio Cacho, Thomas Cottenier, and Alessandro Garcia.
+\newblock Improving robustness of evolving exceptional behaviour in executable
+  models.
+\newblock In {\em Proceedings of the 4th international workshop on Exception
+  handling}, WEH '08, pages 39--46, New York, NY, USA, 2008. ACM.
+
+\bibitem{Cacho:2008}
+Nelio Cacho, Fernando~Castor Filho, Alessandro Garcia, and Eduardo Figueiredo.
+\newblock Ejflow: taming exceptional control flows in aspect-oriented
+  programming.
+\newblock In {\em Proceedings of the 7th international conference on
+  Aspect-oriented software development}, AOSD '08, pages 72--83, New York, NY,
+  USA, 2008. ACM.
+
+\bibitem{Chen:2000}
+Zhiqun Chen.
+\newblock {\em Java Card Technology for Smart Cards: Architecture and
+  Programmer's Guide}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 2000.
+
+\bibitem{CostaMMN09}
+Umberto~Souza da~Costa, Anamaria~Martins Moreira, Martin~A. Musicante, and
+  Pl{\'a}cido A.~Souza Neto.
+\newblock Specification and runtime verification of java card programs.
+\newblock {\em Electr. Notes Theor. Comput. Sci.}, 240:61--78, 2009.
+
+\bibitem{CostaMMN12}
+Umberto~Souza da~Costa, Anamaria~Martins Moreira, Martin~A. Musicante, and
+  Pl{\'a}cido A.~Souza Neto.
+\newblock Jcml: A specification language for the runtime verification of java
+  card programs.
+\newblock {\em Sci. Comput. Program.}, 77(4):533--550, 2012.
+
+\bibitem{FilliatreM07}
+Jean-Christophe Filli{\^a}tre and Claude March{\'e}.
+\newblock The why/krakatoa/caduceus platform for deductive program
+  verification.
+\newblock In {\em CAV}, pages 173--177, 2007.
+
+\bibitem{Leavens_2007}
+Gary~T Leavens.
+\newblock {\em Tutorial on JML, the java modeling language}, page 573.
+\newblock ACM Press, 2007.
+
+\bibitem{jml}
+Gary~T. Leavens, Erik Poll, Curtis Clifton, Yoonsik Cheon, Clyde Ruby, David
+  Cok, Peter MÃ¼ller, Joseph Kiniry, Patrice Chalin, and Daniel~M. Zimmerman.
+\newblock {\em {JML} Reference Manual}, May 2008.
+
+\bibitem{Krakatoa}
+Claude March{\'e}, Christine Paulin-Mohring, and Xavier Urbain.
+\newblock The krakatoa tool for certificationof java/javacard programs
+  annotated in jml.
+\newblock {\em J. Log. Algebr. Program.}, 58(1-2):89--106, 2004.
+
+\bibitem{Meyer92}
+Bertrand Meyer.
+\newblock Applying "design by contract".
+\newblock {\em IEEE Computer}, 25(10):40--51, 1992.
+
+\bibitem{apiJavaCard}
+SUN Microsystems.
+\newblock Api specification — java card platform application programming
+  interface specification, version 2.2.1.
+\newblock Technical report, Sun Microsystems, 2005.
+
+\bibitem{sun2008}
+SUN Microsystems.
+\newblock Runtime environment specification — java card platform runtime
+  environment specification, version 3.0.
+\newblock Technical report, SUN Microsystems, 2008.
+
+\bibitem{ortiz}
+C.~Enrique Ortiz.
+\newblock An introduction to java card technology.
+\newblock Technical report, Sun Microsystems, 2005.
+
+\bibitem{Rankl}
+W.~Rankl and Wolfgang Effing.
+\newblock {\em Smart Card Handbook}.
+\newblock John Wiley \& Sons, Inc., New York, NY, USA, 1st edition, 1997.
+
+\bibitem{Rebelo}
+Henrique Reb\^{e}lo, Roberta Coelho, Ricardo Lima, Gary~T. Leavens, Marieke
+  Huisman, Alexandre Mota, and Fernando Castor.
+\newblock On the interplay of exception handling and design by contract: an
+  aspect-oriented recovery approach.
+\newblock In {\em Proceedings of the 13th Workshop on Formal Techniues for
+  Java-Like Programs}, FTfJP '11, pages 7:1--7:6, New York, NY, USA, 2011. ACM.
+
+\bibitem{RobillardM00}
+Martin~P. Robillard and Gail~C. Murphy.
+\newblock Designing robust java programs with exceptions.
+\newblock In {\em SIGSOFT FSE}, pages 2--10, 2000.
+
+\bibitem{Robillard:2003}
+Martin~P. Robillard and Gail~C. Murphy.
+\newblock Static analysis to support the evolution of exception structure in
+  object-oriented systems.
+\newblock {\em ACM Trans. Softw. Eng. Methodol.}, 12(2):191--221, April 2003.
+
+\bibitem{Vallee-RaiGHLPS00}
+Raja Vall{\'e}e-Rai, Etienne Gagnon, Laurie~J. Hendren, Patrick Lam, Patrice
+  Pominville, and Vijay Sundaresan.
+\newblock Optimizing java bytecode using the soot framework: Is it feasible?
+\newblock In {\em CC}, pages 18--34, 2000.
+
+\end{thebibliography}

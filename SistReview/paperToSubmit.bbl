@@ -1,0 +1,204 @@
+\begin{thebibliography}{10}
+
+\bibitem{AgarwalLS09}
+S.~Agarwal, S.~Lamparter, and R.~Studer.
+\newblock Making web services tradable: A policy-based approach for specifying
+  preferences on web service properties.
+\newblock {\em J. Web Sem.}, 7(1):11--20, 2009.
+
+\bibitem{wsci}
+A.~Arkin, S.~Askary, S.~Fordin, W.~Jekeli, K.~Kawaguchi, D.~Orchard,
+  S.~Pogliani, K.~Riemer, S.~Struble, P.~Takacsi-Nagy, I.~Trickovic, and
+  S.~Zimek.
+\newblock Web service choreography interface.
+\newblock Technical report, World Wide Web Consortium, 2002.
+
+\bibitem{Babamir2010}
+S.~Babamir, S.~Karimi, and M.~Shishechi.
+\newblock A broker-based architecture for quality-driven web services
+  composition.
+\newblock In {\em Computational Intelligence and Software Engineering (CiSE),
+  2010 International Conference on}, pages 1 --4, dec. 2010.
+
+\bibitem{BasinDL06}
+D.~A. Basin, J.~Doser, and T.~Lodderstedt.
+\newblock Model driven security: From uml models to access control
+  infrastructures.
+\newblock {\em ACM Trans. Softw. Eng. Methodol.}, 15(1):39--91, 2006.
+
+\bibitem{ws-co}
+F.~Cabrera, G.~Copeland, T.~Freund, J.~Klein, D.~Langworthy, D.~Orchard,
+  J.~Shewchuk, and T.~Storey.
+\newblock Web services coordination (ws-coordination).
+\newblock Technical specification, BEA Systems, International Business Machines
+  Corporation, Microsoft Corporation, Inc, November 2004.
+
+\bibitem{CeriDMF07}
+S.~Ceri, F.~Daniel, M.~Matera, and F.~M. Facca.
+\newblock Model-driven development of context-aware web applications.
+\newblock {\em ACM Trans. Internet Techn.}, 7(1), 2007.
+
+\bibitem{CholletL09}
+S.~Chollet and P.~Lalanda.
+\newblock An extensible abstract service orchestration framework.
+\newblock In {\em ICWS}, pages 831--838, 2009.
+
+\bibitem{ws-tra}
+W.~Cox, F.~Cabrera, G.~Copeland, T.~Freund, J.~Klein, T.~Storey, and S.~Thatte.
+\newblock Web services transaction (ws-transaction).
+\newblock Technical specification, BEA Systems, International Business Machines
+  Corporation, Microsoft Corporation, Inc, November 2004.
+
+\bibitem{DAmbrogio06}
+A.~D'Ambrogio.
+\newblock A model-driven wsdl extension for describing the qos ofweb services.
+\newblock In {\em ICWS}, pages 789--796, 2006.
+
+\bibitem{DiamadopoulouMPS08}
+V.~Diamadopoulou, C.~Makris, Y.~Panagis, and E.~Sakkopoulos.
+\newblock Techniques to support web service selection and consumption with qos
+  characteristics.
+\newblock {\em J. Network and Computer Applications}, 31(2):108--130, 2008.
+
+\bibitem{Fabra2011}
+J.~Fabra, V.~D. Castro, P.~�lvarez, and E.~Marcos.
+\newblock Automatic execution of business process models: Exploiting the
+  benefits of model-driven engineering approaches.
+\newblock {\em Journal of Systems and Software}, (0):--, 2011.
+
+\bibitem{GutierrezRF10}
+C.~Guti{\'e}rrez, D.~G. Rosado, and E.~Fern{\'a}ndez-Medina.
+\newblock The practical application of a process for eliciting and designing
+  security in web service systems.
+\newblock In {\em JISBD}, pages 143--143, 2010.
+
+\bibitem{JeongCL09}
+B.~Jeong, H.~Cho, and C.~Lee.
+\newblock On the functional quality of service (fqos) to discover and compose
+  interoperable web services.
+\newblock {\em Expert Syst. Appl.}, 36(3):5411--5418, 2009.
+
+\bibitem{Kamalabad2012}
+M.~Kamalabad, F.~Mardukhi, N.~Nematbakhsh, and M.~Dehkordi.
+\newblock Evaluating the similarity of web service policies using flexible
+  parameter matching.
+\newblock In {\em Measurement, Information and Control (MIC), 2012
+  International Conference on}, volume~2, pages 1000--1005, 2012.
+
+\bibitem{Karunamurthy2012787}
+R.~Karunamurthy, F.~Khendek, and R.~H. Glitho.
+\newblock A novel architecture for web service composition.
+\newblock {\em Journal of Network and Computer Applications}, 35(2):787 -- 802,
+  2012.
+\newblock <ce:title>Simulation and Testbeds</ce:title>.
+
+\bibitem{Kitchenham08}
+B.~A. Kitchenham, H.~Al-Kilidar, M.~A. Babar, M.~Berry, K.~Cox, J.~Keung,
+  F.~Kurniawati, M.~Staples, H.~Zhang, and L.~Zhu.
+\newblock Evaluating guidelines for reporting empirical software engineering
+  studies.
+\newblock {\em Empirical Software Engineering}, 13(1):97--121, 2008.
+
+\bibitem{Li2013}
+L.~Li, M.~Rong, and G.~Zhang.
+\newblock A web service composition selection approach based on multi-dimension
+  qos.
+\newblock In {\em Computer Science Education (ICCSE), 2013 8th International
+  Conference on}, pages 1463--1468, 2013.
+
+\bibitem{Liu20121080}
+M.~Liu, M.~Wang, W.~Shen, N.~Luo, and J.~Yan.
+\newblock A quality of service (qos)-aware execution plan selection approach
+  for a service composition process.
+\newblock {\em Future Generation Computer Systems}, 28(7):1080 -- 1089, 2012.
+\newblock <ce:title>Special section: Quality of Service in Grid and Cloud
+  Computing</ce:title>.
+
+\bibitem{ModicaTV09}
+G.~D. Modica, O.~Tomarchio, and L.~Vita.
+\newblock Dynamic slas management in service oriented environments.
+\newblock {\em Journal of Systems and Software}, 82(5):759--771, 2009.
+
+\bibitem{MohantyRP10}
+R.~Mohanty, V.~Ravi, and M.~R. Patra.
+\newblock Web-services classification using intelligent techniques.
+\newblock {\em Expert Syst. Appl.}, 37(7):5484--5490, 2010.
+
+\bibitem{OvaskaEHPA10}
+E.~Ovaska, A.~Evesti, K.~Henttonen, M.~Palviainen, and P.~Aho.
+\newblock Knowledge based quality-driven architecture design and evaluation.
+\newblock {\em Information {\&} Software Technology}, 52(6):577--601, 2010.
+
+\bibitem{Papazoglou2007}
+M.~Papazoglou, P.~Traverso, S.~Dustdar, and F.~Leymann.
+\newblock {Service-Oriented Computing: State of the Art and Research
+  Challenges}.
+\newblock {\em IEEE Computer}, 40(11), 2007.
+
+\bibitem{PastranaPK11}
+J.~L. Pastrana, E.~Pimentel, and M.~Katrib.
+\newblock Qos-enabled and self-adaptive connectors for web services composition
+  and coordination.
+\newblock {\em Computer Languages, Systems {\&} Structures}, 37(1):2--23, 2011.
+
+\bibitem{Rumpel2012}
+A.~Rumpel and K.~Meissner.
+\newblock Requirements-driven quality modeling and evaluation in web mashups.
+\newblock In {\em Quality of Information and Communications Technology
+  (QUATIC), 2012 Eighth International Conference on the}, pages 319--322, 2012.
+
+\bibitem{SchmelingCM11}
+B.~Schmeling, A.~Charfi, and M.~Mezini.
+\newblock Composing non-functional concerns in composite web services.
+\newblock In {\em ICWS}, pages 331--338, 2011.
+
+\bibitem{ThissenW06}
+D.~Thi{\ss}en and P.~Wesnarat.
+\newblock Considering qos aspects in web service composition.
+\newblock In {\em ISCC}, pages 371--377, 2006.
+
+\bibitem{Tran2012531}
+H.~Tran, U.~Zdun, T.~Holmes, E.~Oberortner, E.~Mulo, and S.~Dustdar.
+\newblock Compliance in service-oriented architectures: A model-driven and
+  view-based approach.
+\newblock {\em Information and Software Technology}, 54(6):531 -- 552, 2012.
+\newblock <ce:title>Special Section: Engineering Complex Software Systems
+  through Multi-Agent Systems and Simulation</ce:title> <ce:subtitle>Special
+  Section: Engineering Complex Software Systems through Multi-Agent Systems and
+  Simulation</ce:subtitle>.
+
+\bibitem{TsadimasNA12}
+A.~Tsadimas, M.~Nikolaidou, and D.~Anagnostopoulos.
+\newblock Extending sysml to explore non-functional requirements: the case of
+  information system design.
+\newblock In {\em SAC}, pages 1057--1062, 2012.
+
+\bibitem{Wang2012}
+H.~Wang, P.~Ma, and X.~Zhou.
+\newblock A quantitative and qualitative approach for nfp-aware web service
+  composition.
+\newblock In {\em Services Computing (SCC), 2012 IEEE Ninth International
+  Conference on}, pages 202--209, 2012.
+
+\bibitem{XiaoCZBOLH08}
+H.~Xiao, B.~Chan, Y.~Zou, J.~W. Benayon, B.~O'Farrell, E.~Litani, and
+  J.~Hawkins.
+\newblock A framework for verifying sla compliance in composed services.
+\newblock In {\em ICWS}, pages 457--464, 2008.
+
+\bibitem{Yeom2006}
+G.~Yeom, T.~Yun, and D.~Min.
+\newblock Qos model and testing mechanism for quality-driven web services
+  selection.
+\newblock In {\em Proceedings of the The Fourth IEEE Workshop on Software
+  Technologies for Future Embedded and Ubiquitous Systems, and the Second
+  International Workshop on Collaborative Computing, Integration, and Assurance
+  (SEUS-WCCIA'06)}, pages 199--204, Washington, DC, USA, 2006. IEEE Computer
+  Society.
+
+\bibitem{ZhangPSP05}
+X.~Zhang, F.~Parisi-Presicce, R.~S. Sandhu, and J.~Park.
+\newblock Formal model and policy specification of usage control.
+\newblock {\em ACM Trans. Inf. Syst. Secur.}, 8(4):351--387, 2005.
+
+\end{thebibliography}

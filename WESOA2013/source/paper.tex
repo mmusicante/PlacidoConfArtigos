@@ -1,0 +1,375 @@
+
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+\usepackage{url}
+\urldef{\mailsa}\path|{\ldots,|
+\urldef{\mailsb}\path|\ldots,|
+\urldef{\mailsc}\path|\ldots}@\ldots.com|    
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{Web Services Composition in the presence of Non-Functional Properties: A
+MDD Approach}
+
+% a short form should be given in case it is too long for the running head
+%\titlerunning{Lecture Notes in Computer Science: Authors' Instructions}
+
+% the name(s) of the author(s) follow(s) next
+%
+% NB: Chinese authors should write their first names(s) in front of
+% their surnames. This ensures that the names appear correctly in
+% the running heads and the author index.
+%
+\author{Pl\'acido A. Souza Neto \and Martin A. Musicante \and\\%
+%
+ Genoveva Vargas-Solar\and Umberto Costa\and Val\'eria de Castro\\}
+%
+%\authorrunning{Lecture Notes in Computer Science: Authors' Instructions}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{\ldots\\
+\mailsa\\
+\mailsb\\
+\mailsc}
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+%\toctitle{Lecture Notes in Computer Science}
+%\tocauthor{Authors' Instructions}
+\maketitle
+
+
+\begin{abstract}
+\ldots.
+\keywords{\ldots}
+\end{abstract}
+ 
+
+\section{Introduction}
+\ldots
+ 
+\section{A methodology for web services com\-po\-si\-tions}
+
+In this section we present $\pi$SOD-M. $\pi$SOD-M is a MDA (Model Driven
+Architecture) based methodology. It provides a environment for building service compositions considering
+their non-functional requirements. $\pi$SOD-M extends the SOD-M \cite{valeriaThesis} method by adding
+the concept of \textit{Policy} \cite{Espinosa-OviedoVZC09,Espinosa-Oviedo2011a}
+for representing NFR associated to service-based applications. $\pi$SOD-M also
+proposes the generation of a set of models at different abstraction levels, as
+well as transformations between these models.
+  
+$\pi$SOD-M's models represent both the cross-cutting aspects of the application
+being modelled, as well as the constraints associated to services. The systems
+cross-cutting concerns affect functional concerns, such as availability;
+recovery; and persistence aspects. Constraints are restrictions that must be
+respected during the execution of the application, for example the fact that a
+service requires an authentication for executing system functions. 
+
+$\pi$-SOD-M supports the construction of service-oriented applications that implement business processes.
+Therefore, it proposes a development process based on the definition of models
+(instances of the meta-modes) and transformations for semi-automatically
+generating different levels of abstraction that describe a service-oriented
+application from abstract platform independent views (CIM and PIM level) to
+platform dependent views and the PSM and implementation levels. We extended the
+Business and Service views of the SOD-M method \cite{CastroMV11}. The Business
+view defines  the concepts for modeling a business process, while the Service
+view defines the concepts  for designing services compositions. Our methodology
+introduces concepts (e.g. NF-requirement, constraint, assertion, contract,
+policy) in the Policy view for describing constraints associated to services and
+non-functional properties associated to service processes.
+
+\section{Modeling web services com\-po\-si\-tions with
+$\pi$SOD-M}
+
+
+
+\section{Measurement and evaluation of the $\pi$SOD-M methodology}
+
+Based on \cite{basili:1985}, the measurement and evaluation process requires a
+mechanism for determining what data is to be collected; why it is to be
+collected; and how the collected data is to be interpreted. The purpose of the measurement and
+evaluation flows from the needs of the organization; the need to better
+understand resource utilization in order to improve cost estimation; or the need
+to evaluate the benefits, advantages and drawbacks of a research project.
+
+Aiming to collect data that help in an initial analysis of our methodology
+through three examples described in this chapter, we will use the approach
+proposed by Basili \cite{basili:1985} to extract these data and analyze if the goals of
+our proposal have been achieved and how it is possible improve the $\pi$SOD-M
+methodology. 
+% 
+% Com o objetivo de coletar dados que auxiliem em uma análise inicial da
+% metodologia proposta através dos 3 exemplos descritos neste capítulo, iremos
+% utilizar a abordagem proposta por Basili para extrair esses dados e analisar se
+% os objetivos da nossa proposta foram alcançados e de que forma é possível
+% melhorar a metodologia $\pi$SOD-M.
+
+\paragraph{Generate a set of goals:} First we present the goals we have, when we
+intend to measurement and evaluate the $\pi$SOD-M methodology. The goals are:
+
+% Primeiramente apresentamos os objetivos que almejamos ao realizar essa medição e
+% avaliação da metodologia. Os objetivos são.
+% 
+% Objetivos:
+
+\begin{enumerate}
+  \item  Verify if the identification of non-functional requirements at initial
+  levels of development improves the modeling of reliable web services.
+  
+%   Verificar se a identificação de requisitos não-funcionais nos níveis iniciais de desenvolvimento melhora a modelagem de serviços web confiáveis.
+
+  \item  Verify how to refine application constraints into specification code,
+  and if it improves the software quality.
+  
+%   Verificar se é possível refinar restrições de qualidade em código de especificação.
+
+  \item  Verify if it is possible to reuse code generated for requirements
+non-functional.
+
+% Verificar se é possível a reutilização de código gerado para requisitos
+% não-funcionais.
+
+  \item  Verify how the non-functional requirements are specified in the
+  methodology.
+
+\end{enumerate}
+
+\paragraph{Set of questions of interest which quantify the goals:} Following the
+approach proposed in Basili \cite{basili:1985}, the questions are related to each goal. Table \ref{tab7:questions} present the questions related to the goals of the $\pi$SOD-M evaluation analysis.
+
+\begin{table}
+\centering
+\caption{$\pi$SOD-M's Goals and Questions}
+\label{tab7:questions}
+
+\begin{tabular}{|l|l|}
+
+\hline 
+\hline \textbf{Goals} & \textbf{Questions} \\
+
+\hline 1. Verify if the definition of constraints at initial& 1. What are the
+levels of modeling  \\ 
+
+ the identification levels of development improves  & presented in the
+methodology?  \\
+
+   of non-functional requirements. &    And how the
+  constraints are modelled?  \\
+ 
+ &  \\
+ 
+ &  2. What is the goal of each modeling level?\\
+
+&  \\
+ 
+ &  3. Which kind of artifact is generated at\\
+ & each level of development?\\
+\hline
+2. Verify how to refine application constraints & 1. What kind of modelling
+approach\\
+
+ into contracts assertions, and if it facilitates &  is used in the
+ methodology?
+ \\
+ 
+the identification of non-functional requirements. & \\
+
+& 2. How are modeled the contract assertions?\\
+
+
+\hline
+
+3. Verify if it is possible to classify the contracts  &1. Which level of
+development the contracts \\ 
+generated from the constraints. &  are
+generated? and Does the code\\ 
+&is generated?\\
+&\\
+& 3. The code can be generated automatically \\
+& or manual?\\
+
+\hline
+
+4. Verify how the non-functional requirements & 1. How are classified the
+contracts? \\ 
+could be classified from the contract definition. &  \\
+
+\hline
+\hline
+
+\hline
+
+
+\end{tabular}
+
+\end{table}
+
+
+\paragraph{Set of data metrics and distributions:} Still following the approach
+proposed by Basili \cite{basili:1985}, we identify metrics with the objective of quantify the questions in order to generate data that can be
+analyzed and evaluated in order to verify that the goals of the evaluation
+were satisfied, or not. The metrics are listed by goal/question (for
+example \#1.2. This metric is related to \textit{goal} 1, and \textit{question}
+2 previously identified). The statements for measure the data are
+shown in table \ref{tab8:metrics}.
+
+\begin{table}
+\centering
+\caption{$\pi$SOD-M's Metrics/Distributions}
+\label{tab8:metrics}
+
+\begin{tabular}{|c|l|}
+
+\hline 
+\hline \textbf{Goal/Question} & \textbf{Metrics/Distributions} \\
+
+\hline \#1.1 & 1. How many levels the methodology defines?  \\
+& 2. How many models are generated at each level?\\
+\hline \#1.2 & 1. How many restrictions were modeled (by level)?  \\
+\hline \#1.3 & 1. How many artifacts were generated (by level)?  \\
+\hline \#2.1 & 1. How long (in days) was spent for the modeling   \\
+&  of each case study? \\
+\hline \#2.2 & 1. How many contracts were modeled using the approach?  \\
+\hline \#3.1 & 1. How many lines of code were generated for \\
+& specify the contracts identified? \\
+
+\hline \#3.2 & 1. What is the total of line of code generated? \\
+
+\hline \#4.1 &  1. Have been any non-functional requirement identified?\\
+
+ &  2. Which non-functional requirements were identified?\\
+
+\hline
+\hline
+
+\hline
+
+
+\end{tabular}
+
+\end{table}
+
+
+\paragraph{Collecting the data:} After the development of metrics and the types
+of data to be collected, the extraction was performed considering the modeling
+steps of $\pi$SOD-M for each case study presented in this chapter. Table
+\ref{tab9:data} presents the results of the data collection.   
+
+  
+\paragraph{Evaluation of the data:} Tables \ref{tab8:metrics} and
+\ref{tab9:data} present the questions and data generated from the evaluation of
+each example. All examples were modeled in accordance with the proposed
+methodology and yielded the following results.
+
+
+
+\begin{table} 
+\centering
+\caption{Results: $\pi$SOD-M's Metrics/Distributions}
+\label{tab9:data}
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\cline{2-4}
+& \multicolumn{3}{ |c| }{$\pi$SOD-M} \\
+\hline  
+Metrics/Distributions & Example 1 & Example 2 & Example 3 
+\\
+\hline 
+\hline \#1.1.1 & 4 & 4 & 4 \\
+\hline \#1.1.2 & 1-1-1-1 & 2-2-2-2 & 3-1-1-1 \\
+\hline \#1.2.1 & 5c-8a-6r-2co & 7c-9a-7r-5co & 4c-6a-6r-3co\\
+\hline \#1.3.1 & 1 & 1 & 1 \\
+\hline \#2.1.1 & 8 & 10 & 5\\
+\hline \#2.2.1 & 2& 3& 3\\
+\hline \#3.1.1 &9 & 37 & 20 \\
+\hline \#3.2.1 & 29 & 56& 40\\
+\hline \#4.1.1 & 2& 3& 3\\
+%\hline \#4.1.2 & & & \\
+
+\hline
+
+\end{tabular}
+\end{table}
+
+
+The methodology defines 4 levels of modeling (\textit{\#1.1.1}), however the
+case studies generated a different number of models ($\pi$-UseCase,
+$\pi$-ServiceProcess, $\pi$-ServiceComposition e $\pi$-PEWS). In \textit{Example
+1} was generated 1 model of each type, in \textit{Example 2} were generated two
+models of each type, and in \textit{Example 3} were generated 3 $\pi$-UseCase
+models and 1 referring to the others (\textit{\#1.1.2}). We found that this
+variation has no involvement with the identification of the number of non-functional
+requirements.
+
+
+Regarding the types of restrictions modeled at each level, we find that
+the number constraints identified implies an increase in the number of
+lines of code. The  \textit{Example 1} set five \textit{constraints} in the
+$\pi$-UseCase model, 8 \textit{assertions} in the $\pi$-ServiceProcess model, 6
+\textit{rules} in the $\pi$-ServiceComposition model and 2 \textit{contracts} in
+the $\pi$-PEWS model (\textit{5c-8a-6r-2Co} \footnote{5c =
+5 constraints, assertions 8th = 8; 6r = 6 rules; 2Co contracts = 2}). This
+example generated 29 lines of code specification. However, the \textit{Example
+2} presents the following data \textit{7c-9a-7r-5co}, generating 56 lines of
+specification code. It was observed that the number of restriction increases the
+number of lines specification. The \textit{Example 3} presents the following
+data, \textit{4c-6a-6r-3co}, generating 40 code lines specification
+(\textit{\#1.2.1}, \textit{\#3.1.1} and \textit{\#3.2.1}).
+
+
+According to the data analysis, we also found that the number of lines of code
+for the definition of contracts increase according to the numbers of rules
+identified (\textit{\#1.2.1}). 
+
+The number of days spent for modeling also varied
+according to the number of constraints. Thus, the time spent with
+identification and modeling of the constraints implies a greater number of days
+of development. \textit{Example 2} was modeled in 10 days (\textit{\#2.1.1}) and
+this example showed a greater number of restrictions and non-functional
+requirements. We assume that if these restrictions were not modeled since the initial stages, the time spent on
+maintenance could be higher. \textit{Example 3} had the fewest
+number of restrictions, and therefore took less time to be modeled. Thus the
+number of non-functional requirements of an application implies the time spent
+for the project development using $\pi$SOD-M (\textit{\#2.2.1} and
+\textit{\#4.1.1}).
+
+
+\section{Final remarks}
+
+\bibliography{biblio} 
+\bibliographystyle{plain}
+\end{document}
