@@ -1,3 +1,107 @@
+
+Model Driven Development (MDD) is a top-down approach for the development of software systems. 
+The main ideas of MDD were originaly proposed by the Object Management Group (OMG)~\cite{mda} and provides a set of guidelines for the structuring of specifications.
+The technique advocates for the use of \textit{models} to specify a software system at different levels of abstraction.
+Abstraction levels are called \textit{viewpoints}. 
+MDD defines three viewpoints:
+
+\begin{trivlist}
+\item \textbf{Computation Independent Models (CIM):} This level focusses on the
+environment of the system, as well as on its business and requirement specifications. 
+This viewpoint represents the software system at its highest level of abstraction. 
+At this moment of the development, the structure and system processing details are still unknown or undetermined. 
+ 
+\item \textbf{Platform Independent Models (PIM):} This level focusses on the system functionality, hiding the details of any particular platform. 
+The specification defines those parts of the system that do not change from one platform to another. 
+
+\item \textbf{Platform Specific Models (PSM):} This level focusses on the functionality, in the context of a particular implementation platform.
+Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system.  
+\end{trivlist}
+
+Besides the notion of model at each level of abstraction, MDD requires the use of \textit{model transformations} within and between levels.
+Intra-level transformations are used to provide a unified representation of concepts of a given level.
+Inter-level transformation implement the refinement process between levels.
+Transformations may be automatic or semi-automatic.
+
+Service oriented computing is at the origin of an evolution in the field of software development. 
+An important challenge of service oriented development is  to ensure the alignment between the requirements imposed by the business logic and the IT systems actually developed.
+(Moreover, IT systems need to evolve according to the business needs.)
+Thus, organizations are  seeking for mechanisms to deal with the gap between the systems developed and business needs~\cite{bell}. 
+The literature stresses the need for methodologies and techniques for service oriented analysis and design, claiming that they are the cornerstone  in the development of meaningful services' based applications~\cite{5}.  
+In this context, we argue that the convergence of model-driven software development, service orientation and better techniques for documenting and improving business processes are the key to make real the idea of rapid, accurate development of software that serves, rather than dictates, software users' goals~\cite{watson}. 
+
+Service oriented development methodologies providing models, best practices, and reference architectures to build services' based applications mainly address  functional aspects~\cite{1,2,decastro1,PapazoglouH06}.  Non-functional aspects concerning services' and application's "semantics", often expressed as requirements and constraints in general purpose methodologies, are not fully considered or they are added once the application has been implemented in order to ensure some level of reliability (e.g., data privacy, exception handling, atomicity, data persistence). This leads to services' based applications that are partially specified and that are thereby partially compliant with application requirements.
+
+\bigskip 
+
+In Service-Oriented Computing~\cite{Papazoglou2007}, pre-existing services are
+combined to produce applications and provides the business logic. The selection of services is usually guided by the functional requirements of the application being developed. 
+Some methodologies and techniques have been proposed to help the software
+developer in the specification of functional requirements of the business logic,
+such as the Service Oriented Development Method
+(SOD-M)~\cite{decastro1}. 
+SOD-M is based on MDD and proposes
+models, practices and techniques to aid in software development. SOD-M does not
+provide suport to the specification of non-functional requirements, such as
+security, reliability, and efficiency. Ideally, non-functional requirements
+would be considered along with all the stages of the software development. The
+adoption of non-functional specifications from the early states of development
+can help the developer to produce applications that are capable of dealing with
+the application context.
+
+\bigskip
+
+Non-functional properties of service oriented applications have been
+addressed in academic works and standards~\cite{ws-co,ws-tra,wsci}.
+Dealing with these kind of properties involves the use of specific technologies
+in different layers of the SOC architecture, for instance during the description
+of services APIs (such as WSDL\cite{wsdl} or REST~\cite{rest}) or to express
+service coordinations (like WS-BPEL~\cite{bpel03}).
+
+%Existing work addressing non-functional properties for service-oriented applications can be classified under four approaches:
+%\begin{trivlist}
+%\item[-] Those coming from the Business Process Domain and from the Web
+%service standards that propose ad-hoc protocols. 
+%Examples of these include the WS*-Family of the W3C\cite{ws-co,ws-tra,btp}.
+%\item[-] Those adopting a classic middleware approach were non-functional
+%properties are provided as middleware services, like the ones presented
+%in~\cite{BeVaC00,RohmBSS02,NepalFGJKS05,Bonita}.
+%\item[-] Those providing languages and enabling the specification of protocols
+%used for expressing service
+%compositions~\cite{LakhalKY05,LakhalKY05b,RouachedGABG06,FauvetDDB05}.
+%\item[-] Those adopting separation of concerns,
+%like~\cite{Milanovic06,Espinosa-OviedoVZC09,SchmelingCM11,PastranaPK11}.
+%\end{trivlist}
+
+Protocols and models implementing non-functional properties assume the existence of a global control of the artifacts implementing the application.
+They also assume that each service exports its interface.
+So, the challenge of supporting non-functional properties is related to
+\textit{(i)} The specification of the business rules of the application; and 
+\textit{(ii)} Dealing with the technical characteristics of the infrastructure where the application is executed.
+
+%In this context, there is a need of 
+%\textit{(i)} flexible protocols and models accepting a best effort approach for ensuring non-functional properties.
+%\textit{(ii)} A methodology for specifying the application logic and its associated non-functional properties, starting at the early phases of the development process.
+%
+%In this work, we proppose to address the structured engineering of service-oriented applications in the presence of non-functional properties where: 
+%\textit{(i)} The designer must make the diference between requirements that concern the application logic and the non-functional requirements;
+%\textit{(ii)} General concepts must be provided to support the representation of  different non-functional requirements;
+%\textit{(iii)} The non-functional requirements, specified in an abstract way, must provide enough information to be translated into the specification of technical aspects implementing concrete non-functional properties to be verified at runtime.
+
+
+The main goals of our work are:
+\textit{(i)} To propose a methodology for supporting the construction of service-oriented applications, taking into account both functional and non-functional requirements;
+\textit{(ii)} To improve the construction process by providing an abstract view of the application and ensure the conformance to its specification;
+\textit{(iii)} To reduce the programming effort through the semi-automatic generation of  models for the application, to produce concrete implementations from high abstraction models;
+
+
+
+
+
+
+
+
+
 \[ \mathrm{Intro\ SAC} \]
 
 Functional properties of a computer system are characterized by the effect produced by the system when given a defined input.
