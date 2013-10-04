@@ -1,0 +1,64 @@
+\[ \mathbb{Intro\ SAC} \]
+
+Functional properties of a computer system are characterized by the effect produced by the system when given a defined input.
+Functional properties are not the only crucial aspect in the software development process. 
+Other properties need to be addressed to fit in the application with its context.
+These other aspects are called Non-Functional Properties.
+
+Non-Functional Requirements (NFRs) specify those properties that are not addressed by the functional  specification.
+They are often called \textit{qualities} of the software system.
+%They are also referred as ``constraints'', ``quality attributes'', ``quality goals'', ``quality of
+%service requirements'' and ``non-behavioural requirements'' \cite{Stellman2005}.
+Non-Functional Requirements may specify response time, security constraints or quality of the solution, among others.
+
+
+
+
+Service-Oriented Computing~\cite{Papazoglou2007}, is a software development paradigm where pre-existing services are combined to produce more complex applications. 
+%The selection of services is usually guided by the functional requirements of the application. 
+%In this scenario, there exists the need to provide support for the specification of non-functional requirements, such as
+%security, reliability, and efficiency. 
+The development of service-based applications can benefit from the inclusion of NFRs to the software process from its early stages.
+Failure to comply with this inclusion means that the final application is obtained from a partial specification, making the deployment a difficult task.
+%Ideally, non-functional requirements
+%would be considered along with all the stages of the software development. 
+The adoption of non-functional specifications from the early states of development
+can help the developer to produce applications that are capable of dealing with
+their context.
+Non-functional properties of service oriented applications have been
+addressed in academic works and standards~\cite{ws-co,ws-tra,wsci}.
+Different proposals~\cite{Babamir2010,AgarwalLS09,CholletL09,GutierrezRF10,XiaoCZBOLH08,JeongCL09,TsadimasNA12}
+support non-functional requirements in the context of web service development. 
+
+Most software development methods define software processes that use the notion of refinement.
+Software process begins with the formulation of an abstract specification, which is successively refined to yield the implementation of the system.
+Methods for the development of web service applications are no exception to this rule.
+At least two levels of abstraction can be distinguished: a \textit{Business Level}, including the abstract specification, and a \textit{System Level}, including actual computer programs that implements the system.
+
+In the case of web service applications we will distinguish two separate layers of the implementation.
+The \textit{Composition Layer} is the upper layer of the implementation. 
+It defines the workflow of the system, in terms of individual service calls.
+The \textit{Service Layer} defines those services that are called by the composition.
+
+\[ \mathbb{Original} \]
+Service oriented computing is at the origin of an evolution in the field of software development. 
+An important challenge of service oriented development is  to ensure the alignment between IT systems and the business logic.
+%dealing thereby with the promise that IT systems can  evolve  according to the business needs. 
+Thus, organizations are  seeking for mechanisms to deal with the gap between the systems developed and business needs \cite{bell}. The literature stresses the need for methodologies and techniques for service oriented analysis and design, claiming that they are the cornerstone  in the development of meaningful services' based applications \cite{5}.  In this context, some authors argue that the convergence of model-driven software development, service orientation and better techniques for documenting and improving business processes are the key to make real the idea of rapid, accurate development of software that serves, rather than dictates, software users' goals \cite{watson}. 
+
+Service oriented development methodologies providing models, best practices, and reference architectures to build services' based applications mainly address  functional aspects \cite{1,2,decastro1,PapazoglouH06}.  Non-functional aspects concerning services' and application's "semantics", often expressed as requirements and constraints in general purpose methodologies, are not fully considered or they are added once the application has been implemented in order to ensure some level of reliability (e.g., data privacy, exception handling, atomicity, data persistence). This leads to services' based applications that are partially specified and that are thereby partially compliant with application requirements.
+
+The objective of this work   is to model non-functional constraints and associate them to  services' based applications  early during the services' composition modeling phase. Therefore this paper presents $\pi$-SOD-M, a model-driven method  that extends the SOD-M  \cite{decastro1} for building reliable  services' based information systems (SIS). 
+%SOD-M defines a process  starting with the  identification of business services through business modeling, and, by means of models' transformations it allows to obtain a services' composition model \cite{decastro1} and the executable code that implements it. 
+
+Our work proposes to extend the SOD-M \cite{decastro1} method with  (i)  the notion of {\em A-Policy} \cite{Espinosa-Oviedo2011a} for representing non-functional constraints associated to services' based applications.  
+%{\em A-policies} are used to express constraints which can be applied to all the services' composition  or to a particular service used for implementing it. They represent both systems' cross-cutting aspects (e.g., exception handling expressing what to do when a service is not available) and use constraints imposed by the services  (e.g., the fact that a service requires imposes an authentication protocol for executing a method). 
+Our work  also (ii) defines the $\pi$-{\sc Pews}  meta-model \cite{Placido2010LTPD} providing guidelines for expressing the composition and the {\em A-policies}. Finally, our work (iii) defines model to model transformation rules for generating the $\pi$-{\sc Pews} model of a reliable services' composition starting from the extended services' composition model; and, model to text transformations for generating the corresponding implementation. As will be shown within our environment implementing these meta models and rules, one may represent both systems' cross-cutting aspects (e.g., exception handling for describing what to do when a service is not available, recovery, persistence aspects) and constraints associated to services, that must be respected for using them (e.g., the fact that a service requires an authentication protocol for executing a method). 
+
+The remainder of the paper is organized as follows. Section \ref{sec:motivation} gives an overview of our approach. It describes a motivation example that integrates and synchronizes well-known social networks services namely Facebook, Twitter and, Spotify. Sections \ref{sec:piscm}, \ref{sec:pewsmetamodel}, and \ref{sec:mmrules} describe respectively the three key elements of our proposal, namelly the $\pi$-SCM and $\pi$-{\sc Pews} meta-models and the transformation rules that support the semi-automatic generation of reliable services' compositions.
+%describes $\pi$-SOD-M method that enables the representation and association of {\em A-policies} to services' composition  thereby making them reliable. 
+%
+Section \ref{sec:implementation} describes implementation and validation issues.
+Section \ref{sec:related} analyses related work concerning policy/contract based programming and, services' composition platforms. Section \ref{sec:conclusions} concludes the paper and discusses future work.
+
+

@@ -1,0 +1,44 @@
+
+Related works to our approach include standards devoted for expressing non-functional constraints for services and services' compositions. They also include methods and approaches for modeling non-functional constraints.
+
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+%\noindent{\bf\em 
+\subsection{Programming non-functional properties for services}
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+Current standards in services' composition implement functional, non-functional constraints and communication aspects by combining different languages and protocols. WSDL and SOAP among others are languages used respectively for describing services' interfaces and message exchange protocols for calling methods exported by such services. For adding a transactional behaviour to a services' composition it is necessary to implement WS-Coordination, WS-Transaction, WS-BussinessActivity and WS-AtomicTransaction. The selection of the adequate protocols for adding a specific non-functional constraints to a services' composition (e.g., security, transactional behaviour and adaptability) is responsibility of a programmer. As a consequence, the development of an application based on a services' composition is a complex and a time-consuming process. This is opposed to the philosophy of services that aims at facilitating the integration of distributed applications. Other works, like \cite{helga2}
+introduce a model for transactional services composition based on
+an advanced transactional model. \cite{samy} proposes an approach
+that consists of a set of algorithms and rules to assist designers
+to compose transactional services. In \cite{Vid04} the model
+introduced in \cite{schuldt-etal-TODS} is extended to web services
+for addressing atomicity.
+
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+%\noindent{\bf\em 
+\subsection{Modeling non-functional properties}
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+There are few methodologies and approaches that address the explicit modeling  of non functional
+properties for service based applications.   Software process methodologies for
+building  services based applications have been proposed in\cite{PapazoglouH06,cdl2006,FeuerlichtM05,Ramollari_asurvey}, and they focus mainly on the modeling and construction process of services based business processes that represent the application logic of information systems.
+
+ \textit{Design by Contract} \cite{HL05TACoS} is an approach for specifying web services and verifying them through runtime checkers before they are deployed. A contract adds behavioral information to a service specification, that is, it specifies the conditions in which methods exported by a service can be called. Contracts are expressed using the language \textit{jmlrac} \cite{LeavensCCRC02}.
+ The \textit{Contract Definition Language} (CDL) \cite{cdl2006} is a XML-based
+description language, for defining contracts for services. There are an associated architecture framework, design standards and a methodology, for developing applications using services.  A services' based application  specification is generated after several
+ \cite{AbrialLNSS91} B-machines refinements that describe the services and their
+compositions.
+\cite{PapazoglouH06} proposes a methodology based on a SOA extension. This work defines a service
+oriented business process development methodology with phases for business process development. The whole life-cycle is based on six phases: planning, analysis and design, construction and testing, provisioning, deployment, and execution and monitoring.
+%IBM proposes a methodology for the development of SOA solutions, called SOMA \cite{soma}. SOMA defines a life-cycle with seven phases: business modeling and transformation, solution management, identification,
+%specification, realization, implementation and deployment monitoring and management.
+
+ %\cite{sommerville08} describes some key points for building services' based applications based on business process models that define the activities and information exchanged in a business processes. Activities in business process can be performed by services so that the model of business process
+%represents a composition of services. It classifies services   as public utilities, business services or
+%composition services. Software development that uses services involves creating programs for composing and configuring services to create new composite services. The service engineering process involves identifying services candidates, service interface and implementation definition, testing and deployment of each service.
+
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+%\noindent{\bf\em 
+\subsection{Discussion}
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+As WS-*  and similar approaches, our work enables the specification and programing of  crosscutting aspects (i.e., atomicity, security, exception handling, persistence). In contrast to these approaches, our work specifies policies for a services' composition in an orthogonal way. Besides, these approaches suppose that non-functional requirements are implemented according a the knowledge that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach, once defined {\em A-Policies} for a given application they can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints. 
+
+Furthermore, unlike methodologies and approaches providing best practices presented above, the main contribution of our proposal is that, integrated to a method that proposes meta-models at different levels (CIM, PIM and PSM) and extending the PSM meta-models, it enables  the design and development of services' based applications that can be reused and that are reliable. 
