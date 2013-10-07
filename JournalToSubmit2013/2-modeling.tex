@@ -1,31 +1,31 @@
 
-Consider for instance the following scenario. An organization wants to provide the services' based application "To Publish Music" that monitors the music a person is listening during some periods of time and sends the song title  to this person's Twitter and Facebook accounts. Thus, this social network user will have her status synchronized in  Twitter and Facebook (i.e., either the same title is published in both accounts or it is not updated) with the title of the music she is listening in Spotify.
-For developing this services' based application it is necessary to compose the following services  calling  their  exported methods:
-\begin{itemize}
-\item The music service   Spotify exports a method for obtaining information  about the music a given user is listening:
-\begin{itemize} \item {\sf\small get-Last-Song ( userid ): String} ; \end{itemize}
-\item Facebook and Twitter services export a method for  updating the status of a given user:
-\begin{itemize} 
-%\item{\sf\small get-Status ( usedid ): String ; 
-\item {\sf\small update-Status ( userid, new-status ): String}; 
-\end{itemize}
-\end{itemize}
+%Consider for instance the following scenario. An organization wants to provide the services' based application "To Publish Music" that monitors the music a person is listening during some periods of time and sends the song title  to this person's Twitter and Facebook accounts. Thus, this social network user will have her status synchronized in  Twitter and Facebook (i.e., either the same title is published in both accounts or it is not updated) with the title of the music she is listening in Spotify.
+%For developing this services' based application it is necessary to compose the following services  calling  their  exported methods:
+%\begin{itemize}
+%\item The music service   Spotify exports a method for obtaining information  %about the music a given user is listening:
+%%\begin{itemize} \item {\sf\small get-Last-Song ( userid ): String} ; %%\end{itemize}
+%\item Facebook and Twitter services export a method for  updating the status of a given user:
+%\begin{itemize} 
+%%\item{\sf\small get-Status ( usedid ): String ; 
+%\item {\sf\small update-Status ( userid, new-status ): String}; 
+%\end{itemize}
+%\end{itemize}
 %
 %Figure \ref{fig:E3valuemodel} shows the E3 value model \cite{e3value} of
 %the scenario. The E3 value model is a business model that represents a business case graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) and allows us to understand the environment in which the services' composition will be placed. 
 %The model in Figure \ref{fig:E3valuemodel} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
 
-Figure \ref{fig:E3valuemodel} shows the BPMN model  \footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario. 
-The "To Publish Music" scenario 
-%(showed by doted line) 
-starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}). 
-Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
-\begin{figure}
-\centering
-\includegraphics[width=0.55\textwidth]{figs/SC}
-\caption{BPMN model of the "To Publish Music" scenario}
-\label{fig:E3valuemodel}
-\end{figure}
+%Figure \ref{fig:E3valuemodel} shows the BPMN model  \footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario. 
+%The "To Publish Music" scenario 
+%%(showed by doted line) 
+%starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}). 
+%Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.55\textwidth]{figs/SC}
+%\caption{BPMN model of the "To Publish Music" scenario}
+%\label{fig:E3valuemodel}
+%\end{figure}
 
 Given a set of services with their exported methods known in advance or provided by a  service directory, building services' based applications can be  a simple task that implies expressing an application logic as a services' composition. The challenge being  ensuring the compliance between the specification and the resulting application. Software engineering methods (e.g., \cite{1,2,decastro1,PapazoglouH06}) today can help to ensure this compliance, particularly when information systems include several sometimes complex business processes calling Web services or legacy applications exported as services. 
 
@@ -49,12 +49,13 @@ and allows  to understand the environment in which the services' composition wil
 %One of the main advantages of model-driven approaches is the provision of 
 %It also provides a conceptual structure where the models used by business managers and analysts can be traced towards more detailed models used by software developers.  
 
-Now, consider that besides the services' composition that represents the order in which the services are called for implementing the application "To Publish Music" it is necessary to model  other requirements that represent the (i) conditions imposed by services for being contacted, for example the fact the Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, for example the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated. 
+%Now, consider that besides the services' composition that represents the order in which the services are called for implementing the application "To Publish Music" it is necessary to model  other requirements that represent the (i) conditions imposed by services for being contacted, for example the fact the Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, for example the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated. 
 
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
 \subsection{Modeling non-functional constraints of services' based applications}
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-Adding non-functional requirements and services constraints in the services' composition is a complex task that implies programming  protocols for instance authentication protocols to call Facebook and Twitter in our example, and atomicity (exception handling and recovery) for ensuring a true synchronization of the song title disseminated in the walls of the user's Facebook and Twitter accounts. 
+Adding non-functional requirements and services constraints in the services' composition is a complex task that implies programming  protocols for instance authentication protocols to call a service in our example, and atomicity (exception handling and recovery) for ensuring a true synchronization of the results produced by the service methods calls.
+% song title disseminated in the walls of the user's Facebook and Twitter accounts. 
 
 Service oriented computing promotes ease of information systems' construction thanks, for instance, to services' reuse. Yet, this is not applied to non-functional constraints as the ones described previously, because they do not follow in general the same service oriented principle and because they are often not fully considered in the specification process of existing services' oriented development methods. Rather, they   are either supposed to be ensured by the underlying execution platform, or they are programmed through ad-hoc protocols. Besides,  they are partially or rarely methodologically derived from the application specification, and they are added once the code has been implemented. In consequence, the resulting application does not fully preserve the compliance and reuse expectations provided by the service oriented computing methods.
 
