@@ -24,11 +24,11 @@ Transformations may be automatic or semi-automatic.
 MDD techniques has been successfully used for the development of hardware and software systems~\cite{MDDvariosAqui}. 
 In particular, we are interested in the application of MDD to the design and implementation of web service applications.
 
-Service oriented~\cite{Papazoglou2007} computing is at the origin of an evolution in the field of software development~\cite{??}. 
+Service oriented computing~\cite{Papazoglou2007} is at the origin of an evolution in the field of software development~\cite{??}. 
 An important challenge of service oriented development is  to ensure the alignment between the requirements imposed by the business logic and the IT systems actually developed.
 (Moreover, IT systems need to evolve according to the business needs.)
 Thus, organizations are seeking for mechanisms to bridge the gap between the systems developed and business needs~\cite{bell}. 
-The literature stresses the need for methodologies and techniques for service oriented analysis and design, claiming that they are the cornerstone  in the development of meaningful services' based applications~\cite{5}.  
+The literature stresses the need for methodologies and techniques for service oriented analysis and design, claiming that they are the cornerstone  in the development of meaningful service based applications~\cite{5}.  
 In this context, we argue that the convergence of model-driven software development, service orientation and better techniques for documenting and improving business processes are key to make real the idea of rapid, accurate development of software that serves, rather than dictates the needs of its users~\cite{watson}. 
 
 In Service-Oriented Computing, pre-existing services are
@@ -175,3 +175,89 @@ Section \ref{sec:implementation} describes implementation and validation issues.
 Section \ref{sec:related} analyses related work concerning policy/contract based programming and, services' composition platforms. Section \ref{sec:conclusions} concludes the paper and discusses future work.
 
 }
+
+\bigskip
+\textsc{The next two sections need to be relocated --Martin}
+\bigskip
+
+\section{SOD-M}\label{sec:sodm}
+The Service-Oriented Development Method (SOD-M)~\cite{decastro1} is a MDD approach for service-based applications.
+SOD-M provides a framework with models and standards to express functionalities of applications at a high-level of abstraction. 
+SOD-M meta-models are organized into three levels: CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
+
+Two models are defined at the CIM level: \textit{value model} 
+and \textit{BPMN model}. 
+The PIM level models the entire structure of the application flow,
+while, the PSM level provides transformations towards more specific platforms.
+The PIM-level models are: \textit{use case}, \textit{extended use case}, \textit{service process} and
+\textit{service composition}. The PSM level models are: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
+These three levels have no support for describing non-functional requirements. 
+
+The SOD-M approach includes transformations between models:
+\textit{CIM-to-PIM, PIM-to-PIM} and \textit{PIM-to-PSM} transformations. Given
+an abstract model at the CIM level, it is possible to apply transformations for
+generating a model of the PSM level. In this context, it is necessary to
+follow the process activities described by the methodology. 
+
+SOD-M considers two points of view:
+\textit{(i)} \textit{business}, focusing on the characteristics and requirements
+of the organization, and \textit{(ii)} \textit{system requirements}, focusing on
+features and processes to be implemented in order application requirements. In
+this way, SOD-M aims to simplify the design of service-oriented applications, as
+well as its implementation using current technologies.
+
+
+\section{$\pi$SOD-M}\label{sec:pisodm}
+
+%In this section we present $\pi$SOD-M, an MDD based methodology. 
+$\pi$SOD-M provides an environment for building service compositions considering
+their non-functional requirements. 
+$\pi$SOD-M extends the SOD-M meta-models by adding
+the concept of \textit{Policy}~\cite{Espinosa-Oviedo2011a}
+to represent non-functional requirements.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figs/piSODM}
+\caption{$\pi$SOD-M.}
+\label{fig:piSOD-M}
+\end{figure}
+
+$\pi$SOD-M proposes the generation of a set of models at different abstraction levels, as
+well as transformations between these models.
+$\pi$SOD-M models represent both the functional aspects of the application as well as its non-functional constraints. 
+Constraints are restrictions that must be verified during the execution of the application. 
+An example of this is the requirement of the user's authentication for executing some system functions. 
+
+Similarly to SOD-M, our approach targets the construction of service-oriented applications that implement business processes.
+$\pi$SOD-M proposes a development process based on the definition of models
+(instances of the meta-modes) and transformations between models.
+There are two kinds of transformations:
+Model-to-model transformations are used during the software process to refine the specification.
+Model-to-text transformations are the last step of the process and generate code.
+
+We extended SOD-M to include non-functional specifications.
+Our method defines four meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess}, \textit{$\pi$-ServiceCom\-po\-si\-tion} and \textit{$\pi$-PEWS}.
+The former three are extensions of SOD-M meta-models and belong to the PIM level.
+The \textit{$\pi$-PEWS} meta-model is a PSM (Figure~\ref{fig:piSOD-M}).
+
+The \textit{$\pi$-UseCase} meta-model describes functional and non-functional requirements.
+Non-functional requirements are defined as \textit{constraints} over processing and data. 
+The \textit{$\pi$-ServiceProcess} meta-model defines the concept of \textit{service contract} to represent restrictions over data and actions that must be performed upon certain conditions. 
+The \textit{$\pi$-ServiceProcess} meta-model gathers the constraints
+described in the \textit{$\pi$-UseCase} model into contracts that are associated
+with services. 
+The \textit{$\pi$-ServiceComposition} meta-model provides the concept of \textit{Policy}
+which put together contracts with similar non-functional requirements. 
+For instance, security and privacy restrictions may be grouped into a security policy.
+\textit{$\pi$-ServiceComposition} models can be refined into PSMs.
+
+At the PSM level we have lower-level models that can be automatically translated into actual computer programs.
+The \textit{$\pi$-PEWS} meta-model is the PSM adopted in this work.
+\textit{$\pi$-PEWS} models are textual descriptions of service compositions that can be translated into PEWS code~\cite{BaCAM05,Placido2010LTPD}.
+Although PEWS is our language of choice, other composition languages can be used as target.
+This can be accomplished by defining: \textit{(i)} a model-to-model transformation, from a \textit{$\pi$-ServiceComposition} model to the corresponding PSM, and \textit{(ii)} a model-to-text transformation, from the this PSM to the composition language.
+
+In the next section we develop an example, to serve as a proof-of-concept.
+The example will show the actual notation used for models. 
+
