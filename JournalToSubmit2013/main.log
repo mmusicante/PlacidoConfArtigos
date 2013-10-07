@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009) (format=xelatex 2010.5.29)  7 OCT 2013 17:02
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009) (format=xelatex 2010.5.29)  7 OCT 2013 17:07
 entering extended mode
  %&-line parsing enabled.
 **main.tex
@@ -86,7 +86,7 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@enLab=\toks16
 \@sep=\skip43
 \@@sep=\skip44
-
+ (./main.spl)
 (/usr/local/texlive/2009/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2009/07/16 8.31 (PWD, AO)
 \bibhang=\skip45
@@ -178,7 +178,26 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package epstopdf Warning: Other drivers than `pdftex.def' are not supported.
 
 ))
-No file main.aux.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 L
+      uciano Baresi <baresi@elet.polimi.it>Luciano Baresi <baresi@elet.polim...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (9.09589pt too wide) in paragraph at lines 41--49
+[]\OT1/cmr/m/n/12 Luciano Baresi <baresi@elet.polimi.it>Luciano Baresi <baresi@
+elet.polimi.it> 
+ []
+
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
@@ -193,6 +212,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
+
 *geometry detected driver: pdftex*
 -------------------- Geometry parameters
 paper: class default
@@ -233,8 +253,11 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
+[1
+
+]
 LaTeX Font Info:    Try loading font information for U+msa on input line 145.
-(/usr/local/texlive/2009/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2009/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 145.
@@ -243,50 +266,49 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 145.
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) (./1-intro.tex
 
-Package natbib Warning: Citation `mda' on page 1 undefined on input line 3.
+Package natbib Warning: Citation `mda' on page 2 undefined on input line 3.
 
-[1
-
+[2
 
 ]
 
-Package natbib Warning: Citation `MDDvariosAqui' on page 2 undefined on input l
+Package natbib Warning: Citation `MDDvariosAqui' on page 3 undefined on input l
 ine 24.
 
 
-Package natbib Warning: Citation `Papazoglou2007' on page 2 undefined on input 
+Package natbib Warning: Citation `Papazoglou2007' on page 3 undefined on input 
 line 27.
 
 
-Package natbib Warning: Citation `??' on page 2 undefined on input line 27.
+Package natbib Warning: Citation `??' on page 3 undefined on input line 27.
 
 
-Package natbib Warning: Citation `bell' on page 2 undefined on input line 30.
+Package natbib Warning: Citation `bell' on page 3 undefined on input line 30.
 
 
-Package natbib Warning: Citation `5' on page 2 undefined on input line 31.
+Package natbib Warning: Citation `5' on page 3 undefined on input line 31.
 
 
-Package natbib Warning: Citation `watson' on page 2 undefined on input line 32.
+Package natbib Warning: Citation `watson' on page 3 undefined on input line 32.
 
 
 
-Package natbib Warning: Citation `1' on page 2 undefined on input line 36.
+Package natbib Warning: Citation `1' on page 3 undefined on input line 36.
 
 
-Package natbib Warning: Citation `2' on page 2 undefined on input line 36.
+Package natbib Warning: Citation `2' on page 3 undefined on input line 36.
 
 
-Package natbib Warning: Citation `decastro1' on page 2 undefined on input line 
+Package natbib Warning: Citation `decastro1' on page 3 undefined on input line 
 36.
 
 
-Package natbib Warning: Citation `PapazoglouH06' on page 2 undefined on input l
+Package natbib Warning: Citation `PapazoglouH06' on page 3 undefined on input l
 ine 36.
 
-[2]
+[3]
 
-Package natbib Warning: Citation `decastro1' on page 3 undefined on input line 
+Package natbib Warning: Citation `decastro1' on page 4 undefined on input line 
 50.
 
 ! Undefined control sequence.
@@ -299,142 +321,117 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Package natbib Warning: Citation `ws-co' on page 3 undefined on input line 69.
+Package natbib Warning: Citation `ws-co' on page 4 undefined on input line 69.
 
 
-Package natbib Warning: Citation `ws-tra' on page 3 undefined on input line 69.
-
-
-
-Package natbib Warning: Citation `wsci' on page 3 undefined on input line 69.
-
-
-Package natbib Warning: Citation `wsdl' on page 3 undefined on input line 72.
-
-
-Package natbib Warning: Citation `rest' on page 3 undefined on input line 72.
-
-
-Package natbib Warning: Citation `bpel03' on page 3 undefined on input line 73.
-
-
-[3]
-
-Package natbib Warning: Citation `Papazoglou2007' on page 4 undefined on input 
-line 130.
-
-
-Package natbib Warning: Citation `ws-co' on page 4 undefined on input line 142.
+Package natbib Warning: Citation `ws-tra' on page 4 undefined on input line 69.
 
 
 
-Package natbib Warning: Citation `ws-tra' on page 4 undefined on input line 142
-.
+Package natbib Warning: Citation `wsci' on page 4 undefined on input line 69.
 
 
-Package natbib Warning: Citation `wsci' on page 4 undefined on input line 142.
+Package natbib Warning: Citation `wsdl' on page 4 undefined on input line 72.
 
 
-Package natbib Warning: Citation `Babamir2010' on page 4 undefined on input lin
-e 143.
+Package natbib Warning: Citation `rest' on page 4 undefined on input line 72.
 
 
-Package natbib Warning: Citation `AgarwalLS09' on page 4 undefined on input lin
-e 143.
+Package natbib Warning: Citation `bpel03' on page 4 undefined on input line 73.
 
-
-Package natbib Warning: Citation `CholletL09' on page 4 undefined on input line
- 143.
-
-
-Package natbib Warning: Citation `GutierrezRF10' on page 4 undefined on input l
-ine 143.
-
-
-Package natbib Warning: Citation `XiaoCZBOLH08' on page 4 undefined on input li
-ne 143.
-
-
-Package natbib Warning: Citation `JeongCL09' on page 4 undefined on input line 
-143.
-
-
-Package natbib Warning: Citation `TsadimasNA12' on page 4 undefined on input li
-ne 143.
-
-
-Package natbib Warning: Citation `bell' on page 4 undefined on input line 160.
-
-
-Package natbib Warning: Citation `5' on page 4 undefined on input line 160.
-
-
-Package natbib Warning: Citation `watson' on page 4 undefined on input line 160
-.
 
 [4]
 
-Package natbib Warning: Citation `1' on page 5 undefined on input line 162.
+Package natbib Warning: Citation `Papazoglou2007' on page 5 undefined on input 
+line 130.
 
 
-Package natbib Warning: Citation `2' on page 5 undefined on input line 162.
+Package natbib Warning: Citation `ws-co' on page 5 undefined on input line 142.
 
 
-Package natbib Warning: Citation `decastro1' on page 5 undefined on input line 
-162.
 
-
-Package natbib Warning: Citation `PapazoglouH06' on page 5 undefined on input l
-ine 162.
-
-
-Package natbib Warning: Citation `decastro1' on page 5 undefined on input line 
-164.
-
-
-Package natbib Warning: Citation `decastro1' on page 5 undefined on input line 
-167.
-
-
-Package natbib Warning: Citation `Espinosa-Oviedo2011a' on page 5 undefined on 
-input line 167.
-
-
-Package natbib Warning: Citation `Placido2010LTPD' on page 5 undefined on input
- line 169.
-
-
-LaTeX Warning: Reference `sec:motivation' on page 5 undefined on input line 171
+Package natbib Warning: Citation `ws-tra' on page 5 undefined on input line 142
 .
 
 
-LaTeX Warning: Reference `sec:piscm' on page 5 undefined on input line 171.
+Package natbib Warning: Citation `wsci' on page 5 undefined on input line 142.
 
 
-LaTeX Warning: Reference `sec:pewsmetamodel' on page 5 undefined on input line 
-171.
+Package natbib Warning: Citation `Babamir2010' on page 5 undefined on input lin
+e 143.
 
 
-LaTeX Warning: Reference `sec:mmrules' on page 5 undefined on input line 171.
+Package natbib Warning: Citation `AgarwalLS09' on page 5 undefined on input lin
+e 143.
 
 
-LaTeX Warning: Reference `sec:implementation' on page 5 undefined on input line
- 174.
+Package natbib Warning: Citation `CholletL09' on page 5 undefined on input line
+ 143.
 
 
-LaTeX Warning: Reference `sec:related' on page 5 undefined on input line 175.
+Package natbib Warning: Citation `GutierrezRF10' on page 5 undefined on input l
+ine 143.
 
 
-LaTeX Warning: Reference `sec:conclusions' on page 5 undefined on input line 17
-5.
+Package natbib Warning: Citation `XiaoCZBOLH08' on page 5 undefined on input li
+ne 143.
+
+
+Package natbib Warning: Citation `JeongCL09' on page 5 undefined on input line 
+143.
+
+
+Package natbib Warning: Citation `TsadimasNA12' on page 5 undefined on input li
+ne 143.
+
+
+Package natbib Warning: Citation `bell' on page 5 undefined on input line 160.
+
+
+Package natbib Warning: Citation `5' on page 5 undefined on input line 160.
+
+
+Package natbib Warning: Citation `watson' on page 5 undefined on input line 160
+.
 
 [5]
 
+Package natbib Warning: Citation `1' on page 6 undefined on input line 162.
+
+
+Package natbib Warning: Citation `2' on page 6 undefined on input line 162.
+
+
 Package natbib Warning: Citation `decastro1' on page 6 undefined on input line 
-184.
+162.
+
+
+Package natbib Warning: Citation `PapazoglouH06' on page 6 undefined on input l
+ine 162.
+
+
+Package natbib Warning: Citation `decastro1' on page 6 undefined on input line 
+164.
+
+
+Package natbib Warning: Citation `decastro1' on page 6 undefined on input line 
+167.
 
 
 Package natbib Warning: Citation `Espinosa-Oviedo2011a' on page 6 undefined on 
+input line 167.
+
+
+Package natbib Warning: Citation `Placido2010LTPD' on page 6 undefined on input
+ line 169.
+
+[6]
+
+Package natbib Warning: Citation `decastro1' on page 7 undefined on input line 
+184.
+
+
+Package natbib Warning: Citation `Espinosa-Oviedo2011a' on page 7 undefined on 
 input line 225.
 
 File: figs/piSODM.png Graphic file (type QTm)
@@ -442,52 +439,45 @@ File: figs/piSODM.png Graphic file (type QTm)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6]
-
-LaTeX Warning: Reference `fig:piSOD-M' on page 7 undefined on input line 251.
-
-[7]
+[7] [8]
 Overfull \hbox (1.90302pt too wide) in paragraph at lines 253--263
 []\OT1/cmr/m/n/12 The $\OML/cmm/m/it/12 ^^Y$\OT1/cmr/m/it/12 -UseCase \OT1/cmr/
 m/n/12 meta-model de-scribes func-tional and non-functional re-quire-ments.
  []
 
 
-Package natbib Warning: Citation `BaCAM05' on page 8 undefined on input line 26
+Package natbib Warning: Citation `BaCAM05' on page 9 undefined on input line 26
 6.
 
 
-Package natbib Warning: Citation `Placido2010LTPD' on page 8 undefined on input
+Package natbib Warning: Citation `Placido2010LTPD' on page 9 undefined on input
  line 266.
 
 ) (./2-modeling.tex
 
-Package natbib Warning: Citation `1' on page 8 undefined on input line 30.
+Package natbib Warning: Citation `1' on page 9 undefined on input line 30.
 
 
-Package natbib Warning: Citation `2' on page 8 undefined on input line 30.
+Package natbib Warning: Citation `2' on page 9 undefined on input line 30.
 
 
-Package natbib Warning: Citation `decastro1' on page 8 undefined on input line 
+Package natbib Warning: Citation `decastro1' on page 9 undefined on input line 
 30.
 
 
-Package natbib Warning: Citation `PapazoglouH06' on page 8 undefined on input l
+Package natbib Warning: Citation `PapazoglouH06' on page 9 undefined on input l
 ine 30.
 
 
-LaTeX Warning: Reference `fig:sodm' on page 8 undefined on input line 35.
-
-
-Package natbib Warning: Citation `decastro1' on page 8 undefined on input line 
+Package natbib Warning: Citation `decastro1' on page 9 undefined on input line 
 35.
 
 
-Package natbib Warning: Citation `decastro2' on page 8 undefined on input line 
+Package natbib Warning: Citation `decastro2' on page 9 undefined on input line 
 35.
 
 
-Package natbib Warning: Citation `miller' on page 8 undefined on input line 35.
+Package natbib Warning: Citation `miller' on page 9 undefined on input line 35.
 
 
 Missing character: There is no Õ in font cmr12!
@@ -496,48 +486,16 @@ Missing character: There is no Õ in font cmr12!
 File: figs/SODM.pdf Graphic file (type QTm)
 <use  "figs/SODM.pdf" >
 
-LaTeX Warning: Reference `fig:sodm' on page 8 undefined on input line 42.
-
-
-Package natbib Warning: Citation `decastro1' on page 8 undefined on input line 
+Package natbib Warning: Citation `decastro1' on page 9 undefined on input line 
 42.
 
 
-Package natbib Warning: Citation `e3value' on page 8 undefined on input line 43
+Package natbib Warning: Citation `e3value' on page 9 undefined on input line 43
 .
 
-[8] [9]
-
-LaTeX Warning: Reference `fig:sodm' on page 10 undefined on input line 79.
-
-
-LaTeX Warning: Reference `sec:piscm' on page 10 undefined on input line 79.
-
-
-LaTeX Warning: Reference `sec:pewsmetamodel' on page 10 undefined on input line
- 79.
-
-
-LaTeX Warning: Reference `sec:mmrules' on page 10 undefined on input line 79.
-
-
-LaTeX Warning: Reference `sec:implementation' on page 10 undefined on input lin
-e 79.
-
-[10]) (./3-metamodel.tex
-
-LaTeX Warning: Reference `fig:servicecompositionmodel' on page 11 undefined on 
-input line 2.
-
-
-LaTeX Warning: Reference `fig:e-scomposition-metamodel' on page 11 undefined on
- input line 3.
-
-
-LaTeX Warning: Reference `fig:servicecompositionmodel' on page 11 undefined on 
-input line 3.
-
+[9] [10] [11]) (./3-metamodel.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+
 (/usr/local/texlive/2009/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -545,169 +503,108 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
 File: figs/E-service-composition-metamodel.pdf Graphic file (type QTm)
 
-<use  "figs/E-service-composition-metamodel.pdf" >
+<use  "figs/E-service-composition-metamodel.pdf" > [12]
 
-LaTeX Warning: Reference `fig:servicecompositionmodel' on page 11 undefined on 
-input line 21.
-
-[11]
-
-Package natbib Warning: Citation `Espinosa-Oviedo2011a' on page 12 undefined on
+Package natbib Warning: Citation `Espinosa-Oviedo2011a' on page 13 undefined on
  input line 23.
 
 
-Package natbib Warning: Citation `CIC:eovszmc09c' on page 12 undefined on input
+Package natbib Warning: Citation `CIC:eovszmc09c' on page 13 undefined on input
  line 23.
 
-
-LaTeX Warning: Reference `fig:e-scomposition-metamodel' on page 12 undefined on
- input line 23.
-
-
-LaTeX Warning: Reference `fig:e-scomposition-metamodel' on page 12 undefined on
- input line 28.
-
-[12]
-File: figs/e-composition-model.pdf Graphic file (type QTm)
- <use  "figs/e-composition-model.pdf" >
-
-LaTeX Warning: Reference `fig:servicecompositionmodel' on page 13 undefined on 
-input line 38.
-
-
-LaTeX Warning: Reference `fig:servicecompositionmodel' on page 13 undefined on 
-input line 40.
-
-
-LaTeX Warning: Reference `fig:servicecompositionmodel' on page 13 undefined on 
-input line 42.
-
 [13]
+File: figs/e-composition-model.pdf Graphic file (type QTm)
+ <use  "figs/e-composition-model.pdf" > [14]
 
-Package natbib Warning: Citation `BaAM06' on page 14 undefined on input line 52
+Package natbib Warning: Citation `BaAM06' on page 15 undefined on input line 52
 .
 
 
-Package natbib Warning: Citation `Placido2010LTPD' on page 14 undefined on inpu
+Package natbib Warning: Citation `Placido2010LTPD' on page 15 undefined on inpu
 t line 52.
 
-
-LaTeX Warning: Reference `fig:metamodel' on page 14 undefined on input line 53.
-
-
 File: figs/PEWSMetamodel.pdf Graphic file (type QTm)
-<use  "figs/PEWSMetamodel.pdf" > [14]
-
-LaTeX Warning: Reference `fig:transformations' on page 15 undefined on input li
-ne 89.
-
-[15]
-
-LaTeX Warning: Reference `fig:transformations' on page 16 undefined on input li
-ne 97.
-
+<use  "figs/PEWSMetamodel.pdf" > [15] [16]
 File: figs/Mapping-1.pdf Graphic file (type QTm)
-<use  "figs/Mapping-1.pdf" >
+ <use  "figs/Mapping-1.pdf" >
+[17]) (./4-implementation.tex
 
-LaTeX Warning: Reference `fig:transformations' on page 16 undefined on input li
-ne 121.
-
-[16]) (./4-implementation.tex
-
-Package natbib Warning: Citation `decastro1' on page 17 undefined on input line
+Package natbib Warning: Citation `decastro1' on page 18 undefined on input line
  2.
 
-[17]
-
-LaTeX Warning: Reference `fig:policymanager' on page 18 undefined on input line
- 11.
-
-
-LaTeX Warning: Reference `fig:sodm' on page 18 undefined on input line 11.
-
+[18]
 File: figs/architecture.pdf Graphic file (type QTm)
-<use  "figs/architecture.pdf" > [18]
+ <use  "figs/architecture.pdf" > [19]
 
-LaTeX Warning: Reference `fig:policymanager' on page 19 undefined on input line
- 35.
-
-
-Package natbib Warning: Citation `Espinosa-Oviedo2011a' on page 19 undefined on
+Package natbib Warning: Citation `Espinosa-Oviedo2011a' on page 20 undefined on
  input line 45.
 
-[19]) (./5-relworks.tex
+[20]) (./5-relworks.tex
 
-Package natbib Warning: Citation `helga2' on page 20 undefined on input line 8.
-
-
-
-Package natbib Warning: Citation `samy' on page 20 undefined on input line 10.
-
-
-Package natbib Warning: Citation `Vid04' on page 20 undefined on input line 12.
+Package natbib Warning: Citation `helga2' on page 21 undefined on input line 8.
 
 
 
-Package natbib Warning: Citation `schuldt-etal-TODS' on page 20 undefined on in
+Package natbib Warning: Citation `samy' on page 21 undefined on input line 10.
+
+
+Package natbib Warning: Citation `Vid04' on page 21 undefined on input line 12.
+
+
+
+Package natbib Warning: Citation `schuldt-etal-TODS' on page 21 undefined on in
 put line 13.
 
-[20]
+[21]
 
-Package natbib Warning: Citation `PapazoglouH06' on page 21 undefined on input 
+Package natbib Warning: Citation `PapazoglouH06' on page 22 undefined on input 
 line 22.
 
 
-Package natbib Warning: Citation `cdl2006' on page 21 undefined on input line 2
+Package natbib Warning: Citation `cdl2006' on page 22 undefined on input line 2
 2.
 
 
-Package natbib Warning: Citation `FeuerlichtM05' on page 21 undefined on input 
+Package natbib Warning: Citation `FeuerlichtM05' on page 22 undefined on input 
 line 22.
 
 
-Package natbib Warning: Citation `Ramollari_asurvey' on page 21 undefined on in
+Package natbib Warning: Citation `Ramollari_asurvey' on page 22 undefined on in
 put line 22.
 
 
-Package natbib Warning: Citation `HL05TACoS' on page 21 undefined on input line
+Package natbib Warning: Citation `HL05TACoS' on page 22 undefined on input line
  24.
 
 
-Package natbib Warning: Citation `LeavensCCRC02' on page 21 undefined on input 
+Package natbib Warning: Citation `LeavensCCRC02' on page 22 undefined on input 
 line 24.
 
 
-Package natbib Warning: Citation `cdl2006' on page 21 undefined on input line 2
+Package natbib Warning: Citation `cdl2006' on page 22 undefined on input line 2
 5.
 
 
-Package natbib Warning: Citation `AbrialLNSS91' on page 21 undefined on input l
+Package natbib Warning: Citation `AbrialLNSS91' on page 22 undefined on input l
 ine 27.
 
 
-Package natbib Warning: Citation `PapazoglouH06' on page 21 undefined on input 
+Package natbib Warning: Citation `PapazoglouH06' on page 22 undefined on input 
 line 29.
 
-[21]) (./6-conclusions.tex)
+[22]) (./6-conclusions.tex)
 No file main.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-[22] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[23] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 2262 strings out of 494665
- 29653 string characters out of 3163743
- 85855 words of memory out of 3000000
+ 2266 strings out of 494665
+ 29689 string characters out of 3163743
+ 85873 words of memory out of 3000000
  5419 multiletter control sequences out of 15000+200000
  19406 words of font info for 72 fonts, out of 3000000 for 9000
  669 hyphenation exceptions out of 8191
  41i,8n,30p,1044b,257s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (22 pages).
+Output written on main.pdf (23 pages).
