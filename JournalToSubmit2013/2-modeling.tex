@@ -27,6 +27,49 @@
 %\label{fig:E3valuemodel}
 %\end{figure}
 
+In order to introduce the context of our work consider the Tracking crime application where civil population and by police share information about criminality in given zones of an imaginary city. 
+Users signal crimes using twitter and police officers notify crimes  they have to deal with. 
+Some of this information, if it is not confidential, can be shared to the community of users using this application. 
+Users can track crimes in given zones and see information located in a map according to their privileges.  
+For example civilians can ask Locate the crimes done the last month 100 km from my current position that happened between 8:00 and 14:00.
+While police officers can ask Locate the regions in my sector where murders happened in the last month
+This information can come from the police database and from twitter posts. 
+The zones of the city are thereby according to their degree of criminality.
+
+ In order to provide these functions the application benefits from existing services that provide information,  storage and data visualization functions. Thus, the application is a service based application that implements a business process.
+ The business process is specified in terms of ordered tasks and define the application logic of a Service oriented Application. Tasks can be performed by a person or an entity. In our context, tasks are implemented by Services. 
+Service is an application implemented by a provider that exports an API through a network (e.g., Internet)
+API is defined using an interface definition language (IDL, e.g., WSDL for Web services).
+ In our example the business procces can start with one of two tasks: Notify a crime, or track a crime. A notified crime can be then stored in a database. Tracked crimes are visualized in a map and then the used can ask for detailed information. They are implemented by four services: twitter and an adhoc police service for notifying crimes, Amazon as persistence service and google maps for visualizing and locating crimes in a map. 
+Note that a task can be implemented by a service composition. This is the case of the task Notify crime in our example that enables to notify crimes through twitter or through the police notification service. 
+ 
+
+Business processes have also associated rules and constraints that define their non functional requirements.  
+NFR represents the “semantics” and the conditions in which the tasks must be done. 
+In our example we have some constraints. 
+\begin{itemize}
+\item Twtter requires to be accessed through an authentication protocol, and the police crime notification service has a control  access protocol and allows only 3 tries to access it. 
+\item Only users with enough privileges can store crimes’ notifications. 
+\item Users can only track crimes notified by providers t that hey have authorization to contact; For example civil population cannot track all the crimes notified by the police. 
+\item If the google map is unavailable the results of a track request are delivered on text. 
+\item If a user tracks crimes that are provided by a service for which she does not have authorization then show an empty map. 
+\item Detailed information about a crime depends on the user privileges, on the police assignment regions. 
+\item The tracking crime app keeps track of the accesses to detailed information about crimes. 
+\end{itemize}
+
+Through the example we underlined that every application implements functional aspects that describe its application logic. Recall that an application logic refers to routines that perform the activities to reach the application objective.
+Also there are non functional properties derived from NFR. They refer to strategies to be considered for the application execution like: security, isolation, adaptability, atomicity, and more.
+These non functional properties must be ensured at execution time, and they are not completely defined within the application logic.
+
+The challenge is to define them and to associate them with the application logic considering that different to existing solutions that suppose that it is possible to access the execution stat of all the components  of an application and that the application has complete control on them, in the case for service oriented applications  the components are autonomous services
+API does not necessarily export information about methods dependency (e.g., in the REST protocol);
+they do not share their state (stateless).
+
+
+
+
+
+
 Given a set of services with their exported methods known in advance or provided by a  service directory, building services' based applications can be  a simple task that implies expressing an application logic as a services' composition. The challenge being  ensuring the compliance between the specification and the resulting application. Software engineering methods (e.g., \cite{1,2,decastro1,PapazoglouH06}) today can help to ensure this compliance, particularly when information systems include several sometimes complex business processes calling Web services or legacy applications exported as services. 
 
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
