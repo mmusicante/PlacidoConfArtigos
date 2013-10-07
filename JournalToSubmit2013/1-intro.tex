@@ -182,15 +182,24 @@ Section \ref{sec:related} analyses related work concerning policy/contract based
 
 \section{SOD-M}\label{sec:sodm}
 The Service-Oriented Development Method (SOD-M)~\cite{decastro1} is a MDD approach for service-based applications.
-SOD-M provides a framework with models and standards to express functionalities of applications at a high-level of abstraction. 
-SOD-M meta-models are organized into three levels: CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
+SOD-M provides models and notation to specify service applications at different levels of abstraction. 
+As usual for MDD, SOD-M meta-models are organized into three levels: CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
 
 Two models are defined at the CIM level: \textit{value model} 
 and \textit{BPMN model}. 
-The PIM level models the entire structure of the application flow,
+\textsc{Explain these two here --Martin.}
+
+Models at the PIM level describe the structure of the application flow,
 while, the PSM level provides transformations towards more specific platforms.
-The PIM-level models are: \textit{use case}, \textit{extended use case}, \textit{service process} and
-\textit{service composition}. The PSM level models are: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
+The PIM-level models proposed by SOD-M are: 
+\begin{trivlist}
+\item \textit{use case}: 
+\item \textit{extended use case}:
+\item \textit{service process}:
+\item \textit{service composition}. 
+\end{trivlist}
+
+SOD-M defines three meta-models at the PSM level: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
 These three levels have no support for describing non-functional requirements. 
 
 The SOD-M approach includes transformations between models:
