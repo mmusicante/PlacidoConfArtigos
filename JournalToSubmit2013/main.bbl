@@ -1,0 +1,122 @@
+\begin{thebibliography}{10}
+
+\bibitem{AbrialLNSS91}
+J.~R. Abrial, M.~K.~O. Lee, D.~Neilson, P.~N. Scharbach, and I.~H. Sorensen.
+\newblock The b-method.
+\newblock In Soren Prehn and W.~J. Toetenel, editors, {\em VDM Europe (2)},
+  volume 552 of {\em Lecture Notes in Computer Science}, pages 398--405.
+  Springer, 1991.
+
+\bibitem{AgarwalLS09}
+S.~Agarwal, S.~Lamparter, and R.~Studer.
+\newblock Making web services tradable: A policy-based approach for specifying
+  preferences on web service properties.
+\newblock {\em J. Web Sem.}, 7(1):11--20, 2009.
+
+\bibitem{wsci}
+A.~Arkin, S.~Askary, S.~Fordin, W.~Jekeli, K.~Kawaguchi, D.~Orchard,
+  S.~Pogliani, K.~Riemer, S.~Struble, P.~Takacsi-Nagy, I.~Trickovic, and
+  S.~Zimek.
+\newblock Web service choreography interface.
+\newblock Technical report, World Wide Web Consortium, 2002.
+
+\bibitem{Babamir2010}
+S.~M. Babamir, S.~Karimi, and M.~R. Shishechi.
+\newblock A broker-based architecture for quality-driven web services
+  composition.
+\newblock In {\em Computational Intelligence and Software Engineering (CiSE),
+  2010 International Conference on}, pages 1 --4, dec. 2010.
+
+\bibitem{bell}
+M.~Bell.
+\newblock {\em {Service-Oriented Modeling: Service Analysis, Design, and
+  Architecture}}.
+\newblock 2008.
+
+\bibitem{2}
+A.~Brown.
+\newblock {SOA Development Using the IBM Rational Software Development
+  Platform: A Practical Guide}.
+\newblock In {\em Rational Software}, 2005.
+
+\bibitem{CholletL09}
+S.~Chollet and P.~Lalanda.
+\newblock An extensible abstract service orchestration framework.
+\newblock In {\em Proceedings of the 2009 IEEE International Conference on Web
+  Services}, ICWS '09, pages 831--838, Washington, DC, USA, 2009. IEEE Computer
+  Society.
+
+\bibitem{decastro1}
+V.~de~Castro, E.~Marcos, and R.~Wieringa.
+\newblock Towards a service-oriented mda-based approach to the alignment of
+  business processes with it systems: From the business model to a web service
+  composition model.
+\newblock {\em International Journal of Cooperative Information Systems},
+  18(2), 2009.
+
+\bibitem{Espinosa-Oviedo2011a}
+J.~A. Espinosa-Oviedo, G.~Vargas-Solar, J.~L. Zechinelli-Martini, and
+  C.~Collet.
+\newblock {P}olicy driven services coordination for building social networks
+  based applications.
+\newblock In {\em {I}n {P}roc. of the 8th {I}nt. {C}onference on {S}ervices
+  {C}omputing ({SCC}'11), {W}ork-in-{P}rogress {T}rack}, Washington, DC, USA,
+  July 2011. IEEE.
+
+\bibitem{GutierrezRF10}
+C.~Guti{\'e}rrez, D.~G. Rosado, and E.~Fern\'{a}ndez-Medina.
+\newblock The practical application of a process for eliciting and designing
+  security in web service systems.
+\newblock volume~51, pages 1712--1738, Newton, MA, USA, December 2009.
+  Butterworth-Heinemann.
+
+\bibitem{JeongCL09}
+B.~Jeong, H.~Cho, and C.~Lee.
+\newblock On the functional quality of service (fqos) to discover and compose
+  interoperable web services.
+\newblock {\em Expert Syst. Appl.}, 36(3):5411--5418, April 2009.
+
+\bibitem{LeavensCCRC02}
+G.~T. Leavens, Y.~Cheon, C.~Clifton, C.~Ruby, and D.~R. Cok.
+\newblock How the design of jml accomodates both runtime assertion checking and
+  formal verification.
+\newblock In {\em FMCO}, pages 262--284, 2002.
+
+\bibitem{miller}
+J.~Miller and J.~Mukerji.
+\newblock Mda guide.
+\newblock 2003.
+
+\bibitem{5}
+M.~Papazoglou, P.~Traverso, S.~Dustdar, and F.~Leymann.
+\newblock {Service-Oriented Computing: State of the Art and Research
+  Challenges}.
+\newblock {\em IEEE Computer}, 40(11), 2007.
+
+\bibitem{PapazoglouH06}
+M.~P. Papazoglou and W.~J. Heuvel, Van Der~Heuvel.
+\newblock Service-oriented design and development methodology.
+\newblock {\em Int. J. Web Eng. Technol.}, 2(4):412--442, July 2006.
+
+\bibitem{Ramollari_asurvey}
+E.~Ramollari, D.~Dranidis, and A.~J.~H. Simons.
+\newblock A survey of service oriented development methodologies.
+
+\bibitem{Placido2010LTPD}
+P.~A. Souza~Neto, M.~A. Musicante, G.~Vargas-Solar, and J.~L.
+  Zechinelli-Martini.
+\newblock Adding {C}ontracts to a {W}eb {S}ervice {C}omposition {L}anguage.
+\newblock {\em {LTPD} - 4th {W}orkshop on {L}anguages and {T}ools for
+  {M}ultithreaded, {P}arallel and {D}istributed {P}rogramming}, September 2010.
+
+\bibitem{watson}
+A.~Watson.
+\newblock A brief history of {MDA}, 2008.
+
+\bibitem{XiaoCZBOLH08}
+H.~Xiao, B.~Chan, Y~Zou, J.~W. Benayon, B.~O'Farrell, E.~Litani, and
+  J.~Hawkins.
+\newblock A framework for verifying sla compliance in composed services.
+\newblock In {\em ICWS}, pages 457--464, 2008.
+
+\end{thebibliography}
