@@ -15,14 +15,7 @@
 %% \documentclass[final,3p,times,twocolumn]{elsarticle}
 %% \documentclass[final,5p,times]{elsarticle}
 %% \documentclass[final,5p,times,twocolumn]{elsarticle}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> d5c312cd7be1850888e76b3fdae8410c68913148
-=======
-
->>>>>>> d5c312cd7be1850888e76b3fdae8410c68913148
 %% if you use PostScript figures in your article
 %% use the graphics package for simple commands
 %% \usepackage{graphics}
@@ -107,13 +100,11 @@ the Presence of Non-Functional Properties}
 \author[inst4]{Valeria~de~Castro}
 \author[inst3]{Umberto Souza da Costa}
 
-\address[inst1]{Federal Technological Institute of Rio Grande do Norte -- Natal-RN,
-Brazil}
+\address[inst1]{Federal Technological Institute of Rio Grande do Norte -- Natal, Brazil}
 
 \address[inst2]{Universit\'e de Grenoble -- Saint Martin d'H\`{e}res, France}
 
-\address[inst3]{Federal University of Rio Grande do Norte -- Natal-RN,
-Brazil}
+\address[inst3]{Federal University of Rio Grande do Norte -- Natal, Brazil}
 
 \address[inst4]{Universidad Rey Juan Carlos -- M\'{o}stoles, Spain}
 
@@ -140,35 +131,64 @@ This paper presents\ldots
 %*********************************************************************************************************
 \section{Introduction}
 \label{sec:intro}
-\input{1-intro}
+\input{intro}
 %*********************************************************************************************************
 
+%*********************************************************************************************************
+\section{Related Works}
+\label{sec:relworks}
+%Conceptos existentes en NFR y metodologías similares
+\input{relworks}
+
+\subsection{Modeling non-functional requirements in service-oriented applications}
+\label{sec:modeling}
+%(comentar la revisión y presentar la clasificacion de conceptos y NFR model con los conceptos que proponemos) 
+\input{modelingNFR}
+
+\subsection{Methodologies for Service-oriented applications development including non-functional requirements}
+\label{sec:methodologies}
+%(aqui propuestas relacionadas, analizar sus caracteristicas, si son MDD, si parte de alto nivel, etc.)
+\input{methodologiesForNFR}
+
+%*********************************************************************************************************
 
 %*********************************************************************************************************
 \section{Modeling reliable services' compositions with $\pi$-SOD-M}\label{sec:motivation}
-\input{2-modeling}
-%*********************************************************************************************************
+\input{modelingWithPISODM}
+%(Aquí lo dejaría con la estructura que teníamos para Caise, presentamos el framework y posteriormente comentamos modelos y transformaciones)
+
+\subsection{$\pi$-SOD-M meta-models}\label{sec:pisodmmetamodels}
+%3.1. pi-SoD-M metamodels (presentar los metamodels)
+\input{metamodels}
+
+\subsection{$\pi$-SOD-M transformations}\label{sec:pisodmtransformations}
+%3.2. pi-sod-M transformations (con la tablas del caise)
+\input{transformations}
 
 %*********************************************************************************************************
-\section{$\pi$ services' composition meta-model}\label{sec:piscm}
-\input{3-metamodel}
+
+\section{Applying $\pi$-SOD-M: a case study}
+4.1 Presentar los modelos para el caso y explicar las transformaciones
+4.2 Discussion. (o Lecciones aprendidas del caso)
+\input{modelingCrimes}
+
+
+
+%*********************************************************************************************************
+\section{Conclusions and future work}\label{sec:conclusions}
+\input{conclusions}
 %*********************************************************************************************************
 
+
+\appendix
 
 %*********************************************************************************************************
 \section{Implementation issues}\label{sec:implementation}
 \input{4-implementation}
 %*********************************************************************************************************
 
-%*********************************************************************************************************
-\section{Related works}\label{sec:related}
-\input{5-relworks}
-%*********************************************************************************************************
-
-%*********************************************************************************************************
-\section{Conclusions and future work}\label{sec:conclusions}
-\input{6-conclusions}
-%*********************************************************************************************************
+\section{Intro SOD-M and PiSOD-M}
+\input{sodmAndPisodm}
 
 
 
