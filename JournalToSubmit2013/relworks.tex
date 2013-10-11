@@ -1,4 +1,48 @@
 
+In this section we present some methods and techniques that are related to our work.
+We begin presenting SOD-M~\cite{decastro1}, a method for the development of web applications.
+SOD-M will be extended in the next sections to deal with NFRs.
+We also present here some other frameworks that are related to our proposal.
+
+
+\subsection{SOD-M}\label{sec:sodm}
+The Service-Oriented Development Method (SOD-M)~\cite{decastro1} is a MDD approach for service-based applications.
+SOD-M provides models and notation to specify service applications at different levels of abstraction. 
+As usual for MDD, SOD-M meta-models are organized into three levels: CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
+
+Two models are defined at the CIM level: \textit{value model} 
+and \textit{BPMN model}. 
+\textsc{Explain these two here --Martin.}
+
+Models at the PIM level describe the structure of the application flow,
+while, the PSM level provides transformations towards more specific platforms.
+The PIM-level models proposed by SOD-M are: 
+\begin{trivlist}
+\item \textit{use case}: 
+\item \textit{extended use case}:
+\item \textit{service process}:
+\item \textit{service composition}. 
+\end{trivlist}
+
+SOD-M defines three meta-models at the PSM level: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
+These three levels have no support for describing non-functional requirements. 
+
+The SOD-M approach includes transformations between models:
+\textit{CIM-to-PIM, PIM-to-PIM} and \textit{PIM-to-PSM} transformations. Given
+an abstract model at the CIM level, it is possible to apply transformations for
+generating a model of the PSM level. In this context, it is necessary to
+follow the process activities described by the methodology. 
+
+SOD-M considers two points of view:
+\textit{(i)} \textit{business}, focusing on the characteristics and requirements
+of the organization, and \textit{(ii)} \textit{system requirements}, focusing on
+features and processes to be implemented in order application requirements. In
+this way, SOD-M aims to simplify the design of service-oriented applications, as
+well as its implementation using current technologies.
+
+
+
+
 Related works to our approach include standards devoted for expressing non-functional constraints for services and services' compositions. They also include methods and approaches for modeling non-functional constraints.
 
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
