@@ -7,8 +7,9 @@ to represent non-functional requirements.
 
 Policies are associated to service operations and combine \textit{constraints} and \textit{reactive recovery actions}.
 Constraints are restrictions that must be verified during the execution of the application. 
-An example of this is the requirement of authentication for executing some of the system functions. 
 Failure to verify the constraints will trigger exceptions to execute their corresponding recovery actions.
+An example of policy is the requirement of authentication for executing some of the system functions. 
+The action associated to this policy may perform the authentication of the user.
 
 In this context, we provide concepts at different levels of abstraction for expressing business rules of a process as policies (to implement existing NFP protocols).
 
