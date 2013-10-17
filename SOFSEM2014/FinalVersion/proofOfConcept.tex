@@ -38,20 +38,21 @@ The application is built upon four services: \textsf{twitter} and an \textsf{ad-
 
 Non-functional requirements are specified by rules and conditions to be verified during the excecution of tasks.
 In our example we have the following non-functional requirements:
-\begin{trivlist}
-\item[1.] Twitter requires to be accessed through an authentication protocol that allows three login failures before blocking. 
-\item[2.] Crime notification needs privileged access.
-\item[3.] Civilian users can only track crimes for which they have clearance: Civilian population cannot track all the crimes notified by the police. 
-\item[4.] If \textsf{Google Maps} is unavailable, the results are delivered as text. 
-\item[5.] Querying about crimes without having proper clearance yields an empty map.
-\item[6.] Access rights to detailed information depends on user clearance and zone assignment for police officers. 
-\item[7.] The application maintains a detailed log. 
-\end{trivlist}
+\begin{numtrivlist}
+\item Twitter requires to be accessed through an authentication protocol that allows three login failures before blocking. 
+\item Crime notification needs privileged access.
+\item Civilian users can only track crimes for which they have clearance: Civilian population cannot track all the crimes notified by the police. 
+\item If \textsf{Google Maps} is unavailable, the results are delivered as text. 
+\item Querying about crimes without having proper clearance yields an empty map.
+\item Access rights to detailed information depends on user clearance and zone assignment for police officers. 
+\item The application maintains a detailed log. 
+\end{numtrivlist}
 
 Considering the example of tracking crimes, all the system restrictions are
-model as constraints in the methodology. We have three types of constraints:
+modelled as constraints. 
+We have three types of constraints:
 \textit{value}, \textit{business} and \textit{exceptions behaviour} constraints.
-Each use case can be associated to one or more constraints.
+Each use case (model) can be associated to one or more constraints.
 
 \paragraph*{\textit{$\pi$-UseCase} model:} 
 In our example we have five use cases (Figure~\ref{fig:piUC}), which represent the
@@ -82,14 +83,14 @@ The model presented in Figure~\ref{fig:piUC} is transformed, at this stage of th
 The new model describes the application's activities and defines contracts for each activity or for parts of the application.
 
 A model-to model transformation is defined in order refine the \textit{$\pi$-UseCase} model of the application into the more detailed model. 
-This (semi-automatic) transformation process is supported by a tool (described in~\cite{SouzaNeto:2012}).
+This (semi-automatic) transformation process is supported by a tool (described in~\cite{PlacidoThesis2012}).
 
 The \textit{$\pi$-ServiceProcess} model defined for our tracking crime application is presented in Figure~\ref{fig:piSP}, where: 
-\begin{enumerate}
+\begin{numtrivlist}
 \item Tasks of the previous model are transformed into \textit{actions};
 \item Actions are grouped into \textit{activities} (in accordance to the business logic).
 \item Constraints of the \textit{$\pi$-UseCase} model are transformed into assertions.
-\end{enumerate}
+\end{numtrivlist}
 
 \begin{figure}[ht!]
 \centering
@@ -136,7 +137,7 @@ This code is a service composition program that can be compiled into executable 
 $\pi$-\textit{PEWS} models are expressed in a variant of the PEWS composition language.
 
 \begin{figure}[t]
-\footnotesize
+\begin{footnotesize}
 %\begin{lstlisting}[label=list:rulePre,caption=ATL - piServiceComposition2piPEWS : Pre-condition Rule. ]
 %\begin{lstlisting}[label=list:rulePre]
 \begin{verbatim}
@@ -145,7 +146,6 @@ $\pi$-\textit{PEWS} models are expressed in a variant of the PEWS composition la
 2 namespace googlemaps = maps.googleapis.com/maps/api/service
 3 namespace amazondynamodb = rds.amazonaws.com/doc/2010-07-28/AmazonRDSv4.wsdl
 4 namespace police = www.police.fr/service.wsdl
-
 //Operations 
 5 alias publishTwitter = portType/publishTwitter in twitter
 6 alias searchCrime = portType/searchCrime in amazondynamodb 
@@ -157,35 +157,32 @@ $\pi$-\textit{PEWS} models are expressed in a variant of the PEWS composition la
 10 Service visualizeCrime =  showMap . getCrimeDetail
 ...
 //Path
-11 ( notifyCrime . storeiCrime ) || 
-12 ( trackCrime . visualizeCrime . getCrimeDetail )
+11 (notifyCrime.storeiCrime) || (trackCrime.visualizeCrime.getCrimeDetail)
 ...
 //Contracts
-13 defContract notifyCrimeContract{
-14	isAppliedTo: notifyCrime
-15	requires: userId == ?? && passw == ?? && 
-16	                               req(notifyCrime)  < 3
-17 	  (OnFailureDo: NOT(action_publish(crime));
-18	ensures: publishTwitter(crime) == true
-19 	  (OnFailureDo: skip);
-20 }
-...
+12 defContract notifyCrimeContract{ 
+13    isAppliedTo: notifyCrime
+14	  requires: userId == ?? && passw == ?? && req(notifyCrime)  < 3
+15 	      (OnFailureDo: NOT(action_publish(crime));
+16	  ensures: publishTwitter(crime) == true
+17 	      (OnFailureDo: skip);
+28 }
 \end{verbatim}
 % \end{lstlisting}
+\end{footnotesize}
 \caption{$\pi$-PEWS code for the crime tracking example (partial, simplified).\label{fig:pewscontract} }
 \end{figure}
 
 The $\pi$-PEWS program generated from the model in Figure~\ref{fig:policies} is partially presented in Figure~\ref{fig:pewscontract}. 
 The figure shows a simplified program code, produced in accordance to the following guidelines:
-\begin{trivlist}
-\item[1.] Namespaces, identifying the addresses of external services are produced from the Business Collaborators of the higher-level model. 
+\begin{numtrivlist}
+\item Namespaces, identifying the addresses of external services are produced from the Business Collaborators of the higher-level model. 
 We define four of them, corresponding to the Police, Twitter, Google Map and Amazon partners.
-\item[2.] Specific operations exported by each business collaborator are identified to an \textit{operation} of the program (Each operation is given an \texttt{alias}).
-\item[3.] The workflow in Figure~\ref{fig:piSC} is translated into a textual representation (lines 11 and 12 of the program).
-\item[4.] \textit{Contracts} are defined in $\pi$-PEWS as having pre-conditions (\texttt{requires}), post-conditions (\texttt{ensures}) and actions (\texttt{OnFailureDo}) to be executed in the case thar a condition is not verified. 
+\item Specific operations exported by each business collaborator are identified to an \textit{operation} of the program (Each operation is given an \texttt{alias}).
+\item The workflow in Figure~\ref{fig:piSC} is translated into the text in line 11.
+\item \textit{Contracts} are defined in $\pi$-PEWS as having pre-conditions (\texttt{requires}), post-conditions (\texttt{ensures}) and actions (\texttt{OnFailureDo}) to be executed case a condition is not verified. 
 Contracts are generated from Policies (such as those of Figure~\ref{fig:piSC}.
-\end{trivlist}
+\end{numtrivlist}
 
-
-For a more comprehensive account of $\pi$SOD-M the reader can refer to~\cite{SouzaNeto:2012}.
+For a more comprehensive account of $\pi$SOD-M the reader can refer to~\cite{PlacidoThesis2012}.
 

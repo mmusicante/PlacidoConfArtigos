@@ -52,6 +52,17 @@
         true,false,rise,exception,extend,resume,to,return,function}}
 
 
+\newcounter{numberInTrivlist}
+
+\newenvironment{numtrivlist}{\begin{list}{\arabic{numberInTrivlist}.} 
+                                         {\usecounter{numberInTrivlist}
+                                          \setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{0pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+                            
+                            
 
 \def\B{\hfill{$\Box$}}
 \def\A{\hbox{${\cal A}$}}
