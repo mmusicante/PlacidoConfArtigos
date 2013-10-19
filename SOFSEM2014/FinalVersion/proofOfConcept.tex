@@ -16,7 +16,7 @@ The business process defines the logic of the application and is specified in te
 Tasks can be performed by persons or computers. 
 
 The business process and requirements specifications presented in Figure~\ref{fig:constraints} are instances of the Computation-Independent models of Figure~\ref{fig:piSOD-M}.
-Busines process is represented as a graph while requirements are given as text boxes.
+Business process is represented as a graph while requirements are given as text boxes.
 \begin{figure}[ht!]
 \centering
 %\subfloat[\textit{Tracking Crimes} - Illustration of the Problem.]
@@ -36,7 +36,7 @@ Tracked crimes are visualized in a map.
 The used can ask for detailed information. 
 The application is built upon four services: \textsf{twitter} and an \textsf{ad-hoc police service} for notifying crimes, \textsf{Amazon} used as  persistence service and  \textsf{Google Maps} for locating and displaying crimes on a map.
 
-Non-functional requirements are specified by rules and conditions to be verified during the excecution of tasks.
+Non-functional requirements are specified by rules and conditions to be verified during the execution of tasks.
 In our example we have the following non-functional requirements:
 \begin{numtrivlist}
 \item Twitter requires to be accessed through an authentication protocol that allows three login failures before blocking. 
@@ -63,7 +63,7 @@ The constrains defined for our tracking crime example are:
 \begin{trivlist}
   \item[-] The \textsf{Notify crime} task requires that the user is logged in. 
   This is an example of a \textit{value constraint}, where the value associated to the condition depends on the semantics of the application.
-  In this case, it represents the maximmum number of allowed login attempts;
+  In this case, it represents the maximum number of allowed login attempts;
 \item[-] The \textsf{Store crimes} task requires the verification of the user's clearance (also a value constraint). 
 \item[-] In order to perform the \textsf{Track crimes} task, it is necessary that the notifier user is in the contact list of the requesting user.
 This is an example of \textit{business constraint}.
@@ -125,7 +125,7 @@ Each action will trigger the execution of one or more external services.
 Before and after each service call, policy rules are verified.
 
 In the case of our crime tracking example, the model produced from the $\pi$-\textit{ServiceProcess} model of Figure~\ref{fig:piSP} is given in Figures~\ref{fig:piSC} and~\ref{fig:crimePolicies}.
-Figure~\ref{fig:piSC} shows how the crime application interacts with its \textit{busines collaborators} (external services and entities).
+Figure~\ref{fig:piSC} shows how the crime application interacts with its \textit{business collaborators} (external services and entities).
 The interaction occurs by means of function calls (denoted by dotted lines in the figure).
 Figure~\ref{fig:crimePolicies} shows the definition of three \textit{policies}, which define rules for service execution.
 In our case we have policies for \textit{Security}, \textit{Performance} and \textit{Persistence}. 
