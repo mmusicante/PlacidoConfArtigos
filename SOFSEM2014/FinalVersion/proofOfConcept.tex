@@ -4,7 +4,6 @@ Civilian users signal crimes using Twitter.
 Police officers can notify crimes, as well as update information about solving cases.
 Some of these information are confidential while other can be shared
 to the community of users using this application. 
-
 Users can track crimes in given zones. 
 Crime information stored by the system may be visualized on a map. 
 Some users have different access rights than others.
@@ -13,10 +12,10 @@ For example, police officers have more access rights than civilians.
 
 In order to provide these functionalities, the application uses pre-existing services to provide, store and visualize the information.
 The business process defines the logic of the application and is specified in terms of tasks. 
-Tasks can be performed by persons or computers. 
+Tasks can be performed by people or computers. 
 
 The business process and requirements specifications presented in Figure~\ref{fig:constraints} are instances of the Computation-Independent models of Figure~\ref{fig:piSOD-M}.
-Business process is represented as a graph while requirements are given as text boxes.
+The business process is represented as a graph while requirements are given as text boxes.
 \begin{figure}[ht!]
 \centering
 %\subfloat[\textit{Tracking Crimes} - Illustration of the Problem.]
@@ -39,7 +38,7 @@ The application is built upon four services: \textsf{twitter} and an \textsf{ad-
 Non-functional requirements are specified by rules and conditions to be verified during the execution of tasks.
 In our example we have the following non-functional requirements:
 \begin{numtrivlist}
-\item Twitter requires to be accessed through an authentication protocol that allows three login failures before blocking. 
+\item Twitter requires  an authentication protocol that allows three login failures before blocking. 
 \item Crime notification needs privileged access.
 \item Civilian users can only track crimes for which they have clearance: Civilian population cannot track all the crimes notified by the police. 
 \item If \textsf{Google Maps} is unavailable, the results are delivered as text. 
@@ -47,12 +46,13 @@ In our example we have the following non-functional requirements:
 \item Access rights to detailed information depends on user clearance and zone assignment for police officers. 
 \item The application maintains a detailed log. 
 \end{numtrivlist}
+The idea about these requirements is to leave the application logic expressed by functional requirements as independent as possible from exceptional situations like the unavailability of a service and the conditions in which services are called for example through an authentication protocol. These requirements can be  weaved as activities and branches of the composition or kept independent. The interest of the second option is that the maintenance and the evolution of the application logic can be easier. For example, the services called by the application are not hard coded (Twitter and Google Maps in the example), neither the actions to deal with exceptions (replacing anohter Map service or doing nothing).
 
 Considering the example of tracking crimes, all the system restrictions are
 modelled as constraints. 
-We have three types of constraints:
+$\pi$-SODM provides three types of constraints:
 \textit{value}, \textit{business} and \textit{exceptions behaviour} constraints.
-Each use case (model) can be associated to one or more constraints.
+Each use case (model) can be associated to one or more constraints \footnote{For a more comprehensive account of $\pi$SOD-M the reader can refer to~\cite{PlacidoThesis2012}.}.
 
 \paragraph*{\textit{$\pi$-UseCase} model:} 
 In our example we have five use cases (Figure~\ref{fig:piUC}), which represent the
@@ -184,5 +184,5 @@ We define four of them, corresponding to the Police, Twitter, Google Map and Ama
 Contracts are generated from Policies (such as those of Figure~\ref{fig:piSC}.
 \end{numtrivlist}
 
-For a more comprehensive account of $\pi$SOD-M the reader can refer to~\cite{PlacidoThesis2012}.
+
 
