@@ -1,18 +1,23 @@
 
 The Service-Oriented Development Method (SOD-M)~\cite{decastro1}
-proposes the usage of the MDD approach in the context of service-based applications.
+adopts  the MDD approach to build service-based applications. SOD-M considers two points of view:
+\textit{(i)} \textit{business}, focusing on the characteristics and requirements
+of the organization, and \textit{(ii)} \textit{system requirements}, focusing on
+features and processes to be implemented in order application requirements. In
+this way, SOD-M  simplifies the design of service-oriented applications, as
+well as their implementation using current technologies.
+
 SOD-M provides a framework with models and standards to express functionalities
 of applications at a high-level of abstraction. SOD-M meta-models are organized 
 into three levels: CIM (\textit{Computational Independent Models}), 
 PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
-
 Two models are defined at the CIM level: \textit{value model} 
 and \textit{BPMN model}. 
 The PIM level models the entire structure of the application flow,
 while, the PSM level provides transformations towards more specific platforms.
 The PIM-level models are: \textit{use case}, \textit{extended use case}, \textit{service process} and
 \textit{service composition}. The PSM level models are: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
-These three levels have no support for describing non-functional requirements. 
+ 
 
 The SOD-M approach includes transformations between models:
 \textit{CIM-to-PIM, PIM-to-PIM} and \textit{PIM-to-PSM} transformations. Given
@@ -20,10 +25,7 @@ an abstract model at the CIM level, it is possible to apply transformations for
 generating a model of the PSM level. In this context, it is necessary to
 follow the process activities described by the methodology. 
 
-SOD-M considers two points of view:
-\textit{(i)} \textit{business}, focusing on the characteristics and requirements
-of the organization, and \textit{(ii)} \textit{system requirements}, focusing on
-features and processes to be implemented in order application requirements. In
-this way, SOD-M aims to simplify the design of service-oriented applications, as
-well as its implementation using current technologies.
+These three SOD-M levels have no support for describing non-functional requirements.The following section introduces $\pi$-SODM the extension proposed for considering these requirements.
+
+
 
