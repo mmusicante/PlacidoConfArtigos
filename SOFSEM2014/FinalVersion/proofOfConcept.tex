@@ -38,7 +38,7 @@ The application is built upon four services: \textsf{twitter} and an \textsf{ad-
 Non-functional requirements are specified by rules and conditions to be verified during the execution of tasks.
 In our example we have the following non-functional requirements:
 \begin{numtrivlist}
-\item Twitter requires  an authentication protocol that allows three login failures before blocking. 
+\item Twitter requires authentication and allows three login failures before blocking. 
 \item Crime notification needs privileged access.
 \item Civilian users can only track crimes for which they have clearance: Civilian population cannot track all the crimes notified by the police. 
 \item If \textsf{Google Maps} is unavailable, the results are delivered as text. 
@@ -59,7 +59,6 @@ In our example we have five use cases (Figure~\ref{fig:piUC}), which represent t
 system functions (tasks) and constraints. 
 We will not detail the functional part of the specification, due to lack of space.
 The constrains defined for our tracking crime example are: 
-
 \begin{trivlist}
   \item[-] The \textsf{Notify crime} task requires that the user is logged in. 
   This is an example of a \textit{value constraint}, where the value associated to the condition depends on the semantics of the application.
@@ -72,7 +71,7 @@ Additionally the requesting user must be logged in.
 The availability of the Google Maps service is verified by a \textit{business constraint}.
  \item[-] The \textsf{Show crime details} task is specified to have three constraints: A \textit{value constraint} is defined to verify the user's clearance level; A \textit{business constraint} is used to ensure that the user's clearance is valid for the geographic zone of the crime; Another \textit{value constraint} defines that the log is to be maintained.
 \end{trivlist}
-\begin{figure}[ht!]
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.8\textwidth]{figs/piUseCase}
 \caption{$\pi$-UseCase Model}
@@ -92,9 +91,9 @@ The \textit{$\pi$-ServiceProcess} model defined for our tracking crime applicati
 \item Constraints of the \textit{$\pi$-UseCase} model are transformed into assertions.
 \end{numtrivlist}
 
-\begin{figure}[ht!]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.99\textwidth]{figs/piServiceProcess}
+\includegraphics[width=1.05\textwidth]{figs/piServiceProcess}
 \caption{$\pi$-\textit{ServiceProcess} Model}
 \label{fig:piSP}
 \end{figure}
@@ -109,20 +108,20 @@ This model identifies the services and functions that correspond to each action 
 \subfloat[$\pi$-ServiceComposition Model]
 {\label{fig:piSC}\includegraphics[width=0.95\textwidth]{figs/piServiceComposition}}
 ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. (or a blank line to force the subfig onto a new line)
-\\
+\\[-1mm]
 \subfloat[$\pi$-ServiceComposition Policies]
 {\label{fig:crimePolicies}\includegraphics[width=0.85\textwidth]{figs/policies}}
 ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. (or a blank line to force the subfig onto a new line)
 \caption{Service Composition and Policies.}
 \label{fig:policies}
 \end{figure}
-This model describes the service compositions and their related business
-collaborators (external services), policies, rules associated with a policy and
-the whole application process and functionalities.
-The workflow execution will consider the composition of business services and
-their specific Business Collaborators. 
-Each action will trigger the execution of one or more external services. 
-Before and after each service call, policy rules are verified.
+%This model describes the service compositions and their related business
+%collaborators (external services), policies, rules associated with a policy and
+%the whole application process and functionalities.
+%The workflow execution will consider the composition of business services and
+%their specific Business Collaborators. 
+%Each action will trigger the execution of one or more external services. 
+%Before and after each service call, policy rules are verified.
 
 In the case of our crime tracking example, the model produced from the $\pi$-\textit{ServiceProcess} model of Figure~\ref{fig:piSP} is given in Figures~\ref{fig:piSC} and~\ref{fig:crimePolicies}.
 Figure~\ref{fig:piSC} shows how the crime application interacts with its \textit{business collaborators} (external services and entities).
@@ -135,9 +134,8 @@ In our case we have policies for \textit{Security}, \textit{Performance} and \te
 These models are produced by a model-to-text transformation that takes a $\pi$-\textit{ServiceComposition} model and generates $\pi$-\textit{PEWS} specification code.
 This code is a service composition program that can be compiled into executable code.
 $\pi$-\textit{PEWS} models are expressed in a variant of the PEWS composition language.
-
 \begin{figure}[t]
-\begin{footnotesize}
+\begin{small}
 %\begin{lstlisting}[label=list:rulePre,caption=ATL - piServiceComposition2piPEWS : Pre-condition Rule. ]
 %\begin{lstlisting}[label=list:rulePre]
 \begin{verbatim}
@@ -150,29 +148,22 @@ $\pi$-\textit{PEWS} models are expressed in a variant of the PEWS composition la
 5 alias publishTwitter = portType/publishTwitter in twitter
 6 alias searchCrime = portType/searchCrime in amazondynamodb 
 7 alias showMap = portType/showMap in googlemaps 
-...
 //Services
 8  service notifyCrime = publishCrime  . publishTwitter 
 9  service trackCrime= searchCrime . verifyService
 10 Service visualizeCrime =  showMap . getCrimeDetail
-...
 //Path
 11 (notifyCrime.storeiCrime) || (trackCrime.visualizeCrime.getCrimeDetail)
-...
 //Contracts
-12 defContract notifyCrimeContract{ 
-13    isAppliedTo: notifyCrime
-14	  requires: userId == ?? && passw == ?? && req(notifyCrime)  < 3
-15 	      (OnFailureDo: NOT(action_publish(crime));
-16	  ensures: publishTwitter(crime) == true
-17 	      (OnFailureDo: skip);
-28 }
+12 defContract notifyCrimeContract{  isAppliedTo: notifyCrime
+13	  requires: userId == ?? && passw == ?? && req(notifyCrime)  < 3
+14 	      (OnFailureDo: NOT(action_publish(crime));
+15	  ensures: publishTwitter(crime) == true  (OnFailureDo: skip); }
 \end{verbatim}
 % \end{lstlisting}
-\end{footnotesize}
+\end{small}
 \caption{$\pi$-PEWS code for the crime tracking example (partial, simplified).\label{fig:pewscontract} }
 \end{figure}
-
 The $\pi$-PEWS program generated from the model in Figure~\ref{fig:policies} is partially presented in Figure~\ref{fig:pewscontract}. 
 The figure shows a simplified program code, produced in accordance to the following guidelines:
 \begin{numtrivlist}

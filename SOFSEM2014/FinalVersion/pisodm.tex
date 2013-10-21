@@ -4,24 +4,22 @@ their non-functional requirements. $\pi$SOD-M proposes the generation of a set o
 $\pi$SOD-M includes non-functional specifications through
  four meta-models that extend PIM SOD-M meta-models (see Figure~\ref{fig:piSOD-M}): \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess}, \textit{$\pi$-ServiceCom\-po\-si\-tion} and \textit{$\pi$-PEWS}.
 
-
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{figs/piSOD-M.pdf}
+\includegraphics[width=1\textwidth]{figs/piSOD-M.png}
 \caption{$\pi$SOD-M.}
 \label{fig:piSOD-M}
 \end{figure}
-
-
+%
 The \textit{$\pi$-UseCase} meta-model describes functional and non-functional requirements.
 Non-functional requirements are defined as \textit{constraints} over processing and data. 
-
+%
 The \textit{$\pi$-ServiceProcess} meta-model defines the concept of \textit{service contract} to represent restrictions over data and actions that must be performed upon certain conditions. 
-
+%
 The \textit{$\pi$-ServiceProcess} meta-model gathers the constraints
 described in the \textit{$\pi$-UseCase} model into contracts that are associated
 with services. 
-
+%
 The \textit{$\pi$-ServiceComposition} meta-model provides the concept of \textit{Policy}~\cite{Espinosa-Oviedo2011a}
 which put together contracts with similar non-functional requirements. 
 For instance, security and privacy restrictions may be grouped into a security policy.
@@ -30,11 +28,12 @@ Constraints are restrictions that must be verified during the execution of the a
 Failure to verify the constraints will trigger exceptions to execute their corresponding recovery actions.
 An example of policy is the requirement of authentication for executing some of the system functions. 
 The action associated to this policy may perform the authentication of the user.
-
+%
 The \textit{$\pi$-PEWS} meta-model is a PSM (see Figure~\ref{fig:piSOD-M}).
 At the PSM level we have lower-level models that can be automatically translated into actual computer programs.
 The \textit{$\pi$-PEWS} meta-model is the PSM adopted in this work.
-\textit{$\pi$-PEWS} models are textual descriptions of service compositions that can be translated into PEWS~\cite{BaCAM05,Placido2010LTPD} or BPEL~\cite{bpel03} code.
+\textit{$\pi$-PEWS} models are textual descriptions of service compositions that can be translated into PEWS~\cite{BHM06} %~\cite{BaCAM05,Placido2010LTPD} 
+or BPEL~\cite{bpel03} code.
 Although PEWS is our language of choice, other composition languages can be used as target.
 %This can be accomplished by defining: \textit{(i)} a model-to-model transformation, from a \textit{$\pi$-ServiceComposition} model to the corresponding PSM, and \textit{(ii)} a model-to-text transformation, from the this PSM to the composition language.
 
@@ -56,24 +55,10 @@ Model-to-model transformations are used during the software process to refine th
 Model-to-text transformations are the last step of the process and generate code.
 
 %%%BEGIN{Text Included by Placido Neto for Camera-Ready}%%%%%%
-$\pi$SOD-M environment is built on the top of Eclipse framework, which is a
-framework to build Integrated Development Environments (IDEs). We also use the
-Eclipse Modelling Framework (EMF), a meta-modelling framework that was devised to be
-extended and provides with the utilities needed to define, edit and handle
-(meta)-models. To automate the transformation models we use the ATL Language\footnote{ATL uses EMF to handle models (that is to serialize, to navigate and to modify
-them). Once the ATL transformation is executed, the ATL engine matches the
-source pattern and the source model and instantiates each pattern into the
-target model.} \cite{atl_manual}, a model transformation language framed in
-Eclipse. Another language used for model transformation is Acceleo \cite{acceleo}, a
-model to text engine. $\pi$SOD-M uses this environment~\footnote{The environmental requirements are the Eclipse Modelling (Galilleo or higher)
-and all proposed plugins, \textit{$\pi$-UseCase, $\pi$-ServiceProcess,
-$\pi$-SerciveComposition} and \textit{$\pi$-PEWS} editors; and also the
-transformation plugins. Because the environment is proposed in the
-context of Eclipse, the environmental requirements are also the same needed to
-utilize the Eclipse tool.} to generate service
-composition specification code in \textit{$\pi$-PEWS} and semi-automatize the
- implementation of reliable service-based applications.
-%%%END{Text Included by Placido Neto for Camera-Ready}%%%%%%
+$\pi$SOD-M environment is built on the top of Eclipse. 
+We also used the Eclipse Modelling Framework (EMF) to define, edit and handle
+(meta)-models. 
+To automate the transformation models we use ATL~\cite{atl_manual} and Acceleo~\cite{acceleo}.
 
 In the next section we develop an example, to serve as a proof-of-concept.
 The example will show the actual notation used for models. 

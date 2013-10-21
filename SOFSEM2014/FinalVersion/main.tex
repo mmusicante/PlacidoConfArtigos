@@ -92,7 +92,7 @@
  
 \title{Supporting Non-Functional Requirements in Services Software Development Process: An MDD Approach}
 
-\author{Valeria de Castro\inst{1} \and Martin A. Musicante\inst{2} \and Umberto Souza da Costa\inst{2} \and Pl�cido~A.~de~Souza~Neto\inst{3} \and Genoveva Vargas-Solar\inst{4}}
+\author{Valeria de Castro\inst{1} \and Martin A. Musicante\inst{2} \and Umberto Souza da Costa\inst{2} \and Pl\'acido~A.~de~Souza~Neto\inst{3} \and Genoveva Vargas-Solar\inst{4}}
 
 \institute{Universidad Rey Juan Carlos -- M\'{o}stoles, Spain\\  \email{Valeria.deCastro@urjc.es} 
 \and Federal University of Rio Grande do Norte (UFRN) -- Natal-RN, Brazil\\
@@ -106,7 +106,7 @@
  
 \maketitle
 \begin{abstract}
-This paper presents the $\pi$-SODM method an extension to the Service Oriented Development Method (SOD-M) to support the developement of services software considering their functional and    non-functional requirements. 
+This paper presents the $\pi$-SODM method an extension to the Service Oriented Development Method (SOD-M) to support the development of services software considering their functional and    non-functional requirements. 
 Specifically, $\pi$-SODM proposes: 
 \textit{(i)} meta-models for representing non-functional requirements in different abstraction levels; 
 \textit{(ii)} model-to-model transformation rules, useful to semi-automatically refine Platform Independent Models into Platform Specific Models; and 
@@ -144,57 +144,70 @@ In order to illustrate the use of this methodology the paper describes how its u
 \section{Related work}
 \label{sec:related}
 Over the last years, a number of approaches have been proposed for the
-development of web services. These approaches range from the proposal of new 
+development of web services. 
+These approaches range from the proposal of new 
 languages for web service descriptions~\cite{bpel03,SBS04} 
 to techniques to support phases of the development cycle of this kind of
-software~\cite{lipari2007}. In general, these
-approaches concentrate on specific problems, like supporting transactions or
+software~\cite{lipari2007}. 
+In general, these approaches concentrate on specific problems, like supporting transactions or
 QoS, in order to improve the security and reliability of service-based
-applications. Some proposals address service composition: workflow
+applications. 
+Some proposals address service composition: workflow
 definition~\cite{AalstHKB03,MuP06} or semantic equivalence between
-services~\cite{BHM06}. The proposed solutions come from many communities, 
-including those of Theoretical Computer Science~\cite{VA05,GGP08}, 
-Software Engineering~\cite{Aal03,MendesPDB09}, Programming
-Languages~\cite{MPC08,bpel03} and Databases~\cite{ABM01}.
+services~\cite{BHM06}. 
+%The proposed solutions come from many communities, 
+%including those of Theoretical Computer Science~\cite{VA05,GGP08}, 
+%Software Engineering~\cite{Aal03,MendesPDB09}, Programming
+%Languages~\cite{MPC08,bpel03} and Databases~\cite{ABM01}.
 
-More specifics works dealing with non-functional properties in service-oriented 
+Works dealing with non-functional properties in service-oriented 
 development can be organized in two main groups: those working on the \textit{modeling 
 of particular non-functional properties or QoS attributes} and those 
 proposing \textit{architectures or frameworks to manage and 
 validate QoS attributes in web service composition processes}. 
-First type of works are thus considering a particular non-functional concern (e.g. security)
-which is modeled and then "glued" or associated to functional models of an application. 
+The first group considers specific non-functional concerns (e.g. security)
+which is modelled and then associated to functional models of the application. 
 The work of Chollet et al.~\cite{CholletL09} defines a proposal to associate non-functional 
-quality properties (security properties in that case) to functional activities which are modeled 
-in a web service composition model. Schmeling et al.~\cite{SchmelingCM11} present 
+quality properties (security properties) to functional activities in a web service composition model. Schmeling et al.~\cite{SchmelingCM11} present 
 an approach and also a toolset for specifying and implementing non-functional 
-concerns in web service compositions; non-functional concerns are modeled first 
-in non-functional model and then related to a service composition 
-represented in a BPMN diagram. Ovaska et al.~\cite{OvaskaEHPA10} present an approach to 
-support quality management at design time. Quality requirements are modeled in a first phase 
-and represented then in an architectural model where quality requirements are associated to some
-components in the model. In our case we propose to model non-functional properties joint 
-to the modeling of functional concerns what simplifies the web service development process. 
-Non-functional properties are represented in our work as constraints and policies 
-but more general quality model such as the proposed by ~\cite{Goeb2011,Klass2009} 
-could be taken in consideration in further works. Second type of works related to 
-our proposal proposes specifics architecture or frameworks to manage and validate 
-QoS attributes in service composition processes ~\cite{XiaoCZBOLH08,Babamir2010,Karunamurthy2012787}. 
-Although our proposal is focusing on the design of service oriented application with non-functional 
-properties and not on the validation of QoS attributes at runtime.
+concerns in web service compositions.
+Non-functional concerns are modelled and then related to a service composition 
+represented in a BPMN diagram. 
+Ovaska et al.~\cite{OvaskaEHPA10} present an approach to 
+support quality management at design time. 
+Quality requirements are modelled in a first phase and then
+represented in an architectural model where quality requirements are associated to some
+components of the model. 
+
+%We propose to model non-functional properties together with the modelling of functional concerns.
+%We claim what this approach simplifies the web service development process. 
+%Non-functional properties are represented in our work as constraints and policies 
+%but more general quality model such as the proposed by~\cite{Goeb2011,Klass2009} 
+%could be taken in consideration in further works. 
+
+
+The second group of works dealing with non-functional requirements for services 
+propose specific architectures or frameworks to manage and validate 
+QoS attributes in service composition processes~\cite{XiaoCZBOLH08,Babamir2010,Karunamurthy2012787}. 
+%Although our proposal focus on the design of service oriented application with non-functional 
+%properties and not on the validation of QoS attributes at runtime.
 
 Despite the variety of techniques proposed, there is not yet a consensus on a software methodology 
-for web services. Some methodologies address the service-based 
+for web services. 
+Some methodologies address the service-based 
 development towards a standard or a new way to develop reliable applications. 
-SOD-M and SOMF \cite{somf} are MDD approaches for web services; 
-S-Cube \cite{scube2010book} is focused on the representation of business processes and 
-service-based development; SOMA \cite{soma} is a methodology described by IBM
-for SOA solutions; Extended SOA \cite{PapazoglouH06} merges RUP and
-BPM\cite{bpm} concepts for service modeling; DEVISE \cite{DEVISE} is a
+SOD-M and SOMF~\cite{somf} are MDD approaches for web services; 
+S-Cube~\cite{scube2010book} is focused on the representation of business processes and 
+service-based development; SOMA~\cite{soma} is a methodology 
+for SOA solutions; 
+%Extended SOA~\cite{PapazoglouH06} merges RUP and
+%BPM~\cite{bpm} concepts for service modelling; 
+DEVISE~\cite{DEVISE} is a
 methodology for building service-based infrastructure for collaborative
-enterprises. Other proposals include, the WIED model \cite{TongrungrojanaL04}, 
+enterprises. 
+Other proposals include, the WIED model~\cite{TongrungrojanaL04}, 
 that acts as a bridge between business modeling and design models, and traditional 
-approaches for software engineering \cite{sommerville08} applied to SOC.
+approaches for software engineering applied to SOC.
 
 
 \section{Conclusions}

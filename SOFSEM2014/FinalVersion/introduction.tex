@@ -6,23 +6,23 @@ MDD provides a set of
 guidelines for  structuring  specifications using
  \textit{models} that specify a software system at different levels of abstraction or \textit{viewpoints}: 
 %MDD defines three viewpoints:
-%
-\begin{trivlist}
-\item \textit{Computation Independent Models (CIM):} This viewpoint represents the software system at its highest level of abstraction. It focusses on the system
+
+\noindent \textit{Computation Independent Models (CIM):} This viewpoint represents the software system at its highest level of abstraction. It focusses on the system
 environment, and on its business and requirement specifications. 
 At this moment of the development, the structure and system processing details are still unknown or undetermined. 
-\item \textit{Platform Independent Models (PIM):} This viewpoint focusses on the system functionality, hiding the details of any particular platform. 
+
+\noindent \textit{Platform Independent Models (PIM):} This viewpoint focusses on the system functionality, hiding the details of any particular platform. 
 %The specification defines those parts of the system that are independent of the development platform. 
-\item \textit{Platform Specific Models (PSM):} This viewpoint focusses on the functionality, in the context of a particular implementation platform.
+
+\noindent \textit{Platform Specific Models (PSM):} This viewpoint focusses on the functionality, in the context of a particular implementation platform.
 Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system.  
-\end{trivlist}
-%
+
 Besides the notion of model at each level of abstraction, MDD requires the use of \textit{model transformations} between levels.
 These transformations may be automatic or semi-automatic and implement the refinement process between levels. 
 
 %\bigskip 
 MDD has been applied for developing service oriented applications.
-In Service-Oriented Computing~\cite{Papazoglou2007}, pre-existing services are
+In Service-Oriented Computing~\cite{scube2010book}, pre-existing services are
 combined to produce applications and provide the business logic. The selection of services is usually guided by the functional requirements of the application being developed. 
 Some methodologies and techniques have been proposed to help the software
 developer in the specification of functional requirements of the business logic,
@@ -44,7 +44,7 @@ the application context.
 %\bigskip
 %
 Non-functional properties of service-oriented applications  have been
-addressed in academic works and standards~\cite{ws-co,ws-tra,wsci}.
+addressed in academic works and standards.%~\cite{ws-co,ws-tra,wsci}.
 Dealing with these kind of properties involves the use of specific technologies
 in different layers of the SOC architecture, for instance during the description
 of service APIs (such as WSDL\cite{wsdl} or REST~\cite{rest}) or to express
