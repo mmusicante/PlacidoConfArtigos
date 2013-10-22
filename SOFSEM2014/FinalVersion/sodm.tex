@@ -2,36 +2,36 @@
 The Service-Oriented Development Method (SOD-M)~\cite{decastro1}
 adopts  the MDD approach to build service-based applications. SOD-M considers two points of view:
 \textit{(i)} \textit{business}, focusing on the characteristics and requirements
-of the organization, and \textit{(ii)} \textit{system requirements}, focusing on
-features and processes to be implemented in order application requirements. In
+of the organization; and 
+\textit{(ii)} \textit{system requirements}, focusing on
+features and processes to be implemented in order to build service-based applications in accordance to the business requirements. In
 this way, SOD-M  simplifies the design of service-oriented applications, as
 well as their implementation using current technologies.
 
 SOD-M provides a framework with models and standards to express functionalities
-of applications at a high-level of abstraction. SOD-M meta-models are organized 
+of applications at a high-level of abstraction. The SOD-M meta-models are organized 
 into three levels: CIM (\textit{Computational Independent Models}), 
 PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
 Two models are defined at the CIM level: \textit{value model} 
 and \textit{BPMN model}. 
-The PIM level models the entire structure of the application flow,
-while, the PSM level provides transformations towards more specific platforms.
+The PIM level models the entire structure of the application, as
+the PSM level provides transformations towards more specific platforms.
 The PIM-level models are: \textit{use case}, \textit{extended use case}, \textit{service process} and
-\textit{service composition}. The PSM level models are: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
+\textit{service composition}. The PSM-level models are: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
  
  %%%BEGIN{Text Included by Placido Neto for Camera-Ready}%%%%%%
-The \textit{value model} is a business model that describes a business
-case as a set of values and value activities shared by business actors. The
-\textit{BPMN model} (business process model) is used to describe the business
-process related to the environment which the system will run. These two models
-represent the independent aspects of computing. The \textit{use case model} is used to represent
-the business services to be implemented by the system, while the \textit{extended use case model} is a
-behavioral model, to represent the system features as a way to implement
-the business services. The \textit{service process model} describes the set of
-activities that must be performed on the system to implement a business service.
-Finally, the \textit{service composition model} represents the full flow of
-business system. This model is an extension of the service process model,
-however, in more detail. These four models represent the platform independent
-aspects.
+At the CIM level, the \textit{value model} describes a business
+scenario as a set of values and activities shared by business actors. 
+The \textit{BPMN model} describes a business process and the corresponding environment. 
+%These two models represent the computing-independent aspects of the application logic. 
+At the PIM level, the \textit{use case model} represents
+a business service, as the \textit{extended use case model} contains 
+behavioral descriptions of features to be implemented. 
+The \textit{service process model} describes a set of
+activities to be performed in order to implement a business service.
+Finally, the \textit{service composition model} represents the complete flow of a business system. 
+This model is an extension of the service process model. 
+%These four models represent the platform independent aspects.
 %%%END{Text Included by Placido Neto for Camera-Ready}%%%%%%
 
 The SOD-M approach includes transformations between models:
@@ -40,7 +40,7 @@ an abstract model at the CIM level, it is possible to apply transformations for
 generating a model of the PSM level. In this context, it is necessary to
 follow the process activities described by the methodology. 
 %
-These three SOD-M levels have no support for describing non-functional requirements.The following section introduces $\pi$-SODM the extension proposed for considering these requirements.
+These three SOD-M levels have no support for describing non-functional requirements. The following section introduces $\pi$SOD-M, the extension that we propose for suporting these requirements.
 
 
 
