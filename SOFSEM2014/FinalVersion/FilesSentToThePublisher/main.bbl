@@ -1,0 +1,156 @@
+\begin{thebibliography}{10}
+
+\bibitem{bpel03}
+Andrews, T., Curbera, F., Dholakia, H., Goland, Y., Klein, J., Leymann, F.,
+  Liu, K., Roller, D., Smith, D., Thatte, S., Trickovic, I., Weeranwarana, S.:
+\newblock {Business Process Execution Language for Web Services}.
+\newblock Available at
+  {http://www-128.ibm.com/developerworks/library/specification/ws-bpel/} (2003)
+
+\bibitem{soma}
+Arsanjani, A.:
+\newblock {SOMA:} {S}ervice-{O}riented {M}odeling and {A}rchitecture.
+\newblock Technical report, IBM,
+  http://www.ibm.com/developerworks/library/ws-soa-design1 (2004)
+
+\bibitem{BHM06}
+Ba, C., Halfeld-Ferrari, M., Musicante, M.A.:
+\newblock {Composing Web Services with {PEWS}: A Trace-Theoretical Approach}.
+\newblock In: ECOWS 2006. (2006)  65--74
+
+\bibitem{Babamir2010}
+Babamir, S.M., Karimi, S., Shishechi, M.R.:
+\newblock {A Broker-Based Architecture for Quality-Driven Web Services
+  Composition}.
+\newblock In: Proc. CiSE 2010. (2010)
+
+\bibitem{somf}
+Bell, M.:
+\newblock Service-Oriented Modeling (SOA): Service Analysis, Design, and
+  Architecture.
+\newblock John Wiley (2008)
+
+\bibitem{lipari2007}
+B{\"o}rger, E., Cisternino, A., eds.:
+\newblock Advances in Software Engineering (Revised Tutorial Lectures).
+\newblock In B{\"o}rger, E., Cisternino, A., eds.: Lipari Summer School. Volume
+  5316 of LNCS., Springer (2008)
+
+\bibitem{CholletL09}
+Chollet, S., Lalanda, P.:
+\newblock {An Extensible Abstract Service Orchestration Framework}.
+\newblock In: Proc. ICWS 2009, IEEE (2009)  831--838
+
+\bibitem{wsdl}
+Christensen, E., Curbera, F., Meredith, G., Weerawarana, S.:
+\newblock {Web Services Description Language (WSDL) 1.1}.
+\newblock Technical report, World Wide Web Consortium (2001) Available at
+  http://www.w3.org/TR/wsdl.
+
+\bibitem{decastro1}
+de~Castro, V., Marcos, E., Wieringa, R.:
+\newblock {Towards a service-oriented MDA-based approach to the alignment of
+  business processes with IT systems: From the business model to a web service
+  composition model}.
+\newblock IJCIS \textbf{18}(2) (2009)
+
+\bibitem{DEVISE}
+Dhyanesh, N., Vineel, G.C., Raghavan, S.V.:
+\newblock {DEVISE: A Methodology for Building Web Services Based Infrastructure
+  for Collaborative Enterprises}.
+\newblock In: Proc. WETICE'03, USA, IEEE Computer Society (2003)
+
+\bibitem{Espinosa-Oviedo2011a}
+Espinosa-Oviedo, J.A., Vargas-Solar, G., Zechinelli-Martini, J.L., Collet, C.:
+\newblock {P}olicy driven services coordination for building social networks
+  based applications.
+\newblock In: {P}roc. of {SCC}'11, {W}ork-in-{P}rogress {T}rack, USA, IEEE
+  (2011)
+
+\bibitem{Favre06arigorous}
+Favre, L.:
+\newblock {A Rigorous Framework for Model Driven Development}.
+\newblock In: Advanced Topics in Database Research, Vol. 5. Chapter I, IGP.
+  (2006)  1--27
+
+\bibitem{rest}
+Fielding, R.T.:
+\newblock {REST:} Architectural Styles and the Design of Network-based Software
+  Architectures.
+\newblock Doctoral dissertation, University of California, Irvine (2000)
+
+\bibitem{Goeb2011}
+Goeb, A., Lochmann, K.:
+\newblock A software quality model for soa.
+\newblock In: Proc. WoSQ '11, ACM (2011)  18--25
+
+\bibitem{atl_manual}
+Group, A.:
+\newblock {ATL: Atlas Transformation Language}.
+\newblock Technical report, ATLAS Group, LINA \& INRIA (February, 2006)
+
+\bibitem{Karunamurthy2012787}
+Karunamurthy, R., Khendek, F., Glitho, R.H.:
+\newblock {A novel architecture for Web service composition}.
+\newblock J. of Network and Computer Applications \textbf{35}(2) (2012)  787 --
+  802
+
+\bibitem{Klass2009}
+Klas, M., Heidrich, J., Munch, J., Trendowicz, A.:
+\newblock Cqml scheme: A classification scheme for comprehensive quality model
+  landscapes.
+\newblock In: SEAA '09. (2009)  243--250
+
+\bibitem{MuP06}
+Musicante, M.A., Potrich, E.:
+\newblock Expressing workflow patterns for web services: The case of pews.
+\newblock J.UCS \textbf{12}(7) (jul 2006)  903--921
+
+\bibitem{OvaskaEHPA10}
+Ovaska, E., Evesti, A., Henttonen, K., Palviainen, M., Aho, P.:
+\newblock {Knowledge based quality-driven architecture design and evaluation}.
+\newblock Information {\&} Software Technology \textbf{52}(6) (2010)  577--601
+
+\bibitem{scube2010book}
+Papazoglou, M.P., Pohl, K., Parkin, M., Metzger, A., eds.:
+\newblock Service Research Challenges and Solutions for the Future Internet.
+\newblock In Papazoglou, M.P., Pohl, K., Parkin, M., Metzger, A., eds.: S-CUBE
+  Book. Volume 6500 of LNCS., Springer (2010)
+
+\bibitem{SBS04}
+Sala\"{u}n, G., Bordeaux, L., Schaerf, M.:
+\newblock {Describing and Reasoning on Web Services using Process Algebra}.
+\newblock In: Proc. IEEE International Conference on Web Services. ICWS '04,
+  Washington, DC, USA, IEEE Computer Society (2004)
+
+\bibitem{SchmelingCM11}
+Schmeling, B., Charfi, A., Mezini, M.:
+\newblock {Composing Non-functional Concerns in Composite Web Services}.
+\newblock In: Proc. ICWS 2011. (july 2011)  331 --338
+
+\bibitem{PlacidoThesis2012}
+Souza~Neto, P.A.:
+\newblock {A methodology for building service-oriented applications in the
+  presence of non-functional properties}.
+\newblock PhD thesis, Federal University of Rio Grande do Norte (2012)
+  Available at
+  http://www3.ifrn.edu.br/$\sim$placidoneto/thesisPlacidoASNeto.pdf.
+
+\bibitem{TongrungrojanaL04}
+Tongrungrojana, R., Lowe, D.:
+\newblock {WIED: A Web Modelling Language for Modelling Architectural-Level
+  Information Flows}.
+\newblock J. Digit. Inf. \textbf{5}(2) (2004)
+
+\bibitem{AalstHKB03}
+Van Der~Aalst, W.M.P., Ter~Hofstede, A.H.M., Kiepuszewski, B., Barros, A.P.:
+\newblock {Workflow Patterns}.
+\newblock Distrib. Parallel Databases \textbf{14}(1) (July 2003)  5--51
+
+\bibitem{XiaoCZBOLH08}
+Xiao, H., Chan, B., Zou, Y., Benayon, J.W., O'Farrell, B., Litani, E., Hawkins,
+  J.:
+\newblock {A Framework for Verifying SLA Compliance in Composed Services}.
+\newblock In: ICWS. (2008)
+
+\end{thebibliography}

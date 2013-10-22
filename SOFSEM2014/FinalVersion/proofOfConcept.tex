@@ -46,7 +46,7 @@ In our example we have the following non-functional requirements:
 \item Access rights to detailed information depends on user clearance and zone assignment for police officers. 
 \item The application maintains a detailed log. 
 \end{itemize}
-The idea about these requirements is to leave the application logic expressed by functional requirements as independent as possible from exceptional situations (like the unavailability of a service) and from conditions under which services are called (for instance, through an authentication protocol). These requirements can be  weaved as activities and branches of the composition or implemented apart. The second option is better because makes the maintenance and evolution of applications easier. For instance, the services called by the application are not hard coded (\textsf{Twitter} and \textsf{Google Maps} in the example), neither the actions to deal with exceptions (replacing another map service or doing nothing).
+The idea about these requirements is to leave the application logic expressed by functional requirements as independent as possible from exceptional situations (like the unavailability of a service) and from conditions under which services are called (for instance, through an authentication protocol). These requirements can be  weaved as activities and branches of the composition or implemented apart. The second option is better because it makes the maintenance and evolution of applications easier. For instance, the services called by the application are not hard coded (\textsf{Twitter} and \textsf{Google Maps} in the example), neither the actions to deal with exceptions (replacing another map service or doing nothing).
 
 All the system restrictions are modelled as constraints in this example. 
 $\pi$SOD-M provides three types of constraints:
@@ -93,7 +93,7 @@ The $\pi$-ServiceProcess model describes the activities of the application and d
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.05\textwidth]{figs/piServiceProcess}
+\includegraphics[width=1\textwidth]{figs/piServiceProcess.png}
 \caption{$\pi$-\textit{ServiceProcess} Model.}
 \label{fig:piSP}
 \end{figure}
@@ -178,6 +178,3 @@ The workflow in Figure~\ref{fig:piSC} is translated into the text at line 11.
 \textit{Contracts} are defined in $\pi$-PEWS as having pre-conditions (\texttt{requires}), post-conditions (\texttt{ensures}) and actions (\texttt{OnFailureDo}) to be executed whenever a condition is not verified. 
 Contracts are generated from Policies (Figure~\ref{fig:crimePolicies}).
 \end{itemize}
-
-
-

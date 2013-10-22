@@ -1,0 +1,624 @@
+\documentclass{llncs}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\usepackage{graphicx,url}
+\usepackage[T1]{fontenc}
+%\usepackage{psfig}
+\usepackage{graphics}
+\usepackage{amssymb,amsmath,latexsym}
+\usepackage{listings} 
+\usepackage{subfig}
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{algorithm}[theorem]{Algorithm}
+%\newtheorem{definition}[theorem]{Definition}
+
+
+\usepackage[thmmarks]{ntheorem}
+
+
+\usepackage{listings}
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{.}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{\ensuremath{\Box}} 
+\newtheorem{defi}{Definition}%[section]
+
+\theoremheaderfont{\itshape}
+\newtheorem{examp}{Example}%[section]
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent0cm
+\theoremnumbering{arabic}
+%\theoremsymbol{\ensuremath{\Box}} 
+\newtheorem{algo}{Algorithm}%[section]
+
+\theoremstyle{plain} 
+\theoremsymbol{\ensuremath{\Box}} 
+\theoremseparator{.} 
+\newtheorem{prop}{Property}
+
+
+\lstset{numbers=right, numbersep=5pt, numberstyle=\tiny, stepnumber=1,escapechar=\!,columns=fullflexible,
+        morekeywords={procedure,let,for,do,if,then,else,add,choose,end,while,
+        true,false,rise,exception,extend,resume,to,return,function}}
+
+
+\newcounter{numberInTrivlist}
+
+\newenvironment{numtrivlist}{\begin{list}{\arabic{numberInTrivlist}.} 
+                                         {\usecounter{numberInTrivlist}
+                                          \setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{0pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+                            
+                            
+
+\def\B{\hfill{$\Box$}}
+\def\A{\hbox{${\cal A}$}}
+\def\P{\hbox{${\cal P}$}}
+\def\T{\hbox{${\cal T}$}}
+\def\O{\hbox{${\cal O}$}}
+\def\W{\hbox{${\cal W}$}}
+\def\useOpt{\hbox{${has\_opt}$}}
+
+
+\def\bigS{\hbox{${\cal S}$}}
+\def\bigSd{\hbox{${\cal S}_D$}}
+\def\bigSsm{\hbox{${\cal S}_D^{score}$}}
+
+\newcommand{\ie}{\ifmmode \mathit{i.e.}\else \textit{i.e.}\fi}
+\newcommand{\wrt}{\ifmmode \mathit{w.r.t.}\else \textit{w.r.t.}\fi}
+\newcommand{\eg}{\ifmmode \mathit{e.g.}\else \textit{e.g.}\fi}
+\newcommand{\tuple}[1]{\ifmmode \langle #1 \rangle\else $\langle #1 \rangle$\fi}
+
+\usepackage{authblk}
+
+\begin{document}
+%
+% --- Author Metadata here ---
+
+% --- End of Author Metadata ---
+ 
+\title{Supporting Non-Functional Requirements in Services Software Development Process: an MDD Approach}
+
+\author{Valeria de Castro\inst{1} \and Martin A. Musicante\inst{2} \and Umberto Souza da Costa\inst{2} \and Pl\'acido~A.~de~Souza~Neto\inst{3} \and Genoveva Vargas-Solar\inst{4}}
+
+\institute{Universidad Rey Juan Carlos -- M\'{o}stoles, Spain\\  \email{Valeria.deCastro@urjc.es} 
+\and Federal University of Rio Grande do Norte (UFRN) -- Natal-RN, Brazil\\
+\email{\{mam,umberto\}@dimap.ufrn.br}
+\and Federal Technological Institute of Rio Grande do Norte (IFRN) -- Natal-RN, Brazil\\ \email{placido.neto@ifrn.edu.br}
+\and French Council of Scientific Research (CNRS) -- Grenoble, France\\
+\email{Genoveva.Vargas-Solar@imag.fr}
+}
+
+
+ 
+\maketitle
+\begin{abstract}
+This paper presents the $\pi$SOD-M method, an extension to the Service-Oriented Development Method (SOD-M) to support the development of services software by considering their functional and    non-functional requirements. 
+Specifically, $\pi$SOD-M proposes: 
+\textit{(i)} meta-models for representing non-functional requirements at different abstraction levels; 
+\textit{(ii)} model-to-model transformation rules, useful to semi-automatically refine Platform Independent Models into Platform Specific Models; and 
+\textit{(iii)} rules to transform Platform Specific Models into concrete implementations. 
+In order to illustrate our proposal, the paper also describes how to apply the methodology to develop a proof of concept.
+\end{abstract}
+
+% A category with the (minimum) three required fields
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures,
+%performance measures]
+
+%\terms{Delphi theory} 
+
+\keywords{MDD, Service Oriented Applications, Non-functional Properties}
+
+\section{Introduction}
+\label{sec:intro}
+%\input{introduction}
+Model Driven Development (MDD)~\cite{Favre06arigorous} is a top-down approach proposed by the Object Management Group
+(OMG)\footnote{\texttt{http://www.omg.org/mda}.} for designing and developing software systems. 
+MDD provides a set of guidelines for  structuring  specifications by using \textit{models} to specify software systems at different levels of abstraction or \textit{viewpoints}:\\[1mm]
+\noindent 
+- \textit{Computation Independent Models (CIM)}: this viewpoint represents the software system at its highest level of abstraction. It focusses on the system
+environment and on  business and requirement specifications. 
+At this level, the structure of the system  and its processing details are still unknown or undetermined. 
+
+\noindent 
+- \textit{Platform Independent Models (PIM)}: this viewpoint focusses on the system functionality, hiding the details of any particular platform. 
+%The specification defines those parts of the system that are independent of the development platform. 
+
+\noindent 
+- \textit{Platform Specific Models (PSM)}: this viewpoint focusses on the functionality, in the context of a particular implementation platform.
+Models at this level combine the platform-independent view with specific aspects of the target platform in order to implement the system.  
+
+Besides the notion of models at each level of abstraction, MDD requires  \textit{model transformations} between levels.
+These transformations may be automatic or semi-automatic and implement the refinement process between levels. 
+
+%\bigskip 
+MDD has been applied for developing service-oriented applications.
+In Service-Oriented Computing~\cite{scube2010book}, pre-existing services are
+combined to produce applications and provide the business logic. The selection of services is usually guided by the functional requirements of the application being developed. 
+Some methodologies and techniques have been proposed to help the software
+developer in the specification of functional requirements of the business logic,
+such as the Service-Oriented Development Method
+(SOD-M)~\cite{decastro1}. 
+%SOD-M is based on MDD and proposes
+%models, practices and techniques to aid in software development. 
+%SOD-M does not
+ %suport  the specification of non-functional requirements, such as
+%security, reliability, and efficiency. 
+
+Ideally, non-functional requirements such as
+security, reliability, and efficiency
+would be considered along with all the stages of the software development. The
+adoption of non-functional specifications from the early states of development
+can help the developer to produce applications that are capable of dealing with
+the application context.
+%
+%\bigskip
+%
+Non-functional properties of service-oriented applications  have been
+addressed in academic works and standards. %~\cite{ws-co,ws-tra,wsci} 
+Dealing with these kind of properties involves the use of specific technologies
+at different layers of the SOC architecture, for instance during the description
+of service APIs (such as WSDL\cite{wsdl} or REST~\cite{rest}) or to express
+service coordinations (like WS-BPEL~\cite{bpel03}).
+
+%Existing work addressing non-functional properties for service-oriented applications can be classified under four approaches:
+%\begin{trivlist}
+%\item[-] Those coming from the Business Process Domain and from the Web
+%service standards that propose ad-hoc protocols. 
+%Examples of these include the WS*-Family of the W3C\cite{ws-co,ws-tra,btp}.
+%\item[-] Those adopting a classic middleware approach were non-functional
+%properties are provided as middleware services, like the ones presented
+%in~\cite{BeVaC00,RohmBSS02,NepalFGJKS05,Bonita}.
+%\item[-] Those providing languages and enabling the specification of protocols
+%used for expressing service
+%compositions~\cite{LakhalKY05,LakhalKY05b,RouachedGABG06,FauvetDDB05}.
+%\item[-] Those adopting separation of concerns,
+%like~\cite{Milanovic06,Espinosa-OviedoVZC09,SchmelingCM11,PastranaPK11}.
+%\end{trivlist}
+
+Protocols and models implementing non-functional properties assume the existence of a global control of the artefacts implementing the application.
+They also assume that each service exports its interface.
+So, the challenge of supporting non-functional properties is related to
+\textit{(i)} the specification of the business rules of the application; and 
+\textit{(ii)} dealing with the technical characteristics of the infrastructure where the application is  going to be executed.
+
+%In this context, there is a need of 
+%\textit{(i)} flexible protocols and models accepting a best effort approach for ensuring non-functional properties.
+%\textit{(ii)} A methodology for specifying the application logic and its associated non-functional properties, starting at the early phases of the development process.
+%
+%In this work, we proppose to address the structured engineering of service-oriented applications in the presence of non-functional properties where: 
+%\textit{(i)} The designer must make the diference between requirements that concern the application logic and the non-functional requirements;
+%\textit{(ii)} General concepts must be provided to support the representation of  different non-functional requirements;
+%\textit{(iii)} The non-functional requirements, specified in an abstract way, must provide enough information to be translated into the specification of technical aspects implementing concrete non-functional properties to be verified at runtime.
+
+
+This paper presents $\pi$SOD-M,  a methodology for supporting the development of service-oriented applications by taking into account both functional and non-functional requirements. This methodology aims to:
+\textit{(i)} improve the development process by providing an abstract view of the application and ensuring its conformance to the business requirements;
+\textit{(ii)} reduce the programming effort through the semi-automatic generation of  models for the application, to produce concrete implementations from high-abstraction models.
+%
+%\bigskip
+Accordingly, the remainder of the paper is organized as follows:
+Section~\ref{sec:sodm}  gives an overview of the SOD-M approach;
+Section~\ref{sec:pisodm} presents $\pi$SOD-M, the methodology that we propose to extend SOD-M;
+Section~\ref{sec:poc} shows the development of a proof of concept;
+Section~\ref{sec:related} describes related works; and
+Section~\ref{sec:conclusions} concludes the paper. % and gives final remarks.
+
+
+\section{SOD-M}\label{sec:sodm}
+%\input{sodm}
+
+The Service-Oriented Development Method (SOD-M)~\cite{decastro1}
+adopts  the MDD approach to build service-based applications. SOD-M considers two points of view:
+\textit{(i)} \textit{business}, focusing on the characteristics and requirements
+of the organization; and 
+\textit{(ii)} \textit{system requirements}, focusing on
+features and processes to be implemented in order to build service-based applications in accordance to the business requirements. In
+this way, SOD-M  simplifies the design of service-oriented applications, as
+well as their implementation using current technologies.
+
+SOD-M provides a framework with models and standards to express functionalities
+of applications at a high-level of abstraction. The SOD-M meta-models are organized 
+into three levels: CIM (\textit{Computational Independent Models}), 
+PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
+Two models are defined at the CIM level: \textit{value model} 
+and \textit{BPMN model}. 
+The PIM level models the entire structure of the application, as
+the PSM level provides transformations towards more specific platforms.
+The PIM-level models are: \textit{use case}, \textit{extended use case}, \textit{service process} and
+\textit{service composition}. The PSM-level models are: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
+ 
+ %%%BEGIN{Text Included by Placido Neto for Camera-Ready}%%%%%%
+At the CIM level, the \textit{value model} describes a business
+scenario as a set of values and activities shared by business actors. 
+The \textit{BPMN model} describes a business process and the corresponding environment. 
+%These two models represent the computing-independent aspects of the application logic. 
+At the PIM level, the \textit{use case model} represents
+a business service, as the \textit{extended use case model} contains 
+behavioral descriptions of features to be implemented. 
+The \textit{service process model} describes a set of
+activities to be performed in order to implement a business service.
+Finally, the \textit{service composition model} represents the complete flow of a business system. 
+This model is an extension of the service process model. 
+%These four models represent the platform independent aspects.
+%%%END{Text Included by Placido Neto for Camera-Ready}%%%%%%
+
+The SOD-M approach includes transformations between models:
+\textit{CIM-to-PIM, PIM-to-PIM} and \textit{PIM-to-PSM} transformations. Given
+an abstract model at the CIM level, it is possible to apply transformations for
+generating a model of the PSM level. In this context, it is necessary to
+follow the process activities described by the methodology. 
+%
+These three SOD-M levels have no support for describing non-functional requirements. The following section introduces $\pi$SOD-M, the extension that we propose for supporting these requirements.
+
+
+
+
+
+
+
+\section{$\pi$SOD-M}\label{sec:pisodm}
+%\input{pisodm}
+
+$\pi$SOD-M provides an environment for building service compositions by considering their non-functional requirements. $\pi$SOD-M proposes the generation of a set of models at different abstraction levels, as well as transformations between these models.
+$\pi$SOD-M includes non-functional specifications through
+ four meta-models that extend the SOD-M meta-models at the PIM and PSM levels (see Figure~\ref{fig:piSOD-M}): \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess}, \textit{$\pi$-ServiceCom\-po\-si\-tion} and \textit{$\pi$-PEWS}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{piSOD-M.png}
+\caption{$\pi$SOD-M.}
+\label{fig:piSOD-M}
+\end{figure}
+%
+The \textit{$\pi$-UseCase} meta-model describes functional and non-functional requirements.
+Non-functional requirements are defined as \textit{constraints} over processing steps and data. 
+%
+The \textit{$\pi$-ServiceProcess} meta-model defines the concept of \textit{service contract} to represent restrictions over data and actions that must be performed upon certain conditions. 
+%
+The \textit{$\pi$-ServiceProcess} meta-model gathers the constraints
+described in the \textit{$\pi$-UseCase} model into contracts that are associated with services. 
+%
+The \textit{$\pi$-ServiceComposition} meta-model provides the concept of \textit{Policy}~\cite{Espinosa-Oviedo2011a}
+which put together contracts with similar non-functional requirements. 
+For instance, security and privacy restrictions may be grouped into a security policy.
+\textit{$\pi$-ServiceComposition} models can be refined into PSMs. Policies are associated to service operations and combine \textit{constraints} and \textit{reactive recovery actions}.
+Constraints are restrictions that must be verified during the execution of the application. 
+Failure to verify some constraint will trigger an exceptional behavior to execute the corresponding recovery action.
+An example of policy is the requirement of authentication for executing some of the system functions. 
+The action associated to this policy may perform the authentication of the user.
+%
+%The \textit{$\pi$-PEWS} meta-model is a PSM (see Figure~\ref{fig:piSOD-M}).
+At the PSM level we have lower-level models that can be automatically translated into actual computer programs.
+The \textit{$\pi$-PEWS} meta-model is the PSM adopted in this work~(see Figure~\ref{fig:piSOD-M}).
+\textit{$\pi$-PEWS} models are textual descriptions of service compositions that can be translated into PEWS~\cite{BHM06} %~\cite{BaCAM05,Placido2010LTPD} 
+code.
+%This can be accomplished by defining: \textit{(i)} a model-to-model transformation, from a \textit{$\pi$-ServiceComposition} model to the corresponding PSM, and \textit{(ii)} a model-to-text transformation, from the this PSM to the composition language.
+
+
+%Note that $\pi$SOD-M extends the SOD-M meta-models by adding
+%the concept of \textit{Policy}~\cite{Espinosa-Oviedo2011a}
+%to represent non-functional requirements. 
+%$\pi$SOD-M models represent both the functional aspects of the application as well as their non-functional behaviour. 
+
+
+%In this context, we provide concepts at different levels of abstraction for expressing business rules of a process as policies (to implement existing NFP protocols).
+
+%
+%Similarly to SOD-M, our approach targets the construction of service-oriented applications that implement business processes.
+Thus, $\pi$SOD-M proposes a development process based on the definition of models
+(instances of the meta-models) and transformations between models.
+There are two kinds of transformations:
+model-to-model transformations, used to refine the specification during the software process; and
+model-to-text transformations, used   to generate code in the last step of the software process.
+Notice that other composition languages, such as BPEL~\cite{bpel03}, can be used as target of the proposed software process. Another target language can be supported by defining the corresponding PIM-to-PSM and PSM-to-text transformations.
+
+
+
+%%%BEGIN{Text Included by Placido Neto for Camera-Ready}%%%%%%
+$\pi$SOD-M environment is built on the top of Eclipse. 
+We also used the Eclipse Modelling Framework (EMF) to define, edit and handle
+(meta)-models. 
+To automate the transformation models we use ATL~\cite{atl_manual} and Acceleo.
+
+In the next section we develop an example, in order to illustrate our proposal.
+The example will show the actual notation used for models. 
+
+
+
+
+
+
+
+
+
+\section{Proof of Concept: \textit{Tracking Crimes}}\label{sec:poc}
+%\input{proofOfConcept}
+
+
+Consider a tracking crime application where civilians and police share information about criminality in given zones of a city. 
+Civilian users signal crimes using Twitter.
+Police officers can notify crimes, as well as update information about solving cases.
+Some of these information are confidential while other can be shared
+to the community of users using this application. 
+Users can track crimes in given zones. 
+Crime information stored by the system may be visualized on a map. 
+Some users have different access rights than others.
+For example, police officers have more access rights than civilians.
+
+
+In order to provide these functionalities, the application uses pre-existing services to provide, store and visualize  information.
+The business process defines the logic of the application and is specified in terms of tasks. 
+Tasks can be performed by people or computers. 
+
+The business process and requirements specifications presented in Figure~\ref{fig:constraints} are instances of the Computation-Independent models of Figure~\ref{fig:piSOD-M}.
+The business process is represented as a graph while requirements are given as text boxes.
+\begin{figure}[ht!]
+\centering
+%\subfloat[\textit{Tracking Crimes} - Illustration of the Problem.]
+%{\label{fig:problem}\includegraphics[width=0.95\textwidth]{figs/problem}}
+%~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. (or a blank line to force the subfig onto a new line)
+%\\
+%\subfloat[Contraints.]
+{\label{fig:trans06}\includegraphics[width=0.95\textwidth]{constraints.png}}
+~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. (or a blank line to force the subfig onto a new line)
+\caption{Business process for the tracking crime example.}
+\label{fig:constraints}
+\end{figure}
+
+In our example, crime processing can start with one of two tasks: \textit{(i) notify a crime}, or \textit{(ii) track a crime}.
+Notified crimes are stored in a database. 
+Tracked crimes are visualized on a map.
+The used can ask for detailed information. 
+The application is built upon four services: \textsf{Twitter} and an \textsf{ad-hoc police service}, for notifying crimes; \textsf{Amazon}, used as  persistence service; and  \textsf{Google Maps}, for locating and displaying crimes on a map.
+
+Non-functional requirements are specified by rules and conditions to be verified during the execution of tasks.
+In our example we have the following non-functional requirements:
+\begin{itemize}
+\item Twitter requires authentication and allows three login failures before blocking. 
+\item Crime notification needs privileged access.
+\item Civilian users can only track crimes for which they have clearance: civilian population cannot track all the crimes notified by the police. 
+\item If \textsf{Google Maps} is unavailable, the results are delivered as text. 
+\item Querying about crimes without having proper clearance yields an empty map.
+\item Access rights to detailed information depends on user clearance and zone assignment for police officers. 
+\item The application maintains a detailed log. 
+\end{itemize}
+The idea about these requirements is to leave the application logic expressed by functional requirements as independent as possible from exceptional situations (like the unavailability of a service) and from conditions under which services are called (for instance, through an authentication protocol). These requirements can be  weaved as activities and branches of the composition or implemented apart. The second option is better because it makes the maintenance and evolution of applications easier. For instance, the services called by the application are not hard coded (\textsf{Twitter} and \textsf{Google Maps} in the example), neither the actions to deal with exceptions (replacing another map service or doing nothing).
+
+All the system restrictions are modelled as constraints in this example. 
+$\pi$SOD-M provides three types of constraints:
+\textit{value}, \textit{business} and \textit{exceptions behaviour} constraints.
+Each use case (model) can be associated to one or more constraints\footnote{For a more comprehensive account of $\pi$SOD-M the reader can refer to~\cite{PlacidoThesis2012}.}.
+\paragraph*{\textit{$\pi$-UseCase} model:} 
+our example has five use cases which represent the
+ functions (tasks) and constraints of the system (Figure~\ref{fig:piUC}). 
+We do not detail the functional part of the specification, due to lack of space.
+The constraints defined are: 
+\begin{itemize}
+  \item The \textsf{Notify crime} task requires that the user is logged in. 
+  This is an example of a \textit{value constraint}, where the value associated to the condition depends on the semantics of the application.
+  In this case, it represents the maximum number of allowed login attempts;
+\item The \textsf{Store crimes} task requires the verification of the user's clearance (also a value constraint). 
+\item In order to perform the \textsf{Track crimes} task,
+the contact list of the requesting user must include the user that notified the crime.
+This is an example of \textit{business constraint}.
+Additionally the requesting user must be logged in.
+\item  For the \textsf{View crimes' map} task, the specification defines that if the service \textsf{Google Maps}  is not available, the result is presented as text. This is an example of \textit{exceptional behaviour constraint}. 
+The availability of the \textsf{Google Maps} service is verified by a \textit{business constraint}.
+ \item The \textsf{Show crimes' details} task is specified to have three constraints: A \textit{value constraint} is defined to verify the user's clearance level; a \textit{business constraint} is used to ensure that the user's clearance is valid for the geographic zone of the crime; another \textit{value constraint} defines that the log is to be maintained.
+\end{itemize}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{piUseCase.png}
+\caption{$\pi$-UseCase Model.}
+\label{fig:piUC}
+\end{figure}
+
+A model-to-model transformation is defined to refine the \textit{$\pi$-UseCase} model into the
+corresponding \textit{$\pi$-ServiceProcess} model, a more detailed representation. 
+This (semi-automatic) transformation  is supported by a tool (described in~\cite{PlacidoThesis2012}).
+
+
+\paragraph*{\textit{$\pi$-ServiceProcess} model:}
+in this model task nodes of the $\pi$-UseCase model are better detailed, by refining the control and data flows, and its constraints are transformed into \textit{contracts} (pre- and post-conditions).
+The $\pi$-ServiceProcess model describes the activities of the application and defines contracts for each activity or parts of the application (Figure~\ref{fig:piSP}). The main transformations are: 
+\begin{itemize}
+\item Tasks of the previous model are transformed into \textit{actions};
+\item Actions are grouped into \textit{activities} (in accordance to the business logic).
+\item Constraints of the \textit{$\pi$-UseCase} model are transformed into assertions.
+\end{itemize}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{piServiceProcess.png}
+\caption{$\pi$-\textit{ServiceProcess} Model.}
+\label{fig:piSP}
+\end{figure}
+
+\paragraph*{\textit{$\pi$-ServiceComposition} model:} 
+this model refines the previous model by using the activities to produce the workflow of the application.
+The model serves to identify those entities that collaborate with the service process by providing services to execute actions. 
+This model identifies the services and functions that correspond to each action in the business process.
+
+\begin{figure}[t]
+\centering
+\subfloat[$\pi$-ServiceComposition Model.]
+{\label{fig:piSC}\includegraphics[width=0.95\textwidth]{piServiceComposition.png}}
+~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. (or a blank line to force the subfig onto a new line)
+\\[-1mm]
+\subfloat[$\pi$-ServiceComposition Policies.]
+{\label{fig:crimePolicies}\includegraphics[width=0.85\textwidth]{policies.png}}
+~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. (or a blank line to force the subfig onto a new line)
+\caption{Service Composition and Policies.}
+\label{fig:policies}
+\end{figure}
+%This model describes the service compositions and their related business
+%collaborators (external services), policies, rules associated with a policy and
+%the whole application process and functionalities.
+%The workflow execution will consider the composition of business services and
+%their specific Business Collaborators. 
+%Each action will trigger the execution of one or more external services. 
+%Before and after each service call, policy rules are verified.
+
+In the case of our crime tracking example, the model produced from the $\pi$-\textit{ServiceProcess} model of Figure~\ref{fig:piSP} is given in Figures~\ref{fig:piSC} and~\ref{fig:crimePolicies}.
+Figure~\ref{fig:piSC} shows how the crime application interacts with its \textit{business collaborators} (external services and entities).
+The interaction occurs by means of function calls (denoted by dotted lines in the figure).
+Figure~\ref{fig:crimePolicies} shows the definition of three \textit{policies}, which define rules for service execution.
+In our case we have policies for \textit{Security}, \textit{Performance} and \textit{Persistence}. 
+
+
+\paragraph*{$\pi$\textit{-PEWS} Model:}
+this model is produced by a model-to-text transformation that takes a $\pi$-\textit{ServiceComposition} model and generates $\pi$-\textit{PEWS} specification code.
+This code is a service composition program that can be compiled into an executable composition.
+$\pi$-\textit{PEWS} models are expressed in a variant of the PEWS composition language.
+\begin{figure}[t]
+\begin{small}
+%\begin{lstlisting}[label=list:rulePre,caption=ATL - piServiceComposition2piPEWS : Pre-condition Rule. ]
+%\begin{lstlisting}[label=list:rulePre]
+\begin{verbatim}
+//Namespaces specify service URI
+1 namespace twitter = www.twitter.com/service.wsdl
+2 namespace googlemaps = maps.googleapis.com/maps/api/service
+3 namespace amazondynamodb = rds.amazonaws.com/doc/2010-07-28/AmazonRDSv4.wsdl
+4 namespace police = www.police.fr/service.wsdl
+//Operations 
+5 alias publishTwitter = portType/publishTwitter in twitter
+6 alias searchCrime = portType/searchCrime in amazondynamodb 
+7 alias showMap = portType/showMap in googlemaps 
+//Services
+8  service notifyCrime = publishCrime  . publishTwitter 
+9  service trackCrime= searchCrime . verifyService
+10 Service visualizeCrime =  showMap . getCrimeDetail
+//Path
+11 (notifyCrime.storeiCrime) || (trackCrime.visualizeCrime.getCrimeDetail)
+//Contracts
+12 defContract notifyCrimeContract{  isAppliedTo: notifyCrime
+13	  requires: userId == ?? && passw == ?? && req(notifyCrime)  < 3
+14 	      (OnFailureDo: NOT(action_publish(crime));
+15	  ensures: publishTwitter(crime) == true  (OnFailureDo: skip); }
+\end{verbatim}
+% \end{lstlisting}
+\end{small}
+\caption{$\pi$-PEWS code for the crime tracking example (partial, simplified).\label{fig:pewscontract} }
+\end{figure}
+The $\pi$-PEWS program generated from the model in Figure~\ref{fig:policies} is partially presented in Figure~\ref{fig:pewscontract}. 
+The figure shows a simplified program code, produced in accordance to the following guidelines:
+\begin{itemize}
+\item
+Namespaces, identifying the addresses of external services are produced from the Business Collaborators of the higher-level model. 
+We define four of them, corresponding to the Police, Twitter, Google Map and Amazon partners.
+\item
+Specific operations exported by each business collaborator are identified as an \textit{operation} of the program (to each operation is given an \texttt{alias}).
+\item
+The workflow in Figure~\ref{fig:piSC} is translated into the text at line 11.
+\item
+\textit{Contracts} are defined in $\pi$-PEWS as having pre-conditions (\texttt{requires}), post-conditions (\texttt{ensures}) and actions (\texttt{OnFailureDo}) to be executed whenever a condition is not verified. 
+Contracts are generated from Policies (Figure~\ref{fig:crimePolicies}).
+\end{itemize}
+
+
+
+\section{Related work}
+\label{sec:related}
+Over the last years, a number of approaches have been proposed for the
+development of web services. 
+These approaches range from the proposal of new 
+languages for web service descriptions~\cite{bpel03,SBS04} 
+to techniques to support phases of the development cycle of this kind of
+software~\cite{lipari2007}. 
+In general, these approaches concentrate on specific problems, like supporting transactions or
+QoS, in order to improve the security and reliability of service-based
+applications. 
+Some proposals address service composition: workflow
+definition~\cite{AalstHKB03,MuP06} or semantic equivalence between
+services~\cite{BHM06}. 
+%The proposed solutions come from many communities, 
+%including those of Theoretical Computer Science~\cite{VA05,GGP08}, 
+%Software Engineering~\cite{Aal03,MendesPDB09}, Programming
+%Languages~\cite{MPC08,bpel03} and Databases~\cite{ABM01}.
+
+Works dealing with non-functional properties in service-oriented 
+development can be organized in two main groups: those working on the \textit{modelling 
+of particular non-functional properties or QoS attributes} and those 
+proposing \textit{architectures or frameworks to manage and 
+validate QoS attributes in web service composition processes}. 
+The first group considers specific non-functional concerns (e.g., security)
+which is modelled and then associated to functional models of the application. 
+The work of Chollet et al.~\cite{CholletL09} defines a proposal to associate non-functional 
+quality properties (security properties) to functional activities in a web service composition model. Schmeling et al.~\cite{SchmelingCM11} present 
+an approach and also a toolset for specifying and implementing non-functional 
+concerns in web service compositions.
+Non-functional concerns are modelled and then related to a service composition 
+represented in a BPMN diagram. 
+Ovaska et al.~\cite{OvaskaEHPA10} present an approach to 
+support quality management at design time. 
+Quality requirements are modelled in a first phase and then
+represented in an architectural model where quality requirements are associated to some
+components of the model. 
+We propose to model functional and non-functional properties at the same time during the software process.
+We claim what this approach simplifies the web service development task. 
+Non-functional properties are represented in our work as constraints and policies 
+but more general quality model such as the proposed by~\cite{Goeb2011,Klass2009} 
+could be taken in consideration in further works. 
+
+
+The second group of works dealing with non-functional requirements for services 
+propose specific architectures or frameworks to manage and validate 
+QoS attributes in service composition processes~\cite{XiaoCZBOLH08,Babamir2010,Karunamurthy2012787}. 
+Our proposal is similar to these, but focusses on more general non-functional properties.
+
+Despite the variety of techniques proposed, there is not yet a consensus on a software methodology 
+for web services. 
+Some methodologies address the service-based 
+development towards a standard or a new way to develop reliable applications. 
+SOD-M and SOMF~\cite{somf} are MDD approaches for web services; 
+S-Cube~\cite{scube2010book} is focused on the representation of business processes and 
+service-based development; SOMA~\cite{soma} is a methodology 
+for SOA solutions; 
+%Extended SOA~\cite{PapazoglouH06} merges RUP and
+%BPM~\cite{bpm} concepts for service modelling; 
+DEVISE~\cite{DEVISE} is a
+methodology for building service-based infrastructure for collaborative
+enterprises. 
+Other proposals include the WIED model~\cite{TongrungrojanaL04}, 
+that acts as a bridge between business modelling and design models on one hand, and traditional 
+approaches for software engineering applied to SOC on the other hand.
+
+
+\section{Conclusions}
+\label{sec:conclusions}
+%\input{conclusion}
+
+This paper presented the $\pi$SOD-M software method for specifying and designing service-based applications in the presence of  non-functional constraints. 
+Our proposal enhances the SOD-M method with constraints, policies and contracts  to consider non-functional constraints of applications.
+We implemented the proposed meta-models on the Eclipse platform and we illustrated the approach by developing a simple application.
+
+$\pi$SOD-M is being used in an academic environment.
+So far, the preliminary results indicate that $\pi$SOD-M approach is useful for the development of complex web service applications. 
+We are now working on the definition of a PSM-level meta-model to generate BPEL programs (instead of $\pi$-PEWS) in order to be able to generate code for the de-facto service coordination standard. 
+
+
+
+\section*{Acknowledgements}
+\small
+This research is partly supported by the National Institute of Science and Technology for Software Engineering (INES\footnote{www.ines.org.br}), funded by CNPq (Brazil), grants 573964/2008-4 and 305619/2012-8; CAPES/UdelaR (Brazil/Uruguay) grant 021/ 2010; CAPES/STIC-AmSud (Brazil) grant 020/2010); MASAI project (TIN-2011-22617) financed by the Spanish Ministry of Science and Innovation and the Spanish Network on Service Science (TIN2011-15497-E) financed by the Spanish Ministry of Competitiveness and Economy. 
+
+\normalsize  
+\bibliographystyle{splncs_srt}
+\bibliography{biblio2} 
+\end{document}
