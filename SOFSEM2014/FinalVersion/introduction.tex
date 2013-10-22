@@ -1,23 +1,18 @@
 Model Driven Development (MDD)~\cite{Favre06arigorous} is a top-down approach proposed by the Object Management Group
 (OMG)\footnote{\texttt{http://www.omg.org/mda}.} for designing and developing software systems. 
-MDD provides a set of guidelines for  structuring  specifications by using \textit{models} to specify software systems at different levels of abstraction or \textit{viewpoints}:
-
-\begin{itemize}
-
-\item
-%\noindent 
-\textit{Computation Independent Models (CIM)}: this viewpoint represents the software system at its highest level of abstraction. It focusses on the system
+MDD provides a set of guidelines for  structuring  specifications by using \textit{models} to specify software systems at different levels of abstraction or \textit{viewpoints}:\\[1mm]
+\noindent 
+-\textit{Computation Independent Models (CIM)}: this viewpoint represents the software system at its highest level of abstraction. It focusses on the system
 environment and on  business and requirement specifications. 
 At this level, the structure of the system  and its processing details are still unknown or undetermined. 
-\item
-%\noindent 
-\textit{Platform Independent Models (PIM)}: this viewpoint focusses on the system functionality, hiding the details of any particular platform. 
+
+\noindent 
+-\textit{Platform Independent Models (PIM)}: this viewpoint focusses on the system functionality, hiding the details of any particular platform. 
 %The specification defines those parts of the system that are independent of the development platform. 
-\item
-%\noindent 
-\textit{Platform Specific Models (PSM)}: this viewpoint focusses on the functionality, in the context of a particular implementation platform.
+
+\noindent 
+-\textit{Platform Specific Models (PSM)}: this viewpoint focusses on the functionality, in the context of a particular implementation platform.
 Models at this level combine the platform-independent view with specific aspects of the target platform in order to implement the system.  
-\end{itemize}
 
 Besides the notion of models at each level of abstraction, MDD requires  \textit{model transformations} between levels.
 These transformations may be automatic or semi-automatic and implement the refinement process between levels. 
