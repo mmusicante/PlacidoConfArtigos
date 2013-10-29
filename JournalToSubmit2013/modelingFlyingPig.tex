@@ -1,43 +1,36 @@
 
-%Consider for instance the following scenario. An organization wants to provide the services' based application "To Publish Music" that monitors the music a person is listening during some periods of time and sends the song title  to this person's Twitter and Facebook accounts. Thus, this social network user will have her status synchronized in  Twitter and Facebook (i.e., either the same title is published in both accounts or it is not updated) with the title of the music she is listening in Spotify.
-%For developing this services' based application it is necessary to compose the following services  calling  their  exported methods:
-%\begin{itemize}
-%\item The music service   Spotify exports a method for obtaining information  %about the music a given user is listening:
-%%\begin{itemize} \item {\sf\small get-Last-Song ( userid ): String} ; %%\end{itemize}
-%\item Facebook and Twitter services export a method for  updating the status of a given user:
-%\begin{itemize} 
-%%\item{\sf\small get-Status ( usedid ): String ; 
-%\item {\sf\small update-Status ( userid, new-status ): String}; 
-%\end{itemize}
-%\end{itemize}
-%
-%Figure \ref{fig:E3valuemodel} shows the E3 value model \cite{e3value} of
-%the scenario. The E3 value model is a business model that represents a business case graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) and allows us to understand the environment in which the services' composition will be placed. 
-%The model in Figure \ref{fig:E3valuemodel} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
 
-%Figure \ref{fig:E3valuemodel} shows the BPMN model  \footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario. 
-%The "To Publish Music" scenario 
-%%(showed by doted line) 
-%starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}). 
-%Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.55\textwidth]{figs/SC}
-%\caption{BPMN model of the "To Publish Music" scenario}
-%\label{fig:E3valuemodel}
-%\end{figure}
 
-In order to introduce the context of our work consider the FlyingPig scenario concerning a risk assesment system, where finanacial companies need to be assesed about the risks implied by their business practice. For instance, the condition in which confidential transactions are performed, the physical security for accessing reserved areas (i.e. servers storing). The system provides a set questionaires that provide a thorough description of the practice of the company. This information is used to determine whether there are risky actions within the business processes pof the company that can be amended. It is also used to determine a degree of compliance of security management of financial companies norms. When things have to be amended it is necessary to verify that the amendment reduces the risk. 
+In order to introduce the context of our work consider the FlyingPig scenario concerning a risk assesment system, where finanacial companies need to be assesed about the risks implied by their business practice. For instance, the condition in which confidential transactions are performed, the physical security for accessing reserved areas (i.e. access to the critical servers room should be secured). The system provides a set questionaires that provide a thorough description of the practice of the company. This information is used to determine whether there are risky actions within the business processes of the company that can be amended. It is also used to determine a degree of compliance of security management of financial companies norms. When things have to be amended it is necessary to verify that evidence that the amendment was done and whether it  reduces the risk. 
 
 
 
- In order to provide these functions the application benefits from existing services that provide information,  storage and data visualization functions. Thus, the application is a service based application that implements a business process.
+ In order to provide these functions the application FlyingFish benefits from existing services that provide information,  storage, assesment and data visualization functions. Thus, FlyingFish is a service based application that implements a business process.
  The business process is specified in terms of ordered tasks and define the application logic of a Service oriented Application. Tasks can be performed by a person or an entity. In our context, tasks are implemented by Services. 
 Service is an application implemented by a provider that exports an API through a network (e.g., Internet)
 API is defined using an interface definition language (IDL, e.g., WSDL for Web services).
- In our example the business procces can start with one of two tasks: Notify a crime, or track a crime. A notified crime can be then stored in a database. Tracked crimes are visualized in a map and then the used can ask for detailed information. They are implemented by four services: twitter and an adhoc police service for notifying crimes, Amazon as persistence service and google maps for visualizing and locating crimes in a map. 
-Note that a task can be implemented by a service composition. This is the case of the task Notify crime in our example that enables to notify crimes through twitter or through the police notification service. 
+ In our example the business procces  starts by a request from a company branch asking for an assesment. The request leads to the declaration of a group of users that will answer quetionaires that will be used as input for evaluating risk. Questionaires are considered tasks that users will have to perform. Given a list of tasks a user decides whether she takes on the task (i.e., answering a questionaire) or delegate it to another user. 
  
+During the process of answering a questionnaire, the answer of a question can trigger the generation of other questonaires, that become new tasks to be executed. Once a questionnaire has been completely answered it is stored and processed to generate a set of uncompliant situations associated to their corresponding amendments if there are any or a report specifying a compliance level, incidents and a risk map. 
+ 
+Figure \ref{fig:E3valuemodel} shows the E3 value model \cite{e3value} of
+the scenario. The E3 value model is a business model that represents a business case graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) and allows us to understand the environment in which the services' composition will be placed. 
+The model in Figure \ref{fig:E3valuemodel} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
+
+Figure \ref{fig:E3valuemodel} shows the BPMN model  \footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario. 
+
+%The "To Publish Music" scenario 
+%%(showed by doted line) 
+%starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}). 
+%Twitter and Facebook services are then contacted in parallel for %updating the user's status with the corresponding song title %(activities {\sf Update Twitter} and {\sf Update Facebook}).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.55\textwidth]{figs/SC}
+\caption{BPMN model of the "To Publish Music" scenario}
+\label{fig:E3valuemodel}
+\end{figure}
+
 
 Business processes have also associated rules and constraints that define their non functional requirements.  
 NFR represents the “semantics” and the conditions in which the tasks must be done. 
@@ -59,9 +52,6 @@ These non functional properties must be ensured at execution time, and they are 
 The challenge is to define them and to associate them with the application logic considering that different to existing solutions that suppose that it is possible to access the execution stat of all the components  of an application and that the application has complete control on them, in the case for service oriented applications  the components are autonomous services
 API does not necessarily export information about methods dependency (e.g., in the REST protocol);
 they do not share their state (stateless).
-
-
-
 
 
 
