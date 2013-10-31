@@ -1,0 +1,94 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{article}
+
+\begin{document}
+
+
+\section{Related Works}  
+
+%Some works related with service-oriented
+%development have presented that the impact of the service-oriented
+%computing paradigm, the quality garantees on software development and the
+%way in which systems can be constructed have been growing up, however 
+
+There are
+ few methodologies and approaches that address the explicit modeling  of non functional
+properties for service based applications.   Software process methodologies for
+building  services based applications have been proposed in \cite{PapazoglouH06,Papazoglou03,cdl2006,MilanovicM06,FeuerlichtM05,Ramollari_asurvey,somet2005}, and they focus mainly on the modeling and construction process of services based business processes that represent the application logic of information systems. 
+
+ \textit{Design by Contract} \cite{HL05TACoS} is an approach for specifying web services and verifying them through runtime checkers before they are deployed. A contract adds behavioral information to a service specification, that is, it specifies the conditions in which methods exported by a service can be called. Contracts are expressed using the language \textit{jmlrac} \cite{LeavensCCRC02} . 
+ 
+
+ The \textit{Contract Definition Language} (CDL) \cite{cdl2006} is a XML-based
+description language, for defining contracts for services. There are an associated architecture framework, design standards and a
+methodology \cite{MilanovicM05,Milanovic05,Milanovic06,MilanovicM06}, for developing applications using services. 
+A services' based application  specification is generated after several 
+B \cite{AbrialLNSS91} machines refinements that describe the services and their
+compositions.
+
+\cite{PapazoglouH06} proposes a methodology 
+based on a SOA extension. This work defines a service
+oriented business process development methodology with phases for business process
+development. The whole life-cycle is based on six phases: planning, analysis and design,
+construction and testing, provisioning, deployment, and execution
+and monitoring. 
+
+IBM proposes a methodology for the development of SOA
+solutions, called SOMA \cite{soma}. SOMA defines a life-cycle with seven
+phases: business modelling and transformation, solution management, identification,
+specification, realization, implementation and deployment monitoring
+and management.
+
+Sommerville \cite{sommerville08} describes some key points for building services' based applications based on business process models that define the activities and information
+exchanged in a business processes. Activities in business process
+can be performed by services so that the model of business process
+represents a composition of services. It classifies services as  as public utilities, business services or
+coordination services. Software development that uses services involves creating
+programs for composing and configuring services to create new
+composite services. The service engineering process involves identifying services
+candidates, service interface and
+implementation definition, testing and deployment of each service.
+
+Unlike the works presented, the main contribution of our proposal is the
+methodology description together with model representations in three levels (CIM, PIM and PSM) 
+ for the design and development of distributed applications that can be reused
+ and that are reliable. 
+ 
+
+
+\section{Statements}  
+\label{sec:challenges}   
+
+The research questions that guide our research are
+intimately related with the spirit of classic software engineering, specifically
+the definition of a method for non functional properties-based distributed
+applications development. We also have in mind the application of the concept related with
+model driven development. There is a need to develop a proper model for these
+emerging technologies to reduce developing costs and to produce flexible and adaptable
+services based on quality properties. Therefore, we must ask the following:
+
+\begin{enumerate}
+  \item What the elements that make the development of web
+  service applications different from traditional software development?
+  \item Is it possible to define a methodology for web service application
+  development that is based on non functional properties requirements?
+  \item Is it possible to define a language to specify composition constraints
+  and contract restriction for web service?
+  \item How to verify web services contract restrictions at runtime?
+  \item It is possible to summarize all the development through models?
+\end{enumerate}
+ 
+Therefore, we will defend the following concepts:
+ 
+``\textit{Developing applications that use compositions of services from a
+methodology for this purpose and which is based on non functional properties
+assurance requirements, can provide a better development and outcome. Allied to this, a
+method based on MDD / MDA can provide a better reuse of applications and models.
+Finally, a specification language that expresses web service composition and its
+constraints can help further the development.}''
+
+\bibliography{caise}  
+\bibliographystyle{plain} 
+
+\end{document}

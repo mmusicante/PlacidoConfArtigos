@@ -1,0 +1,39 @@
+//-----------------------------------------------------------------------
+//--------------- MusicApplication.pews Service Specification -----------
+//-----------------------------------------------------------------------
+
+//Namespaces
+namespace spotify = www.spotify.com/music.wsdl
+namespace facebook = www.facebook.com/service.wsdl
+namespace twitter = www.twitter.com/service.wsdl
+
+//Operations
+alias getSong = portType/listenMusic in spotify 
+alias updateMusicTwitter = portType/updateMusic in twitter 
+alias updateMusicFacebook = portType/updateMusic in facebook 
+
+//Variable definition 
+
+//Services
+service publishMusic = updateMusicTwitter  ||  updateMusicFacebook
+
+//Path
+  getSong . publishMusic
+
+//Contract
+defContract HTTPAuthPolicyContract{
+	isAppliedTo: updateMusicFacebook;
+	requires: event.activityName == scope.name
+		(OnFailureDo: scope.httpRequest.Credentials = 
+					  new NetworkCredential(username, password);
+		);
+}	
+	
+defContract OAuthPolicyContract{
+	isAppliedTo: updateMusicTwitter;
+	requires: event.activityName == scope.name AND token == null
+		(OnFailureDo: token = getToken());
+	requires: event.activityName == scope.name AND token != null AND token.isExpired() == true
+		(OnFailureDo: token = renewToken());
+}	
+	

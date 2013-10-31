@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Fri Nov 04 10:12:07 CET 2011
+builderNum=2
+outputDir=out
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=caise.tex
+outputFile=caise.pdf
+langSpell=en
+markDer=true
+srcDir=src

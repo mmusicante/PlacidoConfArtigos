@@ -1,0 +1,101 @@
+\begin{thebibliography}{10}
+
+\bibitem{AbrialLNSS91}
+Jean-Raymond Abrial, Matthew K.~O. Lee, David Neilson, P.~N. Scharbach, and
+  Ib~Holm Sørensen.
+\newblock The b-method.
+\newblock In Søren Prehn and W.~J. Toetenel, editors, {\em VDM Europe (2)},
+  volume 552 of {\em Lecture Notes in Computer Science}, pages 398--405.
+  Springer, 1991.
+
+\bibitem{soma}
+Ali Arsanjani.
+\newblock {SOMA:} {S}ervice-{O}riented {M}odeling and {A}rchitecture.
+\newblock Technical report, IBM, Dispon√≠vel em
+  <http://www.ibm.com/developerworks/library/ws-soa-design1/>, 2004.
+
+\bibitem{CastroMV11}
+Valeria de~Castro, Esperanza Marcos, and Juan~M. Vara.
+\newblock Applying cim-to-pim model transformations for the service-oriented
+  development of information systems.
+\newblock {\em Information {\&} Software Technology}, 53(1):87--105, 2011.
+
+\bibitem{FeuerlichtM05}
+George Feuerlicht and Sooksathit Meesathit.
+\newblock Towards software development methodology for web services.
+\newblock In {\em SoMeT}, pages 263--277, 2005.
+
+\bibitem{somet2005}
+Hamido Fujita and Mohamed Mejri, editors.
+\newblock {\em New Trends in Software Methodologies, Tools and Techniques -
+  Proceedings of the Fifth SoMeT 2005, September 28-30, 2005, Tokyo, Japan},
+  volume 129 of {\em Frontiers in Artificial Intelligence and Applications}.
+  IOS Press, 2005.
+
+\bibitem{HL05TACoS}
+R.~Heckel and M.~Lohmann.
+\newblock Towards contract-based testing of web services.
+\newblock In Mauro Pezz\'e, editor, {\em Proceedings of the International
+  Workshop on Test and Analysis of Component Based Systems (TACoS 2004)},
+  volume 116, pages 145--156, 2005.
+
+\bibitem{LeavensCCRC02}
+Gary~T. Leavens, Yoonsik Cheon, Curtis Clifton, Clyde Ruby, and David~R. Cok.
+\newblock How the design of jml accomodates both runtime assertion checking and
+  formal verification.
+\newblock In {\em FMCO}, pages 262--284, 2002.
+
+\bibitem{Milanovic05}
+Nikola Milanovic.
+\newblock Contract-based web service composition framework with correctness
+  guarantees.
+\newblock In {\em ISAS}, pages 52--67, 2005.
+
+\bibitem{cdl2006}
+Nikola Milanovic.
+\newblock {\em Contract-based Web Service Composition}.
+\newblock PhD thesis, Humboldt-Universit√§t zu Berlin, 2006.
+
+\bibitem{Milanovic06}
+Nikola Milanovic.
+\newblock Service engineering design patterns.
+\newblock In {\em SOSE}, pages 19--26, 2006.
+
+\bibitem{MilanovicM05}
+Nikola Milanovic and Miroslaw Malek.
+\newblock Architectural support for automatic service composition.
+\newblock In {\em IEEE SCC}, pages 133--140, 2005.
+
+\bibitem{MilanovicM06}
+Nikola Milanovic and Miroslaw Malek.
+\newblock Search strategies for automatic web service composition.
+\newblock {\em Int. J. Web Service Res.}, 3(2):1--32, 2006.
+
+\bibitem{Placido2010LTPD}
+Pl{\'a}cido A.~Souza Neto, Martin Musicante, Genoveva Vargas-Solar, and
+  Jos{\'e}-Luis Zechinelli-Martini.
+\newblock Adding {C}ontracts to a {W}eb {S}ervice {C}omposition {L}anguage.
+\newblock {\em {LTPD} - 4th {W}orkshop on {L}anguages and {T}ools for
+  {M}ultithreaded, {P}arallel and {D}istributed {P}rogramming}, September 2010.
+
+\bibitem{Papazoglou03}
+Mike~P. Papazoglou.
+\newblock Service-{O}riented {C}omputing: {C}oncepts, {C}haracteristics and
+  {D}irections.
+\newblock In {\em WISE}, pages 3--12, 2003.
+
+\bibitem{PapazoglouH06}
+Mike~P. Papazoglou and Willem-Jan van~den Heuvel.
+\newblock Service-oriented design and development methodology.
+\newblock {\em Int. J. Web Eng. Technol.}, 2(4):412--442, 2006.
+
+\bibitem{Ramollari_asurvey}
+Ervin Ramollari, Dimitris Dranidis, and Anthony J.~H. Simons.
+\newblock A survey of service oriented development methodologies.
+
+\bibitem{sommerville08}
+Ian Sommerville.
+\newblock {\em Software Engineering 6th Edition}.
+\newblock Addison Wesley, 2008.
+
+\end{thebibliography}

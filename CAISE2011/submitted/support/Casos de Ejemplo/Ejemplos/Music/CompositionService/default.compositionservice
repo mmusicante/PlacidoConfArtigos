@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compositionService:CompositionServiceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:compositionService="http://compositionService">
+  <partition xsi:type="compositionService:BusinessCollaborator" name="Application"/>
+  <partition xsi:type="compositionService:BusinessCollaborator" name="Spotify" isExternal="true"/>
+  <partition xsi:type="compositionService:BusinessCollaborator" name="Facebook" isExternal="true" nodes="//@activities.1/@action.1"/>
+  <partition xsi:type="compositionService:BusinessCollaborator" name="Twitter" isExternal="true" nodes="//@activities.1/@action.2"/>
+  <activities xsi:type="compositionService:ServiceActivity" name="ListenMusic">
+    <node xsi:type="compositionService:InitialNode" outgoing="//@edges.4"/>
+    <action name="GetSong" incoming="//@edges.0 //@edges.4" outgoing="//@edges.1"/>
+    <action name="ListenMusic" outgoing="//@edges.0" type="AOP"/>
+  </activities>
+  <activities xsi:type="compositionService:ServiceActivity" name="PublishMusic">
+    <action name="PublishSong" incoming="//@edges.1" outgoing="//@edges.2 //@edges.3 //@edges.6"/>
+    <action name="UserIsListeningSong" incoming="//@edges.2" outgoing="//@edges.7" partition="//@partition.2"/>
+    <action name="UserIsListeningSong" incoming="//@edges.3" outgoing="//@edges.8" partition="//@partition.3"/>
+  </activities>
+  <activities xsi:type="compositionService:ServiceActivity" name="Confirmation">
+    <node xsi:type="compositionService:ActivityFinalNode" incoming="//@edges.5"/>
+    <action name="PublishingOK" incoming="//@edges.6 //@edges.7 //@edges.8" outgoing="//@edges.5" type="AOP"/>
+  </activities>
+  <edges xsi:type="compositionService:ObjectFlow" name="SongData" target="//@activities.0/@action.0" source="//@activities.0/@action.1"/>
+  <edges xsi:type="compositionService:ControlFlow" name="GetSong -> PublishSong" target="//@activities.1/@action.0" source="//@activities.0/@action.0"/>
+  <edges xsi:type="compositionService:ObjectFlow" name="SongData" target="//@activities.1/@action.1" source="//@activities.1/@action.0"/>
+  <edges xsi:type="compositionService:ObjectFlow" name="SongData" target="//@activities.1/@action.2" source="//@activities.1/@action.0"/>
+  <edges xsi:type="compositionService:ControlFlow" target="//@activities.0/@action.0" source="//@activities.0/@node.0"/>
+  <edges xsi:type="compositionService:ControlFlow" target="//@activities.2/@node.0" source="//@activities.2/@action.0"/>
+  <edges xsi:type="compositionService:ControlFlow" name="PublishSong -> PublishingOK" target="//@activities.2/@action.0" source="//@activities.1/@action.0"/>
+  <edges xsi:type="compositionService:ObjectFlow" name="Ok" target="//@activities.2/@action.0" source="//@activities.1/@action.1"/>
+  <edges xsi:type="compositionService:ObjectFlow" name="Ok" target="//@activities.2/@action.0" source="//@activities.1/@action.2"/>
+</compositionService:CompositionServiceModel>
