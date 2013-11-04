@@ -1,35 +1,12 @@
 
-Model Driven Development (MDD) is a top-down approach for the development of software systems. 
-The main ideas of MDD were originally proposed by the Object Management Group (OMG)~\cite{mda}, as a set of guidelines for the structuring of specifications.
-The technique advocates for the use of \textit{models} to specify a software system at different levels of abstraction (called \textit{viewpoints}):
-
-\begin{trivlist}
-\item \textbf{Computation Independent Models (CIM):} This level focusses on the
-environment of the system, as well as on its business and requirement specifications. 
-This viewpoint represents the software system at its highest level of abstraction. 
-At this moment of the development, the structure and system processing details are still unknown or undetermined. 
+Service oriented computing~\cite{Papazoglou2007} is at the origin of an evolution in the field of software development.
+Service oriented methods advocates for the construction of software systems formed by the composition of heterogeneous, loosely coupled modules.
+These modules (or services) communicate in order to achieve a common purpose.
  
-\item \textbf{Platform Independent Models (PIM):} This level focusses on the system functionality, hiding the details of any particular platform. 
-The specification defines those parts of the system that do not change from one platform to another. 
-
-\item \textbf{Platform Specific Models (PSM):} This level focusses on the functionality, in the context of a particular implementation platform.
-Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system.  
-\end{trivlist}
-
-Besides the notion of model at each level of abstraction, MDD requires the use of \textit{model transformations} within and between levels.
-Intra-level transformations are used to provide a unified representation of concepts of a given level.
-Inter-level transformation implement a refinement process between levels.
-Transformations may be automatic or semi-automatic.
-
-MDD techniques has been successfully used for the development of hardware and software systems~\cite{MDDvariosAqui}. 
-In particular, we are interested in the application of MDD to the design and implementation of web service applications.
-
-Service oriented computing~\cite{Papazoglou2007} is at the origin of an evolution in the field of software development~\cite{??}. 
-An important challenge of service oriented development is  to ensure the alignment between the requirements imposed by the business logic and the IT systems actually developed.
+An important challenge of service oriented development is  to ensure the alignment between the requirements imposed by the business logic and the IT systems actually being developed.
 (Moreover, IT systems need to evolve according to the business needs.)
-Thus, organizations are seeking for mechanisms to bridge the gap between the systems developed and business needs~\cite{bell}. 
-The literature stresses the need for methodologies and techniques for service oriented analysis and design, claiming that they are the cornerstone  in the development of meaningful service based applications~\cite{5}.  
-In this context, we argue that the convergence of model-driven software development, service orientation and better techniques for documenting and improving business processes are key to make real the idea of rapid, accurate development of software that serves, rather than dictates the needs of its users~\cite{watson}. 
+Thus, organizations are seeking for mechanisms to bridge the gap between the actually developed systems and their business needs~\cite{bell}. 
+The literature stresses the need for methodologies and techniques for service oriented analysis and design, claiming that they are the cornerstone in the development of meaningful service based applications~\cite{5}.  
 
 In Service-Oriented Computing, pre-existing services are
 combined to produce applications and provide the business logic. 
@@ -39,13 +16,22 @@ Functional properties are not the only crucial aspect in the software developmen
 Other properties need to be addressed to fit in the application with its context.
 These other aspects are called Non-Functional Properties.
 
-Non-functional aspects of the services, often expressed as requirements and constraints in general purpose methodologies, are not usually considered from the beginning of the (service) software process.
+Non-functional aspects of the services, often expressed as requirements and constraints in general purpose methodologies, are not usually considered from the early phases of the (service) software process.
 Most methods consider them only after the application has been implemented, in order to ensure some level of reliability (e.g., data privacy, exception handling, atomicity, data persistence). 
 This leads to service based applications that are partly specified and, thereby, partly compliant with the requirements of the application.
 Ideally, non-functional requirements should be considered along with all the stages of the software development. 
 The adoption of non-functional specifications from the early states of development
 can help the developer to produce applications that are capable of dealing with
 the application context.
+
+\bigskip
+
+Model Driven Development (MDD) is a top-down approach for the development of software systems. 
+The main ideas of MDD were originally proposed by the Object Management Group (OMG)~\cite{mda}, as a set of guidelines for the structuring of specifications.
+The technique advocates for the use of \textit{models} to specify a software system at different levels of abstraction (called \textit{viewpoints}). 
+These models are successively refined from abstract specifications into actual computer programs.
+
+In this context, we argue that the convergence of model-driven software development, service orientation and better techniques for documenting and improving business processes are key to make real the idea of rapid, accurate development of software that serves, rather than dictates the needs of its users~\cite{watson}. 
 
 In this work, we are interested in the extension of the \textit{Service Oriented Development Method} (SOD-M)~\cite{decastro1}, to support non-functional aspects, from the early stages of software development.
 SOD-M is aligned with the MDD directives and proposes models, practices and techniques for the development of service-based applications.
@@ -62,34 +48,6 @@ The main goals of our work are:
 
 The rest of the paper is organized as follows. 
 Section\dots
-
-
-\begin{center}
-\textsc{\underline{Version from CAISE submission}}
-\end{center}
-
-
-Service oriented computing is at the origin of an evolution in the field of software development. 
-An important challenge of service oriented development is  to ensure the alignment between IT systems and the business logic.
-%dealing thereby with the promise that IT systems can  evolve  according to the business needs. 
-Thus, organizations are  seeking for mechanisms to deal with the gap between the systems developed and business needs \cite{bell}. The literature stresses the need for methodologies and techniques for service oriented analysis and design, claiming that they are the cornerstone  in the development of meaningful services' based applications \cite{5}.  In this context, some authors argue that the convergence of model-driven software development, service orientation and better techniques for documenting and improving business processes are the key to make real the idea of rapid, accurate development of software that serves, rather than dictates, software users' goals \cite{watson}. 
-
-Service oriented development methodologies providing models, best practices, and reference architectures to build services' based applications mainly address  functional aspects \cite{1,2,decastro1,PapazoglouH06}.  Non-functional aspects concerning services' and application's "semantics", often expressed as requirements and constraints in general purpose methodologies, are not fully considered or they are added once the application has been implemented in order to ensure some level of reliability (e.g., data privacy, exception handling, atomicity, data persistence). This leads to services' based applications that are partially specified and that are thereby partially compliant with application requirements.
-
-The objective of this work   is to model non-functional constraints and associate them to  services' based applications  early during the services' composition modeling phase. Therefore this paper presents $\pi$-SOD-M, a model-driven method  that extends the SOD-M  \cite{decastro1} for building reliable  services' based information systems (SIS). 
-%SOD-M defines a process  starting with the  identification of business services through business modeling, and, by means of models' transformations it allows to obtain a services' composition model \cite{decastro1} and the executable code that implements it. 
-
-Our work proposes to extend the SOD-M \cite{decastro1} method with  (i)  the notion of {\em A-Policy} \cite{Espinosa-Oviedo2011a} for representing non-functional constraints associated to services' based applications.  
-%{\em A-policies} are used to express constraints which can be applied to all the services' composition  or to a particular service used for implementing it. They represent both systems' cross-cutting aspects (e.g., exception handling expressing what to do when a service is not available) and use constraints imposed by the services  (e.g., the fact that a service requires imposes an authentication protocol for executing a method). 
-Our work  also (ii) defines the $\pi$-{\sc Pews}  meta-model \cite{Placido2010LTPD} providing guidelines for expressing the composition and the {\em A-policies}. Finally, our work (iii) defines model to model transformation rules for generating the $\pi$-{\sc Pews} model of a reliable services' composition starting from the extended services' composition model; and, model to text transformations for generating the corresponding implementation. As will be shown within our environment implementing these meta models and rules, one may represent both systems' cross-cutting aspects (e.g., exception handling for describing what to do when a service is not available, recovery, persistence aspects) and constraints associated to services, that must be respected for using them (e.g., the fact that a service requires an authentication protocol for executing a method). 
-
-The remainder of the paper is organized as follows. Section \ref{sec:motivation} gives an overview of our approach. It describes a motivation example that integrates and synchronizes well-known social networks services namely Facebook, Twitter and, Spotify. Sections \ref{sec:piscm}, \ref{sec:pewsmetamodel}, and \ref{sec:mmrules} describe respectively the three key elements of our proposal, namelly the $\pi$-SCM and $\pi$-{\sc Pews} meta-models and the transformation rules that support the semi-automatic generation of reliable services' compositions.
-%describes $\pi$-SOD-M method that enables the representation and association of {\em A-policies} to services' composition  thereby making them reliable. 
-%
-Section \ref{sec:implementation} describes implementation and validation issues.
-Section \ref{sec:related} analyses related work concerning policy/contract based programming and, services' composition platforms. Section \ref{sec:conclusions} concludes the paper and discusses future work.
-
-
 
 
 
