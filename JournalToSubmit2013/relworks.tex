@@ -1,88 +1,48 @@
 
-In this section we present some methods and techniques that are related to our work.
-We begin presenting SOD-M~\cite{decastro1}, a method for the development of web applications.
-SOD-M will be extended in the next sections to deal with NFRs.
-We also present here some other frameworks that are related to our proposal.
+Related works to our approach includes existing proposal dealing with the inclusion of non-functional properties in service-oriented development. Standards devoted for expressing non-functional properties for service-oriented applications are also analyzed in this section which needs to be addresses in the code generation phase. Finally exiting methodology for the development of service-oriented applications including non-functional properties are here depicted and compared with our approach.
+%As a result of our study of related works, in this section we present a categorization of main concepts related the treatment if non-functional requirement in the field of service-oriented development.
 
+\subsection{Non-functional properties in service-oriented applications}
 
-\subsection{SOD-M}\label{sec:sodm}
-The Service-Oriented Development Method (SOD-M)~\cite{decastro1} is a MDD approach for service-based applications.
-SOD-M provides models and notation to specify service applications at different levels of abstraction. 
-As usual for MDD, SOD-M meta-models are organized into three levels: CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
+In previous work we have carried out a systematic review \cite{placidoPhDThesis2012} in order to analyze how non-functional properties are taking into account in existing approaches for service-oriented development. Existing proposals in this field may be classified in three types of works which are described in the followed.
 
-Two models are defined at the CIM level: \textit{value model} 
-and \textit{BPMN model}. 
-\textsc{Explain these two here --Martin.}
+The first types of works are thus considering a particular non-functional concern (e.g. security) which is modeled and then "glued" or associated to functional models of an application. The work of Chollet et al. \cite{CholletL09} defines a proposal to associate non-functional quality properties (security properties in that case) to functional activities which are modeled in a web service composition model.
+Schmeling et al. \cite{SchmelingCM11} present an approach and also a toolset for specifying and implementing non-functional concerns in web service compositions; non-functional concerns are modeled first in non-functional model and then related to a service composition represented in a BPMN diagram. Ovaska et al. \cite{OvaskaEHPA10} present an approach to support quality management at design time. Quality requirements are modeled in a first phase and represented then in an architectural model where quality requirements are associated to some components in the model. In our case we propose to model non-functional properties joint to the modeling of functional concerns what simplifies the web service development process. Non-functional properties are represented in our work as constraints and policies but more general quality model such as the proposed by \cite{Goeb2011,Klass2009} could be taken in consideration in further works.
 
-Models at the PIM level describe the structure of the application flow,
-while, the PSM level provides transformations towards more specific platforms.
-The PIM-level models proposed by SOD-M are: 
-\begin{trivlist}
-\item \textit{use case}: 
-\item \textit{extended use case}:
-\item \textit{service process}:
-\item \textit{service composition}. 
-\end{trivlist}
+Second type of works related to our proposal proposes specifics architecture or frameworks to manage and validate QoS attributes in service composition processes. The work of Xiao et al. \cite{XiaoCZBOLH08} present a framework to verify SLA compliance in composed services. Task in a BPEL process can be annotated with non-functional attributes (such as time, cost, resources, etc.) which are validated at design time. A similar work is presented in \cite{SchmelingCM11} by using a formal method that allows to choice best suited services instances according to a service composition pattern that include some QoS attributes. Babamir et al. present in \cite{Babamir2010} a framework for evaluate quality attributes of web services. By executing an algorithm, the framework allow to choice best web services for any task in a process and also candidate web service to replace original ones in cases it cannot perform at runtime. In \cite{Karunamurthy2012787} authors propose architecture in which web services may be described with non-functional characteristics that are validated in the service composition process.
 
-SOD-M defines three meta-models at the PSM level: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}. 
-These three levels have no support for describing non-functional requirements. 
+Third type of works include proposal working on the evaluation and matching of non-functional properties in the process of search or invocation of particular web services.\cite{AgarwalLS09} define a policy language that provides a way to specific constraints on functional as well as non-functional properties of Web services with the aim of facilitating automated discovery and selection of services.\cite{JeongCL09,Kamalabad2012} defines also proposals to the validate quality attributes of web services when discover and compose.\cite{MohantyRP10} works also on the selection of web service for use considering non-functional properties. The paper present web services quality prediction models, which take non-functional properties into account. Similarly, \cite{Yeom2006} define a quality driven selection of web services providing a QoS model.
 
-The SOD-M approach includes transformations between models:
-\textit{CIM-to-PIM, PIM-to-PIM} and \textit{PIM-to-PSM} transformations. Given
-an abstract model at the CIM level, it is possible to apply transformations for
-generating a model of the PSM level. In this context, it is necessary to
-follow the process activities described by the methodology. 
+Our proposal by the contrary to the second and third type of proposals is focusing on the design of service-oriented application with non-functional properties and not on the validation of QoS attributes at runtime.
 
-SOD-M considers two points of view:
-\textit{(i)} \textit{business}, focusing on the characteristics and requirements
-of the organization, and \textit{(ii)} \textit{system requirements}, focusing on
-features and processes to be implemented in order application requirements. In
-this way, SOD-M aims to simplify the design of service-oriented applications, as
-well as its implementation using current technologies.
+Other relevant works such as \cite{DAmbrogio06,Liu20121080} propose extensions to WSDL and BPEL languages respectively for the inclusion of QoS attributes that can be evaluated at runtime.
 
+\subsection{Standards for programming non-functional properties in service-oriented applications}
 
+Current standards in services' composition implement functional, non-functional constraints and communication aspects by combining different languages and protocols. WSDL and SOAP among others are languages used respectively for describing services' interfaces and message exchange protocols for calling methods exported by such services. For adding a transactional behaviour to a services' composition it is necessary to implement WS-Coordination, WS-Transaction, WS-BussinessActivity and WS-AtomicTransaction. The selection of the adequate protocols for adding a specific non-functional constraints to a services' composition (e.g., security, transactional behaviour and adaptability) is responsibility of a programmer. As a consequence, the development of an application based on a services' composition is a complex and a time-consuming process. This is opposed to the philosophy of services that aims at facilitating the integration of distributed applications. Other works, like \cite{Fauvet05} introduce a model for transactional services composition based on an advanced transactional model.\cite{BhiriGP05} proposes an approach that consists of a set of algorithms and rules to assist designers to compose transactional services. In \cite{Vidyasankar:2004} the model introduced in \cite{SchuldtABS02} is extended to web services for addressing atomicity.
 
+As WS-* and similar approaches, our work enables the specification and programming of crosscutting aspects (i.e., atomicity, security, exception handling, persistence).
+In contrast to these approaches, our work specifies policies for a services' composition in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented according a the knowledge that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach, once defined the policies for a given application they can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints.
 
-Related works to our approach include standards devoted for expressing non-functional constraints for services and services' compositions. They also include methods and approaches for modeling non-functional constraints.
+\subsection{Methodologies for Service-oriented applications development including non-functional properties}
 
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-%\noindent{\bf\em 
-\subsection{Programming non-functional properties for services}
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-Current standards in services' composition implement functional, non-functional constraints and communication aspects by combining different languages and protocols. WSDL and SOAP among others are languages used respectively for describing services' interfaces and message exchange protocols for calling methods exported by such services. For adding a transactional behaviour to a services' composition it is necessary to implement WS-Coordination, WS-Transaction, WS-BussinessActivity and WS-AtomicTransaction. The selection of the adequate protocols for adding a specific non-functional constraints to a services' composition (e.g., security, transactional behaviour and adaptability) is responsibility of a programmer. As a consequence, the development of an application based on a services' composition is a complex and a time-consuming process. This is opposed to the philosophy of services that aims at facilitating the integration of distributed applications. Other works, like \cite{helga2}
-introduce a model for transactional services composition based on
-an advanced transactional model. \cite{samy} proposes an approach
-that consists of a set of algorithms and rules to assist designers
-to compose transactional services. In \cite{Vid04} the model
-introduced in \cite{schuldt-etal-TODS} is extended to web services
-for addressing atomicity.
+Beside the works presented above, there are few methodologies for service-oriented development that address the explicit modeling of non functional properties for service-based applications. Important methodologies for building service-based applications have been proposed in the last years \cite{Ramollari_asurvey,PapazoglouH06,FeuerlichtM05,soma,Arsanjani:2008}, but all of they focus mainly on the modeling and construction process of service-based business processes that represent the functionally of information systems.
 
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-%\noindent{\bf\em 
-\subsection{Modeling non-functional properties}
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-There are few methodologies and approaches that address the explicit modeling  of non functional
-properties for service based applications.   Software process methodologies for
-building  services based applications have been proposed in\cite{PapazoglouH06,cdl2006,FeuerlichtM05,Ramollari_asurvey}, and they focus mainly on the modeling and construction process of services based business processes that represent the application logic of information systems.
+Some methodologies dealing with particular non-functional properties in service orientation have also appeared. Tran et al. \cite{Tran2012531} present a model-driven approach for addressing problems related to compliance concerns. Authors define extend elements of a business process models with elements of a compliance model in which QoS policies are represented.\cite{GutierrezRF10} present PWSSec process, a methodology that provide developers with all the activities, tasks, tools, security artifacts and organizational structures necessary to design a secure WS-based solution.
 
- \textit{Design by Contract} \cite{HL05TACoS} is an approach for specifying web services and verifying them through runtime checkers before they are deployed. A contract adds behavioral information to a service specification, that is, it specifies the conditions in which methods exported by a service can be called. Contracts are expressed using the language \textit{jmlrac} \cite{LeavensCCRC02}.
- The \textit{Contract Definition Language} (CDL) \cite{cdl2006} is a XML-based
-description language, for defining contracts for services. There are an associated architecture framework, design standards and a methodology, for developing applications using services.  A services' based application  specification is generated after several
- \cite{AbrialLNSS91} B-machines refinements that describe the services and their
-compositions.
-\cite{PapazoglouH06} proposes a methodology based on a SOA extension. This work defines a service
-oriented business process development methodology with phases for business process development. The whole life-cycle is based on six phases: planning, analysis and design, construction and testing, provisioning, deployment, and execution and monitoring.
+Unlike methodologies and approaches providing best practices presented above, the main contribution of our proposal is that, integrated to a method that allows to model service-based applications starting from a high-level business modelling, and defining meta-models at different abstraction levels (CIM, PIM and PSM), it enables the design and development of services-based applications that can be reused and that are reliable. The definition of a model-driven approach that allows to model non-functional properties in the early stages of the software development process, and the definition of model transformations to go down in the development process adding more a more implementation details at each modelling stage is a key benefits of our proposal.
+
+%\textit{Design by Contract} \cite{HL05TACoS} is an approach for specifying web services and verifying them through runtime checkers before they are deployed. A contract adds behavioral information to a service specification, that is, it specifies the conditions in which methods exported by a service can be called. Contracts are expressed using the language \textit{jmlrac} \cite{LeavensCCRC02}. The \textit{Contract Definition Language} (CDL) \cite{cdl2006} is a XML-based description language, for defining contracts for services. There are an associated architecture framework, design standards and a methodology, for developing applications using services.  A services' based application  specification is generated after several \cite{AbrialLNSS91} B-machines refinements that describe the services and their compositions.
+
+%\cite{PapazoglouH06} proposes a methodology based on a SOA extension. This work defines a service oriented business process development methodology with phases for business process development. The whole life-cycle is based on six phases: planning, analysis and design, construction and testing, provisioning, deployment, and execution and monitoring.
 %IBM proposes a methodology for the development of SOA solutions, called SOMA \cite{soma}. SOMA defines a life-cycle with seven phases: business modeling and transformation, solution management, identification,
 %specification, realization, implementation and deployment monitoring and management.
 
- %\cite{sommerville08} describes some key points for building services' based applications based on business process models that define the activities and information exchanged in a business processes. Activities in business process can be performed by services so that the model of business process
+%\cite{sommerville08} describes some key points for building services' based applications based on business process models that define the activities and information exchanged in a business processes. Activities in business process can be performed by services so that the model of business process
 %represents a composition of services. It classifies services   as public utilities, business services or
 %composition services. Software development that uses services involves creating programs for composing and configuring services to create new composite services. The service engineering process involves identifying services candidates, service interface and implementation definition, testing and deployment of each service.
 
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-%\noindent{\bf\em 
-\subsection{Discussion}
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-As WS-*  and similar approaches, our work enables the specification and programing of  crosscutting aspects (i.e., atomicity, security, exception handling, persistence). In contrast to these approaches, our work specifies policies for a services' composition in an orthogonal way. Besides, these approaches suppose that non-functional requirements are implemented according a the knowledge that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach, once defined {\em A-Policies} for a given application they can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints. 
 
-Furthermore, unlike methodologies and approaches providing best practices presented above, the main contribution of our proposal is that, integrated to a method that proposes meta-models at different levels (CIM, PIM and PSM) and extending the PSM meta-models, it enables  the design and development of services' based applications that can be reused and that are reliable. 
+
+
+
