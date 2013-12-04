@@ -1,47 +1,77 @@
 %3.1. pi-SoD-M metamodels (presentar los metamodels)
 
 
-The {\em A-policy} based services' composition meta-model (see  in Figure \ref{fig:servicecompositionmodel})
-represents  a workflow needed to implement a services' composition, identifying those entities that collaborate in the business processes (called {\sc Business Collaborators} \footnote{We use {\sc capitals} for referring to meta-models' classes.}) and the {\sc Actions} that  they perform. This model is represented by means of a UML activity diagram. Thus, as shown in Figure \ref{fig:e-scomposition-metamodel}, the meta-model includes typical modeling elements of the activity diagram such as {\sc ActivityNodes}, {\sc InitialNodes} and {\sc FinalNodes}, {\sc DecisionNodes}, etc., along with new elements defined by SOD-M such as {\sc Business Collaborators}, {\sc ServiceActivity} and {\sc Action} (see the white  elements   in Figure \ref{fig:servicecompositionmodel}).
+The {\em A-policy} based service composition meta-model (Figure \ref{fig:e-scomposition-metamodel})
+provides classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.}.
+The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model classes.} and the {\sc Actions} they perform. 
+Instances of this meta-model are UML activity diagrams. 
+Figure~\ref{fig:e-scomposition-metamodel} show the modeling elements.
+Those classes pictured as coloured boxes deal with non-functional properties.
+The classes pictured with a white background are those of SOD-M.
 
-\begin{itemize}
-\item A {\sc Business Collaborator} element represents those entities that collaborate in the business processes by performing some of the required actions. They are graphically presented as a partition in the activity diagram. A collaborator can be either internal or external to the system being modelled. When the collaborator of the business is external to the system, the attribute {\sf\small IsExternal} \footnote{We use the {\sf sans serif} font for referring to models' classes defined using a meta-model.} of the collaborator is set to true.
 
-\item {\sc Action}, a kind of {\sc ExecutableNode}, are represented in the model as an activity. Each action identified in the model describes a fundamental behaviour unit which represents some type of transformation or processing in the system being modelled. There are two types of actions: i) a WebService (attribute Type is {\sf\small WS}); and ii) a simple operation that is not supported by a Web Service, called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
-    
-\item The {\sc ServiceActivity} element is a composed activity that  must be carried out as part of a business service and is composed of one or more executable nodes.
-\end{itemize}
+In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
+\begin{itemizedTrivlist}
+\item A {\sc Business Collaborator} element represents those entities that collaborate in the business processes by performing some of the required actions. 
+They are graphically presented as a partition in the activity diagram. 
+A collaborator can be either internal or external to the system. 
+When the collaborator of the business is external to the system, the attribute {\sf IsExternal}\footnote{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} of the collaborator is set to \textbf{true}.
 
- \begin{figure}[htpb]
+\item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented in the model as an activity. 
+Each action represents some type of transformation or processing. 
+There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation that is not supported by a Web Service, called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.80\textwidth]{figs/E-service-composition-metamodel}
-\caption{{\em A-policy} based services' composition meta-model ($\pi$-SCM)}
+\includegraphics[width=1.0\textwidth]{figs/E-service-composition-metamodel}
+\caption{{\em A-policy} based service composition meta-model ($\pi$-SCM)}
 \label{fig:e-scomposition-metamodel}
 \end{figure}
 
-To illustrate the use of the $\pi$-SCM meta-model we used it for defining the {\em A-policy} based composition model of the "To Publish Music" scenario (see
-Figure \ref{fig:servicecompositionmodel}). There are three external business collaborators ({\em Spotify, Twitter} and {\em Facebook} \footnote{We use {\em italics} to refer to concrete values of the classes of a model that are derived from the classes of a meta-model.}). It also shows the business process  of the  "To Publish Music" application that consists of three service activities: {\em Listen Music}, {\em Public Music} and {\em Confirmation}. Note that  the action {\em Publish Music} of the application calls the actions of two service collaborators namely {\em Facebook} and {\em Twitter}.
+\item The {\sc ServiceActivity} element is a composite activity that must be carried out as part of a business service and is composed by one or more executable nodes.
 
-Instead of programming different protocols within the application logic, we propose to include the modeling of non-functional constraints like transactional behaviour, security and adaptability  at the early stages of the services' composition engineering process. We model non-functional constraints of services' compositions using the notion of {\em A-policy} \cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}, a kind of pattern for specifying {\em A-policy} types. In order to represent constraints associated to services compositions, we extended the SOD-M services' composition model with two concepts: {\sc Rule} and {\sc A-policy} (see blue elements in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+\item In order to represent constraints associated to services compositions, we extended the SOD-M service composition model with two concepts: {\sc Rule} and {\sc A-policy} (see blue elements in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
+An {\em A-policy} is formed by attributes and rules. 
+Intuitively, the conditions of each rule will be checked.
+In case of no compliance, the actions defined by the rule will be performed.
+The {\sc Rule} element represents an event - condition - action rule where the {\sc Event} part represents the moment in which a constraint  will be evaluated.
+An {\em A-policy} defines variables and operations that can be shared by the rules and that can be used for expressing their Event and Condition parts. 
+\end{itemizedTrivlist}
 
-The {\sc Rule} element represents an event - condition - action rule where the {\sc Event} part represents the moment in which a constraint  can be evaluated according to a condition represented by the {\sc Condition} part and the  action  to be executed for reinforcing  it represented by the {\sc Action} part. 
-%An {\em A-policy}  describes  specific constraint types that can correspond to non-functional constraints like  transactional behaviour, security and adaptability. 
-%An {\em A-policy}  defines a set of constraints over the execution states of the servicesÕ composition and defines strategies to enforce this property at the servicesÕ composition execution time.
-An {\em A-policy} groups a set of rules. It describes global variables and operations that can be shared by the rules and that can be used for expressing their Event  and Condition parts. An {\em A-Policy} is associated to the elements {\sc BusinessCollaborator}, {\sc ServiceActivity} and, {\sc Action}  of the $\pi$-SCM meta-model (see Figure \ref{fig:e-scomposition-metamodel}) . 
-
-\begin{figure}[htpb]
+\begin{figure}[t]%[htpb]
 \centering
-\includegraphics[width=0.70\textwidth]{figs/e-composition-model}
-\caption{Services' composition model for the business service "To publish music"}
+\includegraphics[width=0.95\textwidth]{figs/e-composition-model}
+
+{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
+
+\caption{Service composition model for the ``To publish music'' business service.}
 \label{fig:servicecompositionmodel}
 \end{figure}
 
-Given that {\em Facebook} and {\em Twitter} services require authentication protocols in order to execute methods that will read and update the users' space. A call to such services must be part of the authentication protocol required by these services.
-In the example we  associate two authentication policies, one for the open authentication protocol, represented by the class {\sf\small Twitter OAuthPolicy} that will be associated to the activity  {\sf\small UpdateTwitter} (see Figure \ref{fig:servicecompositionmodel}). In the same way, the  class {\sf\small Facebook HTTPAuthPolicy}, for the http authentication protocol will be associated to the activity {\sf\small UpdateFacebook}.
- {\sf\small OAuth}  implements the open authentication protocol.
-As shown in Figure \ref{fig:servicecompositionmodel}, the {\em A-policy} has a variable {\sf\small Token} that will be used to store the authentication token provided by the service. This variable type is imported through the library {\sf\small OAuth.Token}. The {\em A-policy}  defines two rules, both can be triggered by events of type {\sf\small ActivityPrepared}: (i) if no token has been associated to the variable {\sf\small token}, stated in by the condition of rule {\sf\small R$_1$}, then a token is obtained (action part of {\sf\small R$_1$}); (ii) if the token has expired, stated in the condition of rule {\sf\small R$_2$}, then it is renewed (action part of {\sf\small R$_2$}). Note that the code in the actions profits from the imported  {\sf\small OAuth.Token} for transparently obtaining or renewing a token from a third party.
+\begin{example}[To Publish Music]
+To illustrate the use of the $\pi$-SCM meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
+In this model, there are three external business collaborators ({\em Spotify, Twitter} and {\em Facebook} \footnote{We use {\em italics} to refer to concrete values of the classes of a model that are derived from the classes of a meta-model.}). 
+The model also shows the business process of the application that consists of three service activities: {\em Listen Music}, {\em Public Music} and {\em Confirmation}. 
+Note that  the activity {\em Publish Music} calls the actions of two service collaborators namely {\em Facebook} and {\em Twitter}.
+Both {\em Facebook} and {\em Twitter} services require authentication protocols in order to execute methods that will read and update the user space. 
+%A call to such services must be part of the authentication protocol required by these services.
+In the example we  associate two authentication policies, one for the open authentication protocol, represented by the class {\sf\small OAuthPolicy} at {\em Twitter}, that will be associated to the activity  {\sf\small UpdateTwitter} (see Figure \ref{fig:servicecompositionmodel}). 
+In the same way, the {\em Facebook} class {\sf\small HTTPAuthPolicy}, for the http authentication protocol will be associated to the activity {\sf\small UpdateFacebook}.
 
-{\sf\small HTTP-Auth} implements the HTTP-Auth protocol.  As shown in Figure  \ref{fig:servicecompositionmodel}, the {\em A-policy} imports an http protocol library and it has two variables {\sf\small username} and {\sf\small password}.  The event of type {\sf\small ActivityPrepared} is the triggering event of the rule {\sf\small R$_1$}. On the notification of an event of that type, a credential is obtained using the username and password values. The object storing the credential is associated to the scope, i.e., the activity that will then use it for executing the method call.
+{\sf\small OAuthPolicy} will implement the open authentication protocol.
+The {\em A-policy} {\sf\small OAuthPolicy} has a variable {\sf\small Token} that will be used to store the authentication token provided by the service.
+This variable is imported through the library {\sf\small OAuthPolicy.Token}. 
+The A-policy {\sf\small OAuthPolicy} defines two rules, both can be triggered by events of type {\sf\small ActivityPrepared}: (R$_1$): If no token has been associated to the variable {\sf\small token}, then a token is obtained ; and (R$_2$): if the token has expired, then it is renewed. 
+Notice that the code in the actions profits from the imported {\sf\small OAuthPolicy.Token} for transparently obtaining or renewing a token from a third party.
+
+{\sf\small HTTPAuthPolicy} implements the HTTP-Auth protocol. 
+The A-policy imports an http protocol library and it has two variables {\sf\small username} and {\sf\small password}.  
+The event of type {\sf\small ActivityPrepared} is the triggering event of the rule {\sf\small R$_1$}. 
+On the notification of an event of that type, a credential is obtained using the username and password. 
+\hfill\openbox
+\end{example}
+
+{\color{magenta} Aqui\dots  }
 
 Thanks to rules and policies  it is possible to model and associate non-functional properties to services' compositions  and then generate the code. For example, the atomic integration of information retrieved from different social network services, automatic generation of an integrated view of the operations executed in different social networks or for providing security in the communication channel when the payment service is called.
 

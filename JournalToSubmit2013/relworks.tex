@@ -17,14 +17,14 @@ Our proposal by the contrary to the second and third type of proposals is focusi
 
 Other relevant works such as \cite{DAmbrogio06,Liu20121080} propose extensions to WSDL and BPEL languages respectively for the inclusion of QoS attributes that can be evaluated at runtime.
 
-\subsection{Standards for programming non-functional properties in service-oriented applications}
+\subsection{Standards for programming non-func\-tion\-al properties in service-oriented applications}
 
 Current standards in services' composition implement functional, non-functional constraints and communication aspects by combining different languages and protocols. WSDL and SOAP among others are languages used respectively for describing services' interfaces and message exchange protocols for calling methods exported by such services. For adding a transactional behaviour to a services' composition it is necessary to implement WS-Coordination, WS-Transaction, WS-BussinessActivity and WS-AtomicTransaction. The selection of the adequate protocols for adding a specific non-functional constraints to a services' composition (e.g., security, transactional behaviour and adaptability) is responsibility of a programmer. As a consequence, the development of an application based on a services' composition is a complex and a time-consuming process. This is opposed to the philosophy of services that aims at facilitating the integration of distributed applications. Other works, like \cite{Fauvet05} introduce a model for transactional services composition based on an advanced transactional model.\cite{BhiriGP05} proposes an approach that consists of a set of algorithms and rules to assist designers to compose transactional services. In \cite{Vidyasankar:2004} the model introduced in \cite{SchuldtABS02} is extended to web services for addressing atomicity.
 
 As WS-* and similar approaches, our work enables the specification and programming of crosscutting aspects (i.e., atomicity, security, exception handling, persistence).
 In contrast to these approaches, our work specifies policies for a services' composition in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented according a the knowledge that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach, once defined the policies for a given application they can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints.
 
-\subsection{Methodologies for Service-oriented applications development including non-functional properties}
+\subsection{Methodologies for Service-oriented applications development including non-func\-tion\-al properties}
 
 Beside the works presented above, there are few methodologies for service-oriented development that address the explicit modeling of non functional properties for service-based applications. Important methodologies for building service-based applications have been proposed in the last years \cite{Ramollari_asurvey,PapazoglouH06,FeuerlichtM05,soma,Arsanjani:2008}, but all of they focus mainly on the modeling and construction process of service-based business processes that represent the functionally of information systems.
 

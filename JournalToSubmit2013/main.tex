@@ -61,6 +61,76 @@
 %%% OUR MACROS %%%
 \newcommand{\COMMENT}[1]{ }
 
+\usepackage[usenames,dvipsnames]{xcolor}
+
+
+\usepackage{amsmath}
+\usepackage[thmmarks,amsmath]{ntheorem}
+
+\newcommand{\openbox}{\leavevmode
+  \hbox to.77778em{%
+  \hfil\vrule
+  \vbox to.675em{\hrule width.6em\vfil\hrule}%
+  \vrule\hfil}}
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\newtheorem{algo}{Algorithm}
+
+\theoremstyle{plain}
+%\theoremheaderfont{\normalfont\itshape}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{\ensuremath{\openbox}} 
+\newtheorem{example}{Example}
+
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{.}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{\ensuremath{\Box}} 
+\newtheorem{defi}{Definition}
+
+\theoremstyle{plain} 
+\theoremsymbol{\ensuremath{\Box}} 
+\theoremseparator{.} 
+\newtheorem{prop}{Property}
+
+
+
+
+
+
+
+
+\newcounter{numberInTrivlist}
+
+\newenvironment{numtrivlist}{\begin{list}{\rm \arabic{numberInTrivlist})} 
+                                         {\usecounter{numberInTrivlist}
+                                          \setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{12pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+
+\newenvironment{itemizedTrivlist}{\begin{list}{\rm ~\hspace{2mm} $\bullet$\ } 
+                                         {\setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{12pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+
+
 \begin{document}
 
 \begin{frontmatter}
@@ -175,7 +245,7 @@ This paper presents\ldots
 %4.2 Discussion. (o Lecciones aprendidas del caso)
 \input{modelingFlyingPig}
 
-\section{ConclumodelingCrimes.texsions and future work}\label{sec:conclusions}
+\section{Conclusions and future work}\label{sec:conclusions}
 \input{conclusions}
 %*********************************************************************************************************
 
@@ -184,7 +254,7 @@ This paper presents\ldots
 
 %*********************************************************************************************************
 \section{Implementation issues}\label{sec:implementation}
-\input{4-implementation}
+\input{implementation}
 %*********************************************************************************************************
 
 
