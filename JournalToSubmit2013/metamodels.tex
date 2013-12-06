@@ -1,14 +1,13 @@
 %3.1. pi-SoD-M metamodels (presentar los metamodels)
 
 
-The {\em A-policy} based service composition meta-model (Figure \ref{fig:e-scomposition-metamodel})
+The {\em A-policy} based service composition ($\pi$-SCM) meta-model, described in Figure \ref{fig:e-scomposition-metamodel},
 provides classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.}.
 The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model classes.} and the {\sc Actions} they perform. 
 Instances of this meta-model are UML activity diagrams. 
-Figure~\ref{fig:e-scomposition-metamodel} show the modeling elements.
-Those classes pictured as coloured boxes deal with non-functional properties.
+Figure~\ref{fig:e-scomposition-metamodel} show the modelling elements.
+Classes pictured as coloured boxes deal with non-functional properties.
 The classes pictured with a white background are those of SOD-M.
-
 
 In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
 \begin{itemizedTrivlist}
@@ -23,7 +22,7 @@ There are two types of actions: i) a WebService (attribute Type is {\sf WS}); an
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/E-service-composition-metamodel}
-\caption{{\em A-policy} based service composition meta-model ($\pi$-SCM)}
+\caption{$\pi$-Service Composition ($\pi$-SCM) Metamodel.}
 \label{fig:e-scomposition-metamodel}
 \end{figure}
 
@@ -44,13 +43,14 @@ An {\em A-policy} defines variables and operations that can be shared by the rul
 
 {\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
 
-\caption{Service composition model for the ``To publish music'' business service.}
+\caption{$\pi$-SCM for the ``To publish music'' business service.}
 \label{fig:servicecompositionmodel}
 \end{figure}
 
-\begin{example}[To Publish Music]
-To illustrate the use of the $\pi$-SCM meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
-In this model, there are three external business collaborators ({\em Spotify, Twitter} and {\em Facebook} \footnote{We use {\em italics} to refer to concrete values of the classes of a model that are derived from the classes of a meta-model.}). 
+\begin{example}[To Publish Music]\label{ex:toPublicMusic}
+To illustrate the use of the $\pi$-Service Composition Meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
+In this model, there are three external business collaborators ({\em Spotify, Twitter} and {\em Facebook}).
+% \footnote{We use {\em italics} to refer to concrete values of the classes of a model that are derived from the classes of a meta-model.}). 
 The model also shows the business process of the application that consists of three service activities: {\em Listen Music}, {\em Public Music} and {\em Confirmation}. 
 Note that  the activity {\em Publish Music} calls the actions of two service collaborators namely {\em Facebook} and {\em Twitter}.
 Both {\em Facebook} and {\em Twitter} services require authentication protocols in order to execute methods that will read and update the user space. 
@@ -71,48 +71,52 @@ On the notification of an event of that type, a credential is obtained using the
 \hfill\openbox
 \end{example}
 
-{\color{magenta} Aqui\dots  }
+We propose the use of rules and policies to model and associate non-functional properties to service compositions.
+These artifacts will be used to generate the actual programs that will implement the application:
+Once the $\pi$-Service Composition Model has been defined, then it can be transformed into a lower level model (in our case, $\pi$-PEWS) that gives support to code generation. 
+The $\pi$-PEWS  meta-model is described in the next section. 
 
-Thanks to rules and policies  it is possible to model and associate non-functional properties to services' compositions  and then generate the code. For example, the atomic integration of information retrieved from different social network services, automatic generation of an integrated view of the operations executed in different social networks or for providing security in the communication channel when the payment service is called.
 
-Back to the  definition process of a SIS, once the {\em A-policy} based services' composition model has been defined, then it can be transformed into a model (i.e., $\pi$-PEWS model) that can support then executable code generation. The following Section describes the $\pi$-PEWS  meta-model that supports this representation. 
-
-
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
 \subsubsection{$\pi$-{\sc Pews}  meta-model}\label{sec:pewsmetamodel}
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-The idea of the $\pi$-{\sc Pews} meta-model is based on the services' composition approach provided by the language PEWS\cite{BaAM06,Placido2010LTPD} (\textit{Path Expressions for Web Services}), a programming language that lets the service designer  combine the methods or subprograms that
-implement each operation of a service, in order to achieve the desired application logic. Figure \ref{fig:metamodel} presents the $\pi$-{\sc Pews} meta-model
-consisting of  classes representing:
-\begin{itemize}
-\item A services' composition: {\sc Namespace} representing the interface exported by a service, {\sc Operation} that represents a call to a service method, {\sc CompositeOperation}, and  {\sc Operator} for representing a services' composition and {\sc Path} representing a services' composition.
-A {\sc Path} can be an {\sc Operation} or a {\sc Compound Operation}
-denoted by an identifier. A {\sc Compound Operation} is defined using an  {\sc Operator}  that can be represent  sequential ($\ . \ $) and parallel ($\ \| \ $) composition of services,
- choice ($\ + \ $) among services,
-the sequential ($*$) and parallel ($\{\dots\}$) repetition of an operation or the conditional execution of an operation ($[C]S$).
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
 
-\item {\em A-Policies} that can be associated to a services' composition:  {\sc A-Policy}, {\sc Rule}, {\sc Event}, {\sc Condition}, {\sc Action}, {\sc State}, and {\sc Scope}.
-\end{itemize}
+PEWS~\cite{BHM06,Placido2010LTPD} is a notation to express service compositions.
+The language is based on the notion of Path Expressions~\cite{And79} and can easily be translated into any actual composition language, such as B	PEL~\cite{bpel03} or any other language that lets the service designer combine the methods or subprograms that implement each operation of a service, in order to achieve the desired application logic. 
+Figure~\ref{fig:metamodel} presents the $\pi$-{\sc Pews} meta-model, where we identify classes to describe:
+\begin{itemizedTrivlist}
+\item Service compositions: {\sc Namespace} representing the interface exported by a service, {\sc Operation} that represents a call to a service method, {\sc CompositeOperation}, {\sc Operator} and {\sc Path} for representing service compositions.
+A {\sc Path} can be an {\sc Operation} or a {\sc Compound Operation}. 
+A {\sc Compound Operation} is defined using an {\sc Operator}.
+The language defines operators to denote guarded operations ($[C]S$); sequential ($\ . \ $), parallel ($\ \| \ $) and alternative ($\ + \ $) compositions; as well as sequential ($*$) and parallel ($\{\dots\}$) repetition.
+
+\item {\em A-Policies} that can be associated to a service compositions:  {\sc A-Policy}, {\sc Rule}, {\sc Event}, {\sc Condition}, {\sc Action}, {\sc State}, and {\sc Scope}.
+A brie description of these classes is given next.
+\end{itemizedTrivlist}
 %
-\begin{figure}
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.80\textwidth]{figs/PEWSMetamodel}
+\includegraphics[width=1.0\textwidth]{figs/PEWSMetamodel}
 \caption{$\pi$-{\sc Pews} Metamodel}
 \label{fig:metamodel}
 \end{figure}
 
-As shown in the diagram an {\sc A-Policy} is applied to a {\sc Scope} that can be either an {\sc Operation} (e.g., an authentication protocol associated to a method exported by a service),  an {\sc Operator} (e.g., a temporal constraint associated to a sequence of operators, the authorized delay between reading a song title in Spotify and updating the walls must be less then 30 seconds), and a {\sc Path} (e.g., executing the walls' update under a strict atomicity protocol -- all or noting).  It groups a set of ECA rules, each rule having a classic semantics, i.e, {\em when an event of type E occurs if  condition C is verified then execute the action A}.  Thus, an {\em A-policy} represents a set of reactions to be possibly executed if one or several triggering events of its rules are notified.
-\begin{itemize}
-\item The class {\sc Scope} represents any element of a services' composition (i.e., operation, operator, path).
-\item The class {\sc A-Policy} represents a recovery strategy implemented by ECA rules of the form {\sc Event} - {\sc Condition} - {\sc Action}. A {\em A-policy} has variables that represent the view of the execution state of its associated scope, that is required for executing the rules. The value of a variable is represented using the type {\sc Variable}. The class {\sc A-Policy} is specialized for defining specific constraints, for instance authentication {\em A-policies}.
-\end{itemize}
-
+Figure~\ref{fig:metamodel} shows that each {\sc A-Policy} is associated to a {\sc Scope} that can be either an {\sc Operation} (e.g., an authentication protocol associated to a method exported by a service),  an {\sc Operator} (e.g., a temporal constraint associated to a sequence of operators) or a {\sc Path}.  
+Each {\sc A-Policy} groups a set of ECA rules with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}.  
+In this way, an {\em A-policy} represents a set of reactions to be possibly executed when one or several events are notified.
+%In this way,
+%\begin{itemizedTrivlist}
+%\item The class {\sc Scope} represents any element of a service composition (i.e., operation, operator, path).
+%\item The class {\sc A-Policy} represents a recovery strategy implemented by ECA rules of the form {\sc Event} - {\sc Condition} - {\sc Action}. 
+%An {\em A-policy} has variables that represent the view of the execution state of its associated scope, that is required for executing the rules. The value of a variable is represented using the type {\sc Variable}. The class {\sc A-Policy} is specialized for defining specific constraints, for instance authentication {\em A-policies}.
+%\end{itemizedTrivlist}
+%
 %An authentication {\em A-policy} represents the situation where an invocation in
 %an activity occurs until its sender and/or its recipient have been
 %identified. Typically, authentication A-Policies ensure that the invocation of the activity will be done within an authentication protocol.
-%
 
-Given a $\pi$-SCM model of a specific services' based application (expressed according to the $\pi$-SCM meta-model), it is possible to generate its corresponding $\pi$-{\sc Pews} model thanks to transformation rules. The following Section describes the transformation rules between the $\pi$-SCM and $\pi$-{\sc Pews} meta-models of our method.
+Given a $\pi$-SCM model of a specific service based application (expressed according to the $\pi$-SCM meta-model), it is possible to generate its corresponding $\pi$-{\sc Pews} model. 
+The following section describes the transformation rules between the $\pi$-SCM and $\pi$-{\sc Pews} meta-models.
 
 
 
