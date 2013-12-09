@@ -24,14 +24,6 @@ This operation uses the parallel constructor and it is written: {\sf PublishFace
 \end{example}
 
 
-\begin{figure}[t]
-\centering{
-\includegraphics[width=0.96\textwidth]{figs/Mapping-1a.png}
-}
-\caption{ $\pi$-SCM to $\pi$-{\sc Pews} transformations.}
-\label{fig:transformationsA}
-\end{figure}
-
 
 \subsection{Transformation of A-policies and rules into $\pi$-{\sc Pews}}
 
@@ -40,7 +32,7 @@ These classes keep their names, as expressed in the source model.
 The transformation of \textit{rules} is guided by the event types associated to these rules.
 The $\pi$-SCM {\em A-policy} variables, given as {\sc\em $<$Variable:name, Variable:type$>$} are transformed into elements of type {\sc Variable} with attributes {\sc name} and {\sc type} of the $\pi$-SCM model.
 
-As shown in Figures~\ref{fig:transformationsA} and~\ref{fig:transformationsB}, for an event of type {\sc\em Pre} the corresponding transformed rule is of type {\sc Precondition}; for an event of type {\sc\em Post} the corresponding transformed rule is of type {\sc Postcondition}; finally, for an event of type {\sc\em TimeRestriction} the corresponding transformed rule is of type {\sc Time}. 
+As shown in Figures~\ref{fig:transformationsB} and~\ref{fig:transformationsC}, for an event of type {\sc\em Pre} the corresponding transformed rule is of type {\sc Precondition}; for an event of type {\sc\em Post} the corresponding transformed rule is of type {\sc Postcondition}; finally, for an event of type {\sc\em TimeRestriction} the corresponding transformed rule is of type {\sc Time}. 
 The condition inside a $\pi$-SCM rule ({\sc\em Rule:condition}) is transformed into a class {\sc\em Condition:expression} where the attributes of the expression are transformed into elements of type {\sc Attribute}.
 
 \begin{figure}
