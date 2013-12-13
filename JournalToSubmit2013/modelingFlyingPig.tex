@@ -22,30 +22,41 @@ The models presented next were generated as a result of interacting with softwar
 
 \subsection{Computation-Independent Models (CIM)}
 
-$\Pi$-SODM uses two models, to be built at the CIM level (See Section~\ref{sec:modelingWithPISODM}): The E3value~\cite{e3value} model and BPMN~\cite{BPMN}.
+$\Pi$-SODM uses two models at the CIM level (see Section~\ref{sec:modelingWithPISODM}): The E3value~\cite{e3value} model and BPMN~\cite{BPMN}.
+The former is a simple model just to identify the transference of value information between components of the system.
+The BPMN model establishes which are the actors and main tasks of the application.
 
-Figure~\ref{fig:E3valuemodel} shows the value model for the case of \textsl{FlyingPig}.
-The value model is a business model that represents a business case graphically as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).
+Figure~\ref{fig:E3valuemodel} shows the value model for the \FlyingPig\ application.
+It is a business model that graphically represents a business case as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).
 
 In our use-case, we identify two business actors: \textsl{ORCA} and \textsl{Broker}. 
 Brokers are responsible for channelling requests for risk assessment of one or several companies. 
-ORCA have two value activities which are services that provide an economical benefit: to \textsl{Identify Amendments} and the possibility to \textsl{Asses Risk Situation}. 
+ORCA have two value activities which are services that provide an economical benefit: to \textsl{Identify Amendments} and the possibility to \textsl{Assess Risk Situation}. 
 The values exchanged between ORCA and the brokers are: \textsl{Amendments} and \textsl{Evaluation Reports} which are value objects ([ \!\dots]) for the companies that need to have a risk assessment, as well as  \textsl{Questionnaire and Evidences} and the risk assessment \textsl{Fee} which are value objects for ORCA System.
 
-The e3value model is a static representation of a business case.
-The model defines \textit{dependency paths}, showing the value exchanges, which are triggered by the occurrence of an end-consumer need (in our case, the need of a risk assessment). 
+The e3value defines \textit{dependency paths}, showing the value exchanges, which are triggered by the occurrence of an end-consumer need (in our case, the need of a risk assessment). 
 A dependency path has a direction and consists of a sequence of linked dependency nodes.
-A dependency path startr with a \textit{start stimulus} node and ends with an \textit{end stimulus} node (see Legend on Figure~\ref{fig:E3valuemodel}). 
+A dependency path starts with a \textit{start stimulus} node and ends with an \textit{end stimulus} node (see Legend on Figure~\ref{fig:E3valuemodel}). 
+Dependency paths may also contain \textsl{OR} and \textsl{AND} elements (both for initiate and join alternative and parallel paths).
 
-AQUI!!!
+The dependency path in Figure~\ref{fig:E3valuemodel} initiates with the need of assessment by a particular company. 
+Once this need occurs, the value exchanges between ORCA and Broker are triggered. 
+The client company will provide orca wit information (answers to a questionary), evidence (to support the information) and a fee (monetary value).
+ORCA will provide amendments (recommendations to change practices) and an evaluation report. 
 
-Figure~\ref{fig:E3valuemodel} shows the dependency paths for \textsl{FlyingPig}. The dependency path identified in that case is the need of assessment of a particular company. It denotes a stimulus caused by the client company who ask for risk assessment. Once this need occurs the value exchanges between ORCA and Broker are triggered. The value model represent that ORCA will provide amendments and an evaluation report in return for the questionnaire and evidences and the fees provided by the Broker. 
+The BPMN model is devised to better understand the process in which the value exchanges occur.
+Figure~\ref{fig:BPMNmodel} shows the BPMN model\footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/.} for the \FlyingPig\ scenario. 
+The model includes two pools representing the \textsl{ORCA} system and the \textsl{Brokers}. 
+Brokers have two lanes, the client \textsl{Company} and a \textsl{User}. 
+The user is a contact member of the company, who will coordinate the assessment process. 
+This process will involve other members of the company as well.
 
-{\color{blue} Javier: Please modify the value model to include fee as a value object in return for evaluation report. Modified figure is on the git}
-
-A better understanding of the process in which these value exchanges occurs may be modeled using a BPMN model. Figure~\ref{fig:bpmn} shows the BPMN model\footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} for the scenario. It includes two pools representing the \textsl{ORCA} system and the \textsl{Brokers}. Brokers have two lanes, the client \textsl{Company} and a \textsl{User}. The user is a contact member of the company, who will coordinate the assessment process. This process will involve other members of the company as well.
-
-The process starts by a request from a company asking for a risk assessment. Note that it is in agreement with the explanation of the start stimulus on the value model above. The request leads to the definition of a group of users that will answer questionnaires for evaluating risk. Questionnaires are considered tasks that users will have to perform. Given a list of tasks, the company assign a responsible and delegate the task. A task may be to answer a questionnaire or add an evidence but also could implies to solve some "risky situation" (e.g. to repair a door {\color{blue} ...¿Genoveva mira por favor si esto puede ser o hay algun ejemplo mas bueno/serio???} ).
+The risk assessment process starts after a request from a company.
+This agrees with the value model, in which the start stimulus triggers the whole process. 
+The request leads to the definition of a group of users that will answer questionnaires for evaluating risk.
+Questionnaires are considered tasks that users will have to perform. 
+Given a list of tasks, the company delegates the task to a user.
+A task may be to answer a questionnaire, add an evidence as well as to solve a ``risky situation'' (e.g. to repair a door {\color{blue} ...¿Genoveva mira por favor si esto puede ser o hay algun ejemplo mas bueno/serio???} ).
 
 Once a tasks are completed they are stored and analyzed to generate a set of un-compliant situations associated to their corresponding amendments if there are any or a report specifying a compliance level, incidents and a risk map.
 During the process of analysing a questionnaire, the answers of some questions can trigger the generation of other questionnaires or amendments, that become new tasks to be executed.  
@@ -60,8 +71,7 @@ In our example we have some constraints.
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/BPMN_GCP.pdf}
-\caption{BPMN model for FlyingPig.\label{fig:BPMNmodel}}
-\label{fig:bpmn}
+\caption{BPMN model for \FlyingPig.\label{fig:BPMNmodel}}
 \end{figure}
 
 
@@ -74,22 +84,19 @@ In our example we have some constraints.
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figs/UseCaseGeneral.png}
-\caption{$\pi$-UseCase model for FlyingPig.\label{fig:piUseCaseModel}}
-\label{fig:bpmn}
+\caption{$\pi$-UseCase model for \FlyingPig.\label{fig:piUseCaseModel}}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figs/ServiceProcessGeneral.png}
-\caption{$\pi$-ServiceProcess model for FlyingPig.\label{fig:PiServiceProcessModel}}
-\label{fig:bpmn}
+\caption{$\pi$-ServiceProcess model for \FlyingPig.\label{fig:PiServiceProcessModel}}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figs/ServiceCompositionGeneral.png}
-\caption{$\pi$-ServiceComposition model for FlyingPig.\label{fig:PiServiceCompositionModel}}
-\label{fig:bpmn}
+\caption{$\pi$-ServiceComposition model for \FlyingPig.\label{fig:PiServiceCompositionModel}}
 \end{figure}
 
 
@@ -98,6 +105,54 @@ In our example we have some constraints.
 {\color{magenta} Placido and Umberto: Could you please insert the $\pi$-PEWS model here? --G \& M.}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%% By Placido...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Pi-UseCase Model description for FlyingPig
+
+The piUseCase model shown in Figure  X models the use cases (features) and constrainsts for the FlyingPig application. 3 actors are identified in this model, the are: (I) Company, (II) User and the (III) Channel-Broker. The Company is the whom ask for risk evaluation, the (II) Channel-Broker is the responsible for managing a defining the evaluation flow, beyond create responsible for evaluating and delegate the tasks. This model also represents the (III) User actor which answers questionnaires for the assessment, including evidence and proceeding with necessary corrections when asked for this type of task.
+
+Each actor is associated with use cases. Use cases represent the actions that the actors are responsible. Altogether, this model defines 6 (six) use cases. The use cases related to the Company's actor is (i) request assessment. The use cases related to Broker-Channel's actor are: (ii) create a responsable and (iii) delegate task; and the use cases related User's actor are: (iv) answer questionnaire and add evidences, (v) register task, and (vi) perform amendment.
+
+In this model, each use case may be related with one or more constraints. The constraints can be of three types: value , business or exceptional behavior . This model as a whole has 7 constraints . The use case (i) request assessment has 2 constraints related with, the are from the value type. One is related to ( i.a) response time (confirmation) that should be up to 30 seconds , and the other ( i.b ) describes that the system should support a large number of requests from different companies . Moreover ( i.c ) if the number of requests exceeds 200 , FlyingPig should make a load balance of the requests. The use case create a responsable has a value constraint ( ii.d ) which defines that the Channel-Broker must have privileges verified before the execution to perform this action. This use case also ( ii.c ) is also related with the load balancing verification. The use case ( iii ) delegate task has no associated constraint . The use case answer questionnaire and add evidences have 2 constraints , they are: the User which performs this action ( iv.e ) must have privileges to answer the questionnaires and ( iv.f ) the time limit must be less than 15 days. The use case register task has 3 constraints associated . Two of them are the same constraints related with the request assessment use case, where (v.a) need a response time confirmation that should be up to 30 seconds, and the other ( v.b ) describes what the system should support a large number of requests for this action, once Users from various companies will be answering the questionnaire and performing tasks. The other constraint requires that ( v.g ) throughout the survey all the questions must be properly answered . Finally , the use case ( vi.f ) perform amendment must be executed in a set time limit in days, the same constraint related with the use case questionnaire answer and add evidences. Figure A presents the relation between the use case and its constraints.
+
+
+
+
+
+
+TABLE A - RELATION BETWEEN USE CASE AND CONSTRAINT
+use cases / constraints	(i) request assessment	(ii) create e responsable 	(iii) delegate task	(iv) answer questionnaire and add evidences	(v) register task	(vi) perform amendment
+(a) confirmation must be received in up to 30sec	X				X	
+(b) requires concurrency for more than 200 users	X				X	
+(c) load balance if there is more than 200 requests	X	X				
+(d) requires Broker’ privileges		X				
+(e) requires User' privileges				X		
+(f) all tasks must be done within a given time limit (e.g. maximum of 15 days)				X		X
+(g) requires questionnaire completion					X	
+
+
+Pi-ServiceProcess Model description for FlyingPig 
+
+The pi-ServiceProcess model (Figure Y) represents the application execution flow of FlyingPig. In this model the action are the result of the use case transformation identified in pi-UseCase model according to their respective actors. The Company, Broker-Channel and User actors are transformed into rays that represent the business collaborators.
+
+The restrictions associated with each use case are transformed into assertions. The set of assertions related to a particular action form the contract for this action. The process of FlyingPig executing begins with the action ( i ) request assessment performed by the Company. This action has one pre-condition regarding the response time and a post-condition concerning the load balance control for the server when it reaches 200 requests. Once the request is made by the Company for risk analysis, the Broker ( ii ) creates responsible for its analysis and ( iii ) delegate the necessary risk assessment. These actions are executed in sequence and has a pre-condition concerning the Broker's privilege. This can only create responsible and delegate the tasks if their authentication datas are correct and if and there was less than 3 requests. The tasks to be performed by the User can be ( iv ) answer questionnaire and add evidences; or ( v) perform amendments. Both the assertion has one pre-condition concerning the time limit for form submission. In this example, we use the limit of 15 days for form submission. If the User is performing the task of answer questionnaire and add evidences, this will have to enter with their authentication data. As postcondition, it is checked if all the answers were answered . The action of perform amendments has no additional verification. Finally, the user registers the tasks performed. This action has response time verification.
+
+This model refines the concepts defined in the pi-UseCase model in order to better describe the assertions and groups them into contracts.
+
+
+Pi-ServiceComposition Model description for FlyingPig 
+
+This model (presented in Figure Z) describes the interactions of the actions described in pi-ServiceProcess model with the external services. Services are provided through the ORCA system and the access is accomplished by FlyingPig interface. FlyingPig is the point of interaction between the actions described in the precess with the services offered by ORCA. FlyingPig provides an interface with five actions, they are: receive a request, generate new interface, create questionnaire, notify responsable e receive answers.. This interface makes the direct calls for the ORCA' services. The services offered by ORCA are: create space company, generate the questionnaire, analyze answer, data store, call for amendment and create report. These services are called according to the process execution.
+
+With respect to non-functional requirements, the assertions grouped into contract in the pi-ServiceProcess model are transformed into policies in the pi-ServiceComposition model. The policies identified in this case study are: security, performance and conformability policies. Each policy is associated with specific the services and it is verified at the service execution time regarding the specific rule which the sercive is associated with..
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lessons Learned}
 
 Through the example we underlined that every application implements functional aspects that describe its application logic.
