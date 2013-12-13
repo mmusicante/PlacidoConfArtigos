@@ -1,56 +1,35 @@
 
-The methodology for supporting the construction of service-oriented applications, taking into account both functional and non-functional requirements presented in this work extends the \textit{Service Oriented Development Method} (SOD-M) proposed by De Castro et al.\cite{decastro1}.
 
-SOD-M define a model-driven approach for development service-based applications. The model-driven method provided by SOD-M is based on the Model Driven Architecture (MDA) proposed by the OMG \cite{miller}. MDA defines a top-down approach for the development of software systems that uses the notion of \textit{model} to specify a software system at different levels of abstraction (called \textit{viewpoints}):
 
-\begin{trivlist}
-\item \textbf{Computation Independent Models (CIM):} This level focusses on the
-environment of the system, as well as on its business and requirement specifications.
-This viewpoint represents the software system at its highest level of abstraction.
-At this moment of the development, the structure and system processing details are still unknown or undetermined.
+%\textsc{Explain these two here --Martin.}
 
-\item \textbf{Platform Independent Models (PIM):} This level focusses on the system functionality, hiding the details of any particular platform.
-The specification defines those parts of the system that do not change from one platform to another.
+%Models at the PIM level describe the structure of the application flow,
+%while, the PSM level provides transformations towards more specific platforms.
+%The PIM-level models proposed by SOD-M are:
+%\begin{trivlist}
+%\item \textit{use case}:
+%\item \textit{extended use case}:
+%\item \textit{service process}:
+%\item \textit{service composition}.
+%\end{trivlist}
 
-\item \textbf{Platform Specific Models (PSM):} This level focusses on the functionality, in the context of a particular implementation platform.
-Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system.
-\end{trivlist}
-
-Besides the notion of model at each level of abstraction, MDA propose the use of \textit{model transformations} within and between levels. Intra-level transformations are used to provide a unified representation of concepts of a given level. Inter-level transformation implement a refinement process between levels. Transformations may be automatic or semi-automatic.
-
-According to MDA guidelines, SOD-M meta-models are organized into three levels: CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}).
-
-Two models are defined at the CIM level: \textit{value model}
-and \textit{BPMN model}.
-\textsc{Explain these two here --Martin.}
-
-Models at the PIM level describe the structure of the application flow,
-while, the PSM level provides transformations towards more specific platforms.
-The PIM-level models proposed by SOD-M are:
-\begin{trivlist}
-\item \textit{use case}:
-\item \textit{extended use case}:
-\item \textit{service process}:
-\item \textit{service composition}.
-\end{trivlist}
-
-SOD-M defines three meta-models at the PSM level: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}.
-These three levels have no support for describing non-functional requirements.
-
-The SOD-M approach includes transformations between models:
-\textit{CIM-to-PIM, PIM-to-PIM} and \textit{PIM-to-PSM} transformations. Given
-an abstract model at the CIM level, it is possible to apply transformations for
-generating a model of the PSM level. In this context, it is necessary to
-follow the process activities described by the methodology.
-
-SOD-M considers two points of view:
-\textit{(i)} \textit{business}, focusing on the characteristics and requirements
-of the organization, and \textit{(ii)} \textit{system requirements}, focusing on
-features and processes to be implemented in order application requirements. In
-this way, SOD-M aims to simplify the design of service-oriented applications, as
-well as its implementation using current technologies. 
-
-{\LARGE \color{red} Relocate the next subsections or delete them --Genoveva and Martin}
+%SOD-M defines three meta-models at the PSM level: \textit{web service interface}, \textit{extended composition service} and \textit{business logic}.
+%These three levels have no support for describing non-functional requirements.
+%
+%The SOD-M approach includes transformations between models:
+%\textit{CIM-to-PIM, PIM-to-PIM} and \textit{PIM-to-PSM} transformations. Given
+%an abstract model at the CIM level, it is possible to apply transformations for
+%generating a model of the PSM level. In this context, it is necessary to
+%follow the process activities described by the methodology.
+%
+%SOD-M considers two points of view:
+%\textit{(i)} \textit{business}, focusing on the characteristics and requirements
+%of the organization, and \textit{(ii)} \textit{system requirements}, focusing on
+%features and processes to be implemented in order application requirements. In
+%this way, SOD-M aims to simplify the design of service-oriented applications, as
+%well as its implementation using current technologies. 
+%
+%{\LARGE \color{red} Relocate the next subsections or delete them --Genoveva and Martin}
 
 
 
@@ -91,15 +70,15 @@ Service oriented computing promotes ease of information systems' construction th
 %
 %Our proposal, called $\pi$-SOD-M, extends the services' composition model of the SOD-M method  with the notion of {\em A-Policy} \cite{Espinosa-Oviedo2011a} for representing services' composition constraints. 
 %
-Our work extends SOD-M for building applications by modeling the application logic and its associated non-functional constraints and thereby ensuring the generation of reliable services' composition. 
-%This method is described in the following sections.
-In order to do, our work organizes non-functional constraints into 
-three layers representing: application modeling, services composition and services. The service composition layer serves as an integration layer between the services layer that exports methods and has associated constraints and characteristics; and the application layer that expresses requirements.
-At the application layer NFP can refer to business rules and values. A value NFR expresses constraints about the way data and functions can be accessed and executed. For example accessing methods under security protocols.
-
-Business NFP at the service layer concerns properties that are associated to services and defines how to call their exported operations (business properties). For example, response time, storage capacity (e.g., Dropbox service provides 5Giga free storage). Value constraints concern more on the conditions in which services can be used. For example, accessing to a function within an authentica-tion protocol.
-
-Finally, at the service composition layer gives an abstract view of the kind of properties exported by services that can be combined for providing NFP for a composition. For example, confidentiality, authentication, privacy and access control can provide security at the service composition layer.
-
-As a first step in our approach,  we started modeling non-functional constraints at the PSM level. Thus, in this paper we  propose the $\pi$-SCM, the services' composition meta-model extended with {\em A-policies} for modeling non-functional constraints (highlighted in Figure  \ref{fig:sodm} and described in Section \ref{sec:piscm}).  $\pi$-SOD-M defines the $\pi$-{\sc Pews}  meta-model providing guidelines for expressing the services' composition and the {\em A-policies} (see Section \ref{sec:pewsmetamodel}), and also defines model to model transformation rules for generating  $\pi$-{\sc Pews} models starting from $\pi$-SCM models that will support executable code generation (see Section \ref{sec:mmrules}). Finally, our work defines model to text transformation rules for generating the program that implements both the services' composition and the associated {\em A-policies} and that is executed by an adapted engine (see Section \ref{sec:implementation}).
+%Our work extends SOD-M for building applications by modeling the application logic and its associated non-functional constraints and thereby ensuring the generation of reliable services' composition. 
+%%This method is described in the following sections.
+%In order to do, our work organizes non-functional constraints into 
+%three layers representing: application modeling, services composition and services. The service composition layer serves as an integration layer between the services layer that exports methods and has associated constraints and characteristics; and the application layer that expresses requirements.
+%At the application layer NFP can refer to business rules and values. A value NFR expresses constraints about the way data and functions can be accessed and executed. For example accessing methods under security protocols.
+%
+%Business NFP at the service layer concerns properties that are associated to services and defines how to call their exported operations (business properties). For example, response time, storage capacity (e.g., Dropbox service provides 5Giga free storage). Value constraints concern more on the conditions in which services can be used. For example, accessing to a function within an authentica-tion protocol.
+%
+%Finally, at the service composition layer gives an abstract view of the kind of properties exported by services that can be combined for providing NFP for a composition. For example, confidentiality, authentication, privacy and access control can provide security at the service composition layer.
+%
+%As a first step in our approach,  we started modeling non-functional constraints at the PSM level. Thus, in this paper we  propose the $\pi$-SCM, the services' composition meta-model extended with {\em A-policies} for modeling non-functional constraints (highlighted in Figure  \ref{fig:sodm} and described in Section \ref{sec:piscm}).  $\pi$-SOD-M defines the $\pi$-{\sc Pews}  meta-model providing guidelines for expressing the services' composition and the {\em A-policies} (see Section \ref{sec:pewsmetamodel}), and also defines model to model transformation rules for generating  $\pi$-{\sc Pews} models starting from $\pi$-SCM models that will support executable code generation (see Section \ref{sec:mmrules}). Finally, our work defines model to text transformation rules for generating the program that implements both the services' composition and the associated {\em A-policies} and that is executed by an adapted engine (see Section \ref{sec:implementation}).
 

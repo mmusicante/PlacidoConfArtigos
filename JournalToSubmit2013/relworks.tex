@@ -45,4 +45,22 @@ Unlike methodologies and approaches providing best practices presented above, th
 
 
 
+SOD-M define a model-driven approach for development service-based applications. The model-driven method provided by SOD-M is based on the Model Driven Architecture (MDA) proposed by the OMG \cite{miller}. MDA defines a top-down approach for the development of software systems that uses the notion of \textit{model} to specify a software system at different levels of abstraction (called \textit{viewpoints}):
 
+\begin{trivlist}
+\item \textbf{Computation Independent Models (CIM):} This level focusses on the
+environment of the system, as well as on its business and requirement specifications.
+This viewpoint represents the software system at its highest level of abstraction.
+At this moment of the development, the structure and system processing details are still unknown or undetermined.
+
+\item \textbf{Platform Independent Models (PIM):} This level focusses on the system functionality, hiding the details of any particular platform.
+The specification defines those parts of the system that do not change from one platform to another.
+
+\item \textbf{Platform Specific Models (PSM):} This level focusses on the functionality, in the context of a particular implementation platform.
+Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system.
+\end{trivlist}
+
+Besides the notion of model at each level of abstraction, MDA propose the use of \textit{model transformations} within and between levels. Intra-level transformations are used to provide a unified representation of concepts of a given level. Inter-level transformation implement a refinement process between levels. Transformations may be automatic or semi-automatic.
+
+
+The methodology for supporting the construction of service-oriented applications, taking into account both functional and non-functional requirements presented in this work extends the \textit{Service Oriented Development Method} (SOD-M) proposed by De Castro et al.\cite{decastro1}.

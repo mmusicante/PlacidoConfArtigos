@@ -19,6 +19,11 @@ Yet, non-functional properties of  services, often expressed as requirements and
 Most methods integrate them only after the application has been implemented.
 This leads to service based applications that are partly specified and, thereby, partialy compliant with the requirements of the application.
 
+Adding non-functional requirements and services constraints in the services' composition is a complex task that implies programming  protocols for instance authentication protocols to call a service in our example, and atomicity (exception handling and recovery) for ensuring a true synchronization of the results produced by the service methods calls.
+% song title disseminated in the walls of the user's Facebook and Twitter accounts. 
+
+Service oriented computing promotes ease of information systems' construction thanks, for instance, to services' reuse. Yet, this is not applied to non-functional constraints as the ones described previously, because they do not follow in general the same service oriented principle and because they are often not fully considered in the specification process of existing services' oriented development methods. Rather, they   are either supposed to be ensured by the underlying execution platform, or they are programmed through ad-hoc protocols. Besides,  they are partially or rarely methodologically derived from the application specification, and they are added once the code has been implemented. In consequence, the resulting application does not fully preserve the compliance and reuse expectations provided by the service oriented computing methods.
+
 Ideally, non-functional requirements should be considered along with all the stages of the software development.
 The adoption of non-functional specifications from the early states of development
 can help the developer to produce applications that  can deal with
@@ -39,11 +44,9 @@ $\pi$-SODM is aligned with the MDD directives and proposes models, practices and
 \item \textit{(ii)} To reduce the programming effort through the semi-automatic generation of  models for the application, to produce concrete implementations from high abstraction models.
 \end{trivlist}
 
-The main contributions of our work are:
-\begin{trivlist}
-\item \textit{(i)} An NFR model including a set of concepts need for the modeling of NFR in service-oriented applications.
-\item \textit{(ii)} A methodology for supporting the construction of service-oriented applications, taking into account both functional and non-functional requirements;
-\end{trivlist}
+The main contribution of our work is a methodology for supporting the construction of service-oriented applications, taking into account both functional and non-functional requirements. The methodology is based on  an NFR model including a set of concepts need for the modeling of NFR in service-oriented applications.
+
+
 Accordingly, the remainder of the paper is organized as follows.
 Section\dots
 
