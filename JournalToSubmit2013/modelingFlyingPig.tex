@@ -1,34 +1,43 @@
-We validated our methodology by in a use-case concerning risk assessment for financial companies, inspired on the ORCA System\footnote{The ORCA System is a trademark of GCP Global www.gcpglobal.com.}.
+We validated our methodology by developing a use-case concerning risk assessment for financial companies.
+Our application is inspired on the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
 Risk assessment is implemented by an interactive business process based on the exchange of a series of questionnaires intended to evaluate the risks implied the client's business practice.
-For instance, the condition in which confidential transactions are performed, the physical security for accessing reserved areas (i.e. access to the critical servers room should be secured).
-This information is used to determine whether there are risky actions within the business processes of the company that can be amended.
-It is also used to determine a degree of compliance to existing norms.
+For instance, the conditions and protocols used to perform confidential transactions, the physical security for accessing reserved areas such as computing server installations.
+The information gathered by the questionnaires is used to determine whether there are risky practices within the business processes of the company, as well as to propose amends to these practices.
+The ultimate goal of the risk assessment is to determine a degree of compliance to existing standards.
 By analysing the questionnaires, ORCA detects risky practices, proposes solutions and triggers further assessment processes to ensure that the solutions have been implemented.
 
-Our goal is to model a service based application (called \textsl{FlyingPig}), for providing risk assessment as a service.
-In order to provide this functionality \textsl{FlyingPig} would benefit from ORCA's legacy services: storage, assessment and data visualization functions.
+Our goal is to model a service based application (called \FlyingPig), for providing risk assessment as a service.
+In order to provide this functionality, \FlyingPig\ would benefit from ORCA's legacy services: storage, assessment and data visualization functions.
 
-In the following, we describe the results of applying $\Pi$-SODM to develop the \textsl{FlyingPig} risk assessment system.
-The models presented next are the final results of the application of $\Pi$-SODM.
-They were generated as a result of interactions with GCP Global software developers.
+In the following, we describe the results of applying $\Pi$-SODM to develop the \FlyingPig\ risk assessment system.
+The models presented next were generated as a result of interacting with software developers at GCP Global.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{figs/E3-Value.pdf}
-\caption{E3value model of the FlyingPig.\label{fig:E3valuemodel}}
+\includegraphics[width=0.7\textwidth]{figs/3ValueModel.pdf}
+\hspace*{5cm}\includegraphics[width=0.4\textwidth]{figs/3ValueKey.pdf}
+\caption{E3value model for \FlyingPig.\label{fig:E3valuemodel}}
 \end{figure}
 
 
-\subsection{CIM}
+\subsection{Computation-Independent Models (CIM)}
 
-$\Pi$-SODM uses two models, to be built at the CIM level (See Section~\ref{sec:modelingWithPISODM}).
+$\Pi$-SODM uses two models, to be built at the CIM level (See Section~\ref{sec:modelingWithPISODM}): The E3value~\cite{e3value} model and BPMN~\cite{BPMN}.
 
-Figure~\ref{fig:E3valuemodel} shows the value model~\cite{e3value} for the case of \textsl{FlyingPig}.
-The value model is a business model that represents a business case graphically as a set of value exchanges ($\bigtriangleup\ \bigtriangledown$) and value activities (rounded boxes) performed by business actors (squared boxes).
+Figure~\ref{fig:E3valuemodel} shows the value model for the case of \textsl{FlyingPig}.
+The value model is a business model that represents a business case graphically as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).
 
-In our use-case, we identify two business actors: \textsl{ORCA} and \textsl{Broker}. Brokers are the responsible for channeling requests for risk assessment of one or several companies. ORCA have two value activities which are services that provide it an economical benefit: to \textsl{identify amendments} and the possibility to \textsl{asses risk situation}. The value exchanged between ORCA and Brokers are: \textsl{amendments} and \textsl{evaluation reports} which are value objects ([...]) for the any companies that need to have a risk assessment, and the \textsl{questionnaire and evidences} and the risk assessment \textsl{fee} which are value objects for ORCA System.
+In our use-case, we identify two business actors: \textsl{ORCA} and \textsl{Broker}. 
+Brokers are responsible for channelling requests for risk assessment of one or several companies. 
+ORCA have two value activities which are services that provide an economical benefit: to \textsl{Identify Amendments} and the possibility to \textsl{Asses Risk Situation}. 
+The values exchanged between ORCA and the brokers are: \textsl{Amendments} and \textsl{Evaluation Reports} which are value objects ([ \!\dots]) for the companies that need to have a risk assessment, as well as  \textsl{Questionnaire and Evidences} and the risk assessment \textsl{Fee} which are value objects for ORCA System.
 
-Beside the static representation of a business case, the value model allows for the representation of dependency paths which enhance the understanding of a business idea by showing all value exchanges triggered by the occurrence of an end-consumer need. A dependency path has a direction and consists of dependency nodes linked by mean of connections. A dependency node is a start stimulus, an AND-fork or AND-join, an OR-fork or OR-join, or an end node (see Legend on Figure~\ref{fig:E3valuemodel}). An start stimulus represents a trigger for the exchange of economic value objects while an end node represents a model boundary.
+The e3value model is a static representation of a business case.
+The model defines \textit{dependency paths}, which show that the value exchanges are triggered by the occurrence of an end-consumer need. 
+A dependency path has a direction and consists of a sequence of linked nodes. 
+A dependency node is a start stimulus, an AND-fork or AND-join, an OR-fork or OR-join, or an end node (see Legend on Figure~\ref{fig:E3valuemodel}). An start stimulus represents a trigger for the exchange of economic value objects while an end node represents a model boundary.
+
+Besides the static representation of a business case, the value model allows for the representation of dependency paths which enhance the understanding of a business idea by showing all value exchanges triggered by the occurrence of an end-consumer need. A dependency path has a direction and consists of dependency nodes linked by mean of connections. A dependency node is a start stimulus, an AND-fork or AND-join, an OR-fork or OR-join, or an end node (see Legend on Figure~\ref{fig:E3valuemodel}). An start stimulus represents a trigger for the exchange of economic value objects while an end node represents a model boundary.
 
 Figure~\ref{fig:E3valuemodel} shows the dependency paths for \textsl{FlyingPig}. The dependency path identified in that case is the need of assessment of a particular company. It denotes a stimulus caused by the client company who ask for risk assessment. Once this need occurs the value exchanges between ORCA and Broker are triggered. The value model represent that ORCA will provide amendments and an evaluation report in return for the questionnaire and evidences and the fees provided by the Broker. 
 
