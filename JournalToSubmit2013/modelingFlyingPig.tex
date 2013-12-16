@@ -136,7 +136,7 @@ In the case of \FlyingPig, the model counts seven constraints:
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{figs/ServiceProcessGeneral.png}
+\includegraphics[width=1.0\textwidth]{figs/ServiceProcessGeneralCut.png}
 \caption{$\pi$-ServiceProcess model for \FlyingPig.\label{fig:PiServiceProcessModel}}
 \end{figure}
 
@@ -145,78 +145,49 @@ In the case of \FlyingPig, the model counts seven constraints:
 The $\pi$-ServiceProcess model (Figure~\ref{fig:PiServiceProcessModel}) presents the workflow for \FlyingPig.
 The actions in this model were obtained by applying the use case transformation rules described in Section~\ref{sec:pewsmetamodel}.
 
-The Company, Broker-Channel and User actors are transformed into lanes that represent the business collaborators.
+The \textsf{Company}, \textsf{Broker-Channel} and \textsf{User} actors are transformed into lanes that represent the business collaborators.
 Use cases are transformed into \textit{actions} and are represented by white boxes.
 The restrictions associated to each use case are transformed into \textit{assertions} (represented by coloured boxes) and may be decorated with pre- and post-conditions. 
-The set of assertions related to a particular action form a \textit{contract} for this action. 
+We can see that this model refines the concepts defined in the $\pi$-UseCase model.
+The assertions specify those non-functional requirements, as they are seen by the actors. 
+The next step in the development is to add these assertions to the models that specify the \FlyingPig\ system.
 
-This model refines the concepts defined in the $\pi$-UseCase model and it is more suited to better describe the assertions, by grouping them into contracts.
-
-\begin{figure}
+\begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{figs/ServiceCompositionGeneral.png}
+\includegraphics[width=1.0\textwidth]{figs/ServiceCompositionGeneralCut.png}
+{\color{red} \raggedright
+$\star$ Change FlyingFish by \FlyingPig.
+}
 \caption{$\pi$-ServiceComposition model for \FlyingPig.\label{fig:PiServiceCompositionModel}}
 \end{figure}
 
 \paragraph{\underline{$\pi$-ServiceProcess Model for \FlyingPig}}~
 
-This model presented in Figure~\ref{fig:PiServiceCompositionModel} describes the interactions of the actions described in pi-ServiceProcess model with the external services. Services are provided through the ORCA system and the access is accomplished by FlyingPig interface. FlyingPig is the point of interaction between the actions described in the precess with the services offered by ORCA. FlyingPig provides an interface with five actions, they are: receive a request, generate new interface, create questionnaire, notify responsable e receive answers.. This interface makes the direct calls for the ORCA' services. The services offered by ORCA are: create space company, generate the questionnaire, analyze answer, data store, call for amendment and create report. These services are called according to the process execution.
-
-With respect to non-functional requirements, the assertions grouped into contract in the pi-ServiceProcess model are transformed into policies in the pi-ServiceComposition model. The policies identified in this case study are: security, performance and conformability policies. Each policy is associated with specific the services and it is verified at the service execution time regarding the specific rule which the sercive is associated with..
-
-
-
-\subsection{PSM}
-
-{\color{magenta} Placido and Umberto: Could you please insert the $\pi$-PEWS model here? --G \& M.}
+The model presented in Figure~\ref{fig:PiServiceCompositionModel} offers a system-centric view of the application.
+The previous model is now enhanced with a view of the \FlyingPig\ application, including those services upon  it is build.
+The assertions in Figure~\ref{fig:PiServiceProcessModel} are implemented as \textit{policies}.
+These policies contain the pre- and post-conditions of the previous model.
+They are associated to actions of the system.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%% By Placido...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+\centering
+%\includegraphics[width=1.0\textwidth]{figs/ServiceCompositionGeneralCut.png}
+\fbox{\LARGE $\pi$-PEWS Model.}
 
-Pi-UseCase Model description for FlyingPig
+{\color{red} \raggedright
+$\star$ Placido: Please, place the model here.
+}
+\caption{$\pi$-PEWS model for \FlyingPig.\label{fig:PiPEWSModel}}
+\end{figure}
 
-The piUseCase model shown in Figure  X models the use cases (features) and constrainsts for the FlyingPig application. 3 actors are identified in this model, the are: (I) Company, (II) User and the (III) Channel-Broker. The Company is the whom ask for risk evaluation, the (II) Channel-Broker is the responsible for managing a defining the evaluation flow, beyond create responsible for evaluating and delegate the tasks. This model also represents the (III) User actor which answers questionnaires for the assessment, including evidence and proceeding with necessary corrections when asked for this type of task.
+\subsection{Platform-Specific Model (PSM)}
 
-Each actor is associated with use cases. Use cases represent the actions that the actors are responsible. Altogether, this model defines 6 (six) use cases. The use cases related to the Company's actor is (i) request assessment. The use cases related to Broker-Channel's actor are: (ii) create a responsable and (iii) delegate task; and the use cases related User's actor are: (iv) answer questionnaire and add evidences, (v) register task, and (vi) perform amendment.
+The model presented in Figure~\ref{fig:PiPEWSModel} is the result of translating the previous model into service composition code.
+Notice that the workflow for \FlyingPig\ is implemented by using the constructors present in BPEL~\cite{BPEL}, with the addition of the notion of \textit{contract}.
 
-In this model, each use case may be related with one or more constraints. The constraints can be of three types: value , business or exceptional behavior . This model as a whole has 7 constraints . The use case (i) request assessment has 2 constraints related with, the are from the value type. One is related to ( i.a) response time (confirmation) that should be up to 30 seconds , and the other ( i.b ) describes that the system should support a large number of requests from different companies . Moreover ( i.c ) if the number of requests exceeds 200 , FlyingPig should make a load balance of the requests. The use case create a responsable has a value constraint ( ii.d ) which defines that the Channel-Broker must have privileges verified before the execution to perform this action. This use case also ( ii.c ) is also related with the load balancing verification. The use case ( iii ) delegate task has no associated constraint . The use case answer questionnaire and add evidences have 2 constraints , they are: the User which performs this action ( iv.e ) must have privileges to answer the questionnaires and ( iv.f ) the time limit must be less than 15 days. The use case register task has 3 constraints associated . Two of them are the same constraints related with the request assessment use case, where (v.a) need a response time confirmation that should be up to 30 seconds, and the other ( v.b ) describes what the system should support a large number of requests for this action, once Users from various companies will be answering the questionnaire and performing tasks. The other constraint requires that ( v.g ) throughout the survey all the questions must be properly answered . Finally , the use case ( vi.f ) perform amendment must be executed in a set time limit in days, the same constraint related with the use case questionnaire answer and add evidences. Figure A presents the relation between the use case and its constraints.
-
-
-
-
-
-
-TABLE A - RELATION BETWEEN USE CASE AND CONSTRAINT
-use cases / constraints	(i) request assessment	(ii) create e responsable 	(iii) delegate task	(iv) answer questionnaire and add evidences	(v) register task	(vi) perform amendment
-(a) confirmation must be received in up to 30sec	X				X	
-(b) requires concurrency for more than 200 users	X				X	
-(c) load balance if there is more than 200 requests	X	X				
-(d) requires Broker’ privileges		X				
-(e) requires User' privileges				X		
-(f) all tasks must be done within a given time limit (e.g. maximum of 15 days)				X		X
-(g) requires questionnaire completion					X	
-
-
-Pi-ServiceProcess Model description for FlyingPig 
-
-The pi-ServiceProcess model (Figure Y) represents the application execution flow of FlyingPig. In this model the action are the result of the use case transformation identified in pi-UseCase model according to their respective actors. The Company, Broker-Channel and User actors are transformed into rays that represent the business collaborators.
-
-The restrictions associated with each use case are transformed into assertions. The set of assertions related to a particular action form the contract for this action. The process of FlyingPig executing begins with the action ( i ) request assessment performed by the Company. This action has one pre-condition regarding the response time and a post-condition concerning the load balance control for the server when it reaches 200 requests. Once the request is made by the Company for risk analysis, the Broker ( ii ) creates responsible for its analysis and ( iii ) delegate the necessary risk assessment. These actions are executed in sequence and has a pre-condition concerning the Broker's privilege. This can only create responsible and delegate the tasks if their authentication datas are correct and if and there was less than 3 requests. The tasks to be performed by the User can be ( iv ) answer questionnaire and add evidences; or ( v) perform amendments. Both the assertion has one pre-condition concerning the time limit for form submission. In this example, we use the limit of 15 days for form submission. If the User is performing the task of answer questionnaire and add evidences, this will have to enter with their authentication data. As postcondition, it is checked if all the answers were answered . The action of perform amendments has no additional verification. Finally, the user registers the tasks performed. This action has response time verification.
-
-This model refines the concepts defined in the pi-UseCase model in order to better describe the assertions and groups them into contracts.
-
-
-Pi-ServiceComposition Model description for FlyingPig 
-
-This model (presented in Figure Z) describes the interactions of the actions described in pi-ServiceProcess model with the external services. Services are provided through the ORCA system and the access is accomplished by FlyingPig interface. FlyingPig is the point of interaction between the actions described in the precess with the services offered by ORCA. FlyingPig provides an interface with five actions, they are: receive a request, generate new interface, create questionnaire, notify responsable e receive answers.. This interface makes the direct calls for the ORCA' services. The services offered by ORCA are: create space company, generate the questionnaire, analyze answer, data store, call for amendment and create report. These services are called according to the process execution.
-
-With respect to non-functional requirements, the assertions grouped into contract in the pi-ServiceProcess model are transformed into policies in the pi-ServiceComposition model. The policies identified in this case study are: security, performance and conformability policies. Each policy is associated with specific the services and it is verified at the service execution time regarding the specific rule which the sercive is associated with..
-
-
-
-
+Contracts may be implemented as transversal concerns~\cite{aspects}.
+Their conditions may be verified at specific point of the composition and their actions are executed if needed.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lessons Learned}
