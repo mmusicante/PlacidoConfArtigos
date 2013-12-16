@@ -1,15 +1,15 @@
 %3.1. pi-SoD-M metamodels (presentar los metamodels)
 
 
-The {\em A-policy} based service composition ($\pi$-SCM) meta-model, described in Figure \ref{fig:e-scomposition-metamodel},
-provides classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.}.
+The {\em A-policy} based service composition ($\pi$-SCM) meta-model, shown in Figure \ref{fig:e-scomposition-metamodel},
+provides classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
 The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model classes.} and the {\sc Actions} they perform. 
-Instances of this meta-model are UML activity diagrams. 
-Figure~\ref{fig:e-scomposition-metamodel} show the modelling elements.
-Classes pictured as coloured boxes deal with non-functional properties.
-The classes pictured with a white background are those of SOD-M.
+Instances of this meta-model are represented as UML activity diagrams. 
+In Figure~\ref{fig:e-scomposition-metamodel} 
+ Coloured boxes illustrate classes  modelling  non-functional properties and 
+ white boxes represent classes modelling functional ones. 
 
-In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
+%In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
 \begin{itemizedTrivlist}
 \item A {\sc Business Collaborator} element represents those entities that collaborate in the business processes by performing some of the required actions. 
 They are graphically presented as a partition in the activity diagram. 
@@ -28,9 +28,9 @@ There are two types of actions: i) a WebService (attribute Type is {\sf WS}); an
 
 \item The {\sc ServiceActivity} element is a composite activity that must be carried out as part of a business service and is composed by one or more executable nodes.
 
-\item In order to represent constraints associated to services compositions, we extended the SOD-M service composition model with two concepts: {\sc Rule} and {\sc A-policy} (see blue elements in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+\item In order to represent constraints associated to services compositions, we extended introduced the concepts {\sc Rule} and {\sc A-policy} (see blue elements in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
 We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
-An {\em A-policy} is formed by attributes and rules. 
+An {\em A-policy} is defined by attributes and rules. 
 Intuitively, the conditions of each rule will be checked.
 In case of no compliance, the actions defined by the rule will be performed.
 The {\sc Rule} element represents an event - condition - action rule where the {\sc Event} part represents the moment in which a constraint  will be evaluated.

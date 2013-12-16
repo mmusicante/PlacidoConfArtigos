@@ -10,16 +10,20 @@ In this section we present $\pi$SOD-M, an MDD based methodology for building ser
 \label{fig:piSOD-M}
 \end{figure}
 
-
+$\pi$-SODM meta-models represent both the functional aspects of the application as well as its non-functional constraints.
 As shown in Figure \ref{fig:piSOD-M}, according to MDA guidelines, $\pi$-SODM meta-models are organized into three levels: 
 \begin{itemize}
-\item CIM (\textit{Computational Independent Models}). Two models are defined at the CIM level: \textit{value model}
-and \textit{BPMN model}. Referring to the "To Publish Music" application,  the designer starts defining an E3value model \footnote{The E3 value model is a business model that represents a business case %graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) 
-and allows  to understand the environment in which the services' composition will be placed \cite{e3value}.}  at the CIM level and then the corresponding models of the PIM are generated leading to a services' composition model (SCM).
+\item CIM (\textit{Computational Independent Models}). This level focusses on the
+environment of the system, as well as on its business and requirement specifications.
+This viewpoint represents the software system at its highest level of abstraction.
+At this stage of the development, the structure and system processing details are still unknown or undetermined.  $\pi$-SODM defines the \textit{value}
+and \textit{BPMN} meta-moels for this purpose. 
+%Referring to the "To Publish Music" application,  the designer starts defining an E3value model \footnote{The E3 value model is a business model that represents a business case %graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) 
+%and allows  to understand the environment in which the services' composition will be placed \cite{e3value}.}  at the CIM level and then the corresponding models of the PIM are generated leading to a services' composition model (SCM).
 
- \item PIM (\textit{Platform Independent Models}). Our method defines four meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess}, and \textit{$\pi$-ServiceCom\-po\-si\-tion}.
-%and \textit{$\pi$-PEWS}.
- 
+ \item PIM (\textit{Platform Independent Models}). This level focusses on the system functionality, hiding the details of any particular platform.
+The specification defines those parts of the system that do not change from one platform to another. Our method defines four meta-models: 
+
  The \textit{$\pi$-UseCase} meta-model describes functional and non-functional requirements.Non-functional requirements are defined as \textit{constraints} over actions and data.
  
 The \textit{$\pi$-ServiceProcess} meta-model defines the concept of \textit{service contract} to represent constraints over data and actions 
@@ -34,18 +38,17 @@ to integrate contracts with similar non-functional requirements.
 For instance, security and privacy restrictions may be grouped into a security policy.
 %\textit{$\pi$-ServiceComposition} models can be refined into PSMs.
  
-  \item PSM (\textit{Platform Specific Models}). At the PSM level we have lower-level models that can be automatically translated into actual computer programs. The \textit{$\pi$-PEWS} meta-model provides concepts for modelling service compositions.
+  \item PSM (\textit{Platform Specific Models}). This level focusses on the functionality, in the context of a particular implementation platform.
+Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system. At the PSM level we have lower-level models that can be automatically translated into actual computer programs. The \textit{$\pi$-PEWS} meta-model provides concepts for modelling service compositions. \textit{$\pi$-PEWS} models instances of this meta-model are textual descriptions of service compositions that can be translated into any service composition language, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
 
 \end{itemize}
 
 
-$\pi$SOD-M (Figure~\ref{fig:piSOD-M}) proposes the generation of a set of models at different levels of abstraction, as well as transformations between these models.
-$\pi$SOD-M models represent both the functional aspects of the application as well as its non-functional constraints.
-\textit{$\pi$-PEWS} models are textual descriptions of service compositions that can be translated into any service composition language, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
+$\pi$-SODM (Figure~\ref{fig:piSOD-M}) proposes the generation of a set of models at different levels of abstraction, as well as transformations between these models.
 This can be accomplished by defining: \textit{(i)} a model-to-model transformation, from a \textit{$\pi$-ServiceComposition} model to the corresponding PSM, and \textit{(ii)} a model-to-text transformation, from the this PSM to the composition language.
 
 Extending from the highest level of abstraction of the MDA, $\pi$-SODM provides  a conceptual structure to: first, capture the system requirements and specification in high-level abstraction models (computation independent models, CIMÕs); next,  starting from such models build platform independent models (PIMÕs) specifying the system details; next transform such models into platform specific models (PSMÕs) that bundles the specification of the system with the details of the targeted platform; and finally, serialize such model into the working-code that implements the system. 
-
+The following sections describe the $\pi$-SODM meta-models.
 
 %Constraints are restrictions that must be verified during the execution of the application.
 %An example of this is the requirement of the user's authentication for executing some system functions.
