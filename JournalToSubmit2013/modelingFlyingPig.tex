@@ -94,10 +94,10 @@ These models are built next, for the \FlyingPig\ scenario.
 \centering
 \includegraphics[width=0.9\textwidth]{figs/UseCaseGeneral.png}
 
-{\color{red} 
-``Create a responsible'' should be changed for ``Designate user in charge''
+{\color{red} \raggedright
+$\star$ ``Create a responsible'' should be changed for ``Designate user in charge''.
 
-``requires concurrency for more than 200 users'' should be changed by ``Maximum number of users should be greater than 200''
+$\star$ ``requires concurrency for more than 200 users'' should be changed by ``Maximum number of users should be greater than 200''.
 }
 \caption{$\pi$-UseCase model for \FlyingPig.\label{fig:piUseCaseModel}}
 \end{figure}
@@ -122,19 +122,17 @@ The model defines three types of constraints: \textit{value} , \textit{business}
 Each constraint is identified by the word $<<$\textsf{constraint}$>>$ followed by its type.
 
 In the case of \FlyingPig, the model counts seven constraints:
-The use case \textsf{request assessment} has two value constraints.
-One of them requires a response time of less than 30 seconds while the other requires that the system's infrastructure should be prepared to deal with, at least 200 users. 
+\begin{numtrivlist}
+\item An acknowledgement is due less than 30 seconds after registering a task or demand for assessment. 
+\item The system's infrastructure should be prepared to deal with, at least, 200 users. 
+\item If the number of requests exceeds 200, \FlyingPig\ should make a load balance of the requests. 
+\item The Channel-Broker must have their privileges verified \textit{before} the execution of the actions associated to the \textsf{designate user in charge} use case.
+\item Users must have their privileges verified \textit{before} the execution of the actions associated to the \textsf{answer questionnaire and add evidences} use case.
+\item All questionnaires need to be fully answered, in order to consider that a task is completed.
+\item There is a time limit (in days) for each amendment required by the system.
+\end{numtrivlist}
 
-PARE AQUI --Martin
-
-Moreover, an associated constraint requires that if the number of requests exceeds 200 , FlyingPig should make a load balance of the requests. The use case create a responsible has a value constraint ( ii.d ) which defines that the Channel-Broker must have privileges verified before the execution to perform this action. This use case also ( ii.c ) is also related with the load balancing verification. The use case ( iii ) delegate task has no associated constraint . The use case answer questionnaire and add evidences have 2 constraints , they are: the User which performs this action ( iv.e ) must have privileges to answer the questionnaires and ( iv.f ) the time limit must be less than 15 days. The use case register task has 3 constraints associated . Two of them are the same constraints related with the request assessment use case, where (v.a) need a response time confirmation that should be up to 30 seconds, and the other ( v.b ) describes what the system should support a large number of requests for this action, once Users from various companies will be answering the questionnaire and performing tasks. The other constraint requires that ( v.g ) throughout the survey all the questions must be properly answered . Finally , the use case ( vi.f ) perform amendment must be executed in a set time limit in days, the same constraint related with the use case questionnaire answer and add evidences. Figure A presents the relation between the use case and its constraints.
-
-
-
-
-
-
-
+{\color{red} Anything else here? --M}
 
 \begin{figure}
 \centering
@@ -142,11 +140,30 @@ Moreover, an associated constraint requires that if the number of requests excee
 \caption{$\pi$-ServiceProcess model for \FlyingPig.\label{fig:PiServiceProcessModel}}
 \end{figure}
 
+\paragraph{\underline{$\pi$-ServiceProcess Model for \FlyingPig}}~
+
+The $\pi$-ServiceProcess model (Figure~\ref{fig:PiServiceProcessModel}) presents the workflow for \FlyingPig.
+The actions in this model were obtained by applying the use case transformation rules described in Section~\ref{sec:pewsmetamodel}.
+
+The Company, Broker-Channel and User actors are transformed into lanes that represent the business collaborators.
+Use cases are transformed into \textit{actions} and are represented by white boxes.
+The restrictions associated to each use case are transformed into \textit{assertions} (represented by coloured boxes) and may be decorated with pre- and post-conditions. 
+The set of assertions related to a particular action form a \textit{contract} for this action. 
+
+This model refines the concepts defined in the $\pi$-UseCase model and it is more suited to better describe the assertions, by grouping them into contracts.
+
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{figs/ServiceCompositionGeneral.png}
 \caption{$\pi$-ServiceComposition model for \FlyingPig.\label{fig:PiServiceCompositionModel}}
 \end{figure}
+
+\paragraph{\underline{$\pi$-ServiceProcess Model for \FlyingPig}}~
+
+This model presented in Figure~\ref{fig:PiServiceCompositionModel} describes the interactions of the actions described in pi-ServiceProcess model with the external services. Services are provided through the ORCA system and the access is accomplished by FlyingPig interface. FlyingPig is the point of interaction between the actions described in the precess with the services offered by ORCA. FlyingPig provides an interface with five actions, they are: receive a request, generate new interface, create questionnaire, notify responsable e receive answers.. This interface makes the direct calls for the ORCA' services. The services offered by ORCA are: create space company, generate the questionnaire, analyze answer, data store, call for amendment and create report. These services are called according to the process execution.
+
+With respect to non-functional requirements, the assertions grouped into contract in the pi-ServiceProcess model are transformed into policies in the pi-ServiceComposition model. The policies identified in this case study are: security, performance and conformability policies. Each policy is associated with specific the services and it is verified at the service execution time regarding the specific rule which the sercive is associated with..
+
 
 
 \subsection{PSM}
