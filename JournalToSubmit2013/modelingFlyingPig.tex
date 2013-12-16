@@ -44,6 +44,14 @@ Once this need occurs, the value exchanges between ORCA and Broker are triggered
 The client company will provide orca wit information (answers to a questionary), evidence (to support the information) and a fee (monetary value).
 ORCA will provide amendments (recommendations to change practices) and an evaluation report. 
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.0\textwidth]{figs/BPMN_GCP.pdf}
+
+{\color{red} Javier: Please change \underline{Asses} by \underline{Assess}. --M}
+\caption{BPMN model for \FlyingPig.\label{fig:BPMNmodel}}
+\end{figure}
+
 The BPMN model is devised to better understand the process in which the value exchanges occur.
 Figure~\ref{fig:BPMNmodel} shows the BPMN model\footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/.} for the \FlyingPig\ scenario. 
 The model includes two pools representing the \textsl{ORCA} system and the \textsl{Brokers}. 
@@ -52,40 +60,81 @@ The user is a contact member of the company, who will coordinate the assessment 
 This process will involve other members of the company as well.
 
 The risk assessment process starts after a request from a company.
-This agrees with the value model, in which the start stimulus triggers the whole process. 
+(This agrees with the value model, in which the start stimulus triggers the whole process.)
 The request leads to the definition of a group of users that will answer questionnaires for evaluating risk.
 Questionnaires are considered tasks that users will have to perform. 
-Given a list of tasks, the company delegates the task to a user.
-A task may be to answer a questionnaire, add an evidence as well as to solve a ``risky situation'' (e.g. to repair a door {\color{blue} ...¿Genoveva mira por favor si esto puede ser o hay algun ejemplo mas bueno/serio???} ).
+Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include from physical facts such as not having easy access to handicapped persons or having an unsecured access to the premises of the company, to more intangible ones, such as the use of an less-than-optimal protocol to access data on the company's computer server.}.
 
-Once a tasks are completed they are stored and analyzed to generate a set of un-compliant situations associated to their corresponding amendments if there are any or a report specifying a compliance level, incidents and a risk map.
-During the process of analysing a questionnaire, the answers of some questions can trigger the generation of other questionnaires or amendments, that become new tasks to be executed.  
+Once tasks are completed, they are stored and analysed to generate a list of un-compliant situations, associated to their corresponding \textit{calls for amendment}, in case there are any, or a report specifying a compliance level, incidents and a risk map.
+During the process of analysing a questionnaire, the answers of some questions can trigger the generation of other questionnaires or amendments, that will become new tasks.  
 
 Business processes have also associated rules and constraints that define their non functional requirements.
 NFR represents the ``semantics'' and the conditions in which the tasks must be done.
 In our example we have some constraints.
+
+{\color{red}
+Placido, Valeria: What can we say about non-functional requirements at the CIM level?
+}
+
+
+
 \begin{itemize}
 \item {\color{magenta} Placido and Umberto: Could you please complete these items? --G \& M.}
 \end{itemize}
 
+
+
+
+\subsection{Platform-Independent Models (PIM)}
+
+In Section~\ref{sec:modelingWithPISODM} we defined three models at the PIM level.
+These models are built next, for the \FlyingPig\ scenario.
+
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{figs/BPMN_GCP.pdf}
-\caption{BPMN model for \FlyingPig.\label{fig:BPMNmodel}}
-\end{figure}
+\includegraphics[width=0.9\textwidth]{figs/UseCaseGeneral.png}
 
+{\color{red} 
+``Create a responsible'' should be changed for ``Designate user in charge''
 
-\subsection{PIM}
-
-
-{\color{magenta} Placido and Umberto: Could you please comment models here? --G \& M.}
-
-
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{figs/UseCaseGeneral.png}
+``requires concurrency for more than 200 users'' should be changed by ``Maximum number of users should be greater than 200''
+}
 \caption{$\pi$-UseCase model for \FlyingPig.\label{fig:piUseCaseModel}}
 \end{figure}
+
+
+\paragraph{\underline{$\pi$-UseCase Model for \FlyingPig}}~
+
+The $\pi$-UseCase model shown in Figure~\ref{fig:piUseCaseModel} describes the features and constraints for the \FlyingPig\ application. 
+In this model, three actors are identified: \textit{Company}, \textit{User} and \textit{Channel-Broker}\footnote{\color{red} Can we change this for Broker ? --M.}. 
+They are represented as stick figures.
+In the context of \FlyingPig, Company is the actor asking for risk evaluation.
+A Channel-Broker is the responsible for channelling the the evaluation process, assigning users to be in charge of tasks as well as delegating tasks. 
+A User, in this model is an actor who answers questionnaires (with base on the actual facts about the Company).
+The User also produces evidence to support facts and performs the necessary amendments to improve the results of the risk assessment.
+
+Each actor is associated to one or more use cases (depicted as white ovals in Figure~\ref{fig:piUseCaseModel}). 
+Use cases describe the main functionalities of the system.
+The $\pi$-UseCase model for \FlyingPig\ defines six use cases. 
+
+In our model, each use case may be associated to one or more (non-functional) constraints (depicted as coloured ovals in Figure~\ref{fig:piUseCaseModel}). 
+The model defines three types of constraints: \textit{value} , \textit{business} or \textit{exceptional behavior}. 
+Each constraint is identified by the word $<<$\textsf{constraint}$>>$ followed by its type.
+
+In the case of \FlyingPig, the model counts seven constraints:
+The use case \textsf{request assessment} has two value constraints.
+One of them requires a response time of less than 30 seconds while the other requires that the system's infrastructure should be prepared to deal with, at least 200 users. 
+
+PARE AQUI --Martin
+
+Moreover, an associated constraint requires that if the number of requests exceeds 200 , FlyingPig should make a load balance of the requests. The use case create a responsible has a value constraint ( ii.d ) which defines that the Channel-Broker must have privileges verified before the execution to perform this action. This use case also ( ii.c ) is also related with the load balancing verification. The use case ( iii ) delegate task has no associated constraint . The use case answer questionnaire and add evidences have 2 constraints , they are: the User which performs this action ( iv.e ) must have privileges to answer the questionnaires and ( iv.f ) the time limit must be less than 15 days. The use case register task has 3 constraints associated . Two of them are the same constraints related with the request assessment use case, where (v.a) need a response time confirmation that should be up to 30 seconds, and the other ( v.b ) describes what the system should support a large number of requests for this action, once Users from various companies will be answering the questionnaire and performing tasks. The other constraint requires that ( v.g ) throughout the survey all the questions must be properly answered . Finally , the use case ( vi.f ) perform amendment must be executed in a set time limit in days, the same constraint related with the use case questionnaire answer and add evidences. Figure A presents the relation between the use case and its constraints.
+
+
+
+
+
+
+
 
 \begin{figure}
 \centering
