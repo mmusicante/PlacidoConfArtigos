@@ -22,8 +22,8 @@ The models presented next were generated as a result of interacting with softwar
 
 \subsection{Computation-Independent Models (CIM)}
 
-$\Pi$-SODM uses two models at the CIM level (see Section~\ref{sec:modelingWithPISODM}): The E3value~\cite{e3value} model and BPMN~\cite{BPMN}.
-The former is a simple model just to identify the transference of value information between components of the system.
+$\Pi$-SODM uses two models at the CIM level: The E3value~\cite{e3value} model and BPMN~\cite{BPMN}.
+The former  identifies the transference of value information between components of the system.
 The BPMN model establishes which are the actors and main tasks of the application.
 
 Figure~\ref{fig:E3valuemodel} shows the value model for the \FlyingPig\ application.
@@ -193,3 +193,6 @@ API does not necessarily export information about methods dependency (e.g., in t
 they do not share their state (stateless).
 
 Given a set of services with their exported methods known in advance or provided by a  service directory, building services' based applications can be  a simple task that implies expressing an application logic as a services' composition. The challenge being  ensuring the compliance between the specification and the resulting application. Software engineering methods (e.g., \cite{1,2,decastro1,PapazoglouH06}) today can help to ensure this compliance, particularly when information systems include several sometimes complex business processes calling Web services or legacy applications exported as services.
+
+As WS-* and similar approaches, our work enables the specification and programming of crosscutting aspects (i.e., atomicity, security, exception handling, persistence).
+In contrast to these approaches, our work specifies policies for a services composition in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented according a the knowledge that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach, once defined the policies for a given application they can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints.

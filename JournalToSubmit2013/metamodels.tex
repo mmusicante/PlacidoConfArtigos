@@ -2,23 +2,22 @@
 
 
 The {\em A-policy} based service composition ($\pi$-SCM) meta-model, shown in Figure \ref{fig:e-scomposition-metamodel},
-provides classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
-The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model classes.} and the {\sc Actions} they perform. 
+provides meta-classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
+The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model meta-classes.} and the {\sc Actions} they perform. 
 Instances of this meta-model are represented as UML activity diagrams. 
-In Figure~\ref{fig:e-scomposition-metamodel} 
- Coloured boxes illustrate classes  modelling  non-functional properties and 
+In Figure~\ref{fig:e-scomposition-metamodel}  coloured boxes illustrate classes  modelling  non-functional properties and 
  white boxes represent classes modelling functional ones. 
 
 %In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
 \begin{itemizedTrivlist}
-\item A {\sc Business Collaborator} element represents those entities that collaborate in the business processes by performing some of the required actions. 
-They are graphically presented as a partition in the activity diagram. 
+\item A {\sc Business Collaborator} meta-class represents the classes of entities that collaborate in  business processes by performing some  required action. 
+An instance of this meta-class is graphically represented as a partition in the activity diagram. 
 A collaborator can be either internal or external to the system. 
 When the collaborator of the business is external to the system, the attribute {\sf IsExternal}\footnote{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} of the collaborator is set to \textbf{true}.
 
-\item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented in the model as an activity. 
-Each action represents some type of transformation or processing. 
-There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation that is not supported by a Web Service, called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
+\item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented in the model as a class activity instance of the meta-class Action. 
+A class action represents some type of transformation or processing. 
+There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/E-service-composition-metamodel}
@@ -26,14 +25,14 @@ There are two types of actions: i) a WebService (attribute Type is {\sf WS}); an
 \label{fig:e-scomposition-metamodel}
 \end{figure}
 
-\item The {\sc ServiceActivity} element is a composite activity that must be carried out as part of a business service and is composed by one or more executable nodes.
+\item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service and is composed by one or more executable nodes.
 
-\item In order to represent constraints associated to services compositions, we extended introduced the concepts {\sc Rule} and {\sc A-policy} (see blue elements in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+\item In order to represent constraints types associated to services compositions, we extended introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
 We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
 An {\em A-policy} is defined by attributes and rules. 
 Intuitively, the conditions of each rule will be checked.
 In case of no compliance, the actions defined by the rule will be performed.
-The {\sc Rule} element represents an event - condition - action rule where the {\sc Event} part represents the moment in which a constraint  will be evaluated.
+The {\sc Rule} meta-class represents the types of event - condition - action rules where the {\sc Event} part represents the moment in which a constraint  will be evaluated.
 An {\em A-policy} defines variables and operations that can be shared by the rules and that can be used for expressing their Event and Condition parts. 
 \end{itemizedTrivlist}
 
@@ -82,7 +81,7 @@ The $\pi$-PEWS  meta-model is described in the next section.
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
 
 PEWS~\cite{BHM06,Placido2010LTPD} is a notation to express service compositions.
-The language is based on the notion of Path Expressions~\cite{And79} and can easily be translated into any actual composition language, such as B	PEL~\cite{bpel03} or any other language that lets the service designer combine the methods or subprograms that implement each operation of a service, in order to achieve the desired application logic. 
+The language is based on the notion of Path Expressions~\cite{And79} and can easily be translated into any actual composition language, such as BPEL~\cite{bpel03} or any other language that lets the service designer combine the methods or subprograms that implement each operation of a service, in order to achieve the desired application logic. 
 Figure~\ref{fig:metamodel} presents the $\pi$-{\sc Pews} meta-model, where we identify classes to describe:
 \begin{itemizedTrivlist}
 \item Service compositions: {\sc Namespace} representing the interface exported by a service, {\sc Operation} that represents a call to a service method, {\sc CompositeOperation}, {\sc Operator} and {\sc Path} for representing service compositions.
@@ -91,7 +90,7 @@ A {\sc Compound Operation} is defined using an {\sc Operator}.
 The language defines operators to denote guarded operations ($[C]S$); sequential ($\ . \ $), parallel ($\ \| \ $) and alternative ($\ + \ $) compositions; as well as sequential ($*$) and parallel ($\{\dots\}$) repetition.
 
 \item {\em A-Policies} that can be associated to a service compositions:  {\sc A-Policy}, {\sc Rule}, {\sc Event}, {\sc Condition}, {\sc Action}, {\sc State}, and {\sc Scope}.
-A brie description of these classes is given next.
+A brief description of these classes is given next.
 \end{itemizedTrivlist}
 %
 \begin{figure}[t]
