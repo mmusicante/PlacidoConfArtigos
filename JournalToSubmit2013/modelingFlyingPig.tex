@@ -154,16 +154,63 @@ These policies contain the pre- and post-conditions of the previous model.
 They are associated to actions of the system.
 
 
-\begin{figure}[t]
-\centering
-%\includegraphics[width=1.0\textwidth]{figs/ServiceCompositionGeneralCut.png}
-\fbox{\LARGE $\pi$-PEWS Model.}
+%\begin{figure}[t]
+%\centering
+\begin{lstlisting}[label=list:flyingPigPiPEWS,caption=pi-PEWS
+Specification: FlyingPig. ]!\label{fig:PiPEWSModel}!
 
-{\color{red} \raggedright
-$\star$ Placido: Please, place the model here.
-}
-\caption{$\pi$-PEWS model for \FlyingPig.\label{fig:PiPEWSModel}}
-\end{figure}
+//Namespaces specify service URI
+namespace orca = www.orca.mx/service.wsdl
+
+//Operations
+alias createCompanySpace = portType/createCompanySpace in orca
+alias generateQuestionnaire = portType/generateQuestionnaire in orca
+alias analizeAnswer = portType/analizeAnswer in orca
+alias storeData = portType/storeData in orca
+alias createReport = portType/createReport in orca
+alias callForAmendments = portType/callForAmendments in orca
+
+//Services
+service receiveRequest(R, Id) = createCompanySpace(R, Id)
+
+service generateNewInterface(Id, NULL) = ...
+
+service createQuestionnaire(Id, Q) = generateQuestionnaire(Id, Q)
+
+service notifyResponsable((Id, Q); NULL) = ...
+
+service receiveAnswers((Id, T); P) =
+			analizeAnswer((Id, T), NULL) 
+			. storeData((Id, T), NULL)
+			. (
+			  (createReport(Id, P) . return(P))
+			  + (callForAmendments(Id,T) . return(NULL))
+			  )
+  
+//Path
+
+receiveRequest(R, Id)
+||
+( generateNewInterface(Id, NULL)
+  . createQuestionnaire(Id, Q)
+  .  notifyResponsable((Id, Q); NULL
+ )
+||
+ ( receiveAnswers((Id, T); P)
+ . [P != NULL] STOP
+ )*	
+ 
+//Policies 					  
+
+
+\end{lstlisting}
+%\fbox{\LARGE $\pi$-PEWS Model.}
+%
+%{\color{red} \raggedright
+%$\star$ Placido: Please, place the model here.
+%}
+%\caption{$\pi$-PEWS model for \FlyingPig.\label{fig:PiPEWSModel}}
+%\end{figure}
 
 \subsection{Platform-Specific Model (PSM)}
 

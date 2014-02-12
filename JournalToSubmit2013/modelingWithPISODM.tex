@@ -1,7 +1,10 @@
 %(Aquí lo dejaría con la estructura que teníamos para Caise, presentamos el framework y posteriormente comentamos modelos y transformaciones)
 
-In this section we present $\pi$SOD-M, an MDD based methodology for building service compositions with non-functional requirements. $\pi$SOD-M provides concepts for  modelling  non-functional requirements at the early stages of the development.
+In this section we present $\pi$SOD-M, an MDD-based methodology for building service compositions with non-functional requirements. 
+$\pi$SOD-M extends SOD-M with concepts for modelling non-functional requirements.
+This is done at all levels of MDA, starting from the early stages of the development.
 %The method uses the concept of \textit{Policy}~\cite{Espinosa-Oviedo2011a} to represent non-functional requirements.
+%$\pi$-SOD-M meta-models represent both the functional aspects of the application as well as its non-functional constraints.
 
 \begin{figure}[h]
 \centering
@@ -10,14 +13,13 @@ In this section we present $\pi$SOD-M, an MDD based methodology for building ser
 \label{fig:piSOD-M}
 \end{figure}
 
-%$\pi$-SODM meta-models represent both the functional aspects of the application as well as its non-functional constraints.
-As shown in Figure \ref{fig:piSOD-M}, according to MDA guidelines, $\pi$-SODM proposes meta-models  organized into three levels: 
+$\pi$-SODM proposes meta-models organized into three levels (Figure~\ref{fig:piSOD-M}): 
 \begin{itemize}
 \item CIM (\textit{Computational Independent Models}). This level focusses on the
 environment of the system, as well as on its business and requirement specifications.
 This level represents the software system at its highest level of abstraction.
 At this stage of the development, the structure and system processing details are still unknown or undetermined.  
-$\pi$-SODM uses the \textit{E3value}~\cite{e3value} and \textit{BPMN}~\cite{BPMN} meta-models for this purpose. 
+$\pi$-SODM uses the \textit{e$^3$value}~\cite{e3value} and \textit{BPMN}~\cite{BPMN} meta-models for this purpose. 
 %Referring to the "To Publish Music" application,  the designer starts defining an E3value model \footnote{The E3 value model is a business model that represents a business case %graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) 
 %and allows  to understand the environment in which the services' composition will be placed \cite{e3value}.}  at the CIM level and then the corresponding models of the PIM are generated leading to a services' composition model (SCM).
 
