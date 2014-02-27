@@ -8,17 +8,17 @@ At the PSM level we have lower-level models that can be automatically translated
 We have defined one meta-model at this level, called \textit{$\pi$-PEWS}.
 
 The \textit{$\pi$-PEWS} meta-model provides concepts for modelling service compositions, including non-functional features.
-\textit{$\pi$-PEWS} models specify: (i) The workflow of the application, and (ii) a mechanism to implement non-functional restrictions.  
-
-The workflow constructors of \textit{$\pi$-PEWS} are similar to those of  most service orchestration languages, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
-Non-functional behaviour is specified as Event-Condition-Action (ECA) rules~\cite{ECA}.
-
 \textit{$\pi$-PEWS} models have two main parts:
 \begin{itemizedTrivlist}
 \item \textit{Service compositions (workflows)} formed by individual service operations and composite operations defined by the use of workflow operators, such as guarded operations ($[C]S$); sequential ($\ . \ $), parallel ($\ \| \ $) and alternative ($\ + \ $) compositions; as well as sequential ($*$) and parallel ($\{\dots\}$) repetitions.
 
 \item \textit{ECA Rules}, with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}. 
+These rules are used to specify non-functional behaviour.
 \end{itemizedTrivlist}
+
+The workflow constructors of \textit{$\pi$-PEWS} are similar to those of  most service orchestration languages, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
+
+
 %%
 %\begin{figure}[t]
 %\centering
@@ -28,9 +28,8 @@ Non-functional behaviour is specified as Event-Condition-Action (ECA) rules~\cit
 %\end{figure}
 %%
 
-
+\bigskip
 The following example presents the \textit{$\pi$-PEWS} model for the ``To Publish Music'' application.
-
 \begin{example}[To Publish Music (end)]\label{Colocar-o-label-correto-aqui}
 The next code presents the \textit{$\pi$-PEWS}  model for our running example.\footnote{\color{red} Placido: Please change the pdf file as needed!}
 
@@ -38,26 +37,23 @@ The next code presents the \textit{$\pi$-PEWS}  model for our running example.\f
 \includegraphics[scale=0.7]{figs/pewsEspecificationContract.pdf}
 \end{center}
 
-The upper part of the model consists of a workflow expression.
-After the execution of searchSong, followed by selectSong,
-the user may either buy, download and listen a song or just listen to a song (conditional workflow).
-The last part of the wokflow publish the title of the song either on tweeter or facebook.
+The initial part of the model consists of a workflow expression.
+In the given code, the execution of \texttt{searchSong} is followed by \texttt{selectSong}.
+At this point, the user may either buy, download and listen a song or just listen to a song (conditional workflow).
+The last part of the workflow publishes the title of the song either on tweeter or facebook.
 
-ECA rules are specified as ``contracts''.
-In our case, the \texttt{buySongContract} specifies conditions to be verified when the \texttt{buySong} service is executed.
-The contract specifies pre and post-conditions, as well as time constraints.\footnote{\color{red} Placido: Please verify the pre-condition assertions!}
-The precondition\dots
+ECA rules are specified as contracts~\cite{Meyer92}.
+In our case, the \texttt{buySongContract} specifies conditions to be verified upon the execution of \texttt{buySong}.
+This contract specifies pre and post-conditions, as well as time constraints.\footnote{\color{red} Placido: Please verify the pre-condition assertions!}
+The precondition (EXPLAIN!)\dots
 
 In case of failure in verifying the precondition, the service \texttt{buySong} is retried.
 
-The postcondition ensures that if the service completes, the payment is processed.
+The postcondition ensures that the payment succeeds before .
 
 The time constraint indicates that the \texttt{sendConfirmation} service is invoked immediately after \texttt{buySong}.
 \end{example}
 
-
-
-===================================
 
 
 
@@ -213,13 +209,13 @@ If rules belonging to several policies are triggered then policies are also orde
 We validated our methodology by developing a use-case concerning risk assessment for financial companies.
 Our application is inspired on the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
 Risk assessment is implemented by an interactive business process based on the exchange of a series of questionnaires intended to evaluate the risks implied the client's business practice.
-For instance, the conditions and protocols used to perform confidential transactions, the physical security for accessing reserved areas such as computing server installations.
-The information gathered by the questionnaires is used to determine whether there are risky practices within the business processes of the company, as well as to propose amends to these practices.
+Examples of business practices are the conditions and protocols used to perform confidential transactions or the physical security for accessing reserved areas (such as computing server installations).
+The information gathered by the questionnaires is used to evaluate whether there are risky practices within the business processes of the company, as well as to propose amends to these practices.
 The ultimate goal of the risk assessment is to determine a degree of compliance to existing standards.
 By analysing the questionnaires, ORCA detects risky practices, proposes solutions and triggers further assessment processes to ensure that the solutions have been implemented.
 
 Our goal is to model a service based application (called \FlyingPig), for providing risk assessment as a service.
-In order to provide this functionality, \FlyingPig\ would benefit from ORCA's legacy services: storage, assessment and data visualization functions.
+In order to provide this functionality, \FlyingPig\ would benefit from ORCA's legacy services for storage, assessment and data visualization functions.
 
 In the following, we describe the results of applying $\Pi$-SODM to develop the \FlyingPig\ risk assessment system.
 The models presented next were generated as a result of interacting with software developers at GCP Global.
@@ -235,18 +231,20 @@ The models presented next were generated as a result of interacting with softwar
 \subsection{Computation-Independent Models (CIM)}
 
 Figure~\ref{fig:E3valuemodel} shows the value model for the \FlyingPig\ application.
-It is a business model that graphically represents a business case as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).
-
-In our use-case, we identify two business actors: \textsl{ORCA} and \textsl{Broker}. 
-Brokers are responsible for channelling requests for risk assessment of one or several companies. 
-ORCA have two value activities which are services that provide an economical benefit: to \textsl{Identify Amendments} and the possibility to \textsl{Assess Risk Situation}. 
-The values exchanged between ORCA and the brokers are: \textsl{Amendments} and \textsl{Evaluation Reports} which are value objects ([ \!\dots]) for the companies that need to have a risk assessment, as well as  \textsl{Questionnaire and Evidences} and the risk assessment \textsl{Fee} which are value objects for ORCA System.
-
-
+It is a business model that graphically represents a business case as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).\footnote{\color{red} This sentence need to move to section 3.1!!}
+We identify two business actors: \textsl{ORCA} and \textsl{Broker}. 
+Brokers channel requests for risk assessment for one or more companies. 
+ORCA have two value activities which are services that provide an economical benefit:  \textsl{Identify Amendments} and \textsl{Assess Risk Situation}. 
+The values exchanged between ORCA and the brokers are: 
+(i) \textsl{Questionnaire and Evidences} filled with information about the client company;
+(ii) \textsl{Amendments} which are ORCA's recommendations, based on the data provided by the answers to questionnaires; 
+(iii) \textsl{Evaluation Reports} for the client companies; 
+and 
+(iv) the risk assessment \textsl{Fee}.
 
 The dependency path in Figure~\ref{fig:E3valuemodel} initiates with the need of assessment by a particular company. 
 Once this need occurs, the value exchanges between ORCA and Broker are triggered. 
-The client company will provide orca wit information (answers to a questionary), evidence (to support the information) and a fee (monetary value).
+The client company will provide ORCA with information (answers to a questionnaire), evidence (to support the information) and a fee (monetary value).
 ORCA will provide amendments (recommendations to change practices) and an evaluation report. 
 
 \begin{figure}[t]
@@ -257,8 +255,8 @@ ORCA will provide amendments (recommendations to change practices) and an evalua
 \caption{BPMN model for \FlyingPig.\label{fig:BPMNmodel}}
 \end{figure}
 
-The BPMN model is devised to better understand the process in which the value exchanges occur.
-Figure~\ref{fig:BPMNmodel} shows the BPMN model\footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/.} for the \FlyingPig\ scenario. 
+The BPMN model for \FlyingPig\ is devised to better understand the process in which the value exchanges occur.
+Figure~\ref{fig:BPMNmodel} shows the BPMN model\footnote{\color{red} Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/.} for the \FlyingPig\ scenario. 
 The model includes two pools representing the \textsl{ORCA} system and the \textsl{Brokers}. 
 Brokers have two lanes, the client \textsl{Company} and a \textsl{User}. 
 The user is a contact member of the company, who will coordinate the assessment process. 
@@ -270,13 +268,10 @@ The request leads to the definition of a group of users that will answer questio
 Questionnaires are considered tasks that users will have to perform. 
 Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include from physical facts such as not having easy access to handicapped persons or having an unsecured access to the premises of the company, to more intangible ones, such as the use of an less-than-optimal protocol to access data on the company's computer server.}.
 
-Once tasks are completed, they are stored and analysed to generate a list of un-compliant situations, associated to their corresponding \textit{calls for amendment}, in case there are any, or a report specifying a compliance level, incidents and a risk map.
-During the process of analysing a questionnaire, the answers of some questions can trigger the generation of other questionnaires or amendments, that will become new tasks.  
+Once tasks are completed, they are stored and analysed to generate a list of noncompliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
+During the process of analysing a questionnaire, the answers of some questions can trigger the generation of additional questionnaires or amendments, that will become new tasks.  
 
-Business processes have also associated rules and constraints that define their non functional requirements.
-NFR represents the ``semantics'' and the conditions in which the tasks must be done.
-In our example we have some constraints.
-
+Business processes also have associated rules and constraints to define their non-functional requirements (NFR).
 {\color{red}
 Placido, Valeria: What can we say about non-functional requirements at the CIM level?
 }
