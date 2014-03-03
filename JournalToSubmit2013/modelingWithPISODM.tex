@@ -1,8 +1,7 @@
 %(Aquí lo dejaría con la estructura que teníamos para Caise, presentamos el framework y posteriormente comentamos modelos y transformaciones)
 
-In this section we present $\pi$SOD-M, an MDD-based methodology for building service compositions with non-functional requirements. 
-$\pi$SOD-M extends SOD-M with concepts for modelling non-functional requirements.
-$\pi$-SODM (Figure~\ref{fig:piSOD-M}) proposes the generation of a set of models at different levels of abstraction, as well as transformations between these models.
+This section presents $\pi$SOD-M, an MDD-based methodology for building service compositions with non-functional requirements. 
+$\pi$SOD-M extends SOD-M with concepts for modelling non-functional requirements, it proposes the generation of a set of models at different levels of abstraction, as well as transformations between these models (Figure~\ref{fig:piSOD-M}).
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/piSOD-M_process.pdf}
@@ -10,10 +9,12 @@ $\pi$-SODM (Figure~\ref{fig:piSOD-M}) proposes the generation of a set of models
 \label{fig:piSOD-M}
 \end{figure}
 
-$\pi$-SODM proposes meta-models, organized into three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}). 
-These models are explained next.
+The $\pi$-SODM  meta-models are organized in three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}). 
+These meta-models are explained next.
 
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Computation Independent Models}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 This level focusses on the highest-level view of the system, including its business and requirement specifications.
 At this stage of the development, the structure and system processing details are still unknown or undetermined.  
@@ -25,9 +26,8 @@ A dependency path has a direction and consists of a sequence of linked dependenc
 A dependency path starts with a \textit{start stimulus} node and ends with an \textit{end stimulus} node\footnote{See Legend on Figure~\ref{fig:CIM:tpme3v}}. 
 Dependency paths may also contain \textsl{OR} and \textsl{AND} elements (both for initiate and join alternative and parallel paths).
 
-The BPMN model is a graphical representation that establishes the high-level workflow of the application.
+The BPMN model is a graphical representation that establishes the business process of the application through a high-level workflow. The next example illustrates the use of these models.
 
-The next example illustrates the use of these models.
 \begin{example}[To Publish Music]\label{ex:toPublicMusic}
 To illustrate our proposal, we build the models for a ``To Publish Music'' problem. 
 This problem involves three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as the user and the application itself.
@@ -53,7 +53,9 @@ The CIM level models are the basis for the development of the application.
 The information presented at this level are (manually) refined into PIM-level models.
 
 
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Platform Independent Models}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 This level focusses on the system functionality, hiding the details of any particular platform.
 The specification defines those parts of the system that do not change from one platform to another. 
@@ -87,7 +89,9 @@ Two authentication policies are required, one for {\em Twitter} and another for 
 {\color{red} To be completed!.}
 \end{example}
 
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Platform Specific Models}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 This level focusses on the functionality, in the context of a particular implementation platform.
 Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system. At the PSM level we have lower-level models that can be automatically translated into actual computer programs. 

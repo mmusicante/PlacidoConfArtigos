@@ -1,210 +1,196 @@
-
-\subsection{Platform-Specific Models}
-
-
-This level focusses on the functionality, in the context of a particular implementation infrastructure.
-Models at this level combine the platform-independent view with specific aspects of the application to be deployed. 
-At the PSM level we have lower-level models that can be automatically translated into any service composition language. 
-We have defined one meta-model at this level, called \textit{$\pi$-PEWS}.
-
-The \textit{$\pi$-PEWS} meta-model provides concepts for modelling service compositions, including non-functional features.
-\textit{$\pi$-PEWS} models have two main parts:
-\begin{itemizedTrivlist}
-\item \textit{Service compositions (workflows)} formed by individual service operations and composite operations defined by the use of workflow operators, such as guarded operations ($[C]S$); sequential ($\ . \ $), parallel ($\ \| \ $) and alternative ($\ + \ $) compositions; as well as sequential ($*$) and parallel ($\{\dots\}$) repetitions.
-
-\item \textit{ECA Rules}, with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}. 
-These rules are used to specify non-functional behaviour.
-\end{itemizedTrivlist}
-
-The workflow constructors of \textit{$\pi$-PEWS} are similar to those of  most service orchestration languages, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
-
-
-%%
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%\subsection{Platform-Specific Models}
+%
+%
+%This level focusses on the functionality, in the context of a particular implementation infrastructure.
+%Models at this level combine the platform-independent view with specific aspects of the application to be deployed. 
+%At the PSM level we have lower-level models that can be automatically translated into any service composition language. 
+%We have defined one meta-model at this level, called \textit{$\pi$-PEWS}.
+%
+%The \textit{$\pi$-PEWS} meta-model provides concepts for modelling service compositions, including non-functional features.
+%\textit{$\pi$-PEWS} models have two main parts:
+%\begin{itemizedTrivlist}
+%\item \textit{Service compositions (workflows)} formed by individual service operations and composite operations defined by the use of workflow operators, such as guarded operations ($[C]S$); sequential ($\ . \ $), parallel ($\ \| \ $) and alternative ($\ + \ $) compositions; as well as sequential ($*$) and parallel ($\{\dots\}$) repetitions.
+%
+%\item \textit{ECA Rules}, with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}. 
+%These rules are used to specify non-functional behaviour.
+%\end{itemizedTrivlist}
+%
+%The workflow constructors of \textit{$\pi$-PEWS} are similar to those of  most service orchestration languages, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
+%
+%
+%%%
+%%\begin{figure}[t]
+%%\centering
+%%\includegraphics[width=1.0\textwidth]{figs/PEWSMetamodel}
+%%\caption{$\pi$-{\sc Pews} Metamodel}
+%%\label{fig:metamodel}
+%%\end{figure}
+%%%
+%
+%\bigskip
+%The following example presents the \textit{$\pi$-PEWS} model for the ``To Publish Music'' application.
+%\begin{example}[To Publish Music (end)]\label{Colocar-o-label-correto-aqui}
+%The next code presents the \textit{$\pi$-PEWS}  model for our running example.\footnote{\color{red} Placido: Please change the pdf file as needed!}
+%
+%\begin{center}
+%\includegraphics[scale=0.7]{figs/pewsEspecificationContract.pdf}
+%\end{center}
+%
+%The initial part of the model consists of a workflow expression.
+%In the given code, the execution of \texttt{searchSong} is followed by \texttt{selectSong}.
+%At this point, the user may either buy, download and listen a song or just listen to a song (conditional workflow).
+%The last part of the workflow publishes the title of the song either on tweeter or facebook.
+%
+%ECA rules are specified as contracts~\cite{Meyer92}.
+%In our case, the \texttt{buySongContract} specifies conditions to be verified upon the execution of \texttt{buySong}.
+%This contract specifies pre and post-conditions, as well as time constraints.\footnote{\color{red} Placido: Please verify the pre-condition assertions!}
+%The precondition (EXPLAIN!)\dots
+%
+%In case of failure in verifying the precondition, the service \texttt{buySong} is retried.
+%
+%The postcondition ensures that the payment succeeds before .
+%
+%The time constraint indicates that the \texttt{sendConfirmation} service is invoked immediately after \texttt{buySong}.
+%\end{example}
+%
+%
+%
+%
+%Given a $\pi$-SCM model of a specific service based application (expressed according to the $\pi$-SCM meta-model), it is possible to generate its corresponding $\pi$-{\sc Pews} model. 
+%The following section describes the transformation rules between the $\pi$-SCM and $\pi$-{\sc Pews} meta-models.
+%
+%
+%
+%
+%
+%
+%
+%The {\em A-policy} based service composition ($\pi$-SCM) meta-model, shown in Figure \ref{fig:e-scomposition-metamodel},
+%provides meta-classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
+%The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model meta-classes.} and the {\sc Actions} they perform. 
+%Instances of this meta-model are represented as UML activity diagrams. 
+%In Figure~\ref{fig:e-scomposition-metamodel}  coloured boxes illustrate classes  modelling  non-functional properties and 
+% white boxes represent classes modelling functional ones. 
+%
+%%In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
+%\begin{itemizedTrivlist}
+%\item A {\sc Business Collaborator} meta-class represents the classes of entities that collaborate in  business processes by performing some  required action. 
+%An instance of this meta-class is graphically represented as a partition in the activity diagram. 
+%A collaborator can be either internal or external to the system. 
+%When the collaborator of the business is external to the system, the attribute {\sf IsExternal}\footnote{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} of the collaborator is set to \textbf{true}.
+%
+%\item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented in the model as a class activity instance of the meta-class Action. 
+%A class action represents some type of transformation or processing. 
+%There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
 %\begin{figure}[t]
 %\centering
-%\includegraphics[width=1.0\textwidth]{figs/PEWSMetamodel}
-%\caption{$\pi$-{\sc Pews} Metamodel}
-%\label{fig:metamodel}
+%\includegraphics[width=1.0\textwidth]{figs/E-service-composition-metamodel}
+%\caption{$\pi$-Service Composition ($\pi$-SCM) Metamodel.}
+%\label{fig:e-scomposition-metamodel}
 %\end{figure}
-%%
-
-\bigskip
-The following example presents the \textit{$\pi$-PEWS} model for the ``To Publish Music'' application.
-\begin{example}[To Publish Music (end)]\label{Colocar-o-label-correto-aqui}
-The next code presents the \textit{$\pi$-PEWS}  model for our running example.\footnote{\color{red} Placido: Please change the pdf file as needed!}
-
-\begin{center}
-\includegraphics[scale=0.7]{figs/pewsEspecificationContract.pdf}
-\end{center}
-
-The initial part of the model consists of a workflow expression.
-In the given code, the execution of \texttt{searchSong} is followed by \texttt{selectSong}.
-At this point, the user may either buy, download and listen a song or just listen to a song (conditional workflow).
-The last part of the workflow publishes the title of the song either on tweeter or facebook.
-
-ECA rules are specified as contracts~\cite{Meyer92}.
-In our case, the \texttt{buySongContract} specifies conditions to be verified upon the execution of \texttt{buySong}.
-This contract specifies pre and post-conditions, as well as time constraints.\footnote{\color{red} Placido: Please verify the pre-condition assertions!}
-The precondition (EXPLAIN!)\dots
-
-In case of failure in verifying the precondition, the service \texttt{buySong} is retried.
-
-The postcondition ensures that the payment succeeds before .
-
-The time constraint indicates that the \texttt{sendConfirmation} service is invoked immediately after \texttt{buySong}.
-\end{example}
-
-
-
-
-Given a $\pi$-SCM model of a specific service based application (expressed according to the $\pi$-SCM meta-model), it is possible to generate its corresponding $\pi$-{\sc Pews} model. 
-The following section describes the transformation rules between the $\pi$-SCM and $\pi$-{\sc Pews} meta-models.
-
-
-
-
-
-
-
-The {\em A-policy} based service composition ($\pi$-SCM) meta-model, shown in Figure \ref{fig:e-scomposition-metamodel},
-provides meta-classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
-The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model meta-classes.} and the {\sc Actions} they perform. 
-Instances of this meta-model are represented as UML activity diagrams. 
-In Figure~\ref{fig:e-scomposition-metamodel}  coloured boxes illustrate classes  modelling  non-functional properties and 
- white boxes represent classes modelling functional ones. 
-
-%In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
-\begin{itemizedTrivlist}
-\item A {\sc Business Collaborator} meta-class represents the classes of entities that collaborate in  business processes by performing some  required action. 
-An instance of this meta-class is graphically represented as a partition in the activity diagram. 
-A collaborator can be either internal or external to the system. 
-When the collaborator of the business is external to the system, the attribute {\sf IsExternal}\footnote{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} of the collaborator is set to \textbf{true}.
-
-\item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented in the model as a class activity instance of the meta-class Action. 
-A class action represents some type of transformation or processing. 
-There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
-\begin{figure}[t]
-\centering
-\includegraphics[width=1.0\textwidth]{figs/E-service-composition-metamodel}
-\caption{$\pi$-Service Composition ($\pi$-SCM) Metamodel.}
-\label{fig:e-scomposition-metamodel}
-\end{figure}
-
-\item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service and is composed by one or more executable nodes.
-
-\item In order to represent constraints types associated to services compositions, we extended introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
-We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
-An {\em A-policy} is defined by attributes and rules. 
-Intuitively, the conditions of each rule will be checked.
-In case of no compliance, the actions defined by the rule will be performed.
-The {\sc Rule} meta-class represents the types of event - condition - action rules where the {\sc Event} part represents the moment in which a constraint  will be evaluated.
-An {\em A-policy} defines variables and operations that can be shared by the rules and that can be used for expressing their Event and Condition parts. 
-\end{itemizedTrivlist}
-
-\begin{figure}[t]%[htpb]
-\centering
-\includegraphics[width=0.95\textwidth]{figs/e-composition-model}
-
-{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
-
-\caption{$\pi$-SCM for the ``To publish music'' business service.}
-\label{fig:servicecompositionmodel}
-\end{figure}
-
-\begin{example}[To Publish Music]\label{ex:toPublicMusic}
-To illustrate the use of the $\pi$-Service Composition Meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
-In this model, there are three external business collaborators ({\em Spotify, Twitter} and {\em Facebook}).
-% \footnote{We use {\em italics} to refer to concrete values of the classes of a model that are derived from the classes of a meta-model.}). 
-The model also shows the business process of the application that consists of three service activities: {\em Listen Music}, {\em Publish Music} and {\em Confirmation}. 
-Note that  the activity {\em Publish Music} calls the actions of two service collaborators namely {\em Facebook} and {\em Twitter}.
-Both {\em Facebook} and {\em Twitter} services require authentication protocols in order to execute methods that will read and update the user space. 
-%A call to such services must be part of the authentication protocol required by these services.
-In the example we  associate two authentication policies, one for the open authentication protocol, represented by the class {\sf\small OAuthPolicy} at {\em Twitter}, that will be associated to the activity  {\sf\small UpdateTwitter} (see Figure \ref{fig:servicecompositionmodel}). 
-In the same way, the {\em Facebook} class {\sf\small HTTPAuthPolicy}, for the http authentication protocol will be associated to the activity {\sf\small UpdateFacebook}.
-
-{\sf\small OAuthPolicy} will implement the open authentication protocol.
-The {\em A-policy} {\sf\small OAuthPolicy} has a variable {\sf\small Token} that will be used to store the authentication token provided by the service.
-This variable is imported through the library {\sf\small OAuthPolicy.Token}. 
-The A-policy {\sf\small OAuthPolicy} defines two rules, both can be triggered by events of type {\sf\small ActivityPrepared}: (R$_1$): If no token has been associated to the variable {\sf\small token}, then a token is obtained ; and (R$_2$): if the token has expired, then it is renewed. 
-Notice that the code in the actions profits from the imported {\sf\small OAuthPolicy.Token} for transparently obtaining or renewing a token from a third party.
-
-{\sf\small HTTPAuthPolicy} implements the HTTP-Auth protocol. 
-The A-policy imports an http protocol library and it has two variables {\sf\small username} and {\sf\small password}.  
-The event of type {\sf\small ActivityPrepared} is the triggering event of the rule {\sf\small R$_1$}. 
-On the notification of an event of that type, a credential is obtained using the username and password. 
-\hfill\openbox
-\end{example}
-
-We propose the use of rules and policies to model and associate non-functional properties to service compositions.
-These artifacts will be used to generate the actual programs that will implement the application:
-Once the $\pi$-Service Composition Model has been defined, then it can be transformed into a lower level model (in our case, $\pi$-PEWS) that gives support to code generation. 
-The $\pi$-PEWS  meta-model is described in the next section. 
-
-
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
-\subsubsection{$\pi$-{\sc Pews}  meta-model}\label{sec:pewsmetamodel}
-%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
-
-
-This section  describes the $\pi$-SOD-M development environment that implements the generation of {\em A-policies}' based services' compositions. For a given services' based application, the process  consists in generating the  code starting from a $\pi$-SCM modeling an application. Note that the services' composition model is not modeled from scratch, but it is the result of a general process defined by the $\pi$-SOD-M method in which a set of models are built following a service oriented approach \cite{decastro1}.
-
-%We used the Eclipse Modeling Framework (EMF) to implement the whole model transformation process \footnote {The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}. From a model specification described in XMI, EMF provides tools and runtime support to produce a set of Java classes for the model, along with a set of adapter classes that enable viewing and command-based editing of the model, and a basic editor.
-%In order to automate the transformation we specified  transformation rules using the ATL model transformation language Finally, in order to generate code we  used Acceleo \footnote{http://www.acceleo.org/pages/home/en}.
-
-%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-%\subsection{$\pi$-SOD-M Development Environment}
-%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-
-Figure \ref{fig:policymanager} depicts a general architecture of the $\pi$-SOD-M Development Environment showing the set of plug-ins  developed in order to implement it. The environment implements the abstract architecture. Thus, it consists of plug-ins implementing the $\pi$-SCM and $\pi$-{\sc Pews} meta-models used for defining models specifying services' compositions and their associated policies; and ATL rules for transforming  PSM models (model to model transformation) and finally generating code (model to text transformation).
-\begin{figure}[htpb]
-	\begin{center}
-		\includegraphics[width=0.60\textwidth]{figs/architecture}
-	\end{center}
-		\caption{$\pi$-SOD-M Development Environment}
-   \label{fig:policymanager}
-\end{figure}
-\begin{itemize}
-\item 	We  used the Eclipse Modeling Framework (EMF) \footnote {The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}   for implementing the meta-models  $\pi$- SCM and $\pi$-{\sc Pews}. Then, starting form these meta-models, we  developed the models' plug-ins needed to support the graphical representation of the $\pi$- SCM and $\pi$-{\sc Pews} models ($\pi$-ServiceCompostion Model and $\pi$-PEWS Model plug-ins).
-
-\item	 We used  ATL \footnote{http://eclipse.org/atl/. An ATL program is basically a set of rules that define how source model elements are matched and navigated to create and initialize the elements of the target models.}
-for  developing the mapping plug-in implementing the  mappings between models ($\pi$-ServiceComposition2$\pi$-PEWS Plug-in).
-
-\item 	We  used Acceleo \footnote{http://www.acceleo.org/pages/home/en} for implementing  the code generation plug-in. We coded the pews.mt program  that implements the model to text transformation for generating executable code. It takes as input a $\pi$-PEWS model implementing a specific services' composition and it generates the code to be executed by the 
-{\em A-policy} based services' composition execution environment. 
-
-%\item Finally, we created a chain execution  to execute the model to text transformation.
-\end{itemize}
-
 %
-As  shown in Figure \ref{fig:policymanager}, once an instance of a PEWS code is obtained starting form a particular $\pi$-services' composition model it can be executed over {\em A-policy} based services' composition execution environment  consisting of a composition engine and a {\em A-policy} manager.  The  {\em A-policy} manager  consists of three main components Manager, for scheduling the execution of rules, C-Evaluator and A-Executor respectively for evaluating rules' conditions and executing their actions. The {\em A-policy} Manager interacts with a composition engine thanks to a  message communication layer (MOM).
+%\item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service and is composed by one or more executable nodes.
+%
+%\item In order to represent constraints types associated to services compositions, we extended introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+%We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
+%An {\em A-policy} is defined by attributes and rules. 
+%Intuitively, the conditions of each rule will be checked.
+%In case of no compliance, the actions defined by the rule will be performed.
+%The {\sc Rule} meta-class represents the types of event - condition - action rules where the {\sc Event} part represents the moment in which a constraint  will be evaluated.
+%An {\em A-policy} defines variables and operations that can be shared by the rules and that can be used for expressing their Event and Condition parts. 
+%\end{itemizedTrivlist}
+%
+%\begin{figure}[t]%[htpb]
+%\centering
+%\includegraphics[width=0.95\textwidth]{figs/e-composition-model}
+%
+%{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
+%
+%\caption{$\pi$-SCM for the ``To publish music'' business service.}
+%\label{fig:servicecompositionmodel}
+%\end{figure}
+%
+%\begin{example}[To Publish Music]\label{ex:toPublicMusic}
+%To illustrate the use of the $\pi$-Service Composition Meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
+%In this model, there are three external business collaborators ({\em Spotify, Twitter} and {\em Facebook}).
+%% \footnote{We use {\em italics} to refer to concrete values of the classes of a model that are derived from the classes of a meta-model.}). 
+%The model also shows the business process of the application that consists of three service activities: {\em Listen Music}, {\em Publish Music} and {\em Confirmation}. 
+%Note that  the activity {\em Publish Music} calls the actions of two service collaborators namely {\em Facebook} and {\em Twitter}.
+%Both {\em Facebook} and {\em Twitter} services require authentication protocols in order to execute methods that will read and update the user space. 
+%%A call to such services must be part of the authentication protocol required by these services.
+%In the example we  associate two authentication policies, one for the open authentication protocol, represented by the class {\sf\small OAuthPolicy} at {\em Twitter}, that will be associated to the activity  {\sf\small UpdateTwitter} (see Figure \ref{fig:servicecompositionmodel}). 
+%In the same way, the {\em Facebook} class {\sf\small HTTPAuthPolicy}, for the http authentication protocol will be associated to the activity {\sf\small UpdateFacebook}.
+%
+%{\sf\small OAuthPolicy} will implement the open authentication protocol.
+%The {\em A-policy} {\sf\small OAuthPolicy} has a variable {\sf\small Token} that will be used to store the authentication token provided by the service.
+%This variable is imported through the library {\sf\small OAuthPolicy.Token}. 
+%The A-policy {\sf\small OAuthPolicy} defines two rules, both can be triggered by events of type {\sf\small ActivityPrepared}: (R$_1$): If no token has been associated to the variable {\sf\small token}, then a token is obtained ; and (R$_2$): if the token has expired, then it is renewed. 
+%Notice that the code in the actions profits from the imported {\sf\small OAuthPolicy.Token} for transparently obtaining or renewing a token from a third party.
+%
+%{\sf\small HTTPAuthPolicy} implements the HTTP-Auth protocol. 
+%The A-policy imports an http protocol library and it has two variables {\sf\small username} and {\sf\small password}.  
+%The event of type {\sf\small ActivityPrepared} is the triggering event of the rule {\sf\small R$_1$}. 
+%On the notification of an event of that type, a credential is obtained using the username and password. 
+%\hfill\openbox
+%\end{example}
+%
+%We propose the use of rules and policies to model and associate non-functional properties to service compositions.
+%These artifacts will be used to generate the actual programs that will implement the application:
+%Once the $\pi$-Service Composition Model has been defined, then it can be transformed into a lower level model (in our case, $\pi$-PEWS) that gives support to code generation. 
+%The $\pi$-PEWS  meta-model is described in the next section. 
 
 
-The composition engine manages the life cycle of the composition. Once a composition instance is activated, the engine schedules the composition activities according to the composition control flow.
-Each activity is seen as the process where the service method call is executed.
-The execution of an activity has four states: prepared, started, terminated, and failure.
-The execution of the control flow (sequence, and/or split and join) can also be prepared, started, terminated and raise a failure.
-
-At execution time, the evaluation of policies done by the {\em A-policy} manager must be synchronized with the execution of the services' composition (i.e., the execution of an activity or a control flow).  Policies associated to a scope are activated when the execution of its scope starts. A {\em A-policy} will have to be executed only if one or several of its rules is triggered. If several rules are triggered the {\em A-policy} manager first builds an execution plan that specifies the order in which such rules will be executed according to the strategies defined in the following section. 
-%Once rules have been executed, the {\em A-policy} finishes its execution and returns to a sleeping state.
-If rules belonging to several policies are triggered then policies are also ordered according to an execution plan. The execution of policies is out of the scope of this paper, the interested reader can refer to \cite{Espinosa-Oviedo2011a} for further details.
-%The order of policies has implications on the global order of the rules to be executed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=============================================================================
+%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
+%\subsubsection{$\pi$-{\sc Pews}  meta-model}\label{sec:pewsmetamodel}
+%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
+%
+%
+%This section  describes the $\pi$-SOD-M development environment that implements the generation of {\em A-policies}' based services' compositions. For a given services' based application, the process  consists in generating the  code starting from a $\pi$-SCM modeling an application. Note that the services' composition model is not modeled from scratch, but it is the result of a general process defined by the $\pi$-SOD-M method in which a set of models are built following a service oriented approach \cite{decastro1}.
+%
+%%We used the Eclipse Modeling Framework (EMF) to implement the whole model transformation process \footnote {The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}. From a model specification described in XMI, EMF provides tools and runtime support to produce a set of Java classes for the model, along with a set of adapter classes that enable viewing and command-based editing of the model, and a basic editor.
+%%In order to automate the transformation we specified  transformation rules using the ATL model transformation language Finally, in order to generate code we  used Acceleo \footnote{http://www.acceleo.org/pages/home/en}.
+%
+%%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+%%\subsection{$\pi$-SOD-M Development Environment}
+%%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+%
+%Figure \ref{fig:policymanager} depicts a general architecture of the $\pi$-SOD-M Development Environment showing the set of plug-ins  developed in order to implement it. The environment implements the abstract architecture. Thus, it consists of plug-ins implementing the $\pi$-SCM and $\pi$-{\sc Pews} meta-models used for defining models specifying services' compositions and their associated policies; and ATL rules for transforming  PSM models (model to model transformation) and finally generating code (model to text transformation).
+%\begin{figure}[htpb]
+%	\begin{center}
+%		\includegraphics[width=0.60\textwidth]{figs/architecture}
+%	\end{center}
+%		\caption{$\pi$-SOD-M Development Environment}
+%   \label{fig:policymanager}
+%\end{figure}
+%\begin{itemize}
+%\item 	We  used the Eclipse Modeling Framework (EMF) \footnote {The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}   for implementing the meta-models  $\pi$- SCM and $\pi$-{\sc Pews}. Then, starting form these meta-models, we  developed the models' plug-ins needed to support the graphical representation of the $\pi$- SCM and $\pi$-{\sc Pews} models ($\pi$-ServiceCompostion Model and $\pi$-PEWS Model plug-ins).
+%
+%\item	 We used  ATL \footnote{http://eclipse.org/atl/. An ATL program is basically a set of rules that define how source model elements are matched and navigated to create and initialize the elements of the target models.}
+%for  developing the mapping plug-in implementing the  mappings between models ($\pi$-ServiceComposition2$\pi$-PEWS Plug-in).
+%
+%\item 	We  used Acceleo \footnote{http://www.acceleo.org/pages/home/en} for implementing  the code generation plug-in. We coded the pews.mt program  that implements the model to text transformation for generating executable code. It takes as input a $\pi$-PEWS model implementing a specific services' composition and it generates the code to be executed by the 
+%{\em A-policy} based services' composition execution environment. 
+%
+%%\item Finally, we created a chain execution  to execute the model to text transformation.
+%\end{itemize}
+%
+%%
+%As  shown in Figure \ref{fig:policymanager}, once an instance of a PEWS code is obtained starting form a particular $\pi$-services' composition model it can be executed over {\em A-policy} based services' composition execution environment  consisting of a composition engine and a {\em A-policy} manager.  The  {\em A-policy} manager  consists of three main components Manager, for scheduling the execution of rules, C-Evaluator and A-Executor respectively for evaluating rules' conditions and executing their actions. The {\em A-policy} Manager interacts with a composition engine thanks to a  message communication layer (MOM).
+%
+%
+%The composition engine manages the life cycle of the composition. Once a composition instance is activated, the engine schedules the composition activities according to the composition control flow.
+%Each activity is seen as the process where the service method call is executed.
+%The execution of an activity has four states: prepared, started, terminated, and failure.
+%The execution of the control flow (sequence, and/or split and join) can also be prepared, started, terminated and raise a failure.
+%
+%At execution time, the evaluation of policies done by the {\em A-policy} manager must be synchronized with the execution of the services' composition (i.e., the execution of an activity or a control flow).  Policies associated to a scope are activated when the execution of its scope starts. A {\em A-policy} will have to be executed only if one or several of its rules is triggered. If several rules are triggered the {\em A-policy} manager first builds an execution plan that specifies the order in which such rules will be executed according to the strategies defined in the following section. 
+%%Once rules have been executed, the {\em A-policy} finishes its execution and returns to a sleeping state.
+%If rules belonging to several policies are triggered then policies are also ordered according to an execution plan. The execution of policies is out of the scope of this paper, the interested reader can refer to \cite{Espinosa-Oviedo2011a} for further details.
+%%The order of policies has implications on the global order of the rules to be executed.
+%
+%
+%=============================================================================
 
 We validated our methodology by developing a use-case concerning risk assessment for financial companies.
 Our application is inspired on the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
