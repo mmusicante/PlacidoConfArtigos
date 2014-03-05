@@ -21,30 +21,42 @@ At this stage of the development, the structure and system processing details ar
 $\pi$-SODM uses the \textit{e$^3$value}~\cite{e3value} and \textit{BPMN}~\cite{BPMN} meta-models for this purpose. 
 
 The e$^3$value model identifies the value/information exchange between components of the system. 
-It defines \textit{dependency paths}, showing the value exchanges, which are triggered by the occurrence of an end-consumer need.
+It defines \textit{dependency paths}, showing the value exchange between providers and end users once they ask for a service.
+% , which are triggered by the occurrence of an end-consumer need.
 A dependency path has a direction and consists of a sequence of linked dependency nodes.
-A dependency path starts with a \textit{start stimulus} node and ends with an \textit{end stimulus} node\footnote{See Legend on Figure~\ref{fig:CIM:tpme3v}}. 
+A dependency path starts with a \textit{start stimulus} node and ends with an \textit{end stimulus} node\footnote{see Figure~\ref{fig:CIM:tpme3v}}. 
 Dependency paths may also contain \textsl{OR} and \textsl{AND} elements (both for initiate and join alternative and parallel paths).
 
 The BPMN model is a graphical representation that establishes the business process of the application through a high-level workflow. The next example illustrates the use of these models.
 
 \begin{example}[To Publish Music]\label{ex:toPublicMusic}
-To illustrate our proposal, we build the models for a ``To Publish Music'' problem. 
-This problem involves three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as the user and the application itself.
-
-The e$^3$value and BPMN models for this applications are shown in Figure~\ref{fig:CIM:tpm}.
-Notice that the models at this level show\dots 
-{\color{red} Valeria and Placido: Please explain the CIM models for this example.}
-%\hfill\openbox
+To illustrate our proposal, consider the scenario ``To Publish Music''  based on
+three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as the user and the application itself. 
+The e$^3$value and BPMN models for this application are shown in Figures~\ref{fig:CIM:tpme3v} and \ref{fig:CIM:tpmbpmn}. 
 \end{example}
 
-\begin{figure}\center
+\begin{figure}[htpb]
+\center
 \includegraphics[width=0.88\textwidth]{figs/e3value.pdf}
 \hspace*{5cm}\includegraphics[width=0.4\textwidth]{figs/3ValueKey.pdf}
 \caption{\label{fig:CIM:tpme3v} e3value model for ``To Publish Music''.}
 \end{figure}
 
-\begin{figure}\center
+The E3 value model is a business model that represents a business case graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) and allows us to understand the environment in which the services' composition will be placed. 
+The E3 value model in Figure \ref{fig:CIM:tpme3v} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
+
+
+%Note that the models at this level show\dots 
+%{\color{red} Valeria and Placido: Please explain the CIM models for this example.}
+%\hfill\openbox
+
+
+Figure \ref{fig:CIM:tpmbpmn} shows the BPMN model  \footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario. 
+It starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}). 
+Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
+%
+\begin{figure}[htpb]
+\center
 \includegraphics[width=0.49\textwidth]{figs/SC.pdf}
 \caption{\label{fig:CIM:tpmbpmn} BPMN model for ``To Publish Music''.}
 \end{figure}
@@ -62,12 +74,23 @@ The specification defines those parts of the system that do not change from one 
 Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess} and \textit{$\pi$-ServiceComposition}.
  
 The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model for describing functional and non-functional requirements. 
-Non-functional requirements are defined as \textit{constraints} over actions and data.
+Non-functional requirements are defined as \textit{constraints} over actions and data. The \textit{$\pi$-UseCase} meta-model describes the functional aspects of the application being developed and the restrictions that applies to each of them. These restrictions are modeled using the concepts: (i) constraint type and (ii) non-functional requirement with its specific attribute.
+All constraints are described by stereotyped use cases. Every relationship between an use
+case and a constraint is done through a dependency relationship (from UML).  A constraint is defined by a stereotype, containing its type and name. Constraints are represented by a stereotyped use case («constraint»).
+Each use case is related with one or more system requirements. Moreover, these use cases are related to non-functional requirements necessary for the proper execution of the application function. The function described by a use case can be part of a business service (in the case of service remote calls). This information is described through comments.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
-{\color{red} Talk about this model for the example.}
+%Now, consider that besides the services' composition that represents the order in which the services are called for implementing the application "To Publish Music" it is necessary to model  other requirements that represent the (i) conditions imposed by services for being contacted, for example the fact the Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, for example the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated. 
+ 
+ We use part of our case study to illustrate this meta-model. Each use case may have multiple constraints. In this example the publish music use case has an authentication constraint (user must authenticate). For a song to be published on any social network it is necessary to provide data privacy. The constraint type concerns the authentication values and the constraint has an non-functional attributes. The use case is also related with requirement, a business service and a non-functional requirement properties.
+%{\color{red} Talk about this model for the example.}
 \end{example}
 
+\begin{figure}[htpb]
+\center
+\includegraphics[width=0.9\textwidth]{figs/UseCase.pdf}
+\caption{\label{fig:CIM:tpmbpmn} $\pi$-UseCase model for ``To Publish Music''.}
+\end{figure}
  
 The \textit{$\pi$-ServiceProcess} meta-model defines the concept of \textit{service contract} to represent constraints over data and actions 
 gathers the constraints described in the \textit{$\pi$-UseCase}.
