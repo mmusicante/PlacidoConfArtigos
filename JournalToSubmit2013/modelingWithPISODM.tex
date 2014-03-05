@@ -82,7 +82,7 @@ Each use case is related with one or more system requirements. Moreover, these u
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
 %Now, consider that besides the services' composition that represents the order in which the services are called for implementing the application "To Publish Music" it is necessary to model  other requirements that represent the (i) conditions imposed by services for being contacted, for example the fact the Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, for example the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated. 
  
- We use part of our case study to illustrate this meta-model. Each use case may have multiple constraints. In this example the publish music use case has an authentication constraint (user must authenticate). For a song to be published on any social network it is necessary to provide data privacy. The constraint type concerns the authentication values and the constraint has an non-functional attributes. The use case is also related with requirement, a business service and a non-functional requirement properties.
+ We use part of our case study to illustrate this meta-model. The ?To Publish Music? use case can update the Face- book or Twitter user status. Therefore, it is necessary to perform a social network authentication with the user?s data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a «value» constraint, because the user?s id and password are verified.  Figure \ref{fig:CIM:tpmbpmn}  the buy music, download music, listen music and pay use cases. The process of buying a song requires the user?s private data for a Spotify account, and also a secure connection, represented as «value» and «business» constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as «value» stereotype . Other restriction is that the minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example}
 
@@ -93,11 +93,18 @@ Each use case is related with one or more system requirements. Moreover, these u
 \end{figure}
  
 The \textit{$\pi$-ServiceProcess} meta-model defines the concept of \textit{service contract} to represent constraints over data and actions 
-gathers the constraints described in the \textit{$\pi$-UseCase}.
+gathers the constraints described in the \textit{$\pi$-UseCase}. A \textit{$\pi$-ServiceProcess} model represents the service processes and its contracts. It models the set of system activities and describe contracts for each activity or the process as a whole. Each service identified in the previous model (\textit{$\pi$-UseCase}) is mapped to an action. This model describes the workflow for the modelled application behaviour. The behaviour is represented by each action and the restrictions by the assertion description. All assertions are described by stereotyped actions.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic3}
-{\color{red} Talk about this model for the example.}
+Considering the example scenario, the contract based process of activities execution is shown in figure \ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions are: (i) verify if the User data are correct; (ii) if the User is already logged in Spotify; (iii) if bank account information are correct and; (iv) if there is enough money to make the payment. As post-condition, it ensures the complete transaction and verify if a notification were sent to the user and Spotify, about the payment authorization. There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in case of Twitter. In the case of Facebook, it is required that the user is already logged on Spotify and these data are the same as Facebook. As post-condition, it ensures that the Facebook service send a notification of success. To update Twitter a pre-condition is required, while to update Facebook is necessary a pre-condition and a confirmation notice is modelled as post-condition. As a pre-condition for ?twitter update? it is necessary that (i) the music format be correct and (ii) the twitter login and password be correct for the update.
+%{\color{red} Talk about this model for the example.}
 \end{example}
+
+\begin{figure}[htpb]
+\center
+\includegraphics[width=0.9\textwidth]{figs/ServiceProcess.pdf}
+\caption{\label{fig:CIM:serviceprocess} $\pi$-ServiceProcess model for ``To Publish Music''.}
+\end{figure}
 
 The \textit{$\pi$-ServiceComposition} meta-model provides the concept  of \textit{Policy}
 to integrate contracts with similar non-functional requirements.
@@ -111,49 +118,6 @@ Both {\em Facebook} and {\em Twitter} require authentication.
 Two authentication policies are required, one for {\em Twitter} and another for {\em Facebook}.
 {\color{red} To be completed!.}
 \end{example}
-
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-\subsection{Platform Specific Models}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-
-This level focusses on the functionality, in the context of a particular implementation platform.
-Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system. At the PSM level we have lower-level models that can be automatically translated into actual computer programs. 
-We have defined one meta-model at this level.
-
-The \textit{$\pi$-PEWS} meta-model provides concepts for modelling service compositions. 
-Instances of this meta-model are textual descriptions of service compositions that can be translated into any service composition language, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
-
-PEWS~\cite{BHM06,Placido2010LTPD} is a notation to express service compositions.
-The language is based on the notion of Path Expressions~\cite{And79} and can easily be translated into any actual composition language, such as BPEL~\cite{bpel03} or any other language that lets the service designer combine the methods or subprograms that implement each operation of a service, in order to achieve the desired application logic. 
-Figure~\ref{fig:metamodel} presents the $\pi$-{\sc Pews} meta-model, where we identify classes to describe:
-\begin{itemizedTrivlist}
-\item Service compositions: {\sc Namespace} representing the interface exported by a service, {\sc Operation} that represents a call to a service method, {\sc CompositeOperation}, {\sc Operator} and {\sc Path} for representing service compositions.
-A {\sc Path} can be an {\sc Operation} or a {\sc Compound Operation}. 
-A {\sc Compound Operation} is defined using an {\sc Operator}.
-The language defines operators to denote guarded operations ($[C]S$); sequential ($\ . \ $), parallel ($\ \| \ $) and alternative ($\ + \ $) compositions; as well as sequential ($*$) and parallel ($\{\dots\}$) repetition.
-
-\item {\em A-Policies} that can be associated to a service compositions:  {\sc A-Policy}, {\sc Rule}, {\sc Event}, {\sc Condition}, {\sc Action}, {\sc State}, and {\sc Scope}.
-A brief description of these classes is given next.
-\end{itemizedTrivlist}
-%
-\begin{figure}[t]
-\centering
-\includegraphics[width=1.0\textwidth]{figs/PEWSMetamodel}
-\caption{$\pi$-{\sc Pews} Metamodel}
-\label{fig:metamodel}
-\end{figure}
-
-Figure~\ref{fig:metamodel} shows that each {\sc A-Policy} is associated to a {\sc Scope} that can be either an {\sc Operation} (e.g., an authentication protocol associated to a method exported by a service),  an {\sc Operator} (e.g., a temporal constraint associated to a sequence of operators) or a {\sc Path}.  
-Each {\sc A-Policy} groups a set of ECA rules with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}.  
-In this way, an {\em A-policy} represents a set of reactions to be possibly executed when one or several events are notified.
-
-Given a $\pi$-SCM model of a specific service based application (expressed according to the $\pi$-SCM meta-model), it is possible to generate its corresponding $\pi$-{\sc Pews} model. 
-The following section describes the transformation rules between the $\pi$-SCM and $\pi$-{\sc Pews} meta-models.
-
-
-
-
-
 
 ===================================
 
@@ -230,6 +194,46 @@ We propose the use of rules and policies to model and associate non-functional p
 These artifacts will be used to generate the actual programs that will implement the application:
 Once the $\pi$-Service Composition Model has been defined, then it can be transformed into a lower level model (in our case, $\pi$-PEWS) that gives support to code generation. 
 The $\pi$-PEWS  meta-model is described in the next section. 
+
+
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+\subsection{Platform Specific Models}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+
+This level focusses on the functionality, in the context of a particular implementation platform.
+Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system. At the PSM level we have lower-level models that can be automatically translated into actual computer programs. 
+We have defined one meta-model at this level.
+
+The \textit{$\pi$-PEWS} meta-model provides concepts for modelling service compositions. 
+Instances of this meta-model are textual descriptions of service compositions that can be translated into any service composition language, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
+
+PEWS~\cite{BHM06,Placido2010LTPD} is a notation to express service compositions.
+The language is based on the notion of Path Expressions~\cite{And79} and can easily be translated into any actual composition language, such as BPEL~\cite{bpel03} or any other language that lets the service designer combine the methods or subprograms that implement each operation of a service, in order to achieve the desired application logic. 
+Figure~\ref{fig:metamodel} presents the $\pi$-{\sc Pews} meta-model, where we identify classes to describe:
+\begin{itemizedTrivlist}
+\item Service compositions: {\sc Namespace} representing the interface exported by a service, {\sc Operation} that represents a call to a service method, {\sc CompositeOperation}, {\sc Operator} and {\sc Path} for representing service compositions.
+A {\sc Path} can be an {\sc Operation} or a {\sc Compound Operation}. 
+A {\sc Compound Operation} is defined using an {\sc Operator}.
+The language defines operators to denote guarded operations ($[C]S$); sequential ($\ . \ $), parallel ($\ \| \ $) and alternative ($\ + \ $) compositions; as well as sequential ($*$) and parallel ($\{\dots\}$) repetition.
+
+\item {\em A-Policies} that can be associated to a service compositions:  {\sc A-Policy}, {\sc Rule}, {\sc Event}, {\sc Condition}, {\sc Action}, {\sc State}, and {\sc Scope}.
+A brief description of these classes is given next.
+\end{itemizedTrivlist}
+%
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.0\textwidth]{figs/PEWSMetamodel}
+\caption{$\pi$-{\sc Pews} Metamodel}
+\label{fig:metamodel}
+\end{figure}
+
+Figure~\ref{fig:metamodel} shows that each {\sc A-Policy} is associated to a {\sc Scope} that can be either an {\sc Operation} (e.g., an authentication protocol associated to a method exported by a service),  an {\sc Operator} (e.g., a temporal constraint associated to a sequence of operators) or a {\sc Path}.  
+Each {\sc A-Policy} groups a set of ECA rules with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}.  
+In this way, an {\em A-policy} represents a set of reactions to be possibly executed when one or several events are notified.
+
+Given a $\pi$-SCM model of a specific service based application (expressed according to the $\pi$-SCM meta-model), it is possible to generate its corresponding $\pi$-{\sc Pews} model. 
+The following section describes the transformation rules between the $\pi$-SCM and $\pi$-{\sc Pews} meta-models.
+
 
 
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
