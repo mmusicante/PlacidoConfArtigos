@@ -198,7 +198,7 @@ Risk assessment is implemented by an interactive business process based on the e
 Examples of business practices are the conditions and protocols used to perform confidential transactions or the physical security for accessing reserved areas (such as computing server installations).
 The information gathered by the questionnaires is used to evaluate whether there are risky practices within the business processes of the company, as well as to propose amends to these practices.
 The ultimate goal of the risk assessment is to determine a degree of compliance to existing standards.
-By analysing the questionnaires, ORCA detects risky practices, proposes solutions and triggers further assessment processes to ensure that the solutions have been implemented.
+By analyzing the questionnaires, ORCA detects risky practices, proposes solutions and triggers further assessment processes to ensure that the solutions have been implemented.
 
 Our goal is to model a service based application (called \FlyingPig), for providing risk assessment as a service.
 In order to provide this functionality, \FlyingPig\ would benefit from ORCA's legacy services for storage, assessment and data visualization functions.
@@ -213,8 +213,9 @@ The models presented next were generated as a result of interacting with softwar
 \caption{E3value model for \FlyingPig.\label{fig:E3valuemodel}}
 \end{figure}
 
-
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Computation-Independent Models (CIM)}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 Figure~\ref{fig:E3valuemodel} shows the value model for the \FlyingPig\ application.
 It is a business model that graphically represents a business case as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).\footnote{\color{red} This sentence need to move to section 3.1!!}
@@ -254,15 +255,16 @@ The request leads to the definition of a group of users that will answer questio
 Questionnaires are considered tasks that users will have to perform. 
 Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include from physical facts such as not having easy access to handicapped persons or having an unsecured access to the premises of the company, to more intangible ones, such as the use of an less-than-optimal protocol to access data on the company's computer server.}.
 
-Once tasks are completed, they are stored and analysed to generate a list of noncompliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
-During the process of analysing a questionnaire, the answers of some questions can trigger the generation of additional questionnaires or amendments, that will become new tasks.  
+Once tasks are completed, they are stored and analyzed to generate a list of noncompliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
+During the process of analyzing a questionnaire, the answers of some questions can trigger the generation of additional questionnaires or amendments, that will become new tasks.  
 
 Business processes also have associated rules and constraints to define their non-functional requirements (NFR).
 {\color{red}
 Placido, Valeria: What can we say about non-functional requirements at the CIM level?
 }
-
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Platform-Independent Models (PIM)}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 In Section~\ref{sec:modelingWithPISODM} we defined three models at the PIM level.
 These models are built next, for the \FlyingPig\ scenario.
@@ -351,8 +353,7 @@ They are associated to actions of the system.
 %\centering
 \begin{lstlisting}[label=list:flyingPigPiPEWS,caption=pi-PEWS
 Specification: FlyingPig. ]!\label{fig:PiPEWSModel}!
-
-//Namespaces specify service URI
+ //Namespaces specify service URI
 namespace orca = www.orca.mx/service.wsdl
 
 //Operations
@@ -395,7 +396,7 @@ receiveRequest(R, Id)
  
 //Policies 					  
 
-
+\normalsize
 \end{lstlisting}
 %\fbox{\LARGE $\pi$-PEWS Model.}
 %
@@ -405,7 +406,9 @@ receiveRequest(R, Id)
 %\caption{$\pi$-PEWS model for \FlyingPig.\label{fig:PiPEWSModel}}
 %\end{figure}
 
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Platform-Specific Model (PSM)}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 The model presented in Figure~\ref{fig:PiPEWSModel} is the result of translating the previous model into service composition code.
 Notice that the workflow for \FlyingPig\ is implemented by using the constructors present in BPEL~\cite{BPEL}, with the addition of the notion of \textit{contract}.
@@ -413,8 +416,9 @@ Notice that the workflow for \FlyingPig\ is implemented by using the constructor
 Contracts may be implemented as transversal concerns~\cite{aspects}.
 Their conditions may be verified at specific point of the composition and their actions are executed if needed.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Lessons Learned}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 Through the example we underlined that every application implements functional aspects that describe its application logic.
 Recall that an application logic refers to routines that perform the activities to reach the application objective.
