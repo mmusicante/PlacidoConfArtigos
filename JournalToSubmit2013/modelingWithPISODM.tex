@@ -1,7 +1,7 @@
 %(AquÃ­ lo dejarÃ­a con la estructura que tenÃ­amos para Caise, presentamos el framework y posteriormente comentamos modelos y transformaciones)
 
 This section presents $\pi$SOD-M, an MDD-based methodology for building service compositions with non-functional requirements. 
-$\pi$SOD-M extends SOD-M with concepts for modelling non-functional requirements, it proposes the generation of a set of models at different levels of abstraction, as well as transformations between these models (Figure~\ref{fig:piSOD-M}).
+$\pi$SOD-M provides concepts for modelling non-functional requirements, it proposes the generation of a set of models at different levels of abstraction, as well as transformations between these models (Figure~\ref{fig:piSOD-M}).
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/piSOD-M_process.pdf}
@@ -20,21 +20,16 @@ This level focusses on the highest-level view of the system, including its busin
 At this stage of the development, the structure and system processing details are still unknown or undetermined.  
 $\pi$-SODM uses the \textit{e$^3$value}~\cite{e3value} and \textit{BPMN}~\cite{BPMN} meta-models for this purpose. 
 
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .   
+\subsubsection{E$^3$value meta-model}
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 The e$^3$value model identifies the value/information exchange between components of the system. 
-It defines \textit{dependency paths}, showing the value exchange between providers and end users once they ask for a service.
+It defines \textit{dependency paths}, showing the value exchange between providers and end users when they ask for a service.
 % , which are triggered by the occurrence of an end-consumer need.
 A dependency path has a direction and consists of a sequence of linked dependency nodes.
-A dependency path starts with a \textit{start stimulus} node and ends with an \textit{end stimulus} node\footnote{see Figure~\ref{fig:CIM:tpme3v}}. 
+It starts with a \textit{start stimulus} node and ends with an \textit{end stimulus} node (see Figure~\ref{fig:CIM:tpme3v}). 
 Dependency paths may also contain \textsl{OR} and \textsl{AND} elements (both for initiate and join alternative and parallel paths).
-
-The BPMN model is a graphical representation that establishes the business process of the application through a high-level workflow. The next example illustrates the use of these models.
-
-\begin{example}[To Publish Music]\label{ex:toPublicMusic}
-To illustrate our proposal, consider the scenario ``To Publish Music''  based on
-three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as the user and the application itself. 
-The e$^3$value and BPMN models for this application are shown in Figures~\ref{fig:CIM:tpme3v} and \ref{fig:CIM:tpmbpmn}. 
-\end{example}
-
+The e$^3$value model is a business model that represents a business case graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) and allows us to understand the environment in which the services' composition will be placed. 
 \begin{figure}[htpb]
 \center
 \includegraphics[width=0.88\textwidth]{figs/e3value.pdf}
@@ -42,18 +37,27 @@ The e$^3$value and BPMN models for this application are shown in Figures~\ref{fi
 \caption{\label{fig:CIM:tpme3v} e3value model for ``To Publish Music''.}
 \end{figure}
 
-The E3 value model is a business model that represents a business case graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) and allows us to understand the environment in which the services' composition will be placed. 
-The E3 value model in Figure \ref{fig:CIM:tpme3v} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
+\begin{example}[To Publish Music]\label{ex:toPublicMusic}
+To illustrate our proposal, consider the scenario ``To Publish Music''  based on
+three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as the user and the application itself. 
+The e$^3$value  model for this application are shown in Figures~\ref{fig:CIM:tpme3v}. The e$^3$value value model in Figure \ref{fig:CIM:tpme3v} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
+\end{example}
+
+
 
 
 %Note that the models at this level show\dots 
 %{\color{red} Valeria and Placido: Please explain the CIM models for this example.}
 %\hfill\openbox
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
+\subsubsection{BPMN meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
+The BPMN meta-model is a graphical representation that establishes the business process of the application through a high-level workflow. The next example illustrates the use of this meta-model.
 
-
+\begin{example}[To Publish Music]\label{ex:toPublicMusicBPMN}
 Figure \ref{fig:CIM:tpmbpmn} shows the BPMN model  \footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario. 
 It starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}). 
 Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
+\end{example}
 %
 \begin{figure}[htpb]
 \center
@@ -62,7 +66,7 @@ Twitter and Facebook services are then contacted in parallel for updating the us
 \end{figure}
 
 The CIM level models are the basis for the development of the application. 
-The information presented at this level are (manually) refined into PIM-level models.
+The information presented at this level is (manually) refined into PIM-level models of the methodology $\pi$-SODM described next.
 
 
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
@@ -73,13 +77,17 @@ This level focusses on the system functionality, hiding the details of any parti
 The specification defines those parts of the system that do not change from one platform to another. 
 Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess} and \textit{$\pi$-ServiceComposition}.
  
+ % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
+\subsubsection{\textit{$\pi$-UseCase} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model for describing functional and non-functional requirements. 
-Non-functional requirements are defined as \textit{constraints} over actions and data. The \textit{$\pi$-UseCase} meta-model describes the functional aspects of the application being developed and the restrictions that applies to each of them. These restrictions are modeled using the concepts: (i) constraint type and (ii) non-functional requirement with its specific attribute.
-
+Non-functional requirements are defined as \textit{constraints} over actions and data. The \textit{$\pi$-UseCase} meta-model describes the functional aspects of the application being developed and the restrictions that apply to each of them. These restrictions are modeled using the concepts: (i) constraint type and (ii) non-functional requirement with its specific attribute. All constraints are described by stereotyped use cases. Every relationship between a use
+case and a constraint is done through a dependency relationship (from UML).  A constraint is defined by a stereotype, containing its type and name. Constraints are represented by a stereotyped use case («constraint»).
+Each use case is related with one or more system requirements. Moreover, these use cases are related to non-functional requirements necessary for the proper execution of the application function. The function described by a use case can be part of a business service (in the case of service remote calls). This information is described through comments.
+We use part of our case study to illustrate this meta-model. The "To Publish Music" use case can update the Facebook or Twitter user status.
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
 %Now, consider that besides the services' composition that represents the order in which the services are called for implementing the application "To Publish Music" it is necessary to model  other requirements that represent the (i) conditions imposed by services for being contacted, for example the fact the Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, for example the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated. 
  
- We use part of our case study to illustrate this meta-model. The "To Publish Music" use case can update the Facebook or Twitter user status. Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a «value» constraint, because the users id and password are verified.  Figure \ref{fig:CIM:tpmbpmn}  the buy music, download music, listen music and pay use cases. The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as «value» and «business» constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as «value» stereotype . Other restriction is that the minimum payment value is 2 euros.
+  Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a «value» constraint, because the users id and password are verified.  Figure \ref{fig:CIM:tpmbpmn} shows the buy music, download music, listen music and pay use cases. The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as «value» and «business» constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as «value» stereotype. Other restriction is that the minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example}
 
@@ -89,15 +97,15 @@ Non-functional requirements are defined as \textit{constraints} over actions and
 \caption{\label{fig:CIM:tpmbpmn} $\pi$-UseCase model for ``To Publish Music''.}
 \end{figure}
  
- All constraints are described by stereotyped use cases. Every relationship between a use
-case and a constraint is done through a dependency relationship (from UML).  A constraint is defined by a stereotype, containing its type and name. Constraints are represented by a stereotyped use case («constraint»).
-Each use case is related with one or more system requirements. Moreover, these use cases are related to non-functional requirements necessary for the proper execution of the application function. The function described by a use case can be part of a business service (in the case of service remote calls). This information is described through comments.
+ 
+ % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
+\subsubsection{\textit{$\pi$-ServiceProcess} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 
 The \textit{$\pi$-ServiceProcess} meta-model defines the concept of \textit{service contract} to represent constraints over data and actions 
-gathers the constraints described in the \textit{$\pi$-UseCase}. A \textit{$\pi$-ServiceProcess} model represents the service processes and its contracts. It models the set of system activities and describe contracts for each activity or the process as a whole. Each service identified in the previous model (\textit{$\pi$-UseCase}) is mapped to an action. This model describes the workflow for the modelled application behaviour. The behaviour is represented by each action and the restrictions by the assertion description. All assertions are described by stereotyped actions.
+groups the constraints described in the \textit{$\pi$-UseCase}. A \textit{$\pi$-ServiceProcess} model represents the service processes and its contracts. It models the set of system activities and describe contracts for each activity or the process as a whole. Each service identified in the previous model (\textit{$\pi$-UseCase}) is mapped to an action. This model describes the workflow for the modelled application behaviour. The behaviour is represented by each action and the restrictions by the assertion description. All assertions are described by stereotyped actions.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic3}
-Considering the example scenario, the contract based process of activities execution is shown in figure \ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions are: (i) verify if the User data are correct; (ii) if the User is already logged in Spotify; (iii) if bank account information are correct and; (iv) if there is enough money to make the payment. As post-condition, it ensures the complete transaction and verify if a notification were sent to the user and Spotify, about the payment authorization. There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in case of Twitter. In the case of Facebook, it is required that the user is already logged on Spotify and these data are the same as Facebook. As post-condition, it ensures that the Facebook service send a notification of success. To update Twitter a pre-condition is required, while to update Facebook is necessary a pre-condition and a confirmation notice is modelled as post-condition. As a pre-condition for "twitter update" it is necessary that (i) the music format be correct and (ii) the twitter login and password be correct for the update.
+Considering the example scenario, the contract based process of activities  is shown in figure \ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions are: (i) verify if the User data are correct; (ii) if the User is already logged in Spotify; (iii) if bank account information are correct and; (iv) if there is enough money to make the payment. A post-condition ensures the complete transaction and verifies if a notification was sent to the user and Spotify, about the payment authorization. There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in case of Twitter. In the case of Facebook, it is required that the user is already logged on Spotify and these data are the same as Facebook. As post-condition, it ensures that the Facebook service send a notification of success. To update Twitter a pre-condition is required, while to update Facebook is necessary a pre-condition and a confirmation notice is modelled as post-condition. As a pre-condition for "twitter update" it is necessary that (i) the music format be correct and (ii) the twitter login and password be correct for the update.
 %{\color{red} Talk about this model for the example.}
 \end{example}
 
@@ -107,16 +115,19 @@ Considering the example scenario, the contract based process of activities execu
 \caption{\label{fig:CIM:serviceprocess} $\pi$-ServiceProcess model for ``To Publish Music''.}
 \end{figure}
 
-The \textit{$\pi$-ServiceComposition} meta-model provides the concept  of \textit{Policy}
-to integrate contracts with similar non-functional requirements.
-For instance, security and privacy restrictions may be grouped into a security policy. As shown in Figure \ref{fig:e-scomposition-metamodel},
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
+\subsubsection{\textit{$\pi$-ServiceComposition} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
+
+The \textit{$\pi$-ServiceComposition} meta-model provides the concept   \textit{Policy}
+to group contracts with similar non-functional requirements.
+For instance, security and privacy restrictions may be grouped into a security policy. As shown in Figure \ref{fig:e-scomposition-metamodel}, $\pi$-SODM 
 provides meta-classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
 The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model meta-classes.} and the {\sc Actions} they perform. 
 Instances of this meta-model are represented as UML activity diagrams. 
 In Figure~\ref{fig:e-scomposition-metamodel}  coloured boxes illustrate classes  modelling  non-functional properties and 
  white boxes represent classes modelling functional ones. 
 
-The {\em A-policy} based service composition ($\pi$-SCM) meta-model, 
+The {\em A-policy} based service composition ($\pi$-SCM) meta-model consists of:
 %In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
 \begin{itemizedTrivlist}
 \item A {\sc Business Collaborator} meta-class represents the classes of entities that collaborate in  business processes by performing some  required action. 
@@ -136,10 +147,10 @@ There are two types of actions: i) a WebService (attribute Type is {\sf WS}); an
 
 \item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service and is composed by one or more executable nodes.
 
-\item In order to represent constraints types associated to services compositions, we extended introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+\item In order to represent constraint types associated to services compositions, we extended introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
 We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
 An {\em A-policy} is defined by attributes and rules. 
-Intuitively, the conditions of each rule will be checked.
+Intuitively, the conditions of each rule will be evaluated.
 In case of no compliance, the actions defined by the rule will be performed.
 The {\sc Rule} meta-class represents the types of event - condition - action rules where the {\sc Event} part represents the moment in which a constraint  will be evaluated.
 An {\em A-policy} defines variables and operations that can be shared by the rules and that can be used for expressing their Event and Condition parts. 
@@ -148,9 +159,7 @@ An {\em A-policy} defines variables and operations that can be shared by the rul
 \begin{figure}[t]%[htpb]
 \centering
 \includegraphics[width=0.95\textwidth]{figs/e-composition-model}
-
-{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
-
+%{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
 \caption{$\pi$-SCM for the ``To publish music'' business service.}
 \label{fig:servicecompositionmodel}
 \end{figure}
