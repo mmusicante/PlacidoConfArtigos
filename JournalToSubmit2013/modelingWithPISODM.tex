@@ -1,7 +1,8 @@
 %(AquÃ­ lo dejarÃ­a con la estructura que tenÃ­amos para Caise, presentamos el framework y posteriormente comentamos modelos y transformaciones)
 
 This section presents $\pi$SOD-M, an MDD-based methodology for building service compositions with non-functional requirements. 
-$\pi$SOD-M provides concepts for modelling non-functional requirements, it proposes the generation of a set of models at different levels of abstraction, as well as transformations between these models (Figure~\ref{fig:piSOD-M}).
+As shown in Figure~\ref{fig:piSOD-M}, $\pi$SOD-M provides meta-models for modelling functional and non-functional requirements organized in three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}). 
+ Given  high-level models specified at the CIM level, $\pi$SOD-M proposes the semi-automatic generation  of a set of models at the other levels of abstraction thanks to transformation rules specified between the meta-models.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/piSOD-M_process.pdf}
@@ -9,8 +10,7 @@ $\pi$SOD-M provides concepts for modelling non-functional requirements, it propo
 \label{fig:piSOD-M}
 \end{figure}
 
-The $\pi$-SODM  meta-models are organized in three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}). 
-These meta-models are explained next.
+
 
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Computation Independent Models}
@@ -37,10 +37,24 @@ The e$^3$value model is a business model that represents a business case graphic
 \caption{\label{fig:CIM:tpme3v} e3value model for ``To Publish Music''.}
 \end{figure}
 
+To illustrate our proposal, consider the scenario ``To Publish Music''.  An organization wants to provide the service based application "To Publish Music" that monitors the music a person is listening during some periods of time and sends the song title  to this person's Twitter and Facebook accounts. Thus, this social network user will have her status synchronized in  Twitter and Facebook (i.e., either the same title is published in both accounts or it is not updated) with the title of the music she is listening in Spotify.
+The application is based on
+three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as the user and the application itself.  For developing this services' based application it is necessary to compose the following services  calling  their  exported methods:
+\begin{itemize}
+\item The music service   Spotify exports a method for obtaining information  about the music a given user is listening:
+\begin{itemize} \item {\sf\small get-Last-Song ( userid ): String} ; \end{itemize}
+\item Facebook and Twitter services export a method for  updating the status of a given user:
+\begin{itemize} 
+%\item{\sf\small get-Status ( usedid ): String ; 
+\item {\sf\small update-Status ( userid, new-status ): String}; 
+\end{itemize}
+\end{itemize}
+
+
+
 \begin{example}[To Publish Music]\label{ex:toPublicMusic}
-To illustrate our proposal, consider the scenario ``To Publish Music''  based on
-three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as the user and the application itself. 
-The e$^3$value  model for this application are shown in Figures~\ref{fig:CIM:tpme3v}. The e$^3$value value model in Figure \ref{fig:CIM:tpme3v} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
+
+The e$^3$value  model for t``To Publish Music'' are shown in Figures~\ref{fig:CIM:tpme3v}. The e$^3$value value model in Figure \ref{fig:CIM:tpme3v} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
 \end{example}
 
 
@@ -79,14 +93,26 @@ Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{
  
  % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 \subsubsection{\textit{$\pi$-UseCase} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
-The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model for describing functional and non-functional requirements. 
-Non-functional requirements are defined as \textit{constraints} over actions and data. The \textit{$\pi$-UseCase} meta-model describes the functional aspects of the application being developed and the restrictions that apply to each of them. These restrictions are modeled using the concepts: (i) constraint type and (ii) non-functional requirement with its specific attribute. All constraints are described by stereotyped use cases. Every relationship between a use
-case and a constraint is done through a dependency relationship (from UML).  A constraint is defined by a stereotype, containing its type and name. Constraints are represented by a stereotyped use case («constraint»).
-Each use case is related with one or more system requirements. Moreover, these use cases are related to non-functional requirements necessary for the proper execution of the application function. The function described by a use case can be part of a business service (in the case of service remote calls). This information is described through comments.
-We use part of our case study to illustrate this meta-model. The "To Publish Music" use case can update the Facebook or Twitter user status.
-\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
+%Constraints are described by stereotyped use cases. Every relationship between a use
+%case and a constraint is done through a dependency relationship (from UML).  A constraint is defined by a stereotype, containing its type and name. Constraints are represented by a stereotyped use case («constraint»).
+%Each use case is related with one or more system requirements.  The function described by a use case can be part of a business service (in the case of service remote calls). This information is described through comments. Each use case may have multiple constraints.
+
+ Figure \ref{fig:CIM:usecasemetamodel} presents the \textit{$\pi$-UseCase} meta-model  highlighting the elements that represent the policy view. The \textit{$\pi$-UseCase} meta-model is used to describe the functionalities  of the application being developed and the restrictions associated  to them. It extends the UML Use Case meta-model for describing non-functional requirements with  the concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc non-functional requirement}, {\sc non-functional attribute} and {\sc Constraint}. An {\sc End Consumer} is represented by an {\sc Actor}. An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), while a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.{\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
+ The {\sc Business Collabortors} concept are represented  through {\sc Packages}. A {\sc Business Collaborator} represents an external service or a system that interact with the application that are being modelled. Each {\sc Business Collabortors} combines the features described in each  {\sc Package}. Thus, the services functions can bespecified being grouped into packages.
+ 
+ \begin{figure}[htpb]
+\center
+\includegraphics[width=0.9\textwidth]{figs/UseCaseMetaModel.pdf}
+\caption{\label{fig:CIM:usecasemetamodel} $\pi$-UseCase Meta-Model.}
+\end{figure}
+
+
+ The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented as part of description of {\sc Use Cases} and {\sc Constraints}. A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has its name, description, and which ones should be checked during the execution of the application. Each {\sc Constraint} is represented as a stereotyped ({\sf «constraint»}) use case. A restriction may be a restriction on data ({\sc Value Constraint}), represented as the stereotype «value»; or on business rules (Business Constraint), represented as the stereotype {\sf «business»}; and {\sc Exceptional Behaviour} constraints, which represents constraint violation for the use case execution, represented as the stereotype {\sf «exceptional\_behaviour»}.
+ We use part of our case study to illustrate this meta-model. 
+ \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
 %Now, consider that besides the services' composition that represents the order in which the services are called for implementing the application "To Publish Music" it is necessary to model  other requirements that represent the (i) conditions imposed by services for being contacted, for example the fact the Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, for example the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated. 
  
+The "To Publish Music" use case can update the Facebook or Twitter user status.
   Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a «value» constraint, because the users id and password are verified.  Figure \ref{fig:CIM:tpmbpmn} shows the buy music, download music, listen music and pay use cases. The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as «value» and «business» constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as «value» stereotype. Other restriction is that the minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example}
@@ -97,12 +123,23 @@ We use part of our case study to illustrate this meta-model. The "To Publish Mus
 \caption{\label{fig:CIM:tpmbpmn} $\pi$-UseCase model for ``To Publish Music''.}
 \end{figure}
  
- 
+
  % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 \subsubsection{\textit{$\pi$-ServiceProcess} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 
-The \textit{$\pi$-ServiceProcess} meta-model defines the concept of \textit{service contract} to represent constraints over data and actions 
-groups the constraints described in the \textit{$\pi$-UseCase}. A \textit{$\pi$-ServiceProcess} model represents the service processes and its contracts. It models the set of system activities and describe contracts for each activity or the process as a whole. Each service identified in the previous model (\textit{$\pi$-UseCase}) is mapped to an action. This model describes the workflow for the modelled application behaviour. The behaviour is represented by each action and the restrictions by the assertion description. All assertions are described by stereotyped actions.
+The \textit{$\pi$-ServiceProcess} meta-model extends the UML activity diagram with the concept of \textit{contract} to represent constraints over data and actions. This concept is used to model 
+groups  of  constraints described in the \textit{$\pi$-UseCase}. 
+As shown in Figure \ref{fig:CIM:serviceprocessmetamodel} The concepts modelled in the \textit{$\pi$-ServiceProcess} meta-model are: {\sc Contract}, {\sc Assertion}, {\sc Exceptional behaviour}, {\sc Activity}, {\sc Service Activity}, {\sc Action} and {\sc Constraint}.
+
+A specific \textit{$\pi$-ServiceProcess} model shows the set of logically related activities that need to be performed in a service-based system. So, the activities of this model represent a behaviour that is part of the system workflow. A \textit{$\pi$-ServiceProcess}  model represents three main elements: (i) service process, (ii) service activity and (iii) activity contract. The service process is represented by the model itself. A service activity represents a behaviour that is part of the execution flow, and is identified in this model as an {\sc Action}. An activity contract represents the {\sc Non-functional Requirement} behaviour that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf «assertion»}). All {\sc Assertion} related with an {\sc Action} compose a {\sc Contract}. Using the concepts {\sc Contract} and {\sc Assertion} it is possible to define  interface specifications for each activity service, by defining their pre-conditions and post-conditions.
+
+\begin{figure}[htpb]
+\center
+\includegraphics[width=0.9\textwidth]{figs/ServiceProcessMetaModel.pdf}
+\caption{\label{fig:CIM:serviceprocessmetamodel} $\pi$-Service Process Meta-Model.}
+\end{figure}
+
+%According to the meta-model, a \textit{$\pi$-ServiceProcess} model represents the service processes and its contracts. It models the set of system activities and describe contracts for each activity or the process as a whole. Each service identified in the previous model (\textit{$\pi$-UseCase}) is mapped to an action. This model defines a workflow for  modeling business logic and the behaviour of the application being developed. The behaviour is represented by each action and the restrictions by the assertion description. All assertions are described by stereotyped actions.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic3}
 Considering the example scenario, the contract based process of activities  is shown in figure \ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions are: (i) verify if the User data are correct; (ii) if the User is already logged in Spotify; (iii) if bank account information are correct and; (iv) if there is enough money to make the payment. A post-condition ensures the complete transaction and verifies if a notification was sent to the user and Spotify, about the payment authorization. There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in case of Twitter. In the case of Facebook, it is required that the user is already logged on Spotify and these data are the same as Facebook. As post-condition, it ensures that the Facebook service send a notification of success. To update Twitter a pre-condition is required, while to update Facebook is necessary a pre-condition and a confirmation notice is modelled as post-condition. As a pre-condition for "twitter update" it is necessary that (i) the music format be correct and (ii) the twitter login and password be correct for the update.
