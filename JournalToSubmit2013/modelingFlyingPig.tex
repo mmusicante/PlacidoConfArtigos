@@ -237,13 +237,13 @@ ORCA will provide amendments (recommendations to change practices) and an evalua
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/BPMN_GCP.pdf}
-
-{\color{red} Javier: Please change \underline{Asses} by \underline{Assess}. --M}
 \caption{BPMN model for \FlyingPig.\label{fig:BPMNmodel}}
 \end{figure}
 
 The BPMN model for \FlyingPig\ is devised to better understand the process in which the value exchanges occur.
-Figure~\ref{fig:BPMNmodel} shows the BPMN model\footnote{\color{red} Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/.} for the \FlyingPig\ scenario. 
+Figure~\ref{fig:BPMNmodel} shows the BPMN model
+%\footnote{\color{red} Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/.} 
+for the \FlyingPig\ scenario. 
 The model includes two pools representing the \textsl{ORCA} system and the \textsl{Brokers}. 
 Brokers have two lanes, the client \textsl{Company} and a \textsl{User}. 
 The user is a contact member of the company, who will coordinate the assessment process. 
@@ -266,8 +266,8 @@ Placido, Valeria: What can we say about non-functional requirements at the CIM l
 \subsection{Platform-Independent Models (PIM)}
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
-In Section~\ref{sec:modelingWithPISODM} we defined three models at the PIM level.
-These models are built next, for the \FlyingPig\ scenario.
+%In Section~\ref{sec:modelingWithPISODM} we defined three models at the PIM level.
+The $\pi$-SOD-M models of the PIM level  for the \FlyingPig\ scenario are presented next.
 
 \begin{figure}[t]
 \centering
@@ -311,7 +311,7 @@ In the case of \FlyingPig, the model counts seven constraints:
 \item There is a time limit (in days) for each amendment required by the system.
 \end{numtrivlist}
 
-{\color{red} Anything else here? --M}
+%{\color{red} Anything else here? --M}
 
 \begin{figure}
 \centering
@@ -410,7 +410,7 @@ receiveRequest(R, Id)
 \subsection{Platform-Specific Model (PSM)}
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
-The model presented in Figure~\ref{fig:PiPEWSModel} is the result of translating the previous model into service composition code.
+The  PSM models of our methodology result of translating the previous model into service composition code.
 Notice that the workflow for \FlyingPig\ is implemented by using the constructors present in BPEL~\cite{BPEL}, with the addition of the notion of \textit{contract}.
 
 Contracts may be implemented as transversal concerns~\cite{aspects}.
