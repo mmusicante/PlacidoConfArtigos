@@ -23,13 +23,13 @@ $\pi$-SODM uses the \textit{e$^3$value}~\cite{e3value} and \textit{BPMN}~\cite{B
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .   
 \subsubsection{E$^3$value meta-model}
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
-The e$^3$value model identifies the value/information exchange between components of the system. 
-It defines \textit{dependency paths}, showing the value exchange between providers and end users when they ask for a service.
+The e$^3$value model is a business model that represents a business case graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) and allows  to understand the environment of the application being developed. The e$^3$value model of an application identifies the value/information exchange between components of the system. Therefore,
+it defines \textit{dependency paths}, showing the value exchange between providers and end users when they ask for a service.
 % , which are triggered by the occurrence of an end-consumer need.
 A dependency path has a direction and consists of a sequence of linked dependency nodes.
 It starts with a \textit{start stimulus} node and ends with an \textit{end stimulus} node (see Figure~\ref{fig:CIM:tpme3v}). 
 Dependency paths may also contain \textsl{OR} and \textsl{AND} elements (both for initiate and join alternative and parallel paths).
-The e$^3$value model is a business model that represents a business case graphically as a set of value exchanges ($\nabla$$\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes) and allows us to understand the environment in which the services' composition will be placed. 
+
 \begin{figure}[htpb]
 \center
 \includegraphics[width=0.88\textwidth]{figs/e3value.pdf}
@@ -37,7 +37,7 @@ The e$^3$value model is a business model that represents a business case graphic
 \caption{\label{fig:CIM:tpme3v} e3value model for ``To Publish Music''.}
 \end{figure}
 
-To illustrate our proposal, consider the scenario ``To Publish Music''.  An organization wants to provide the service based application "To Publish Music" that monitors the music a person is listening during some periods of time and sends the song title  to this person's Twitter and Facebook accounts. Thus, this social network user will have her status synchronized in  Twitter and Facebook (i.e., either the same title is published in both accounts or it is not updated) with the title of the music she is listening in Spotify.
+To illustrate its use, consider the scenario ``To Publish Music''.  An organization wants to provide the service based application "To Publish Music" that monitors the music listened by somebody during some periods of time and sends the song title  to this person's Twitter and Facebook accounts. Thus, this social network user will have her status synchronized in  Twitter and Facebook (i.e., either the same title is published in both accounts or it is not updated) with the title of the music she is listening in Spotify.
 The application is based on
 three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as the user and the application itself.  For developing this services' based application it is necessary to compose the following services  calling  their  exported methods:
 \begin{itemize}
@@ -54,10 +54,10 @@ three external actors ({\em Spotify, Twitter} and {\em Facebook}), as well as th
 
 \begin{example}[To Publish Music]\label{ex:toPublicMusic}
 
-The e$^3$value  model for t``To Publish Music'' are shown in Figures~\ref{fig:CIM:tpme3v}. The e$^3$value value model in Figure \ref{fig:CIM:tpme3v} shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
+The e$^3$value  model for ``To Publish Music'' is shown in Figures~\ref{fig:CIM:tpme3v}. The e$^3$value value model shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status and thereby they share non material benefits (i.e., the fact that users subscribe to their networks and are active on them thanks to the private application).
 \end{example}
 
-
+The e$^3$value  model insists on (economic) value exchange among the actors involved in an application. It is also necessary to understand the business process of the application and the conditions in which the different steps of this process are executed input/out data and the dependencies among these steps. Therefore, our methodology proposes the BPMN meta-model as a tool for modeling this aspect of the application.
 
 
 %Note that the models at this level show\dots 
@@ -89,7 +89,7 @@ The information presented at this level is (manually) refined into PIM-level mod
 
 This level focusses on the system functionality, hiding the details of any particular platform.
 The specification defines those parts of the system that do not change from one platform to another. 
-Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess} and \textit{$\pi$-ServiceComposition}.
+Our methodology defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess} and \textit{$\pi$-ServiceComposition}.
  
  % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 \subsubsection{\textit{$\pi$-UseCase} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
@@ -97,8 +97,10 @@ Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{
 %case and a constraint is done through a dependency relationship (from UML).  A constraint is defined by a stereotype, containing its type and name. Constraints are represented by a stereotyped use case («constraint»).
 %Each use case is related with one or more system requirements.  The function described by a use case can be part of a business service (in the case of service remote calls). This information is described through comments. Each use case may have multiple constraints.
 
- Figure \ref{fig:CIM:usecasemetamodel} presents the \textit{$\pi$-UseCase} meta-model  highlighting the elements that represent the policy view. The \textit{$\pi$-UseCase} meta-model is used to describe the functionalities  of the application being developed and the restrictions associated  to them. It extends the UML Use Case meta-model for describing non-functional requirements with  the concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc non-functional requirement}, {\sc non-functional attribute} and {\sc Constraint}. An {\sc End Consumer} is represented by an {\sc Actor}. An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), while a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.{\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
- The {\sc Business Collabortors} concept are represented  through {\sc Packages}. A {\sc Business Collaborator} represents an external service or a system that interact with the application that are being modelled. Each {\sc Business Collabortors} combines the features described in each  {\sc Package}. Thus, the services functions can bespecified being grouped into packages.
+ Figure \ref{fig:CIM:usecasemetamodel} presents the \textit{$\pi$-UseCase} meta-model  highlighting the elements that represent the policy view. The \textit{$\pi$-UseCase} meta-model is used to describe the functionalities  of the application being developed and the restrictions associated  to them. It extends the UML Use Case meta-model for describing non-functional requirements with  the concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc non-functional requirement}, {\sc non-functional attribute} and {\sc Constraint}. An {\sc End Consumer} is represented by an {\sc Actor}. An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), while a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
+{\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
+ The {\sc Business Collaborators} concept are represented  through {\sc Packages}. A {\sc Business Collaborator} represents an external service or a system that interact with the application that are being modelled. Each {\sc Business Collaborators} combines the features described in each  {\sc Package}. Thus, the services functions can be
+specified being grouped into packages.
  
  \begin{figure}[htpb]
 \center
@@ -107,12 +109,13 @@ Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{
 \end{figure}
 
 
- The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented as part of description of {\sc Use Cases} and {\sc Constraints}. A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has its name, description, and which ones should be checked during the execution of the application. Each {\sc Constraint} is represented as a stereotyped ({\sf «constraint»}) use case. A restriction may be a restriction on data ({\sc Value Constraint}), represented as the stereotype «value»; or on business rules (Business Constraint), represented as the stereotype {\sf «business»}; and {\sc Exceptional Behaviour} constraints, which represents constraint violation for the use case execution, represented as the stereotype {\sf «exceptional\_behaviour»}.
+ The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented as part of description of {\sc Use Cases} and {\sc Constraints}. 
+A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has its name, description, and which ones should be checked during the execution of the application. Each {\sc Constraint} is represented as a stereotyped ({\sf «constraint»}) use case. A restriction may be associated to data ({\sc Value Constraint}), represented as the stereotype «value»; it can represent business rules (Business Constraint), represented as the stereotype {\sf «business»}; and it can represent {\sc Exceptional Behaviour} constraints, represented as the stereotype {\sf «exceptional\_behaviour»}.
  We use part of our case study to illustrate this meta-model. 
  \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
-%Now, consider that besides the services' composition that represents the order in which the services are called for implementing the application "To Publish Music" it is necessary to model  other requirements that represent the (i) conditions imposed by services for being contacted, for example the fact the Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, for example the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated. 
+Consider that besides the services' composition that represents the order in which the services are called for implementing the application "To Publish Music" it is necessary to model  other requirements that represent the (i) conditions imposed by services for being contacted, for example the fact the Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, (e.g., the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated). 
  
-The "To Publish Music" use case can update the Facebook or Twitter user status.
+For instance, in the "To Publish Music" use case expects  the Facebook or Twitter user status to be changed every time a user starts listening a new song.
   Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a «value» constraint, because the users id and password are verified.  Figure \ref{fig:CIM:tpmbpmn} shows the buy music, download music, listen music and pay use cases. The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as «value» and «business» constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as «value» stereotype. Other restriction is that the minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example}
@@ -129,9 +132,9 @@ The "To Publish Music" use case can update the Facebook or Twitter user status.
 
 The \textit{$\pi$-ServiceProcess} meta-model extends the UML activity diagram with the concept of \textit{contract} to represent constraints over data and actions. This concept is used to model 
 groups  of  constraints described in the \textit{$\pi$-UseCase}. 
-As shown in Figure \ref{fig:CIM:serviceprocessmetamodel} The concepts modelled in the \textit{$\pi$-ServiceProcess} meta-model are: {\sc Contract}, {\sc Assertion}, {\sc Exceptional behaviour}, {\sc Activity}, {\sc Service Activity}, {\sc Action} and {\sc Constraint}.
+As shown in Figure \ref{fig:CIM:serviceprocessmetamodel} The concepts of the \textit{$\pi$-ServiceProcess} meta-model are: {\sc Contract}, {\sc Assertion}, {\sc Exceptional behaviour}, {\sc Activity}, {\sc Service Activity}, {\sc Action} and {\sc Constraint}.
 
-A specific \textit{$\pi$-ServiceProcess} model shows the set of logically related activities that need to be performed in a service-based system. So, the activities of this model represent a behaviour that is part of the system workflow. A \textit{$\pi$-ServiceProcess}  model represents three main elements: (i) service process, (ii) service activity and (iii) activity contract. The service process is represented by the model itself. A service activity represents a behaviour that is part of the execution flow, and is identified in this model as an {\sc Action}. An activity contract represents the {\sc Non-functional Requirement} behaviour that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf «assertion»}). All {\sc Assertion} related with an {\sc Action} compose a {\sc Contract}. Using the concepts {\sc Contract} and {\sc Assertion} it is possible to define  interface specifications for each activity service, by defining their pre-conditions and post-conditions.
+A specific \textit{$\pi$-ServiceProcess} model shows the set of logically related activities that  to be performed in a service-based application. So, the activities of this model represent a behaviour that is part of the business logic of the application. A \textit{$\pi$-ServiceProcess}  model represents three main elements: (i) service process, (ii) service activity and (iii) activity contract. A service activity represents an operation that is part of the execution flow, and it is modelled as an {\sc Action}. An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf «assertion»}). The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre-conditions and post-conditions.
 
 \begin{figure}[htpb]
 \center
@@ -155,16 +158,15 @@ Considering the example scenario, the contract based process of activities  is s
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 \subsubsection{\textit{$\pi$-ServiceComposition} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 
-The \textit{$\pi$-ServiceComposition} meta-model provides the concept   \textit{Policy}
-to group contracts with similar non-functional requirements.
-For instance, security and privacy restrictions may be grouped into a security policy. As shown in Figure \ref{fig:e-scomposition-metamodel}, $\pi$-SODM 
+ As shown in Figure \ref{fig:e-scomposition-metamodel}, the $\pi$-ServiceComposition meta-model
 provides meta-classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
-The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model meta-classes.} and the {\sc Actions} they perform. 
-Instances of this meta-model are represented as UML activity diagrams. 
-In Figure~\ref{fig:e-scomposition-metamodel}  coloured boxes illustrate classes  modelling  non-functional properties and 
- white boxes represent classes modelling functional ones. 
-
-The {\em A-policy} based service composition ($\pi$-SCM) meta-model consists of:
+The \textit{$\pi$-ServiceComposition} meta-model extends the UML activity  meta-model with the concept   \textit{Policy}
+to group contracts with similar non-functional requirements.
+For instance, security and privacy restrictions may be grouped into a security policy.
+%The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model meta-classes.} and the {\sc Actions} they perform. Associated constraints are represeted by the meta-classes 
+%In Figure~\ref{fig:e-scomposition-metamodel}  coloured boxes illustrate classes  modelling  non-functional properties and 
+ %white boxes represent classes modelling functional ones. 
+ The  ($\pi$-SCM) meta-model consists of:
 %In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
 \begin{itemizedTrivlist}
 \item A {\sc Business Collaborator} meta-class represents the classes of entities that collaborate in  business processes by performing some  required action. 
@@ -192,7 +194,7 @@ In case of no compliance, the actions defined by the rule will be performed.
 The {\sc Rule} meta-class represents the types of event - condition - action rules where the {\sc Event} part represents the moment in which a constraint  will be evaluated.
 An {\em A-policy} defines variables and operations that can be shared by the rules and that can be used for expressing their Event and Condition parts. 
 \end{itemizedTrivlist}
-
+Instances of this meta-model are represented as UML activity diagrams. 
 \begin{figure}[t]%[htpb]
 \centering
 \includegraphics[width=0.95\textwidth]{figs/e-composition-model}
@@ -202,7 +204,7 @@ An {\em A-policy} defines variables and operations that can be shared by the rul
 \end{figure}
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic4}
-To illustrate the use of the $\pi$-Service Composition Meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
+To illustrate the use of the $\pi$-Service Composition meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
  We model a business process that consists of three service activities: {\em Listen Music}, {\em Publish Music} and {\em Confirmation}. 
 The {\em Publish Music} activity calls the {\em Facebook} and {\em Twitter} services.
 Both {\em Facebook} and {\em Twitter} require authentication. 
@@ -278,4 +280,181 @@ The following section describes the transformation rules between the $\pi$-SCM a
 %\subsubsection{$\pi$-{\sc Pews}  meta-model}\label{sec:pewsmetamodel}
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
 
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+\section{Transformation rules}\label{sec:mmrules}
+%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
+
+Model transformations can be seen as processes that take models as input and produces models as output. The $\pi$-SOD-M model transformations occur in the two levels, PIM and PSM, we defined: PIM-to-PIM and PIM-to-PSM transformations. Transformations in the same level are ?horizontal transformations?, and transformations between different levels are called ?vertical transformations?. There are 3 model transformations defined in $\pi$-SOD-M: $\pi$-UseCase to $\pi$--ServiceProcess; $\pi$--ServiceProcess to $\pi$-ServiceComposition; and $\pi$-ServiceComposition to $\pi$-PEWS.
+
+%Figure \ref{fig:transformations} shows the transformation principle between the elements of the $\pi$-SCM meta-model used for representing the services' composition into the elements of the $\pi$-{\sc Pews} meta-model. There are two groups of rules: those that transform services' composition elements of the $\pi$-SCM to $\pi$-{\sc Pews} meta-models elements; and those that transform rules grouped by policies into {\em A-policy} types.
+
+% _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
+\subsection{From $\pi$-UseCase to the $\pi$-ServiceProcess}
+% _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
+
+The PIM to PIM transformation process between $\pi$-UseCase and $\pi$-ServiceProcess (Table \ref{fig:transformationsUseCase-ServiceProcess}) models defines how the application requirements are represented as a service process. At this level, services and general functions are represented as simple or composite use cases.
+\begin{figure}
+\centering{
+\includegraphics[width=0.96\textwidth]{figs/Table5}}
+\caption{ $\pi$-UseCase to $\pi$-ServiceProcess transformation}
+\label{fig:transformationsUseCase-ServiceProcess}
+\end{figure}
+Every {\sc Use Case} is transformed into an {\sc Action} of the $\pi$-ServiceProcess meta-model, and every {\sc Extend} association identified in the $\pi$-UseCase meta-model is transformed into a  {\sc Fork node}.
+%because several extends relations implies a conditional verification in the execution workflow . 
+If the extend association has only one {\sc Use Case}, the fork will present the {\sc Action} as an alternative flow, and later, both flows will meet. If the extend association has several source {\sc Use Case}, the fork will present different {\sc Actions} as mutual alternatives flows, and later, all these flows will meet.  {\sc Activity services} (from $\pi$-ServiceProcess meta-model) consists of a composition of one or more {\sc Actions}. {\sc Action} can be viewed as a method of the system application. Thus, services are represented as a set of functions in the $\pi$-ServiceProcess meta- model, because {\sc Contracts} modelled are associated to functions ({\sc Actions}).
+
+\begin{figure}
+\centering{
+\includegraphics[width=0.96\textwidth]{figs/35}}
+\caption{ $\pi$-UseCase to $\pi$-ServiceProcess transformation rules}
+\label{fig:transformationsUseCase-ServiceProcessRules}
+\end{figure}
+
+All {\sc Constraints} in the source model ($\pi$-UseCase meta-model) are transformed into a {\sc Contract}. A {\sc Contract} is represented as a set of {\sc Constraints}. Each constrain description is directly transformed into {\sc Assertion}. A set of {\sc Constraint} of a {\sc Use Case} or a {\sc Composite use case} is transformed into a set of {\sc Assertion} used to define a {\sc Contract}. All {\sc Use Cases} are associated to a {\sc Non-functional requirement} and all {\sc Constraints} are associated with a {\sc Non-functional attribute}. Thus, {\sc Constraint} representing the same {\sc Use Case} is transformed into a {\sc Contract}. A {\sc Contract} can have exceptional cases. The negation of the {\sc Constraint} predicate are treated as {\sc Exceptional behaviour}. In this particular case, a {\sc Exceptional behaviour} will be generated in the target model.The {\sc Constraint type} can have different transformations, depending of the following values:
+\begin{itemize}
+\item If the value of {\sc Constraint type} is {\sc Business}, it will be transformed into none {\sc Assertion};\item  If the value of {\sc Constraint type} is {\sc Value} with the {\sc Assertion} isExceptionalBehaviour attribute set to false, it will be transformed into one {\sc Assertion};\item If the value of {\sc Constraint type} is {\sc Value} with the {\sc Assertion} isExceptionalBehaviour attribute set to true, it will be transformed into a {\sc Exceptional behaviour};
+\end{itemize}Given the $\pi$-UseCase meta-model, to all {\sc Constraint} entity related with a {\sc Use Case}, there is a {\sc Contract} that compounds a set of {\sc Assertions} entity (figure  \ref{fig:transformationsUseCase-ServiceProcessRules}-a) and the {\sc Use Case} is refined in a service {\sc Action}.
+
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT1}Considering the scenario example  the transformation of the ?listen music? Use Case is transformed into a Service Action. This Action is a Spotify service function that can be invoked to play the music. For ?publish music? Use Case, all Constraints are transformed in a set of Assertions that are grouped in a Contract (?publishMusicContract?). The ?publishMusicContract? is related with the ?publishMusic? Action. 
+\end{example}
+A {\sc Constraint} transformation means that from {\sc Constraint} and {\sc Constraint Type} entities are generated detailed {\sc Contract} information, that are refined into {\sc Exceptional behaviours} and {\sc Assertions} entities (figure   \ref{fig:transformationsUseCase-ServiceProcessRules}-b). {\sc Constraint} is related with a {\sc Constraint type}, and there are different cases for the transformation of this concept. A Business type is transformed into an {\sc Assertion} that does not consider value attributes information like maxValue and minValue. These {\sc  Assertion} information attributes are considered if the {\sc Constraint Type} is a Value type. This is semi-automatic, because there is not
+enough information in a $\pi$-UseCase model to run a complete automatic transformation. 
+
+If the {\sc Constraint Type} is a Value type, the designer must specify the variable information, and its boundary values after the transformation. For this, the designer must consider the {\sc Constraint} and {\sc Use Case} descriptions. By default, value constraints are transformed into pre-conditions and business constraints are transformed into post-conditions. This rule may be adjusted by the designer at the time of transformation.
+A {\sc Service activity} and the {\sc Actions} are generated from two different elements in the source model ($\pi$-UseCase), from a {\sc Requirement} or a {\sc Composite use case}. Figures  \ref{fig:transformationsUseCase-ServiceProcessRules}-c  and d present the transformation schema for {\sc Requirement} and {\sc Composite use case} concepts. Both elements are related with many {\sc Use Cases} that are transformed in many {\sc Actions}. A {\sc Use Case} is related with, either, a {\sc Requirement} and a {\sc Composite use case}. {\sc Actions} are related with a {\sc Service activity.}
+
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT2}
+For the execution of the ?download music? use case is necessary process with the payment process. Thus, the set of {\sc Use cases} that include the ?download music? process are transformed in {\sc Actions}, and a {\sc Service activity} that aggregates these {\sc Actions} is also generated. 
+\end{example}
+
+\begin{figure}
+\centering{
+\includegraphics[width=0.96\textwidth]{figs/37}}
+\caption{ Extended Transformation Examples}
+\label{fig:transformaton-examples}
+\end{figure}
+The transformations for {\sc Extend} and {\sc Include} dependence elements are not as simple as the previous transformations (figures \ref{fig:transformaton-examples}-a). The workflow generated for each «extends» relationship with just two use cases (figure  \ref{fig:transformaton-examples}-a) is described by figure \ref{fig:transformaton-examples}-c). The generated workflow contains: one {\sc Fork node}, one {\sc Join node}, and four {\sc Control flow} elements, and also two {\sc Action} elements, one for each {\sc Use case}, if there are less than 2 extended {\sc Use case}. When there is more than one «extends» relationship among different use cases (figures \label{fig:transformaton-examples}-b and d), the transformation is proceed as: adding two more {\sc Control flow} for each new {\sc Use case}, and one {\sc Action} for each new extended {\sc Use case}.
+
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT3}
+Considering the scenario example, it is possible to apply the same rule for the ?publish music? use case, which has two extended use cases, ?public twitter? and ?public Facebook?, applying the illustration expressed in figures \ref{fig:transformaton-examples}-b and d.
+\end{example}
+
+\begin{figure}
+\centering{
+\includegraphics[width=0.96\textwidth]{figs/36}}
+\caption{ $\pi$-UseCase to $\pi$-ServiceProcess Model Transformation Rules (2)}
+\label{fig:transformationsUseCase-ServiceProcessRules}
+\end{figure}
+
+For the {\sc Include} use case elements, the transformation is represented as a {\sc Action} sequence, as shown in figure \ref{fig:transformationsUseCase-ServiceProcessRules}-b. For each {\sc Use case} element an {\sc Action} element is generated. For a set of n {\sc Use case} we generate n-1 {\sc Object flow} elements. Each {\sc Control flow} links two {\sc Actions}.
+
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT4}Example: Given the ?download music? use case from the scenario example, it includes pay- ment process to buy the music. It is represented as a include in the $\pi$-UseCase model and is transformed in a sequence flow in the $\pi$-ServiceProcess model (as presented in figure \ref{fig:transformation-example-include}). 
+\end{example}
+
+\begin{figure}
+\centering{
+\includegraphics[width=0.76\textwidth]{figs/38}}
+\caption{ Include Transformation Example}
+\label{fig:transformation-example-include}
+\end{figure}
+All this transformation rules from $\pi$-UseCase model to $\pi$-ServiceProcess model were validated with the scenario example. All transformations described in this section are completely automatic, however information about values and its boundaries are inserted by the designer after the transformation process.
+
+
+%In the scenario "To Publish Music" the service activity {\sf PublishMusic} of the $\pi$-SC model specifies  calls to two {\sf Activitie}s of type {\em UpdateMusic}, respectively concerning the {\sf Business Service}s {\em Facebook} and {\em Twitter}. Given that no {\sf ConstrolNode} is specified by the $\pi$-SC model, the corresponding transformation is the expression that defines a {\sf Composite Operation} named {\em PublishSong} of the $\pi$-{\sc Pews} model of the form ({\sf PublishFacebook} $\parallel$ {\sf PublishTwitter}).
+
+
+% _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
+%\noindent
+
+%{\bf\em 
+\subsubsection{From $\pi$-ServiceProcess to $\pi$-ServiceComposition}
+% _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
+%The {\em A-policies} defined for the elements of the $\pi$-SCM are transformed into {\sc A-Policy} classes, named according to the names expressed in the source model. The transformation of the rules expressed in the $\pi$-SCM is guided by the event types associated to these rules.   The variables associated to an {\em A-policy} expressed in the $\pi$-SCM as {\sc\em $<$Variable:name, Variable:type$>$} are transformed into elements of type {\sc Variable} with attributes {\sc name} and {\sc type} directly specified from the elements {\sc\em  Variable:name} and {\sc\em Variable:type} of the $\pi$-SCM model.
+
+%As shown in Figure \ref{fig:transformations}, for an event of type {\sc\em Pre} the corresponding transformed rule is of type {\sc Precondition}; for an event of type {\sc\em Post} the corresponding transformed rule is of type {\sc Postcondition}; finally, for an event of type {\sc\em TimeRestriction} the corresponding transformed rule is of type {\sc Time}. 
+%The condition expression of a rule in the $\pi$-SCM ({\sc\em Rule:condition}) is transformed into a class {\sc\em Condition:expression} where the attributes of the expression are transformed into elements of type {\sc Attribute}.
+
+%The attribute event of a rule  ({\sc\em Rule:event}) in the $\pi$-SCM is transformed into an {\sc Event Type} according to the rule type. 
+
+%As shown in Figure \ref{fig:transformations}, the event type for a rule of type (i) {\sc Precondition} is {\sc ActivityPrepared}; (ii) {\sc Postcondition} is {\sc TermActivity}; (iii) {\sc TimeRestriction} is {\sc Temporal}. The {\sc\em Rule:Action} of a rule in the $\pi$-SCM is transformed into an {\sc Action:type}.
+
+%
+%Figure \ref{fig:p-scim} shows the  $\pi$-{\sc Pews} model for our example.
+%In the scenario "To Publish Music" the {\sf Policies} {\em OAuthPolicy} and {\em HTTPAuthPolicy} of the $\pi$-SCM model are transformed into {\em A-policies} of type {\sf Precondition} of the $\pi$-{\sc Pews} model of the scenario. Thus in both cases the events are of type {\sf ActivityPrepared}. These policies, as stated in the $\pi$-SCM model, are associated to {\sf Activities}. In the corresponding transformation they are associated to {\sf Operation}s {\em PublishFacebook} and {\em PublishTwitter}.
+%\begin{figure}[htpb]
+%\centering{
+%\includegraphics[width=0.78\textwidth]{figs/modeloPEWS}}
+%\caption{$\pi$-{\sc Pews} generated model fo the "To Publish Music" application}
+%\label{fig:p-scim}
+%\end{figure}
+
+%Figure \ref{fig:pewsexpression} shows the correspondence between the model and the statements that implement it, with a schematic representation of the business process.
+%\begin{figure}
+%\centering{
+%\includegraphics[width=0.85\textwidth]{figs/pews-expression}}
+%\caption{Pews program implementing the "To Publish Music" application}
+%\label{fig:pewsexpression}
+%\end{figure}
+
+The main goal of this transformation is to group all {\sc Contracts} and {\sc Actions} in {\sc Policies} and {\sc Service activities}, respectively.{\sc Actions}  in the source model will be transformed into an {\sc Action} in the target model, and every {\sc Service activity} in the source model will be transformed into a {\sc Service activity} in the target model. This happens because $\pi$-ServiceComposition is an extension of $\pi$-ServiceProcess.For the non-functional specifications, the {\sc Contract} entity with the same {\sc Non-functional requirement} in the source model ($\pi$-ServiceProcess model) will be transformed into a {\sc Policy} in the target model ($\pi$-ServiceComposition model). Each {\sc Assertion} will be transformed into a {\sc Rule:Condition} attribute in the target model, but if the {\sc Assertion} has a value type, the name and the attributes in the source model will be transformed into a {\sc Variable} in the target model. The other {\sc Assertion property} values remains unchanged. The {\sc Assertion: Aproperty} attribute can have different transformations, depending of the following values:
+\begin{itemize}\item {\sc Post-Conditions} are transformed into{\sc  Post} in the $\pi$-ServiceComposition model; 
+\item {\sc Preconditions} are transformed into {\sc Pre} in the $\pi$-ServiceComposition model;\item {\sc Timerestrictions} are transformed into {\sc Time} in the $\pi$-ServiceComposition model.
+\end{itemize}
+
+\begin{figure}
+\centering{
+\includegraphics[width=1\textwidth]{figs/ServiceProcess-ServiceComposition}}
+\caption{ Transformation Rules: From $\pi$-ServiceProcess to $\pi$-ServiceComposition}
+\label{fig:ServiceProcess-ServiceComposition}
+\end{figure}
+The {\sc Exceptional behaviour} entities will be transformed into an {\sc Action} in the $\pi$- ServiceComposition model, and every {\sc Non-functional attribute} associated to an element ({\sc Contract} and {\sc Non-functional requirement}) in the $\pi$-ServiceProcess model becomes a {\sc Non-functional attribute} associated to the corresponding element ({\sc Policy}) in the $\pi$-ServiceComposition model.Table \ref{fig:ServiceProcess-ServiceComposition}  describes the transformations between $\pi$-ServiceProcess and $\pi$-ServiceComposition meta-models.
+
+
+Figure \ref{fig:ServiceProcess-ServiceComposition-Rules} presents the main transformation rules for this level. The main feature of this transformation is the generation of a {\sc Policy} from of a set of {\sc Contracts}. But, what is the adopted criterion for this transformation? The main criteria is that all {\sc Contracts} from the same {\sc Non-functional requirement} will be transformed in one {\sc Policy}. Thus, we can have Safety, Performance, and Reliability {\sc Policies}.
+
+\begin{figure}
+\centering{
+\includegraphics[width=0.96\textwidth]{figs/ExceptionalRules}}
+\caption{$\pi$-ServiceProcess to $\pi$-ServiceComposition Model Transformation Rules}
+\label{fig:ServiceProcess-ServiceComposition-Rules}
+\end{figure}
+Each {\sc Assertion} of a {\sc Contract} ( $\pi$-UseCase model) is transformed into a {\sc Rule} in the $\pi$-ServiceProcess model. The set of {\sc Contracts} generates a {\sc Policy} composed by those {\sc Rules}. Thus, the set of {\sc Rules} make up a single {\sc Policy}. It is important to highlight that only the {\sc Contracts} of the same {\sc Non-functional requirement} is transformed into the same {\sc Policy}. Different NFRs? {\sc Contracts}, are transformed into different {\sc Policies}. Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-a show how this transformation is made.Similar to the transformation between {\sc Contract} and {\sc Policy}, a set of {\sc Actions} is transformed into a single {\sc Service activity} entity. {\sc Actions} are related with {\sc Business collaborator}, and all information related to a {\sc Business Collaborator} are transformed from {\sc Packages} information ($\pi$-UseCase model).  {\sc Packages} are transformed into {\sc Business Collaborator}. Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-b presents the transformation between {\sc Action} and {\sc Service Activity} elements.An exceptional behaviour is triggered by a failure in the verification of the condition of a rule. An {\sc Exceptional behaviour} is performed to preserve the state of the application. Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-c presents how an {\sc Exceptional behaviour} that can be transformed into an {\sc Action} call.
+
+As the $\pi$-ServiceComposition model refines the $\pi$-ServiceProcess concepts at PIM level, a service previously defined as actions (source model) is refined as composition of those actions (target model) that are necessary to represent a business service, identifying who are the partners involved in the realization ({\sc Business collaborators}). In addition, $\pi$-SOD-M defines a platform specific model based on web services composition. This model is explicitly indicates those actions which are (or will be, if not yet implemented) supported by web services.
+
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT5}Considering the scenario example, the {\sc Action}?s update music {\sc Contract} is transformed is a {\sc Policy} with its {\sc Rules}. All contract {\sc Assertions} are transformed in RULE and its attributes, e.g. the login and password verification. The ?securityLoginPolicy? is all set of {\sc Rules} that were transformed from the {\sc Assertions} in $\pi$-ServiceProcess model. The {\sc Non- functional requirement} information will be used to the {\sc Policy} generation comes from the initial use case model. Also the {\sc Business Collaborator} Facebook and Spotify information came from {\sc Package} $\pi$-UseCase entity element. All {\sc Contracts} of the same {\sc Non- functional requirement} are composed in a {\sc Policy}.
+\end{example}
+% _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
+\subsection{From $\pi$-ServiceComposition to $\pi$-PEWS}
+% _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
+
+Table \ref{fig:ServiceComposition-Pews-Rules} describes the PIM to PSM transformations between $\pi$-ServiceComposition and $\pi$-PEWS meta-models. We propose two groups of rules: those that transform services com- position elements of the $\pi$-ServiceComposition into $\pi$-PEWS meta-model elements; and those that transform rules grouped by policies into A-policy types.
+
+A named action of the $\pi$-SCM represented by  {\sc\em Action} and {\sc\em Action:name} is transformed to a  named class {\sc Operation} with a corresponding attribute name {\sc Operation:name}. A  named service activity represented by the elements {\sc\em ServiceActivity}  and  {\sc\em ServiceActivity:name} of the $\pi$-SCM, are  transformed into a named operation of the $\pi$-{\sc Pews} represented by the elements  {\sc CompositeOperation} and {\sc CompositeOperation:name}. When more than one action is called, according to the following  composition patterns expressed using the operators {\sc\em merge, decision, fork and join} in the $\pi$-SCM the corresponding transformations, according to the PEWS operators presented above:
+\begin{itemize}
+\item   $op_1 . op_2$ if no {\sc\em ControlNode} is specified
+\item ($op_1 \parallel op_2) . op_3$ if control nodes of type {\sc\em fork, join} are combined
+ \item ($op_1 + op_2) . op_3$ if control nodes of type {\sc\em decision, merge} are combined
+\end{itemize}
+
+\begin{figure}
+\centering{
+\includegraphics[width=0.96\textwidth]{figs/Table7}}
+\caption{Transformation Rules: From $\pi$-ServiceComposition to $\pi$-PEWS}
+\label{fig:ServiceComposition-Pews-Rules}
+\end{figure}
+
+
+The A-policies defined for the elements of the $\pi$-ServiceComposition are transformed into {\sc A-policy} classes, named according to the names expressed in the source model. The transformation of the rules expressed in the $\pi$-ServiceComposition is guided by the event types associated to these rules. The variables associated to an A-policy expressed in the $\pi$- ServiceComposition as $<$Variable:name, Variable:type$>$ are transformed into elements of type {\sc Variable} with attributes {\sf NAME} and {\sf TYPE} directly specified from the elements Variable:name and Variable:type of the $\pi$-ServiceComposition model.
+
+As shown in Table \ref{fig:ServiceComposition-Pews-Rules}, for an event of type Pre the corresponding transformed rule is of type {\sc Precondition}; for an event of type Post the corresponding transformed rule is of type {\sc Post- condition}; finally, for an event of type TimeRestriction the corresponding transformed rule is of type {\sc Time}. The condition expression of a rule in the $\pi$-ServiceComposition (Rule:condition) is transformed into a class Condition:expression where the attributes of the expression are trans- formed into elements of type {\sc Attribute}.
+
+Figure \ref{fig:Specific-Contract-Representation} presents the $\pi$-PEWS specification resulting from the $\pi$- ServiceComposition model transformation of our scenario example.
+
+\begin{figure}
+\centering{
+\includegraphics[width=0.96\textwidth]{figs/31-31}}
+\caption{$\pi$-PEWS Specific and Contract Representation}
+\label{fig:Specific-Contract-Representation}
+\end{figure}
 
