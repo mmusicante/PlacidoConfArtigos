@@ -1,125 +1,98 @@
-A non-functional property (NFP) specifies a criterion about the behavior of a system related to the conditions in which it is executed and to its performance. Non-functional properties are also referred to as constraints, quality attributesÄù, quality goalsÄù, Äúquality of service requirements and Äúnon-behavioral requirementsÄù \cite{StGr05}. In the case of service-based applications, non-functional requirements concern the application itself as well as its component services. 
-The majority of the works on NFPs focus on measuring in which extent a software system  fulfills the NFPs that it should satisfy \cite{BBKL78,FePf96,KiDa96,Lyu96,MuIO90}. 
+While Functional Requirements establish \textit{what} is computed by an application, Non-Functional Requirements (NFRs) are concerned with \textit{how} the task is preformed.  
+NFRs include aspects such as performance, authentication and quality constraints.
+Non-functional properties are also referred to as constraints, quality attributesÄù, quality goalsÄù, quality of service requirements and Äúnon-behavioural requirementsÄù \cite{StGr05}. 
+In the case of service-based applications, non-functional requirements concern the application itself as well as its component services. 
+%The majority of the works on NFPs focus on measuring in which extent a software system  fulfills the NFPs that it should satisfy \cite{BBKL78,FePf96,KiDa96,Lyu96,MuIO90}. 
+Most research on NFRs focus on the evaluation of compliance by the software system. 
 
+In~\cite{Babamir2010,Yeom2006} non-functional properties of web services are classified according to three points of view, namely,  
+\textit{service level}, \textit{system level} and \textit{business level}.
+In~\cite{Babamir2010} NFRs are denoted as \textit{quality constraints}, which are expressed as logic formulae.
+In~\cite{Yeom2006} authors classify NFRs into \textit{category}, \textit{sub-category} and \textit{property}. Categories include \textit{business}, \textit{service} and \textit{system}.
+Possible \textit{sub-categories} are \textit{security}, \textit{value} or  \textit{interoperability}. The work also defines a \textit{web service quality model}, which considers non-functional properties. 
 
-We consider that existing  approaches address NFP from four perspectives: (i) NFP classification generally expressed as quality of service properties (QoS attributes) that can be associated to service compositions; (ii) service matching for satisfying  non-functional properties by composing specific services;  (iii) programming NFP as protocols that are asserted to service composition code; and, (iv) methodologies that provide tools for building service compositions with associated NFP. 
+In~\cite{XiaoCZBOLH08} the authors use the terms  
+\textit{non-functional attributes}, \textit{composition mo\-del entity} and \textit{mo\-del entity}  to classify different concepts related to NFRs.
+The notion of non-functional attribute is used to describe NFRs of the abstract process model. In the lower level, the composition is annotated with non-functional attributes.
 
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-\subsection{Classifying non-functional properties}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-We conducted a systematic review \cite{placidoPhDThesis2012} to analyze approaches that classify non-functional properties for developing service-oriented applications. As a result this analysis proposes a classification of NFP.
-%as a result of a study concerning software methodologies for the construction of service-oriented systems. 
-The classification is organized into three layers: application, services composition and services. 
+D'Ambrogio~\cite{DAmbrogio06} uses the term \textit{quality category} to group similar \textit{quality characteristics}. 
+\textit{Quality dimensions} are used to quantify an individual characteristic.
+For instance, the quality category \textit{performance} groups characteristics such as
+\textit{latency} and \textit{throughput}. 
+The development process is based on MDA and the authors also present a WSDL extension for describing the QoS of web services. A catalog of \textit{QoS characteristics} is provided for the web service domain, including properties as \textit{availability}, \textit{reliability} and \textit{access control}. 
 
-\begin{itemize}
-\item At the application layer NFP  refer to business rules (e.g., only the user can publish data on her/his Facebook wall) and values for example, the email address is a string containing an "@"Äù and a "Äú."Äù. A value NFP expresses constraints about the way data and functions can be accessed and executed. 
-
-\item The service composition layer serves as an integration layer between the services layer that exports methods and has associated constraints and characteristics; and the application layer that expresses requirements. 
-
-\item  At the service layer  business NFP concern properties that are associated to services and defines how to call their exported operations (business properties).  Value constraints concern more on the conditions in which services can be used. For example, accessing to a function within an authentication protocol. This layer gives an abstract view of the kind of properties associated to services that can be combined for providing NFP for a composition.  For example, confidentiality, authentication, privacy and access control can provide security at the service composition layer. 
-\end{itemize}
-
-
-
-\cite{ScCM10} proposes concepts and requirements for characterizing and analyzing existing approaches addressing NFP for service coordinations. 
-%
-%Therefore they propose:
-%\begin{itemize}
-%\item	A meta-model that introduces for characterizing NFP according to the entity to which they are associated: attribute, concern, action, and activity. 
-%\item	Six requirements for studying NFP definition approaches for service coordinations: NFP specifications, NFP actions specification, Web service subjects specification, non functional attributes execution order specification, composite Web service subjects specification, stateful non functional constraint specification.
-%\item	Seven requirements for studying NFP enforcement approaches: separation of con-cerns, transparent integration of functional and NFP, quantification, superimposi-tion, integration of NFP with distributed Web service, programming language in-dependence, Web service composition support.
-%\end{itemize}
-%
-NFP concepts are close to those defined by \cite{Souz12} but they are not organized into layers.  They correspond essentially to the service and service composition layers. The enforcement requirements describe the way NFP are weaved to service coordinations. Existing works respect all or a subset of these requirements. The chosen requirements have an impact in the way NFP are enforced at execution time.
-
-
-%  Standards devoted for expressing non-functional properties for service-oriented applications are also analyzed in this section which needs to be addresses in the code generation phase. Finally exiting methodology for the development of service-oriented applications including non-functional properties are here depicted and compared with our approach.
-%As a result of our study of related works, in this section we present a categorization of main concepts related the treatment if non-functional requirement in the field of service-oriented development.
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-\subsection{Specifying Non-functional properties}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-
-\cite{CyPr04} proposes an extension to UML for expressing NFPs that can be integrated into the Class, Sequence, and Collaboration Diagrams.    UML diagrams such as actor-use case communication, message in the sequence diagram, and state in the state machine diagram are annotated with quantitative performance constraints. The UML Profile for Modeling Quality of Service and Fault Tolerance Characteristics and Mechanisms \cite{Omg04} describe a set of QoS characteristics such as throughput, latency, integrity, and dependability. The characteristics can also be parameterized with for example the type of keys or types of encryption algorithms to used for addressing  security. For all UML profiles based approaches it is  possible to apply the stereotypes and its tagged values to arbitrary UML meta-classes, e.g. Class or Operation. For instance, there are stereotypes for encryption, decryption and logging which can be added to classes representing operations exported by services. The ordering or priority of stereotypes cannot be expressed but composition-related requirements can theoretically be realized through behavioral diagrams like activity diagrams or state diagrams \cite{OrHe07}.
-
- %incorporate extra-functional properties into UML models by the use of UML stereotypes. 
-%Design patterns help in documenting and communicating proven design solutions to recurring problems. Design patterns not only describe how to solve design problems but also document the designers‚Äô intentions - why the solution is chosen over others and what tradeoffs are made. 
-
-%\cite{GrYu01} observe that non-functional properties  (NFPs) are pervasive in the descriptions of design patterns and propose their systematic treatment in descrip-tions of patterns and when applying patterns during design. 
-
-%Business rules provide means for expressing, managing and updating pieces of busi-ness domain knowledge independent of the rest of the application. According to the Business Rules Group \cite{Hay00}, a business rule  is intended to assert business structure or to control the behavior of the business \cite{Hay00}. Business rules are usually expressed either as constraints or in the form if conditions then action. The conditions are also called rule premises. The business rule approach encompasses a collection of terms (definitions), facts (connection between terms) and rules (computation, constraints and conditional logic) \cite{Hall01}. Terms and Facts are statements that contain sensible business relevant observations, whereas rules are statements used to discover new information or guide decision-making. 
-%In a business rule system,  rules are logically separated   from the system \cite{ChMe04}. \cite{ChMe04} investigate a hybrid approach, that combines business processes as known in BPEL with business rules \cite{Hay00}.
-
-\cite{ChLa09} proposes a generative framework to address NFPs for web service compositions. They separate the orchestration meta-model from other non-functional meta-models. They propose a non-functional meta-model for security  and they specify how these requirements must be ensured. The NFPs are  associated to the composition model by adding annotations.
-KAOS \cite{DaLF93,Lams01} is a goal-oriented framework for addressing functional requirements with a formal temporal logic  to precisely specify NFPs, such as performance.
-% as part of attribute specification of functional requirements. 
-
-The AO4BPEL \cite{CSHM06} deployment descriptor (DD) is used for specifying non-functional requirements for BPEL processes. First the service (e.g., logging, security, transactions and reliable messaging) is selected. Then, the class (e.g. authentication or confidentiality for security) can be specified. The type (e.g. encryption or decryption for confidentiality) is  the concrete action that must be executed in order to enforce the requirement.  A selector can be defined such as for a certain BPEL activity. Each selector can be mapped to a requirement. 
-
-The W3C proposes a set of languages and protocols for specifying the NFP of a servicesÄô coordination. A classification of NFP protocols, provided by the WS-* family protocols proposed by the World Wide Web Consortium (W3C). 
-%These protocols suppose an underlying communication protocol. 
-%
-%The following sections describe representative examples of the WS-* protocol-based approaches.
-%
- Standards in services composition implement functional, non-functional constraints and communication aspects by combining different languages and protocols. WSDL and SOAP are languages used respectively for describing services interfaces and message exchange protocols for calling methods exported by such services. For adding a transactional behaviour to a services composition it is necessary to implement WS-Coordination, WS-Transaction, WS-BussinessActivity and WS-AtomicTransaction. The selection of the adequate protocols for adding a specific non-functional constraints to a services composition (e.g., security, transactional behaviour and adaptability) is responsibility of a programmer. 
  
-% As a consequence, the development of an application based on a services' composition is a complex and a time-consuming process.
-% % This is opposed to the philosophy of services that aims at facilitating the integration of distributed applications. 
-% Other works, like \cite{Fauvet05} introduce a model for transactional services composition based on an advanced transactional model.\cite{BhiriGP05} proposes an approach that consists of a set of algorithms and rules to assist designers to compose transactional services. In \cite{Vidyasankar:2004} the model introduced in \cite{SchuldtABS02} is extended to web services for addressing atomicity.
+Schmeling et al.~\cite{SchmelingCM11} present an approach and a toolset for specifying and implementing web service compositions with support to several NFRs. The term \textit{non-functional concern} (NFC) is used to denote  NFRs. 
+%Two aspects are considered: specification and realization.
+\textit{Non-functional concern} is a general term used to describe non-functional requirements. 
+For instance, \textit{security}, \textit{reliability}, \textit{transactional behavior} are non-functional requirements. 
+A \textit{non-functional action} represents some behavior that implements \textit{non-functional attributes}. 
+An example of \textit{non-functional action} is \textit{encryption}, which provides the implementation of the \textit{non-functional attribute} \textit{confidentiality}. 
+Non-functional actions related to a common concern are grouped into \textit{non-functional activities}. 
+
+Pastrana et al.~\cite{PastranaPK11} use the term \textit{contract} to describe non-functional requirements. 
+\textit{Contracts} may have pre-conditions, post-conditions and invariants. 
+Each contract defines \textit{assertions} associated with \textit{quality properties}. 
+Each service may have as many associated \textit{contracts} as needed.
+
+Chollet et al.~\cite{CholletL09} associate (non-functional) \textit{quality properties} to 
+(functional) activities. The authors present a security meta-model for web service
+composition. The NFRs considered are \textit{authentication}, \textit{integrity} and \textit{confidentiality}. 
+Each NFR is associated with a service activity.
 
 
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-\subsection{Non-functional properties in service compositions}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-
-Several approaches adding non-functional properties to service compositions extend the underlying composition model. Non-functional properties can concern for example security, atomicity, availability, response time.
-\cite{CholletL09,SchmelingCM11}  associate non-functional  properties  to functional activities  modeled by a web service composition model. In \cite{chmelingCM11} 
-non-functional properties are   modeled independently and then associated to   a specific service composition represented in a BPMN diagram. 
-In \cite{OvaskaEHPA10} non-functional properties concern  quality management and they are specified at design time. Quality requirements  are then associated to the components of an architecture that implements a service composition. 
-
-
-Other approaches specify architectures or frameworks to manage and validate QoS attributes in service composition processes. 
-\cite{XiaoCZBOLH08} proposes a framework to verify NFP compliance in composed services. Tasks in a BPEL process can be annotated with non-functional attributes (such as time, cost, resources, etc.) which are validated at design time. 
-\cite{SchmelingCM11} uses a formal method  to choose best suited services instances according to a service composition pattern that includes some QoS attributes. 
- \cite{Babamir2010} proposes a framework for evaluating quality attributes of web services. By executing an algorithm, the framework  chooses the best web services for any task in a process and also candidate web service to replace unavailable ones at runtime. \cite{DAmbrogio06,Liu20121080}  extend  WSDL and BPEL   for including  QoS attributes that can be evaluated at runtime.
- \cite{Karunamurthy2012787} proposes an architecture in which web services are described with non-functional characteristics that are validated in the service composition process.
-
-Other approaches \cite{JeongCL09,Kamalabad2012,MohantyRP10} use matching techniques for choosing services that can cope with non-functional properties required by a given application.
-\cite{AgarwalLS09} defines a policy language to specify constraints on functional  properties of Web services for facilitating automated discovery and selection of services. 
-\cite{Yeom2006} define a quality driven selection of web services providing a QoS model.
+Ceri et al.\cite{CeriDMF07} uses the notions of \textit{policy}, \textit{rule}, \textit{condition} and \textit{action model} to specify NFRs.
+Agarwal et al.~\cite{AgarwalLS09} associate \textit{service policies} to services. 
+Each service may also have \textit{properties}, such as \textit{security} and \textit{reliability}. 
+Ovaska et al.~\cite{OvaskaEHPA10} use the terms \textit{quality attribute}, \textit{category}, \textit{conceptual layer} and \textit{importance} to organize and classify NFRs.
+Other authors do not define specific terms to refer to NFRs. 
+They use terms such as \textit{attribute}~\cite{ZhangPSP05,BasinDL06,JeongCL09}, 
+\textit{property}~\cite{Fabra2011}, 
+\textit{factor}~\cite{MohantyRP10,GutierrezRF10}, 
+\textit{characteristic}~\cite{DiamadopoulouMPS08}, 
+\textit{quality level}~\cite{ModicaTV09}, and
+\textit{value}~\cite{ThissenW06,BasinDL06}.
 
 
+Despite of the different notations found in the literature for classifying NFRs, some non-functional requirements are frequently considered, such as \textit{security}, \textit{performance}, \textit{reliability}, \textit{usability}, and \textit{availability}.
+However, distinct hierarchies and models are proposed for NFRs,  according to different points of view.
+We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,SchmelingCM11,BasinDL06,Fabra2011,OvaskaEHPA10} that use MDD (Model Driven Development) for designing and developing applications. 
 
-%\cite{} works also on the selection of web service for use considering non-functional properties. The paper present web services quality prediction models, which take non-functional properties into account. 
-
-
-Our proposal in contrast, focuses on the design of service-oriented application with non-functional properties modelled  for services and service compositions and then ensured at execution thanks to appropriate environments.
-
-%We propose to model non-functional properties  represented in our work as constraints and policies but more general quality model such as the proposed by \cite{Goeb2011,Klass2009} could be taken in consideration in further works.
-
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-\subsection{ Methodologies for developing Service-oriented applications   with non-func\-tion\-al properties}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-
- \cite{Ramollari_asurvey,PapazoglouH06,FeuerlichtM05,soma,Arsanjani:2008} propose methodologies for building service-based applications that  mainly focus on modeling functional aspects of service-based business processes. SOD-M \cite{decastro1} defines a model-driven approach for development service-based applications. 
-Few service-oriented development methodologies    explicitly address  non functional properties modeling \cite{Tran2012531,GutierrezRF10}. \cite{GutierrezRF10} a methodology that provides  activities, tasks, tools, security artifacts and organizational structures necessary to design a secure WS-based solution. 
-
-Unlike methodologies and approaches providing best practices presented above,  our proposal proposes a method for modelling service-based applications starting from a high-level business representation, and defining meta-models at different abstraction levels (CIM, PIM and PSM). It supports the design and development of services-based applications that can be reused and that are reliable.  A model-driven approach  is adopted to model non-functional properties in the early stages of the software development process.  Our approach also proposes  the definition of model transformations to go down in the development process adding more a more implementation details at each modelling stage is a key benefit of our proposal.
-
-%\textit{Design by Contract} \cite{HL05TACoS} is an approach for specifying web services and verifying them through runtime checkers before they are deployed. A contract adds behavioral information to a service specification, that is, it specifies the conditions in which methods exported by a service can be called. Contracts are expressed using the language \textit{jmlrac} \cite{LeavensCCRC02}. The \textit{Contract Definition Language} (CDL) \cite{cdl2006} is a XML-based description language, for defining contracts for services. There are an associated architecture framework, design standards and a methodology, for developing applications using services.  A services' based application  specification is generated after several \cite{AbrialLNSS91} B-machines refinements that describe the services and their compositions.
-
-%\cite{PapazoglouH06} proposes a methodology based on a SOA extension. This work defines a service oriented business process development methodology with phases for business process development. The whole life-cycle is based on six phases: planning, analysis and design, construction and testing, provisioning, deployment, and execution and monitoring.
-%IBM proposes a methodology for the development of SOA solutions, called SOMA \cite{soma}. SOMA defines a life-cycle with seven phases: business modeling and transformation, solution management, identification,
-%specification, realization, implementation and deployment monitoring and management.
-
-%\cite{sommerville08} describes some key points for building services' based applications based on business process models that define the activities and information exchanged in a business processes. Activities in business process can be performed by services so that the model of business process
-%represents a composition of services. It classifies services   as public utilities, business services or
-%composition services. Software development that uses services involves creating programs for composing and configuring services to create new composite services. The service engineering process involves identifying services candidates, service interface and implementation definition, testing and deployment of each service.
+Fabra \textit{et al.}~\cite{Fabra2011} also describes the importance of  MDD for service-oriented applications. This work  presents a complete development methodology, although this methodology is not centered on NFRs.
+The authors in~\cite{ThissenW06,ZhangPSP05} use formal methods to define a service-based development process that takes NFRs into account. 
+In~\cite{AgarwalLS09,PastranaPK11} ontologies are used to define and model NFRs, 
+whereas in~\cite{XiaoCZBOLH08,GutierrezRF10} Business Process Modeling (BPM) is used for
+system specification, including NFRs. 
+The majority of the authors concentrate on the  modeling of service compositions, although a significant number of approaches is focused on the definition of NFR models.
 
 
+In the method defined in~\cite{XiaoCZBOLH08}, tasks in the process model can be 
+annotated with \textit{non-functional attributes} (NFAs). 
+NFAs are defined apart  and are concerned with data items or tasks. 
+NFAs for data considers \textit{value} and \textit{range}, whereas NFAs for tasks include \textit{cost}, \textit{time}, \textit{resources} and \textit{expressions}.
 
+The proposal in~\cite{ThissenW06} presents steps for  selecting services 
+by taking QoS information into account. The proposed steps are: 
+\textit{(i)} identification of relevant QoS information; 
+\textit{(ii)} identification of basic composition patterns and 
+QoS aggregation rules for these patterns; and 
+\textit{(iii)} definition of a selection mechanism of services. 
+The QoS properties considered are \textit{performance}, \textit{cost}, \textit{reliability} and
+\textit{availability}. 
+  
+Karunamurthy et al.~\cite{Karunamurthy2012787} use the term \textit{non-function parameters} to define NFRs, such as \textit{cost}, \textit{response time}, \textit{availability}, \textit{security}, \textit{reliability} and \textit{reputation}.  
+The \textit{Non-Func\-tion\-al Specification Language} (NFSL) is proposed as a domain specific language (DSL) to express \textit{non-function parameters}.
 
+Liu et al.~\cite{Liu20121080} use the term \textit{QoS parameter} to describe non-functional requirements such as \textit{cost}, \textit{execution duration}, \textit{accuracy}, \textit{security}, \textit{integrity}, \textit{availability} and \textit{reliability}.  
+In the same way, Tran et al.~\cite{Tran2012531} use the term \textit{QoS policies} to classify similar non-functional requirements.
 
-%Besides the notion of model at each level of abstraction, MDA propose the use of \textit{model transformations} within and between levels. Intra-level transformations are used to provide a unified representation of concepts of a given level. Inter-level transformation implement a refinement process between levels. Transformations may be automatic or semi-automatic.
+Li et al.~\cite{Li2013} associate \textit{dimensions} to  \textit{QoS parameters} to classify NFRs.  
+For instance, the \textit{time} dimension is associated to the \textit{execution time} and \textit{communication time} parameters; the \textit{spatial} dimension is associated to the \textit{storage capacity} and \textit{message length} parameters; the \textit{reliability} dimension is associated to the \textit{availability} and \textit{reliability} parameters and the \textit{cost} dimension is associated to the \textit{service cost} parameter.
+Rumpel et al.~\cite{Rumpel2012}  associate \textit{quality requirements} to  \textit{quality properties}. Quality requirements are intended to be specified as constraints. 
 
-
-%The methodology for supporting the construction of service-oriented applications, taking into account both functional and non-functional requirements presented in this work extends the \textit{Service Oriented Development Method} (SOD-M) proposed by De Castro et al.\cite{decastro1}.
+\bigskip
+Most works agree on distinguishing three points of view, namely the point of view of the organization (or Business view), of the individual service providers (or Service view) and of the composition designer (or System view).
+The Business view is concerned with the business logic (\textit{i.e.}, an abstract level of tasks, defined by the guidelines and constraints imposed by the organization).
+Service and System views are concerned with the implementation of the software solution: The Service level is concerned with the building blocks of the application.
+It may use web services provided by third party sources.
+The System level is concerned with the coordination of services, to implement the business logic.
