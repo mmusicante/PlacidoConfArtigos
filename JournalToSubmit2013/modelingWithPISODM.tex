@@ -302,13 +302,14 @@ The following section describes the transformation rules between the $\pi$-SCM a
 \section{Transformation rules}\label{sec:mmrules}
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
 
- $\pi$-SOD-M  proposes  horizontal transformation rules between $\pi$-UseCase to $\pi$-ServiceProcess meta-models,  and vertical transformation rules between $\pi$--ServiceProcess to $\pi$-ServiceComposition meta models; and $\pi$-ServiceComposition to $\pi$-PEWS. 
+ $\pi$-SOD-M  proposes  horizontal transformation rules between $\pi$-use case to $\pi$-service process models,  and vertical transformation rules between $\pi$-service process to $\pi$-service composition  models; and $\pi$-service composition model to $\pi$-PEWS code. The following lines describe the particular purpose of these transformation rules that are intended to (semi)-automatize the construction of a service oriented application (see the $\pi$-SODM environment description in the next section).
  
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
 \subsection{From $\pi$-UseCase to the $\pi$-ServiceProcess}
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
 
-The PIM to PIM transformation rules specify how  to transform a $\pi$-use case model into  a $\pi$-service process model (Table \ref{fig:transformationsUseCase-ServiceProcess}). Given  (composite) $\pi$-use case model defining the functions of  the developed application and their associated constraints (representing business rules), the objective is to express them as a $\pi$-service process model describing the application logic and its associated non-functional properties.  The principle is to express a set of $\pi$-use cases (i.e., use cases with constraints) related by associations of type {\sc Extend}   in terms of  a business process consisting of actions related by a control flow and associated contracts.
+Given  (composite) $\pi$-use case model defining the functions of  the developed application and their associated constraints (representing business rules), the objective is to express them as a $\pi$-service process model describing the application logic and its associated non-functional properties.  The principle is to express a set of $\pi$-use cases (i.e., use cases with constraints) related by relationships of type {\sc Extend}   in terms of  a business process consisting of actions related by a control flow and associated contracts specifying NFP. The PIM to PIM transformation rules specify how  to transform a $\pi$-use case model into  a $\pi$-service process model (Table \ref{fig:transformationsUseCase-ServiceProcess}). 
+
 \begin{figure}
 \centering{
 \includegraphics[width=0.96\textwidth]{figs/Table5}}
@@ -316,12 +317,12 @@ The PIM to PIM transformation rules specify how  to transform a $\pi$-use case m
 \label{fig:transformationsUseCase-ServiceProcess}
 \end{figure}
 
-As defined in the $\pi$-ServiceProcess  meta-model an {\sc Activity service}  consists of a composition of one or more entities of type {\sc Action}. 
-Thus, every {\sf $\pi$-use case} is transformed into an {\sf Action} that will compose the target $\pi$-service process model.  Every {\sf Extend} relationship identified in a $\pi$-use case model is transformed into a  {\sf Fork node}.
-If the extend relationship has: 
+As defined in the $\pi$-ServiceProcess  meta-model an {\sc Activity service}  consists of a composition of  entities of type {\sc Action}. 
+Thus, every {\sf $\pi$-use case} is transformed into an {\sf Action} of the target $\pi$-service process model.  Every {\sf Extend} relationship identified in a $\pi$-use case model is transformed into a  {\sf Fork node}.
+If the {\sf Extend} relationship concerns: 
 \begin{itemize}
-\item only one {\sf use case} it is transformed into an {\sf action} of the fork in an alternative flow. 
-\item several  {\sf use cases} are transformed as  different {\sf Actions} with mutual alternative flows in the fork node.   
+\item one {\sf use case} it is transformed into an {\sf Action} participating in the fork node in an alternative flow. 
+\item several  {\sf use cases} are transformed as  different {\sf Actions} that belong to mutual alternative flows in the fork node.   
 %{\sc Contracts}  are associated to  {\sc Actions}.
 \end{itemize}
 
@@ -332,13 +333,13 @@ If the extend relationship has:
 \label{fig:transformationsUseCase-ServiceProcessRules}
 \end{figure}
 
-   A {\sf Constraint} of a (composite) {\sf Use Case}  is transformed into an  {\sf Assertion}.  The set of constraints  in a $\pi$-use case model  (transformed into assertions) are grouped in a {\sf Contract} in a $\pi$-ServiceProcess model (figure  \ref{fig:transformationsUseCase-ServiceProcessRules}-a).
+   A {\sf Constraint} of a (composite) {\sf Use Case}  is transformed into an  {\sf Assertion}.  The set of constraints  in a $\pi$-use case model  (transformed into assertions) are grouped in a {\sf Contract} in a $\pi$-service process model (figure  \ref{fig:transformationsUseCase-ServiceProcessRules}-a).
 A constraint of a given type ({\sf Constraint type}) can have different transformations as stated in the following rules (figure   \ref{fig:transformationsUseCase-ServiceProcessRules}-b). Given a  a {\sf Constraint} of type:
 
 \begin{itemize}
-\item   {\sc Business Constraint} is transformed into an {\sf Assertion} with no value attributes. %information like maxValue and minValue;
-\item     {\sc Value Constraint}  with the  attribute {\sf  isExceptionalBehaviour}  set to false, is transformed into an {\sf Assertion};
-\item  {\sc Value Constraint }  with the attribute {\sf  isExceptionalBehaviour }  set to true, is transformed into  {\sf Exceptional behaviour};
+\item   {\sc Business} is transformed into an {\sf Assertion} with no value attributes. %information like maxValue and minValue;
+\item     {\sc Value}  with the  attribute {\sf  isExceptionalBehaviour}  set to false, is transformed into an {\sf Assertion}.
+\item  {\sc Value }  with the attribute {\sf  isExceptionalBehaviour }  set to true, is transformed into  {\sf Exceptional behaviour}.
 \end{itemize}
 %Given the $\pi$-UseCase meta-model, to all {\sc Constraint} entity related with a {\sc Use Case}, there is a {\sc Contract} that compounds a set of {\sc Assertions} entity  and the {\sc Use Case} is refined in a service {\sc Action}.
 
@@ -346,18 +347,12 @@ A constraint of a given type ({\sf Constraint type}) can have different transfor
  For transforming constraints of type {\sf Value Constraint }
   the designer must specify value thresholds associated to attributes as specified by  { constraint}s  and {use case}s. By default, value constraints are transformed into pre-conditions and business constraints are transformed into post-conditions. 
   
-\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT1}
-Considering the scenario example  the transformation of the "listen music" Use Case is transformed into a Service Action. This Action is a Spotify service function that can be invoked to play the music. For the "publish music" Use Case,  constraints are transformed in a set of assertions that are grouped in a Contract ("publishMusicContract"). The "publishMusicContract" is related with the Action "publishMusic". 
-\end{example}
 
 % From {\sc Constraint} and {\sc Constraint Type} entities are generated detailed {\sc Contract} information, that are refined into {\sc Exceptional behaviours} and {\sc Assertions} entities . {\sc Constraint} is related with a {\sc Constraint type}, and there are different cases for the transformation of this concept. A Business type is transformed into an {\sc Assertion} . These {\sc  Assertion} information attributes are considered if the {\sc Constraint Type} is a Value type. This is semi-automatic, because there is not
 %enough information in a $\pi$-UseCase model to run a complete automatic transformation. 
 
 A {\sf Requirement} and a {\sf Composite use case} in a  $\pi$-UseCase model are transformed respectively into a {\sf Service activity} and an {\sf Action} (see figures  \ref{fig:transformationsUseCase-ServiceProcessRules}-c  and d). 
 
-\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT2}
-For the use case "download music" it is necessary process  the payment. Thus, the use cases that model the function "download music"  are transformed into {\sf actions}, and a {\sf Service activity} that aggregates these {\sf Actions}. 
-\end{example}
 
 \begin{figure}
 \centering{
@@ -368,13 +363,11 @@ For the use case "download music" it is necessary process  the payment. Thus, th
 
 %The transformations for {\sc Extend} and {\sc Include} dependencies  are not as simple as the previous transformations (figures \ref{fig:transformaton-examples}-a). 
 
-The relationships of type  {\sc Extend} and {\sc Include}  determine the way the business process is expressed as a workflow.  The workflow generated for a relationship  «extends»  between  two use cases (figure  \ref{fig:transformaton-examples}-a) is described in figure \ref{fig:transformaton-examples}-c).  The generated workflow consists of  a {\sf Fork node}, a {\sf Join node},  four entities of type {\sc Control flow}, and also two entities of type {\sc Action} , one for each {\sf Use case}.
+The relationships of type  {\sc Extend} and {\sc Include}  determine the way the business process is expressed as a workflow.  The workflow generated for a relationship  «extends»  between  two use cases (figure  \ref{fig:transformationsUseCase-ServiceProcessRules}-a) is described in figure \ref{fig:transformaton-examples}-c).  The generated workflow consists of  a {\sf Fork node}, a {\sf Join node},  four entities of type {\sc Control flow}, and also two entities of type {\sc Action} , one for each {\sf Use case}.
 
-When there is more than one «extends» relationship among several use cases (figures \label{fig:transformaton-examples}-b and d), the transformation leads to  two more {\sc Control flow} entities for each  {\sc use case}, and an {\sf Action} for each  extended {\sf use case}.
+When there is more than one «extends» relationship among several use cases (figures \label{fig:transformationsUseCase-ServiceProcessRuless}-b), the transformation leads to  two more {\sc Control flow} entities for each  {\sc use case}, and an {\sf Action} for each  extended {\sf use case}.
 
-\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT3}
-Considering the scenario example, it is possible to apply the same rule for the "publish music" use case, which has two extended use cases, "public twitter" and "public Facebook", applying the rules shown in figures \ref{fig:transformaton-examples}-b and d.
-\end{example}
+
 
 \begin{figure}
 \centering{
@@ -383,10 +376,13 @@ Considering the scenario example, it is possible to apply the same rule for the 
 \label{fig:transformationsUseCase-ServiceProcessRules}
 \end{figure}
 
- {\sf Include} use case entities, are transformed into an {\sf Action} sequence, as shown in figure \ref{fig:transformationsUseCase-ServiceProcessRules}-b. A {\sc Use case} element is transformed into an {\sf Action}. For a set of n {\sc Use case} is transformed into an  n-1 {\sf Object flow} elements. Each {\sf Control flow} is transformed into two {\sf Actions} associated by a relationship.
+ {\sf Include} use case entities, are transformed into an {\sf Action} sequence, as shown in figure \ref{fig:transformationsUseCase-ServiceProcessRules}-b. A {\sc Use case} element is transformed into an {\sf Action}. A set of n {\sc Use case} is transformed into an  n-1 {\sf Object flow} elements. Each {\sf Control flow} is transformed into two {\sf Actions} associated by a relationship.
 
-\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT4}
-Given the "download music" use case of the scenario example, it includes the payment process to buy the music. It is represented as a include in the $\pi$-UseCase model and it is transformed in a sequence flow in the $\pi$-ServiceProcess model (as shown in figure \ref{fig:transformation-example-include}). 
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT1}
+Considering the scenario example  the transformation of the "listen music" Use Case is transformed into a Service Action. This Action is a Spotify service function that can be invoked to play the music. For the "publish music" Use Case,  constraints are transformed in a set of assertions that are grouped in a Contract ("publishMusicContract"). The "publishMusicContract" is related with the Action "publishMusic". 
+For the use case "download music" it is necessary process  the payment. Thus, the use cases that model the function "download music"  are transformed into {\sf actions}, and a {\sf Service activity} that aggregates these {\sf Actions}. 
+Considering the scenario example, it is possible to apply the same rule for the "publish music" use case, which has two extended use cases, "public twitter" and "public Facebook", applying the rules shown in figures \ref{fig:transformaton-examples}-b and d.
+Given the "download music" use case of the scenario example, it includes the payment process to buy the music. It is represented as a include in the $\pi$-UseCase model and it is transformed in a sequence flow in the $\pi$-Service process model (as shown in figure \ref{fig:transformation-example-include}). 
 \end{example}
 
 \begin{figure}
@@ -428,7 +424,13 @@ Given the "download music" use case of the scenario example, it includes the pay
 Table \ref{fig:ServiceProcess-ServiceComposition}  shows the transformation rules for transforming a $\pi$-Service process model into a   $\pi$-ServiceComposition model.
 As illustrated in Figure \ref{fig:ServiceProcess-ServiceComposition-Rules} the  principle of this transformation  is to group respectively  {\sf Contracts}  and {\sf Actions} into {\sf Policies} and {\sf Service activities}.   
 
-Each {\sf Assertion} of a {\sf Contract} in a $\pi$-UseCase model is transformed into a {\sf Rule} in a $\pi$-ServiceProcess model. The set of {\sf Contracts} generates a {\sf Policy} composed by those {\sf Rules}. Thus, the set of {\sf Rules} make  a single {\sf Policy}. Only the {\sc Contracts} of the same {\sc Non-functional requirement} are transformed into the same {\sc Policy}. Different NFRs {\sc Contracts}, are transformed into different {\sc Policies}. Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-a show how this transformation is made (e.g., safety, performance, and reliability {\sc Policy} types).
+Each {\sf Assertion} of a {\sf Contract} in a $\pi$-service composition model is transformed into a {\sf Rule} in a $\pi$-service composition model. The set of {\sf Rules}  concerning the same NFP (e.g., safety, performance, and reliability) is grouped into a {\sf Policy} (see Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-a). Each {\sf Assertion} of a {\sf Contract} is transformed into a {\sf Rule:Condition} attribute. If the {\sf Assertion} has a value type, the name and the attributes are transformed into a {\sf Variable} in the target model.  The {\sf Assertion: Aproperty} attribute can have different transformations, according to  the following rules:
+\begin{itemize}
+\item a {\sf Post-Condition} is transformed into a {\sf  Post}. 
+\item a {\sf Precondition} is transformed into {\sf Pre}.
+\item a {\sf Timerestriction} is transformed into {\sf Time}.
+\end{itemize}
+
 
 \begin{figure}
 \centering{
@@ -437,14 +439,9 @@ Each {\sf Assertion} of a {\sf Contract} in a $\pi$-UseCase model is transformed
 \label{fig:ServiceProcess-ServiceComposition-Rules}
 \end{figure}
 
-
-{\sf Actions}  of a $\pi$-service process model are transformed into an {\sf Action} in a $\pi$-service composition model, and every {\sf Service activity} of a $\pi$-service process model is transformed into a {\sf Service activity} in a $\pi$-service composition model (see Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-b). {\sf Actions} are related to a  {\sf Business collaborator}. A {\sf Package}  in the $\pi$-use case model is transformed   into a {\sf Business Collaborator}.  
- {\sf Contract}s  concerned with the same { non-functional requirement} in a $\pi$-service process model are transformed into a {\sf Policy} in a $\pi$-service composition model. Each {\sf Assertion} of a {\sf Contract} is transformed into a {\sf Rule:Condition} attribute. If the {\sf Assertion} has a value type, the name and the attributes are transformed into a {\sf Variable} in the target model.  The {\sf Assertion: Aproperty} attribute can have different transformations, according to  the following rules:
-\begin{itemize}
-\item a {\sf Post-Condition} is transformed into a {\sf  Post}. 
-\item a {\sf Precondition} is transformed into {\sf Pre}.
-\item a {\sf Timerestriction} is transformed into {\sf Time}.
-\end{itemize}
+A {\sf Package}  in the $\pi$-use case model is transformed   into a {\sf Business Collaborator}. 
+{\sf Actions}  of a $\pi$-service process model are transformed into an {\sf Action} in a $\pi$-service composition model, and every {\sf Service activity} of a $\pi$-service process model is transformed into a {\sf Service activity} in a $\pi$-service composition model (see Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-b). An {\sf Exceptional behaviour} entity is transformed into an {\sf Action} in a $\pi$-service composition model (see Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-c ), and every {\sf Non-functional attribute} associated to an element ({\sf Contract} and {\sf Non-functional requirement}) in a $\pi$-service process model becomes a {\sf Non-functional attribute} associated to the corresponding element {\sf Policy} in a $\pi$-service composition model.
+ Finally, {\sf Actions} are grouped by  a  {\sf Business collaborator}.  
 
 \begin{figure}
 \centering{
@@ -453,7 +450,6 @@ Each {\sf Assertion} of a {\sf Contract} in a $\pi$-UseCase model is transformed
 \label{fig:ServiceProcess-ServiceComposition}
 \end{figure}
 
-An {\sf Exceptional behaviour} entity is transformed into an {\sf Action} in a $\pi$-service composition model (see Figure \ref{fig:ServiceProcess-ServiceComposition-Rules}-c ), and every {\sf Non-functional attribute} associated to an element ({\sf Contract} and {\sf Non-functional requirement}) in the $\pi$-ServiceProcess model becomes a {\sf Non-functional attribute} associated to the corresponding element {\sf Policy} in the $\pi$-ServiceComposition model.
 
 
 
@@ -465,9 +461,9 @@ An {\sf Exceptional behaviour} entity is transformed into an {\sf Action} in a $
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT5}
 Considering the scenario example, 
 %the {\sf Action}s update music {\sc Contract} is transformed is a {\sc Policy} with its {\sc Rules}. All contract {\sc Assertions} are transformed in RULE and its attributes, e.g. the login and password verification. 
-the "securityLoginPolicy" consists of a set of {\sf Rules} that were transformed from the {\sf Assertions} in $\pi$-ServiceProcess model. 
+the "securityLoginPolicy" consists of a set of {\sf Rules} that were transformed from the {\sf Assertions} in $\pi$-service process model. 
 %The {\sc Non- functional requirement} information will be used to the {\sc Policy} generation comes from the initial use case model. Also 
-The {\sf Business Collaborator} Facebook and Spotify information came from entity of type {\sc Package}  in the $\pi$-use case model. 
+The {\sf Business Collaborator} Facebook and Spotify information come from entity of type {\sc Package}  in the $\pi$-use case model. 
 %All {\sc Contracts} of the same {\sc Non- functional requirement} are composed in a {\sc Policy}.
 \end{example}
 
@@ -477,7 +473,7 @@ The {\sf Business Collaborator} Facebook and Spotify information came from entit
 
 Table \ref{fig:ServiceComposition-Pews-Rules} describes the PIM to PSM transformations between a $\pi$-Service composition and a $\pi$-PEWS program. We propose two groups of rules: those that transform services composition entities of a $\pi$-Service composition model into $\pi$-PEWS model ; and those that transform rules grouped by policies into A-policy types.
 
-A named action of the $\pi$-SCM represented by  {\sf Action} and {\sf Action:name} is transformed to an  {\sf Operation} with a corresponding attribute name {\sf Operation:name}. A  named service activity represented by the elements {\sf ServiceActivity}  and  {\sf ServiceActivity:name} of the $\pi$-SCM, are  transformed into a named operation of the $\pi$-{Pews} represented by the entities  {\sf CompositeOperation} and {\sf CompositeOperation:name}. When more than one action is called, according to the following  composition patterns expressed using the operators {\sc\em merge, decision, fork and join} in the $\pi$-SCM the corresponding transformations, according to the PEWS operators presented above:
+A named action of the $\pi$-service composition model represented by  {\sf Action} and {\sf Action:name} is transformed to an  {\sf Operation} with a corresponding attribute name {\sf Operation:name}. A  named service activity represented by the elements {\sf ServiceActivity}  and  {\sf ServiceActivity:name} of the $\pi$-service composition model, are  transformed into a named operation of the $\pi$-{Pews} represented by the entities  {\sf CompositeOperation} and {\sf CompositeOperation:name}. When more than one action is called, according to the following  composition patterns expressed using the operators {\sc\em merge, decision, fork and join} in the $\pi$-service composition model the corresponding transformations, according to the PEWS operators presented above:
 \begin{itemize}
 \item   $op_1 . op_2$ if no {\sc\em ControlNode} is specified
 \item ($op_1 \parallel op_2) . op_3$ if control nodes of type {\sc\em fork, join} are combined
