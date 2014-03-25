@@ -1,8 +1,9 @@
 %(Aquí lo dejaría con la estructura que teníamos para Caise, presentamos el framework y posteriormente comentamos modelos y transformaciones)
 
-This section presents $\pi$SOD-M, an MDD-based methodology for building service compositions with non-functional requirements. 
-As shown in Figure~\ref{fig:piSOD-M}, $\pi$SOD-M provides meta-models for modelling functional and non-functional requirements organized in three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}). 
- Given  high-level models specified at the CIM level, $\pi$SOD-M proposes the semi-automatic generation  of a set of models at the other levels of abstraction thanks to transformation rules specified between the meta-models.
+This section presents \pisodm, an MDD-based methodology for building service compositions with non-functional requirements. 
+\pisodm provides meta-models for modelling functional and non-functional requirements organized in three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}). 
+Given  high-level models specified at the CIM level, \pisodm proposes the semi-automatic refinement of these models, for the generation  of a set of models at the other levels of abstraction.
+The refinement process is driven by transformation rules specified between the meta-models.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/piSOD-M_process.pdf}
@@ -18,7 +19,7 @@ As shown in Figure~\ref{fig:piSOD-M}, $\pi$SOD-M provides meta-models for modell
 
 This level focusses on the highest-level view of the system, including its business and requirement specifications.
 At this stage of the development, the structure and system processing details are still unknown or undetermined.  
-$\pi$-SODM uses the \textit{e$^3$value}~\cite{Gordijn02valuebased} and \textit{BPMN}~\cite{BPMN} meta-models for this purpose. 
+\pisodm uses the \textit{e$^3$value}~\cite{Gordijn02valuebased} and \textit{BPMN}~\cite{BPMN} meta-models for this purpose. 
 
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .   
 \subsubsection{E$^3$value meta-model}
@@ -39,6 +40,7 @@ Dependency paths may also contain \textsl{OR} and \textsl{AND} elements (both fo
 \caption{\label{fig:CIM:tpme3v} e3value model for ``To Publish Music''.}
 \end{figure}
 
+\begin{example}[To Publish Music]\label{ex:toPublicMusic}
 Let us consider the scenario ``To Publish Music'', which will be used as a running example in this section:
 An organization wants to provide the service based application ``To Publish Music'' that monitors the music listened by a user during some periods of time and sends the song title  to this person's Twitter and Facebook accounts. 
 In this way, this social network user will have her status synchronized in  Twitter and Facebook (i.e., either the same title is published in both accounts or it is not updated) with the title of the music she is listening in Spotify.
@@ -56,7 +58,6 @@ The following (external) services will be used by the application:
 
 
 
-\begin{example}[To Publish Music]\label{ex:toPublicMusic}
 
 The e$^3$value model for ``To Publish Music'' is shown in Figure~\ref{fig:CIM:tpme3v}. 
 The e$^3$value value model shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status.
@@ -74,8 +75,8 @@ The e$^3$value  model is used to model the (economic) value exchange among the a
 BPMN~\cite{BPMN}  is a graphical representation that establishes the business process of the application through a high-level workflow. 
 The next example illustrates the use of this meta-model.
 
-\begin{example}[To Publish Music]\label{ex:toPublicMusicBPMN}
-Figure \ref{fig:CIM:tpmbpmn} shows the BPMN model \footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario. 
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicBPMN}
+Figure \ref{fig:CIM:tpmbpmn} shows the BPMN model\footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario. 
 It starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}). 
 Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
 \end{example}
@@ -87,7 +88,7 @@ Twitter and Facebook services are then contacted in parallel for updating the us
 \end{figure}
 
 The CIM level models are the basis for the development of the application. 
-The information presented at this level is (manually) refined into PIM-level models of the methodology $\pi$-SODM described next.
+The information presented at this level is (manually) refined into PIM-level models of the methodology \pisodm described next.
 Notice tat, at this level, the models are (very informally) used to describe both functional and non-functional requirements.
 
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
@@ -103,7 +104,7 @@ Our methodology defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \te
 
 Figure~\ref{fig:CIM:usecasemetamodel} presents the \textit{$\pi$-UseCase} meta-model.
 The goal of \textit{$\pi$-UseCase}  is to be the first representation of the application in terms of functionality, as well as to represent its non-functional requirements.
-The notion of \textit{policy} is ised to describe NFRs. 
+The notion of \textit{policy} is used to describe NFRs. 
 (In Figure~\ref{fig:CIM:usecasemetamodel}, we have highlighted the concepts related to NFRs).
 The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model for describing non-functional requirements with  the concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc non-functional requirement}, {\sc non-functional attribute} and {\sc Constraint}. An {\sc End Consumer} is represented by an {\sc Actor}. An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), while a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
 {\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
@@ -179,12 +180,12 @@ As a pre-condition for ``twitter update'' it is necessary that (i) the music for
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 \subsubsection{\textit{$\pi$-ServiceComposition} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 
- As shown in Figure \ref{fig:e-scomposition-metamodel}, the $\pi$-ServiceComposition meta-model ($\pi$-SCM)
+As shown in Figure \ref{fig:e-scomposition-metamodel}, the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model 
 provides meta-classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
-The \textit{$\pi$-ServiceComposition} meta-model extends the UML activity  meta-model with the concept of  \textit{A-Policy}
+The \textit{$\pi$-Serv\-ice\-Com\-po\-si\-tion} meta-model extends the UML activity  meta-model with the concept of  \textit{A-Policy}
 to group contracts with similar non-functional requirements.
 For instance, security and privacy restrictions may be grouped into a security policy.
- The  ($\pi$-SCM) meta-model defines:
+ The  ($\pi$-Serv\-ice\-Com\-po\-si\-tion) meta-model defines:
 %In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
 \begin{itemizedTrivlist}
 \item A {\sc Business Collaborator} meta-class, to represent the classes of entities that collaborate in  business processes by performing some  required action. 
@@ -198,13 +199,13 @@ There are two types of actions: i) a WebService (attribute Type is {\sf WS}); an
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/E-service-composition-metamodel}
-\caption{$\pi$-Service Composition ($\pi$-SCM) Metamodel.}
+\caption{$\pi$-Service Composition Metamodel.}
 \label{fig:e-scomposition-metamodel}
 \end{figure}
 
 \item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service and is composed by one or more executable nodes.
 
-\item In order to represent constraint types associated to services compositions, we introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+\item In order to represent constraint types associated to services compositions, we introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model in Figure \ref{fig:e-scomposition-metamodel}).
 We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
 An {\em A-policy} is defined by attributes and rules. 
 Intuitively, the conditions of each rule will be evaluated.

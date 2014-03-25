@@ -1,19 +1,19 @@
 While Functional Requirements establish \textit{what} is computed by an application, Non-Functional Requirements (NFRs) are concerned with \textit{how} the task is preformed.  
 NFRs include aspects such as performance, authentication and quality constraints.
-Non-functional properties are also referred to as constraints, quality attributesÄù, quality goalsÄù, quality of service requirements and Äúnon-behavioural requirementsÄù \cite{StGr05}. 
+These requirements are usually specified by conditions, called Non-functional Properties.
+Non-functional properties are also referred to as constraints, quality attributes, quality goals, quality of service requirements and non-behavioural requirements~\cite{Chung91,MylopoulosBook99,Chung2009}. 
+Most research on NFRs focus on the evaluation of compliance by the software system as a whole. %~\cite{BBKL78,FePf96,KiDa96,Lyu96,MuIO90}. 
 In the case of service-based applications, non-functional requirements concern the application itself as well as its component services. 
-%The majority of the works on NFPs focus on measuring in which extent a software system  fulfills the NFPs that it should satisfy \cite{BBKL78,FePf96,KiDa96,Lyu96,MuIO90}. 
-Most research on NFRs focus on the evaluation of compliance by the software system. 
 
 In~\cite{Babamir2010,Yeom2006} non-functional properties of web services are classified according to three points of view, namely,  
 \textit{service level}, \textit{system level} and \textit{business level}.
-In~\cite{Babamir2010} NFRs are denoted as \textit{quality constraints}, which are expressed as logic formulae.
-In~\cite{Yeom2006} authors classify NFRs into \textit{category}, \textit{sub-category} and \textit{property}. Categories include \textit{business}, \textit{service} and \textit{system}.
-Possible \textit{sub-categories} are \textit{security}, \textit{value} or  \textit{interoperability}. The work also defines a \textit{web service quality model}, which considers non-functional properties. 
-
+%In~\cite{Babamir2010} NFRs are denoted as \textit{quality constraints}, which are expressed as logic formulae.
+%In~\cite{Yeom2006} authors classify NFRs into \textit{category}, \textit{sub-category} and \textit{property}. Categories include \textit{business}, \textit{service} and \textit{system}.
+%Possible \textit{sub-categories} are \textit{security}, \textit{value} or  \textit{interoperability}. The work also defines a \textit{web service quality model}, which considers non-functional properties. 
 In~\cite{XiaoCZBOLH08} the authors use the terms  
 \textit{non-functional attributes}, \textit{composition mo\-del entity} and \textit{mo\-del entity}  to classify different concepts related to NFRs.
-The notion of non-functional attribute is used to describe NFRs of the abstract process model. In the lower level, the composition is annotated with non-functional attributes.
+The notion of non-functional attribute is used to describe NFRs of the abstract process model. 
+In the lower level, the composition is annotated with non-functional attributes.
 
 D'Ambrogio~\cite{DAmbrogio06} uses the term \textit{quality category} to group similar \textit{quality characteristics}. 
 \textit{Quality dimensions} are used to quantify an individual characteristic.
@@ -22,31 +22,32 @@ For instance, the quality category \textit{performance} groups characteristics s
 The development process is based on MDA and the authors also present a WSDL extension for describing the QoS of web services. A catalog of \textit{QoS characteristics} is provided for the web service domain, including properties as \textit{availability}, \textit{reliability} and \textit{access control}. 
 
  
-Schmeling et al.~\cite{SchmelingCM11} present an approach and a toolset for specifying and implementing web service compositions with support to several NFRs. The term \textit{non-functional concern} (NFC) is used to denote  NFRs. 
-%Two aspects are considered: specification and realization.
-\textit{Non-functional concern} is a general term used to describe non-functional requirements. 
-For instance, \textit{security}, \textit{reliability}, \textit{transactional behavior} are non-functional requirements. 
-A \textit{non-functional action} represents some behavior that implements \textit{non-functional attributes}. 
-An example of \textit{non-functional action} is \textit{encryption}, which provides the implementation of the \textit{non-functional attribute} \textit{confidentiality}. 
-Non-functional actions related to a common concern are grouped into \textit{non-functional activities}. 
+Schmeling et al.~\cite{SchmelingCM11} present an approach and a toolset for specifying and implementing web service compositions with support to several NFRs. 
+The approach defines abstraction levels, where the terms \textit{Non-Functional Concerns}, \textit{Non-Functional Actions} and \textit{Non-Functional Attributes} are used at each level (in decreasing order of abstraction).
+Non-functional concern is a general term used to describe non-functional requirements (such as  \textit{security}, \textit{reliability} or \textit{transactional behavior}). 
+Each concern is refined into a set of non-functional attributes.  
+Each non-functional attribute represents some behavior, to be refined into non-functional actions. 
+An example of non-functional action is \textit{encryption}, which provides the implementation of the non-functional attribute \textit{confidentiality}, which is part of the \textit{security} non-functional concern. 
+%Non-functional actions related to a common concern are grouped into \textit{non-functional activities}. 
 
-Pastrana et al.~\cite{PastranaPK11} use the term \textit{contract} to describe non-functional requirements. 
-\textit{Contracts} may have pre-conditions, post-conditions and invariants. 
+Pastrana et al.~\cite{PastranaPK11} use a traditional design-by-contract approach~\cite{Meyer97}.
+They use the term \textit{contract} to describe non-functional requirements. 
+Contracts may have pre-conditions, post-conditions and invariants. 
 Each contract defines \textit{assertions} associated with \textit{quality properties}. 
 Each service may have as many associated \textit{contracts} as needed.
 
 Chollet et al.~\cite{CholletL09} associate (non-functional) \textit{quality properties} to 
-(functional) activities. The authors present a security meta-model for web service
-composition. The NFRs considered are \textit{authentication}, \textit{integrity} and \textit{confidentiality}. 
+(functional) activities. 
+The authors present a security meta-model that takes into account web service compositions. 
+The NFRs considered are \textit{authentication}, \textit{integrity} and \textit{confidentiality}. 
 Each NFR is associated with a service activity.
 
 
-Ceri et al.\cite{CeriDMF07} uses the notions of \textit{policy}, \textit{rule}, \textit{condition} and \textit{action model} to specify NFRs.
+Ceri et al.\cite{CeriDMF07} use the notions of \textit{policy}, \textit{rule}, \textit{condition} and \textit{action model} to specify NFRs.
 Agarwal et al.~\cite{AgarwalLS09} associate \textit{service policies} to services. 
 Each service may also have \textit{properties}, such as \textit{security} and \textit{reliability}. 
 Ovaska et al.~\cite{OvaskaEHPA10} use the terms \textit{quality attribute}, \textit{category}, \textit{conceptual layer} and \textit{importance} to organize and classify NFRs.
-Other authors do not define specific terms to refer to NFRs. 
-They use terms such as \textit{attribute}~\cite{ZhangPSP05,BasinDL06,JeongCL09}, 
+Other authors do not define specific terms to refer to NFRs; they use terms such as \textit{attribute}~\cite{ZhangPSP05,BasinDL06,JeongCL09}, 
 \textit{property}~\cite{Fabra2011}, 
 \textit{factor}~\cite{MohantyRP10,GutierrezRF10}, 
 \textit{characteristic}~\cite{DiamadopoulouMPS08}, 
@@ -58,17 +59,18 @@ Despite of the different notations found in the literature for classifying NFRs,
 However, distinct hierarchies and models are proposed for NFRs,  according to different points of view.
 We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,SchmelingCM11,BasinDL06,Fabra2011,OvaskaEHPA10} that use MDD (Model Driven Development) for designing and developing applications. 
 
-Fabra \textit{et al.}~\cite{Fabra2011} also describes the importance of  MDD for service-oriented applications. This work  presents a complete development methodology, although this methodology is not centered on NFRs.
-The authors in~\cite{ThissenW06,ZhangPSP05} use formal methods to define a service-based development process that takes NFRs into account. 
+%Fabra \textit{et al.}~\cite{Fabra2011} also describes the importance of  MDD for service-oriented applications. 
+%The work  presents a development methodology, although this methodology is not centered on NFRs.
+The authors in~\cite{ThissenW06,ZhangPSP05} use formal methods to define a service-based development processes that take NFRs into account. 
 In~\cite{AgarwalLS09,PastranaPK11} ontologies are used to define and model NFRs, 
-whereas in~\cite{XiaoCZBOLH08,GutierrezRF10} Business Process Modeling (BPM) is used for
+whereas in~\cite{XiaoCZBOLH08,GutierrezRF10} Business Process Modelling is used for
 system specification, including NFRs. 
-The majority of the authors concentrate on the  modeling of service compositions, although a significant number of approaches is focused on the definition of NFR models.
+Most authors focus their work on modelling service compositions, although a significant number of approaches is focused on the definition of NFR models.
 
-
-In the method defined in~\cite{XiaoCZBOLH08}, tasks in the process model can be 
-annotated with \textit{non-functional attributes} (NFAs). 
-NFAs are defined apart  and are concerned with data items or tasks. 
+In the method defined in~\cite{XiaoCZBOLH08}, each task and data item of the application can be 
+annotated with functional and non-functional attributes (NFAs). 
+Functional and non-functional attributes are independently defined.
+They are attached to specific tasks later in the development of the application. 
 NFAs for data considers \textit{value} and \textit{range}, whereas NFAs for tasks include \textit{cost}, \textit{time}, \textit{resources} and \textit{expressions}.
 
 The proposal in~\cite{ThissenW06} presents steps for  selecting services 
@@ -91,7 +93,7 @@ For instance, the \textit{time} dimension is associated to the \textit{execution
 Rumpel et al.~\cite{Rumpel2012}  associate \textit{quality requirements} to  \textit{quality properties}. Quality requirements are intended to be specified as constraints. 
 
 \bigskip
-Most works agree on distinguishing three points of view, namely the point of view of the organization (or Business view), of the individual service providers (or Service view) and of the composition designer (or System view).
+Most works agree on distinguishing three points of view, namely the point of view of the organization (or \textit{Business} view), of the individual service providers (or \textit{Service} view) and of the composition designer (or \textit{System} view).
 The Business view is concerned with the business logic (\textit{i.e.}, an abstract level of tasks, defined by the guidelines and constraints imposed by the organization).
 Service and System views are concerned with the implementation of the software solution: The Service level is concerned with the building blocks of the application.
 It may use web services provided by third party sources.

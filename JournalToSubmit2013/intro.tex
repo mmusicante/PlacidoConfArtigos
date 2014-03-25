@@ -10,7 +10,7 @@
 
 In Service-Oriented Computing~\cite{Papazoglou2007}, pre-existing services are
 combined to build an application business logic.
-The selection of services is usually guided by the \textit{functional} requirements of the application being developed~\cite{1,2,decastro1,PapazoglouH06}\footnote{Functional properties of a computer system are characterized by the effect produced by the system when given a defined input.}.
+The selection of services is usually guided by the \textit{functional} requirements of the application being developed~\cite{2,decastro1,PapazoglouH06}\footnote{Functional properties of a computer system are characterized by the effect produced by the system when given a defined input.}.
 An important challenge of service-oriented development is  to ensure the alignment between the functional requirements imposed by the business logic and the functions actually being developed.
 
 Functional properties are not the only  aspect in the software development process.
@@ -38,16 +38,16 @@ In consequence, the development process will not fully preserve the compliance a
 
 The literature stresses the need for methodologies and techniques for service oriented analysis and design 
 %since they are the cornerstone in the development of meaningful service based applications
-~\cite{5}. 
+~\cite{Papazoglou2007}. 
 Existing approaches argue that the convergence of model-driven software development, service orientation,   and  business processes improvement are key for developing accurate  software~\cite{watson}. 
 Model Driven Development (MDD)  for software systems is mainly characterized by the use of models as a product~\cite{Selic03}.
 These models are successively refined from abstract specifications into actual computer programs.
 
 Our work proposes  the $\pi$-\textit{Service Oriented Development Method} ($\pi$-SODM)
 to support non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements from the early stages of software development.
-$\pi$-SODM is aligned with the MDD guidelines and proposes models, practices and techniques for the development of service-based applications.  The technique proposes  the use of \textit{models} to specify a software system at different levels of abstraction. 
+\pisodm is aligned with the MDD guidelines and proposes models, practices and techniques for the development of service-based applications.  The technique proposes  the use of \textit{models} to specify a software system at different levels of abstraction. 
 Models are organized according to the guidelines for structuring the specifications of software systems of the Model Driven Architecture (MDA)~\cite{miller} approach. 
-The goals of  $\pi$-SODM are to:
+The goals of  \pisodm are to:
 %SOD-M does not provide support for the specification of non-functional requirements, such as
 %security, reliability, and efficiency.
 \begin{trivlist}
@@ -57,8 +57,8 @@ The goals of  $\pi$-SODM are to:
 
 This paper is organized as follows.
 Section~\ref{sec:relworks} summarizes the general principles of existing works for addressing NFP and associating them to service compositions.
-Sections~\ref{sec:motivation}  and~\ref{sec:mmrules} introduce respectively the meta-models of the $\pi$-SODM and transformation rules. 
-Section~\ref{sec:implementation} describes the $\pi$-SODM environment that provides tools for building service based applications according to the $\pi$-SODM methodology. 
+Sections~\ref{sec:motivation}  and~\ref{sec:mmrules} introduce respectively the meta-models of the \pisodm and transformation rules. 
+Section~\ref{sec:implementation} describes the \pisodm environment that provides tools for building service based applications according to the \pisodm methodology. 
 Section~\ref{sec:flyingPig} describes the experiment that we conducted for validating our methodology and discusses lessons learned. 
 Finally, Section~\ref{sec:conclusions} concludes the paper and gives research perspectives.
 
