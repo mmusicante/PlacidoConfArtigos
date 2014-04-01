@@ -141,69 +141,19 @@
 %The $\pi$-PEWS  meta-model is described in the next section. 
 
 
-%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
-%\subsubsection{$\pi$-{\sc Pews}  meta-model}\label{sec:pewsmetamodel}
-%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
-%
-%
-%This section  describes the $\pi$-SOD-M development environment that implements the generation of {\em A-policies}' based services' compositions. For a given services' based application, the process  consists in generating the  code starting from a $\pi$-SCM modeling an application. Note that the services' composition model is not modeled from scratch, but it is the result of a general process defined by the $\pi$-SOD-M method in which a set of models are built following a service oriented approach \cite{decastro1}.
-%
-%%We used the Eclipse Modeling Framework (EMF) to implement the whole model transformation process \footnote {The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}. From a model specification described in XMI, EMF provides tools and runtime support to produce a set of Java classes for the model, along with a set of adapter classes that enable viewing and command-based editing of the model, and a basic editor.
-%%In order to automate the transformation we specified  transformation rules using the ATL model transformation language Finally, in order to generate code we  used Acceleo \footnote{http://www.acceleo.org/pages/home/en}.
-%
-%%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-%%\subsection{$\pi$-SOD-M Development Environment}
-%%%..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--
-%
-%Figure \ref{fig:policymanager} depicts a general architecture of the $\pi$-SOD-M Development Environment showing the set of plug-ins  developed in order to implement it. The environment implements the abstract architecture. Thus, it consists of plug-ins implementing the $\pi$-SCM and $\pi$-{\sc Pews} meta-models used for defining models specifying services' compositions and their associated policies; and ATL rules for transforming  PSM models (model to model transformation) and finally generating code (model to text transformation).
-%\begin{figure}[htpb]
-%	\begin{center}
-%		\includegraphics[width=0.60\textwidth]{figs/architecture}
-%	\end{center}
-%		\caption{$\pi$-SOD-M Development Environment}
-%   \label{fig:policymanager}
-%\end{figure}
-%\begin{itemize}
-%\item 	We  used the Eclipse Modeling Framework (EMF) \footnote {The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}   for implementing the meta-models  $\pi$- SCM and $\pi$-{\sc Pews}. Then, starting form these meta-models, we  developed the models' plug-ins needed to support the graphical representation of the $\pi$- SCM and $\pi$-{\sc Pews} models ($\pi$-ServiceCompostion Model and $\pi$-PEWS Model plug-ins).
-%
-%\item	 We used  ATL \footnote{http://eclipse.org/atl/. An ATL program is basically a set of rules that define how source model elements are matched and navigated to create and initialize the elements of the target models.}
-%for  developing the mapping plug-in implementing the  mappings between models ($\pi$-ServiceComposition2$\pi$-PEWS Plug-in).
-%
-%\item 	We  used Acceleo \footnote{http://www.acceleo.org/pages/home/en} for implementing  the code generation plug-in. We coded the pews.mt program  that implements the model to text transformation for generating executable code. It takes as input a $\pi$-PEWS model implementing a specific services' composition and it generates the code to be executed by the 
-%{\em A-policy} based services' composition execution environment. 
-%
-%%\item Finally, we created a chain execution  to execute the model to text transformation.
-%\end{itemize}
-%
-%%
-%As  shown in Figure \ref{fig:policymanager}, once an instance of a PEWS code is obtained starting form a particular $\pi$-services' composition model it can be executed over {\em A-policy} based services' composition execution environment  consisting of a composition engine and a {\em A-policy} manager.  The  {\em A-policy} manager  consists of three main components Manager, for scheduling the execution of rules, C-Evaluator and A-Executor respectively for evaluating rules' conditions and executing their actions. The {\em A-policy} Manager interacts with a composition engine thanks to a  message communication layer (MOM).
-%
-%
-%The composition engine manages the life cycle of the composition. Once a composition instance is activated, the engine schedules the composition activities according to the composition control flow.
-%Each activity is seen as the process where the service method call is executed.
-%The execution of an activity has four states: prepared, started, terminated, and failure.
-%The execution of the control flow (sequence, and/or split and join) can also be prepared, started, terminated and raise a failure.
-%
-%At execution time, the evaluation of policies done by the {\em A-policy} manager must be synchronized with the execution of the services' composition (i.e., the execution of an activity or a control flow).  Policies associated to a scope are activated when the execution of its scope starts. A {\em A-policy} will have to be executed only if one or several of its rules is triggered. If several rules are triggered the {\em A-policy} manager first builds an execution plan that specifies the order in which such rules will be executed according to the strategies defined in the following section. 
-%%Once rules have been executed, the {\em A-policy} finishes its execution and returns to a sleeping state.
-%If rules belonging to several policies are triggered then policies are also ordered according to an execution plan. The execution of policies is out of the scope of this paper, the interested reader can refer to \cite{Espinosa-Oviedo2011a} for further details.
-%%The order of policies has implications on the global order of the rules to be executed.
-%
-%
-%=============================================================================
 
-We validated our methodology by developing a use-case concerning risk assessment for financial companies.
-Our application is inspired on the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
+
+We validated our methodology by developing a use-case concerning risk assessment for financial companies as implemented by the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
 Risk assessment is implemented by an interactive business process based on the exchange of a series of questionnaires intended to evaluate the risks implied by the client business practice.
 Examples of business practices are: the conditions and protocols used to perform confidential transactions, the physical security for accessing reserved areas (such as computing server installations).
-The information gathered by the questionnaires is used to evaluate whether there are risky practices within the business processes of the company, as well as to propose amendmets to these practices.
+The information gathered by the questionnaires is used to evaluate whether there are risky practices within the business processes of the company, as well as to propose amendments to these practices.
 The ultimate goal of the risk assessment is to determine a degree of compliance to existing standards.
 By analyzing the questionnaires, ORCA detects risky practices, proposes solutions and triggers further assessment processes to ensure that the solutions have been implemented.
 
 Our goal is to model a service based application (called \FlyingPig), for providing risk assessment as a service.
-In order to provide this functionality, \FlyingPig\ would benefit from ORCA's legacy services for storage, assessment and data visualization functions.
+In order to provide this functionality, \FlyingPig\ would benefit from ORCA's legacy services providing storage, assessment and data visualization functions.
 
-In the following, we describe the results of applying $\Pi$-SODM to develop the \FlyingPig\ risk assessment system.
+In the following sections, we describe the results of applying $\Pi$-SODM to develop the \FlyingPig\ risk assessment system.
 The models presented next were generated as a result of interacting with software developers at GCP Global.
 
 \begin{figure}
@@ -218,10 +168,11 @@ The models presented next were generated as a result of interacting with softwar
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 Figure~\ref{fig:E3valuemodel} shows the value model for the \FlyingPig\ application.
-It is a business model that graphically represents a business case as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).\footnote{\color{red} This sentence need to move to section 3.1!!}
+It is a business model that graphically represents a business case as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).
+%\footnote{\color{red} This sentence need to move to section 3.1!!}
 We identify two business actors: \textsl{ORCA} and \textsl{Broker}. 
-Brokers channel requests for risk assessment for one or more companies. 
-ORCA have two value activities which are services that provide an economical benefit:  \textsl{Identify Amendments} and \textsl{Assess Risk Situation}. 
+Brokers emit requests for risk assessment for one or more companies. 
+ORCA has two value activities which are services that provide an economical benefit:  \textsl{Identify Amendments} and \textsl{Assess Risk Situation}. 
 The values exchanged between ORCA and the brokers are: 
 (i) \textsl{Questionnaire and Evidences} filled with information about the client company;
 (ii) \textsl{Amendments} which are ORCA's recommendations, based on the data provided by the answers to questionnaires; 
@@ -229,8 +180,8 @@ The values exchanged between ORCA and the brokers are:
 and 
 (iv) the risk assessment \textsl{Fee}.
 
-The dependency path in Figure~\ref{fig:E3valuemodel} initiates with the need of assessment by a particular company. 
-Once this need occurs, the value exchanges between ORCA and Broker are triggered. 
+The dependency path in Figure~\ref{fig:E3valuemodel} initiates with the need of assessment emited by a particular company. 
+Once this need has been declared, the value exchanges between ORCA and Broker are triggered. 
 The client company will provide ORCA with information (answers to a questionnaire), evidence (to support the information) and a fee (monetary value).
 ORCA will provide amendments (recommendations to change practices) and an evaluation report. 
 
@@ -240,28 +191,37 @@ ORCA will provide amendments (recommendations to change practices) and an evalua
 \caption{BPMN model for \FlyingPig.\label{fig:BPMNmodel}}
 \end{figure}
 
-The BPMN model for \FlyingPig\ is devised to better understand the process in which the value exchanges occur.
+
 Figure~\ref{fig:BPMNmodel} shows the BPMN model
 %\footnote{\color{red} Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/.} 
-for the \FlyingPig\ scenario. 
+for the \FlyingPig\ scenario. The BPMN model for \FlyingPig\ is partitioned for better understanding the process in which the value exchanges occur.
 The model includes two pools representing the \textsl{ORCA} system and the \textsl{Brokers}. 
 Brokers have two lanes, the client \textsl{Company} and a \textsl{User}. 
-The user is a contact member of the company, who will coordinate the assessment process. 
-This process will involve other members of the company as well.
+The user is a contact member of the company, who  coordinates the assessment process. 
+This process  involves other members of the company as well.
 
 The risk assessment process starts after a request from a company.
-(This agrees with the value model, in which the start stimulus triggers the whole process.)
+This corresponds to the value model, in which the start stimulus triggers the whole process.
 The request leads to the definition of a group of users that will answer questionnaires for evaluating risk.
 Questionnaires are considered tasks that users will have to perform. 
-Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include from physical facts such as not having easy access to handicapped persons or having an unsecured access to the premises of the company, to more intangible ones, such as the use of an less-than-optimal protocol to access data on the company's computer server.}.
+Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecure access to the premises of the company. They can be also abstract  such as the protocol used for accessing data on the company's computer server.}.
 
-Once tasks are completed, they are stored and analyzed to generate a list of noncompliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
-During the process of analyzing a questionnaire, the answers of some questions can trigger the generation of additional questionnaires or amendments, that will become new tasks.  
+Once tasks have been completed, they are stored and analyzed to generate a list of noncompliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
+During the process of analyzing a questionnaire, the answers of some questions can trigger the generation of additional questionnaires or amendments, that will be scheduled as new tasks.  
 
-Business processes also have associated rules and constraints to define their non-functional requirements (NFR).
-{\color{red}
-Placido, Valeria: What can we say about non-functional requirements at the CIM level?
-}
+Business processes also have associated rules and constraints to define their non-functional requirements (NFR):
+\begin{numtrivlist}
+\item An acknowledgement is due less than 30 seconds after registering a task or demand for assessment. 
+\item The system should be able to deal with, at least, 200 users. 
+\item If the number of requests exceeds 200, \FlyingPig\ should implement a load balance strategy for processing the requests. 
+\item The proviledges of the Channel-Broker must be verified \textit{before} the execution of the actions associated to the \textsf{designate user in charge} $\pi$-use case.
+\item The privileges of Users must be verified \textit{before} the execution of the actions associated to the \textsf{answer questionnaire and add evidences} $\pi$-use case.
+\item All questionnaires need to be fully answered, in order to consider that a task is completed.
+\item There is a time limit (in days) for each amendment required by the system.
+\end{numtrivlist}
+
+
+
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Platform-Independent Models (PIM)}
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
@@ -274,9 +234,9 @@ The $\pi$-SOD-M models of the PIM level  for the \FlyingPig\ scenario are presen
 \includegraphics[width=0.9\textwidth]{figs/UseCaseGeneral.png}
 
 {\color{red} \raggedright
-$\star$ ``Create a responsible'' should be changed for ``Designate user in charge''.
+$\star$  "Assign user in charge".
 
-$\star$ ``requires concurrency for more than 200 users'' should be changed by ``Maximum number of users should be greater than 200''.
+$\star$ "Maximum number of users should be greater than 200".
 }
 \caption{$\pi$-UseCase model for \FlyingPig.\label{fig:piUseCaseModel}}
 \end{figure}
@@ -285,32 +245,22 @@ $\star$ ``requires concurrency for more than 200 users'' should be changed by ``
 \paragraph{\underline{$\pi$-UseCase Model for \FlyingPig}}~
 
 The $\pi$-UseCase model shown in Figure~\ref{fig:piUseCaseModel} describes the features and constraints for the \FlyingPig\ application. 
-In this model, three actors are identified: \textit{Company}, \textit{User} and \textit{Channel-Broker}\footnote{\color{red} Can we change this for Broker ? --M.}. 
-They are represented as stick figures.
-In the context of \FlyingPig, Company is the actor asking for risk evaluation.
-A Channel-Broker is the responsible for channelling the the evaluation process, assigning users to be in charge of tasks as well as delegating tasks. 
-A User, in this model is an actor who answers questionnaires (with base on the actual facts about the Company).
+In this model, three actors are identified: \textit{Company}, \textit{User} and \textit {Broker} represented as stick figures.
+In the context of \FlyingPig, Company is the actor requesting a risk evaluation.
+A Broker is  responsible for coordinating  the evaluation process, assigning users to be in charge of tasks as well as delegating tasks. 
+A User, in this model is an actor who answers questionnaires according to the current situation  of the Company.
 The User also produces evidence to support facts and performs the necessary amendments to improve the results of the risk assessment.
 
-Each actor is associated to one or more use cases (depicted as white ovals in Figure~\ref{fig:piUseCaseModel}). 
-Use cases describe the main functionalities of the system.
-The $\pi$-UseCase model for \FlyingPig\ defines six use cases. 
+Each actor is associated to one or more $\pi$-use cases (depicted as white ovals in Figure~\ref{fig:piUseCaseModel}). 
+%Use cases 
+that describe the main functionalities of the system.
+The $\pi$-UseCase model for \FlyingPig\ defines six $\pi$-use cases. 
 
-In our model, each use case may be associated to one or more (non-functional) constraints (depicted as coloured ovals in Figure~\ref{fig:piUseCaseModel}). 
-The model defines three types of constraints: \textit{value} , \textit{business} or \textit{exceptional behavior}. 
+In our model, each $\pi$-use case may be associated to one or more (non-functional) constraints (depicted as coloured ovals in Figure~\ref{fig:piUseCaseModel}). 
+The model defines three types of constraints: \textit{value}, \textit{business} or \textit{exceptional behavior}. 
 Each constraint is identified by the word $<<$\textsf{constraint}$>>$ followed by its type.
 
-In the case of \FlyingPig, the model counts seven constraints:
-\begin{numtrivlist}
-\item An acknowledgement is due less than 30 seconds after registering a task or demand for assessment. 
-\item The system's infrastructure should be prepared to deal with, at least, 200 users. 
-\item If the number of requests exceeds 200, \FlyingPig\ should make a load balance of the requests. 
-\item The Channel-Broker must have their privileges verified \textit{before} the execution of the actions associated to the \textsf{designate user in charge} use case.
-\item Users must have their privileges verified \textit{before} the execution of the actions associated to the \textsf{answer questionnaire and add evidences} use case.
-\item All questionnaires need to be fully answered, in order to consider that a task is completed.
-\item There is a time limit (in days) for each amendment required by the system.
-\end{numtrivlist}
-
+%In the case of \FlyingPig, as expressed above the model constraints:
 %{\color{red} Anything else here? --M}
 
 \begin{figure}
@@ -322,11 +272,12 @@ In the case of \FlyingPig, the model counts seven constraints:
 \paragraph{\underline{$\pi$-ServiceProcess Model for \FlyingPig}}~
 
 The $\pi$-ServiceProcess model (Figure~\ref{fig:PiServiceProcessModel}) presents the workflow for \FlyingPig.
-The actions in this model were obtained by applying the use case transformation rules described in Section~\ref{sec:pewsmetamodel}.
+The actions in this model were obtained by applying the $\pi$-use case transformation rules.
+% described in Section~\ref{sec:pewsmetamodel}.
 
 The \textsf{Company}, \textsf{Broker-Channel} and \textsf{User} actors are transformed into lanes that represent the business collaborators.
 Use cases are transformed into \textit{actions} and are represented by white boxes.
-The restrictions associated to each use case are transformed into \textit{assertions} (represented by coloured boxes) and may be decorated with pre- and post-conditions. 
+The restrictions associated to each $\pi$-use case are transformed into \textit{assertions} (represented by coloured boxes) and may be decorated with pre- and post-conditions. 
 We can see that this model refines the concepts defined in the $\pi$-UseCase model.
 The assertions specify those non-functional requirements, as they are seen by the actors. 
 The next step in the development is to add these assertions to the models that specify the \FlyingPig\ system.
@@ -342,11 +293,13 @@ $\star$ Change FlyingFish by \FlyingPig.
 
 \paragraph{\underline{$\pi$-ServiceProcess Model for \FlyingPig}}~
 
-The model presented in Figure~\ref{fig:PiServiceCompositionModel} offers a system-centric view of the application.
-The previous model is now enhanced with a view of the \FlyingPig\ application, including those services upon  it is build.
+The model presented in Figure~\ref{fig:PiServiceCompositionModel} 
+%offers a system-centric view of the application.
+%The previous model 
+is now  completed with the services that will provide some functions of the application  \FlyingPig\.
 The assertions in Figure~\ref{fig:PiServiceProcessModel} are implemented as \textit{policies}.
-These policies contain the pre- and post-conditions of the previous model.
-They are associated to actions of the system.
+These policies express the pre- and post-conditions of the previous model.
+They are associated to the actions of the system.
 
 
 %\begin{figure}[t]
@@ -407,14 +360,14 @@ receiveRequest(R, Id)
 %\end{figure}
 
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-\subsection{Platform-Specific Model (PSM)}
+%\subsection{Platform-Specific Model (PSM)}
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
-The  PSM models of our methodology result of translating the previous model into service composition code.
-Notice that the workflow for \FlyingPig\ is implemented by using the constructors present in BPEL~\cite{BPEL}, with the addition of the notion of \textit{contract}.
+The  PSM models of our methodology result by transforming the $\pi$-service composition model into PEWS code.
+Note that the workflow for \FlyingPig\ is implemented by using the BPEL constructors~\cite{BPEL} adding the notion of \textit{contract}.
 
-Contracts may be implemented as transversal concerns~\cite{aspects}.
-Their conditions may be verified at specific point of the composition and their actions are executed if needed.
+%Contracts may be implemented as transversal concerns~\cite{aspects}.
+%Their conditions may be verified at specific point of the composition and their actions are executed if needed.
 
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Lessons Learned}
