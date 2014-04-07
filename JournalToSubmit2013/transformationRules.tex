@@ -18,13 +18,7 @@ The resulting model consists of actions related by a control flow and contracts 
 As defined by the $\pi$-ServiceProcess  meta-model (Figure~\ref{fig:CIM:serviceprocessmetamodel}) an {\sc Activity Service} consists of a composition of  entities of type {\sc Action}. 
 Thus, every {\sf $\pi$-use case} is transformed into an {\sf Action} of the target $\pi$-Service Process model.  
 Every {\sf Extend} relationship identified in a $\pi$-Use Case model is
-transformed into a  {\sf Fork node}\footnote{Notice that Fork nodes are used
-both to represent alternative and parallel execution. {\color{red} \sc Placido,
-please check this!} {\color{blue} This is consequence of the use cases' extends
-and include relationships. To transform an use case into an action, it is
-necessary check the dependence relation. The include implies a parallel fork,
-and a extends implies in a alternative fork. I included the references for this definition.
-} }\cite{valeriaThesis,placidoPhDThesis2012}.
+transformed into a  {\sf Fork node}~\cite{valeriaThesis,placidoPhDThesis2012}.
 If the {\sf Extend} relationship concerns just one {\sf use case}, it is transformed into an {\sf Action} inside one flow of the fork node. 
 Otherwise, several  {\sf use cases} are transformed into different {\sf Actions} that belong to different flows departing from the fork node.   
 
@@ -115,52 +109,24 @@ The {\sf Assertion: aProperty} attribute can have different transformations, acc
 %\caption{$\pi$-ServiceProcess to $\pi$-ServiceComposition Model Transformation Rules}
 %\label{fig:ServiceProcess-ServiceComposition-Rules}
 %\end{figure}
-{\color{red}
-A {\sf Package} in the $\pi$-use case model is transformed   into a {\sf Business Collaborator}. 
 
-Placido: Is this correct? Why it is here? We consider the $\pi$-use case in the previous section!
-}{\color{blue} Yes, it is correct. I defined it in the thesis because in the
-previous SOD-M a Business Collaborator comes from 'nothing'. So, as we needed to
-refine most concepts from use case, I decided separete the use cases in
-packages and then tranform it in a Collaborator. As a use case is transformed
-into an action, and all action is from a BC, I related both concepts. There is a
-layer gap ($\pi$-ServiceProcess), because in this layer we define only the
-actions.  
+Some elements of the $\pi$-service composition model are obtained from the $pi$-UseCase model: 
+A {\sf Package} in the $\pi$-use case model is transformed into a {\sf Business Collaborator};
+\textsf{Non-Functional Attributes} of the $\pi$-use case model are grouped into \textsf{Non-Funtional requirements} of the $\pi$-ServiceComposition model. 
+These requirements will be associated to a \textsf{Policy} (from the $\pi$-ServiceProcess model).
 
-We are defining it here because the concept is necessary for the
-transformation. Packages is part of UML in the use case model, and I used it for define the colaborators.}
 
-{\sf Actions} and {\sf Service activity} of a $\pi$-Service Process model are transformed into their homonym concepts of the $\pi$-Service Composition model. 
 
-{\color{blue} An {\sf Exceptional behaviour} entity is transformed into an {\sf
-Action} in a $\pi$-Serv\-ice\-Com\-po\-si\-tion model and every {\sf
-Non-functional attribute} associated to an {\sf Contract} (it comes from the $\pi$UseCase model) element 
-in a $\pi$-ServiceProcess model becomes a {\sf Non-functional Requirement}
-associated to the corresponding element {\sf A-Policy} in a
-$\pi$-ServiceComposition model}.\footnote{\color{red} Not found in the
-metamodel! --Martin and Umberto \color{blue}  ANSWER:  If you analyze the model $\pi$-UseCase, a constraint may be associated with one or more NFA (Non-functional attribute). The constraints
-associated with the same use case, are grouped into a contract. Each contract is
-related to a actions ($\pi$-ServiceProcess). Thus, the contracts (set of
-constraints) have NFAs associated (from piUseCase). The transformation between
-the first 2 levels (PIM $\pi$-UseCase to $\pi$-ServiceProcess) give us this.
-NFAs associated to an element (Contract) in a $\pi$-ServiceProcess model are
-refined (grouped) into a Non-functional requirement associated to the corresponding
-element A-Policy in the $\pi$-ServiceComposition model. I have to update the
-meta-models (thesis version) because they were outdated.} Finally, {\sf Actions}
-are grouped by  a {\sf Business collaborator}.\footnote{\color{red} How? Where
-in the metamodel? --Martin and Umberto \color{blue} ANSWER: Figure
-\ref{fig:e-scomposition-metamodel} presents the relationship between Action and BusinessCollaborator}
 
+{\sf Actions} and {\sf Service activity} of a $\pi$-Service Process model are transformed into their homonym concepts of the $\pi$-Service Composition model.
+
+Finally, {\sf Actions} are grouped into  a {\sf Business collaborator}.
 %\begin{figure}
 %\centering{
 %\includegraphics[width=1\textwidth]{figs/ServiceProcess-ServiceComposition}}
 %\caption{ Transformation Rules: From $\pi$-ServiceProcess to $\pi$-ServiceComposition}
 %\label{fig:ServiceProcess-ServiceComposition}
 %\end{figure}
-
-
-
-
 
 
 %As the $\pi$-ServiceComposition model refines the $\pi$-ServiceProcess concepts at PIM level, a service previously defined as actions (source model) is refined as composition of those actions (target model) that are necessary to represent a business service, identifying who are the partners involved in the realization ({\sc Business collaborators}). 
@@ -172,8 +138,7 @@ Considering the example scenario, the model in Figure~\ref{fig:PiServiceComposit
 The "securityLoginPolicy" consists of a set of {\sf Rules} that were transformed from the {\sf Assertions} in $\pi$-service process model. 
 The information about Facebook and Spotify (both of them {\sf Business
 Collaborators}) come from entity of type {\sc Package} in the $\pi$-use case
-model.\footnote{\color{red} Como assim? - Placido, explain this, please! Why
-have we bypassed one level here? \color{blue} ANSWER: It was explained before.}
+model.
 \end{example}
 
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
@@ -184,14 +149,9 @@ This section describes the PIM to PSM transformations from a $\pi$-Service compo
 We distinguish two groups of rules: \textit{(i)} those transforming service composition entities into workflows; and \textit{(ii)} those that transform  A-Policies into Contracts.
 
 Single actions (represented by {\sf Action} and {\sf
-Action:name}\footnote{\color{red} Where is the name defined? \color{blue} ANSWER: I updated the metamodel with the name atribute, however
-in general, I ommit the atributes for the metamodel presentation, but in the
-implementation the atributes are there.}) are transformed into individual service {\sf Operations}.
+Action:name}) are transformed into individual service {\sf Operations}.
 Complex actions (represented by {\sf ServiceActivity}  and  {\sf
-ServiceActivity:name}\footnote{\color{red} Where is the name defined?
-\color{blue} ANSWER: I updated the metamodel with the name atribute, however
-in general, I ommit the atributes for the metamodel presentation, but in the
-implementation the atributes are there.}) are transformed into (named) composite
+ServiceActivity:name}) are transformed into (named) composite
 operations that defines a (named) workflow of the application.
 Composition patterns expressed using the operators {\sc\em merge, decision, fork and join} are transformed into their corresponding workflows of the $\pi$-PEWS model.
 
@@ -202,10 +162,7 @@ Composition patterns expressed using the operators {\sc\em merge, decision, fork
 %\label{fig:ServiceComposition-Pews-Rules}
 %\end{figure}
 
-The A-Policies defined for the entities of a $\pi$-service composition model are transformed into {\sf A-policy}
-\footnote{\color{red} Please rename this for CONTRACT on the pi-pews metamodel!
-\color{blue} ANSWER: The latest version of the $\pi$-PEWS grammar I defined
-policy.} entities, named according to the names expressed in the source model.
+The A-Policies defined for the entities of a $\pi$-service composition model are transformed into {\sf A-policy} entities, named according to the names expressed in the source model.
 The transformation of the rules expressed in a $\pi$-service composition is guided by the event types associated to these rules. 
 The variables associated to an A-Policy expressed in a $\pi$-service composition model as {\sf $<$Variable:name, Variable:type$>$} are transformed into entities  {\sf Variable} with attributes {\sf Name} and {\sf Type} directly specified from the elements {\sf Variable:name} and {\sf Variable:type} of a $\pi$-service composition model.
 
@@ -229,10 +186,6 @@ for implementing the  mappings between models.
 
 \item 	We  used Acceleo\footnote{http://www.acceleo.org/pages/home/en} for implementing  the code generation plug-in for generating executable code. 
 It takes a $\pi$-PEWS model and generates the code to be executed by the {\em
-A-Policy} based service composition execution environment\footnote{\color{red}
-Placido: Policy or contract??. \color{blue} ANSWER: The latest version of the
-$\pi$-PEWS grammar I defined \textbf{policy}. Particularly I prefer \textbf{policy},
-because for what we're proposing, one same policy can be applied to different
-services and groups a set of contracts.}.
+A-Policy} based service composition execution environment.
 \end{itemize}
 
