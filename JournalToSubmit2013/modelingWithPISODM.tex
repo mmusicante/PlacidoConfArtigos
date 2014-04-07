@@ -12,7 +12,7 @@ The transformations between models are presented in section~\ref{sec:mmrules}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/piSOD-M_process.pdf}
-\caption{\pisodm Overview.}
+\caption{\pisodm Overview. {\color{blue}[[The figure was up to date.]]}}
 \label{fig:piSOD-M}
 \end{figure}
 
@@ -124,14 +124,14 @@ specified being grouped into packages.
 
 
  The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented as part of description of {\sc Use Cases} and {\sc Constraints}. 
-A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has its name, description, and which ones should be checked during the execution of the application. Each {\sc Constraint} is represented as a stereotyped ({\sf «constraint»}) use case. A restriction may be associated to data ({\sc Value Constraint}), represented as the stereotype «value»; it can represent business rules (Business Constraint), represented as the stereotype {\sf «business»}; and it can represent {\sc Exceptional Behaviour} constraints, represented as the stereotype {\sf «exceptional\_behaviour»}.
+A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has its name, description, and which ones should be checked during the execution of the application. Each {\sc Constraint} is represented as a stereotyped ({\sf ï¿½constraintï¿½}) use case. A restriction may be associated to data ({\sc Value Constraint}), represented as the stereotype ï¿½valueï¿½; it can represent business rules (Business Constraint), represented as the stereotype {\sf ï¿½businessï¿½}; and it can represent {\sc Exceptional Behaviour} constraints, represented as the stereotype {\sf ï¿½exceptional\_behaviourï¿½}.
  We use part of our case study to illustrate this meta-model. 
  \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
 Figure~\ref{fig:CIM:piusecasetpm} shows a $\pi$-UseCase model for our example application.
 We consider that, besides the service composition for implementing the application, it is necessary to model  other requirements that represent the (i) conditions imposed by services usage --for example, the fact that both Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, (e.g., the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated). 
  
 The ``To Publish Music'' use case expects  the Facebook or Twitter user status to be changed every time a user starts listening a new song.
-  Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a «value» constraint, because the users id and password are verified.  Figure \ref{fig:CIM:piusecasetpm} shows the buy music, download music, listen music and pay use cases. The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as «value» and «business» constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as «value» stereotype. Other restriction is that the minimum payment value is 2 euros.
+  Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a ï¿½valueï¿½ constraint, because the users id and password are verified.  Figure \ref{fig:CIM:piusecasetpm} shows the buy music, download music, listen music and pay use cases. The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as ï¿½valueï¿½ and ï¿½businessï¿½ constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as ï¿½valueï¿½ stereotype. Other restriction is that the minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example}
 
@@ -153,7 +153,7 @@ The highlighted portion of the figure corresponds to the concepts related to the
 A specific \textit{$\pi$-ServiceProcess} model shows the set of logically related activities to be performed in a service-based application. 
 So, the activities of this model represent a behaviour that is part of the business logic of the application. 
 A \textit{$\pi$-ServiceProcess}  model contains three main elements: (i) service process, (ii) service activity and (iii) activity contract. A service activity represents an operation that is part of the execution flow, and it is modelled as an {\sc Action}. 
-An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf «assertion»}). 
+An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf ï¿½assertionï¿½}). 
 The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre-conditions and post-conditions.
 
 \begin{figure}[htpb]
@@ -201,10 +201,12 @@ When the collaborator of the business is external to the system, the attribute {
 \item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented in the model as a class activity instance of the meta-class \textsc{Action}. 
 A class action represents some type of transformation or processing. 
 There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
+
 \begin{figure}[t]
-\centering
-\includegraphics[width=1.0\textwidth]{figs/E-service-composition-metamodel}
-\caption{$\pi$-Service Composition Metamodel.}
+\centering 
+\includegraphics[width=1.0\textwidth]{figs/PiServiceComposition} 
+\caption{$\pi$-Service Composition Metamodel. {\color{blue}[[The figure was up
+to date.]]}}
 \label{fig:e-scomposition-metamodel}
 \end{figure}
 
@@ -221,9 +223,10 @@ An {\em A-policy} defines variables and operations that can be shared by the rul
 Instances of this meta-model are represented as UML activity diagrams. 
 \begin{figure}[t]%[htpb]
 \centering
-\includegraphics[width=0.95\textwidth]{figs/e-composition-model}
+\includegraphics[width=0.95\textwidth]{figs/piServiceComposition-toPublishMusic}
 %{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
-\caption{$\pi$-SCM for the ``To publish music'' business service.}
+\caption{$\pi$-ServiceComposition Model for the ``To publish
+music'' business service. {\color{blue}[[The figure was up to date.]]}}
 \label{fig:servicecompositionmodel}
 \end{figure}
 
@@ -286,15 +289,16 @@ A brief description of these classes is given next.
 %
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{figs/PEWSMetamodel}
-\caption{$\pi$-{\sc Pews} Metamodel.}
+\includegraphics[width=0.9\textwidth]{figs/PEWSMetamodel_old}
+\caption{$\pi$-{\sc Pews} Metamodel.  {\color{blue}[[The figure was up
+to date.]]}}
 \label{fig:PPEWSmetamodel}
 \end{figure}
 
 Figure~\ref{fig:PPEWSmetamodel} shows that each {\sc A-Policy} is associated to a {\sc Scope} that can be either an {\sc Operation} (e.g., an authentication protocol associated to a method exported by a service),  an {\sc Operator} (e.g., a temporal constraint associated to a sequence of operators) or a {\sc Path}.  
 Each {\sc A-Policy} groups a set of ECA rules with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}.  
 In this way, an {\em A-policy} represents a set of reactions to be possibly executed when one or several events are notified.
-
+ 
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic5}
 Figure \ref{fig:Specific-Contract-Representation} shows the $\pi$-PEWS code resulting from the $\pi$-service composition model of our scenario example.
