@@ -12,7 +12,7 @@ The transformations between models are presented in section~\ref{sec:mmrules}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/piSOD-M_process.pdf}
-\caption{\pisodm Overview. {\color{blue}[[The figure was up to date.]]}}
+\caption{\pisodm Overview.}
 \label{fig:piSOD-M}
 \end{figure}
 
@@ -205,8 +205,7 @@ There are two types of actions: i) a WebService (attribute Type is {\sf WS}); an
 \begin{figure}[t]
 \centering 
 \includegraphics[width=1.0\textwidth]{figs/PiServiceComposition} 
-\caption{$\pi$-Service Composition Metamodel. {\color{blue}[[The figure was up
-to date.]]}}
+\caption{$\pi$-Service Composition Metamodel.}
 \label{fig:e-scomposition-metamodel}
 \end{figure}
 
@@ -226,7 +225,7 @@ Instances of this meta-model are represented as UML activity diagrams.
 \includegraphics[width=0.95\textwidth]{figs/piServiceComposition-toPublishMusic}
 %{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
 \caption{$\pi$-ServiceComposition Model for the ``To publish
-music'' business service. {\color{blue}[[The figure was up to date.]]}}
+music'' business service.}
 \label{fig:servicecompositionmodel}
 \end{figure}
 
@@ -276,7 +275,7 @@ Instances of this meta-model are textual descriptions of service compositions th
 
 PEWS~\cite{BHM06,Placido2010LTPD} is a notation to express service compositions.
 The language is based on the notion of Path Expressions~\cite{And79} and can easily be translated into any actual composition language, such as BPEL~\cite{bpel03}. 
-Figure~\ref{fig:metamodel} presents the $\pi$-{\sc Pews} meta-model, where we identify classes to describe:
+Figure~\ref{fig:PPEWSmetamodel} presents the $\pi$-{\sc Pews} meta-model, where we identify classes to describe:
 \begin{itemizedTrivlist}
 \item Service compositions: {\sc Namespace} representing the interface exported by a service, {\sc Operation} that represents a call to a service method, {\sc CompositeOperation}, {\sc Operator} and {\sc Path} for representing service compositions.
 A {\sc Path} can be an {\sc Operation} or a {\sc Compound Operation}. 
@@ -290,8 +289,7 @@ A brief description of these classes is given next.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.75\textwidth]{figs/PEWSMetamodel}
-\caption{$\pi$-{\sc Pews} Metamodel.  {\color{blue}[[The figure was up
-to date.]]}}
+\caption{$\pi$-{\sc Pews} Metamodel.}
 \label{fig:PPEWSmetamodel}
 \end{figure}
 
@@ -305,10 +303,10 @@ Figure \ref{fig:Specific-Contract-Representation} shows the $\pi$-PEWS code resu
 Notice that the code contains namespaces and definitions (obtained by using information about the business collaborators of the $\pi$-SCM model), a workflow expression \textit{(Path)} containing operation calls and contracts (derived from the \textit{A-Policies}).
 \end{example}
 
-\begin{figure}
-\centering{
-\includegraphics[width=0.96\textwidth]{figs/31-31}}
-\caption{$\pi$-PEWS Specific and Contract Representation. {\color{red}\sc Placido: Please change this figure\dots}}
+\begin{figure} 
+\centering
+\includegraphics[width=0.8\textwidth]{figs/pi-pewsSpecification-toPublishMusic}
+\caption{$\pi$-PEWS Specific and Policy Representation.}
 \label{fig:Specific-Contract-Representation}
 \end{figure}
 

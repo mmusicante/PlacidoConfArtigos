@@ -232,12 +232,6 @@ The $\pi$-SOD-M models of the PIM level  for the \FlyingPig\ scenario are presen
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.9\textwidth]{figs/UseCaseGeneral.png}
-
-{\color{red} \raggedright
-$\star$  "Assign user in charge".
-
-$\star$ ``Provide support for at least 200 users''.
-} {\color{blue} [[I did not understand what must be done.]]}
 \caption{$\pi$-UseCase model for \FlyingPig.\label{fig:piUseCaseModel}}
 \end{figure}
 
@@ -285,9 +279,6 @@ The next step in the development is to add these assertions to the models that s
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/ServiceCompositionGeneralCut}
-{\color{red} \raggedright
-$\star$ Change FlyingFish by \FlyingPig.
-} {\color{blue} [[done.]]}
 \caption{$\pi$-ServiceComposition model for \FlyingPig.\label{fig:PiServiceCompositionModel}}
 \end{figure}
 
@@ -382,7 +373,7 @@ The challenge is to define them and to associate them with the application logic
 API does not necessarily export information about methods dependency (e.g., in the REST protocol);
 they do not share their state (stateless).
 
-Given a set of services with their exported methods known in advance or provided by a  service directory, building services' based applications can be  a simple task that implies expressing an application logic as a services' composition. The challenge being  ensuring the compliance between the specification and the resulting application. Software engineering methods (e.g., \cite{1,2,decastro1,PapazoglouH06}) today can help to ensure this compliance, particularly when information systems include several sometimes complex business processes calling Web services or legacy applications exported as services.
+Given a set of services with their exported methods known in advance or provided by a  service directory, building services' based applications can be  a simple task that implies expressing an application logic as a services' composition. The challenge being  ensuring the compliance between the specification and the resulting application. Software engineering methods (e.g., \cite{2,decastro1,PapazoglouH06}) today can help to ensure this compliance, particularly when information systems include several sometimes complex business processes calling Web services or legacy applications exported as services.
 
 As WS-* and similar approaches, our work enables the specification and programming of crosscutting aspects (i.e., atomicity, security, exception handling, persistence).
 In contrast to these approaches, our work specifies policies for a services composition in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented according a the knowledge that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach, once defined the policies for a given application they can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints.
