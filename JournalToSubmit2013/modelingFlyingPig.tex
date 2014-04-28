@@ -153,7 +153,7 @@ By analyzing the questionnaires, ORCA detects risky practices, proposes solution
 Our goal is to model a service based application (called \FlyingPig), for providing risk assessment as a service.
 In order to provide this functionality, \FlyingPig\ would benefit from ORCA's legacy services providing storage, assessment and data visualization functions.
 
-In the following sections, we describe the results of applying $\Pi$-SODM to develop the \FlyingPig\ risk assessment system.
+In the following sections, we describe the results of applying \pisodm to develop the \FlyingPig\ risk assessment system.
 The models presented next were generated as a result of interacting with software developers at GCP Global.
 
 \begin{figure}
@@ -227,7 +227,7 @@ Business processes also have associated rules and constraints to define their no
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 %In Section~\ref{sec:modelingWithPISODM} we defined three models at the PIM level.
-The $\pi$-SOD-M models of the PIM level  for the \FlyingPig\ scenario are presented next.
+The \pisodm models of the PIM level  for the \FlyingPig\ scenario are presented next.
 
 \begin{figure}[t]
 \centering
@@ -282,7 +282,7 @@ The next step in the development is to add these assertions to the models that s
 \caption{$\pi$-ServiceComposition model for \FlyingPig.\label{fig:PiServiceCompositionModel}}
 \end{figure}
 
-\paragraph{\underline{$\pi$-ServiceProcess Model for \FlyingPig}}~
+\paragraph{\underline{$\pi$-ServiceComposition Model for \FlyingPig}}~
 
 The model presented in Figure~\ref{fig:PiServiceCompositionModel} 
 %offers a system-centric view of the application.
@@ -293,10 +293,20 @@ These policies express the pre- and post-conditions of the previous model.
 They are associated to the actions of the system.
 
 
+
+
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%\subsection{Platform-Specific Model (PSM)}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+\paragraph{\underline{$\pi$-PEWS Model for \FlyingPig}}~
+
+The  PSM model of our case study is obtained by transforming the $\pi$-service composition model into a workflow.
+Notice that the workflow for \FlyingPig\ is implemented by using the BPEL constructors~\cite{BPEL}, adding the notion of \textit{policy}.
+
 %\begin{figure}[t]
 %\centering
-\begin{lstlisting}[label=list:flyingPigPiPEWS,caption=pi-PEWS
-Specification: FlyingPig. ]!\label{fig:PiPEWSModel}!
+\begin{lstlisting}[basicstyle=\footnotesize,label=list:flyingPigPiPEWS,caption=pi-PEWS
+Specification: FlyingPig. ]!\label{fig:PiPEWSModel}! 
  //Namespaces specify service URI
 namespace orca = www.orca.mx/service.wsdl
 
@@ -310,52 +320,22 @@ alias callForAmendments = portType/callForAmendments in orca
 
 //Services
 service receiveRequest(R, Id) = createCompanySpace(R, Id)
-
 service generateNewInterface(Id, NULL) = ...
-
 service createQuestionnaire(Id, Q) = generateQuestionnaire(Id, Q)
-
 service notifyResponsable((Id, Q); NULL) = ...
-
 service receiveAnswers((Id, T); P) =
-			analizeAnswer((Id, T), NULL) 
-			. storeData((Id, T), NULL)
-			. (
-			  (createReport(Id, P) . return(P))
-			  + (callForAmendments(Id,T) . return(NULL))
-			  )
+	analizeAnswer((Id, T), NULL) . storeData((Id, T), NULL)
+	. ((createReport(Id, P) . return(P)) + (callForAmendments(Id,T) . return(NULL)))
   
-//Path
-
+//Workflow
 receiveRequest(R, Id)
 ||
-( generateNewInterface(Id, NULL)
-  . createQuestionnaire(Id, Q)
-  .  notifyResponsable((Id, Q); NULL
- )
+(generateNewInterface(Id, NULL).createQuestionnaire(Id, Q).notifyResponsable((Id, Q); NULL))
 ||
- ( receiveAnswers((Id, T); P)
- . [P != NULL] STOP
- )*	
- 
-//Policies 					  
-
-\normalsize
+ (receiveAnswers((Id, T); P) . [P != NULL] STOP)*	
 \end{lstlisting}
-%\fbox{\LARGE $\pi$-PEWS Model.}
-%
-%{\color{red} \raggedright
-%$\star$ Placido: Please, place the model here.
-%}
 %\caption{$\pi$-PEWS model for \FlyingPig.\label{fig:PiPEWSModel}}
 %\end{figure}
-
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-%\subsection{Platform-Specific Model (PSM)}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-
-The  PSM models of our methodology result by transforming the $\pi$-service composition model into PEWS code.
-Note that the workflow for \FlyingPig\ is implemented by using the BPEL constructors~\cite{BPEL} adding the notion of \textit{contract}.
 
 %Contracts may be implemented as transversal concerns~\cite{aspects}.
 %Their conditions may be verified at specific point of the composition and their actions are executed if needed.
@@ -373,7 +353,7 @@ The challenge is to define them and to associate them with the application logic
 API does not necessarily export information about methods dependency (e.g., in the REST protocol);
 they do not share their state (stateless).
 
-Given a set of services with their exported methods known in advance or provided by a  service directory, building services' based applications can be  a simple task that implies expressing an application logic as a services' composition. The challenge being  ensuring the compliance between the specification and the resulting application. Software engineering methods (e.g., \cite{2,decastro1,PapazoglouH06}) today can help to ensure this compliance, particularly when information systems include several sometimes complex business processes calling Web services or legacy applications exported as services.
+Given a set of services with their exported methods known in advance or provided by a  service directory, building service-based applications can be  a simple task that implies expressing an application logic as a service composition. The challenge being  ensuring the compliance between the specification and the resulting application. Software engineering methods (e.g., \cite{2,decastro1,PapazoglouH06}) today can help to ensure this compliance, particularly when information systems include several sometimes complex business processes calling Web services or legacy applications exported as services.
 
 As WS-* and similar approaches, our work enables the specification and programming of crosscutting aspects (i.e., atomicity, security, exception handling, persistence).
 In contrast to these approaches, our work specifies policies for a services composition in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented according a the knowledge that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach, once defined the policies for a given application they can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints.

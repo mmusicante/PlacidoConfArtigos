@@ -1,6 +1,12 @@
-This paper presented $\pi$-SOD-M for specifying and designing reliable service based applications. We model and associate policies to  services' based applications that represent both systems' cross-cutting aspects and use constraints stemming from the services used for implementing them.  We extended the SOD-M method, particularly the $\pi$-SCM (services' composition meta-model) and $\pi$-{\sc Pews} meta-models for representing both the application logic and its associated non-functional constraints and then generating its executable code. We implemented the meta-models on the Eclipse platform and we validated the approach using a use case that uses authentication  policies.
+This paper presented \pisodm for designing and developing reliable service-based applications. 
+\pisodm is an MDA methodology that extends a previously defined method (called SOD-M) to include Non-Functional Requirements.
+These requirements are taken into account from the initial stages of the software development process.
+Non-functional constraints are related to business rules associated to the behavior of the application and, in the case of service-based applications, they are also concerned with constraints imposed by the services. 
 
-Non-functional constraints are related to business rules associated to the general "semantics" of the application and in the case of services' based applications, they also concern the use constraints imposed by the services. We are currently working on the definition of a method for explicitly expressing such properties in the early stages of the specification of services based applications. Having such business rules expressed and then translated and associated to the services' composition can help to ensure that the resulting application is compliant to the user requirements and also to the characteristics of the services it uses.
+Our methodology includes two CIM-level models, three PIM-level models and one PSM-level model. 
+We implemented the meta-models on the Eclipse platform and we validated the approach by using an industrially inspired use case.
 
-Programming non-functional properties is not an easy task, so we are defining a set of predefined {\em A-policy} types with the associated use rules for guiding the programmer when she associates them to a concrete application. {\em A-policy} type  that can also serve as patterns for programming or specializing the way non-functional constraints are programmed.
-
+Our case study demonstrates the applicability of \pisodm.
+The case study was developed together with our industrial partner, GCP Global.
+The Company is using \pisodm for the development of their product.
+The case study presented here is a simplified version of their application.

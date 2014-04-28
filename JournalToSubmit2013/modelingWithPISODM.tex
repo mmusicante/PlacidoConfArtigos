@@ -94,7 +94,7 @@ Twitter and Facebook services are then contacted in parallel for updating the us
 
 The CIM level models are the basis for the development of the application. 
 The information presented at this level is (manually) refined into PIM-level models of the methodology \pisodm described next.
-Notice tat, at this level, the models are (very informally) used to describe both functional and non-functional requirements.
+Notice that, at this level, the models are (very informally) used to describe both functional and non-functional requirements.
 
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Platform Independent Models}
@@ -113,8 +113,10 @@ The notion of \textit{policy} is used to describe NFRs.
 (In Figure~\ref{fig:CIM:usecasemetamodel}, we have highlighted the concepts related to NFRs).
 The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model for describing non-functional requirements with  the concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc non-functional requirement}, {\sc non-functional attribute} and {\sc Constraint}. An {\sc End Consumer} is represented by an {\sc Actor}. An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), while a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
 {\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
- The {\sc Business Collaborators} concept are represented  through {\sc Packages}. A {\sc Business Collaborator} represents an external service or a system that interact with the application that are being modelled. Each {\sc Business Collaborators} combines the features described in each  {\sc Package}. Thus, the services functions can be
-specified being grouped into packages.
+ The {\sc Business Collaborator} concept is represented  through {\sc Packages}. 
+A {\sc Business Collaborator} represents an external service or a system that interacts with the application that are being modelled. 
+Each {\sc Business Collaborator} combines the features described in each  {\sc Package}. 
+Thus, the services functions can be specified being grouped into packages.
  
  \begin{figure}[htpb]
 \center
@@ -124,13 +126,19 @@ specified being grouped into packages.
 
 
  The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented as part of description of {\sc Use Cases} and {\sc Constraints}. 
-A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has its name, description, and which ones should be checked during the execution of the application. Each {\sc Constraint} is represented as a stereotyped ({\sf constraint}) use case. A restriction may be associated to data ({\sc Value Constraint}), represented as the stereotype �value�; it can represent business rules (Business Constraint), represented as the stereotype {\sf �business�}; and it can represent {\sc Exceptional Behaviour} constraints, represented as the stereotype {\sf �exceptional\_behaviour�}.
- We use part of our case study to illustrate this meta-model. 
- \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
+A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has its name, description, and which ones should be checked during the execution of the application. 
+Each {\sc Constraint} is represented as a stereotyped ({\sf constraint}) use case. 
+There are three kinds of constraint:
+\textit{(i)} A restriction may be associated to data ({\sc Value Constraint}), represented as the stereotype ``value''; 
+\textit{(ii)} A restriction may correspond to business rules (\textsc{Business Constraint}), represented as the stereotype {\sf ``business''}; and 
+\textit{(iii)} A restriction may describe {\sc Exceptional Behaviour} constraints, represented as the stereotype {\sf ``exceptional\_behaviour''}.
+These concepts are present in the following example.
+
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
 Figure~\ref{fig:CIM:piusecasetpm} shows a $\pi$-UseCase model for our example application.
 We consider that, besides the service composition for implementing the application, it is necessary to model  other requirements that represent the (i) conditions imposed by services usage --for example, the fact that both Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, (e.g., the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated). 
  
-The ``To Publish Music'' use case expects  the Facebook or Twitter user status to be changed every time a user starts listening a new song.
+The ``To Publish Music'' Busines Service expects  the Facebook or Twitter user status to be changed every time a user starts listening a new song.
   Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a �value� constraint, because the users id and password are verified.  Figure \ref{fig:CIM:piusecasetpm} shows the buy music, download music, listen music and pay use cases. The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as �value� and �business� constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as �value� stereotype. Other restriction is that the minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example} 
@@ -170,7 +178,7 @@ Considering the example scenario, the contract based process of activities  is s
 (ii) if the User is already logged in Spotify; 
 (iii) if bank account information are correct and; 
 (iv) if there are enough funds in the bank account to cover the payment. 
-A post-condition ensures the complete transaction and verifies if a notification was sent to the user and Spotify, about the payment authorization. There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in case of Twitter. In the case of Facebook, it is required that the user is already logged on Spotify and these data are the same as Facebook. 
+A post-condition ensures the complete transaction and verifies if a notification was sent to the user and Spotify, about the payment authorization. There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in the case of Twitter. In the case of Facebook, it is required that the user is already logged in Spotify and these data are the same as Facebook. 
 As post-condition, the application ensures that the Facebook service sends a notification of success. 
 To update Twitter a pre-condition is required, while to update Facebook it is necessary to check a pre-condition and a confirmation notice (modelled as post-condition). 
 As a pre-condition for ``twitter update'' it is necessary that (i) the music format be correct and (ii) the twitter login and password be correct for the update.
