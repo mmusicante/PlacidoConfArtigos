@@ -33,7 +33,7 @@ A {\sf Constraint} associated to a {\sf Use Case}  is transformed into an  {\sf 
 The set of resulting assertions  are grouped into a {\sf Contract}.
 Constraints are transformed according to their type:
 {\sc Business} constraints and {\sc Value} constraints with the {\sf  isExceptionalBehaviour} attribute set to false are transformed into {\sf Assertion}s;
-{\sc Value } constraints with the {\sf  isExceptionalBehaviour} attribute set to true are transformed into {\sf Exceptional behaviour}s.
+{\sc Value } constraints with the {\sf  isExceptionalBehaviour} attribute set to true are transformed into {\sf Exceptional behavior}s.
 
 In order to transform constraints of type {\sf Value Constraint}, the designer must specify thresholds to be associated to the assertions of a contract.
 By default, value constraints are transformed into pre-conditions and business constraints are transformed into post-conditions. 
@@ -77,7 +77,7 @@ The ``download music'' use case  includes the payment process to buy the music.
 Thus, these use cases  are transformed into {\sf Actions}, and a {\sf Service Activity} that aggregates these {\sf Actions}.   
 This \textsf{Service Activity} is transformed into a sequence flow on the $\pi$-service process model.
 %(as shown in figure \ref{fig:transformation-example-include}). 
-The same rule is applied for the ``publish music'' use case, which has two extended use cases, to publish on Twitter and Facebook.
+The same rule is applied to the ``publish music'' use case, which has two extended use cases, to publish on Twitter and Facebook.
  \end{example}
 
 %\begin{figure}
@@ -110,10 +110,10 @@ The {\sf Assertion: aProperty} attribute can have different transformations, acc
 %\label{fig:ServiceProcess-ServiceComposition-Rules}
 %\end{figure}
 
-Some elements of the $\pi$-service composition model are obtained from the $pi$-UseCase model: 
+Some elements of the $\pi$-service composition model are obtained from the $\pi$-UseCase model: 
 A {\sf Package} in the $\pi$-use case model is transformed into a {\sf Business Collaborator};
-\textsf{Non-Functional Attributes} of the $\pi$-use case model are grouped into \textsf{Non-Funtional requirements} of the $\pi$-ServiceComposition model. 
-These requirements will be associated to a \textsf{Policy} (from the $\pi$-ServiceProcess model).
+\textsf{Non-Functional Attributes} of the $\pi$-use case model are grouped into \textsf{Non-Functional requirements} of the $\pi$-ServiceComposition model. 
+These requirements are associated to a \textsf{Policy} (from the $\pi$-ServiceProcess model).
 
 
 
@@ -134,8 +134,7 @@ Finally, {\sf Actions} are grouped into  a {\sf Business collaborator}.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT5}
 Considering the example scenario, the model in Figure~\ref{fig:PiServiceCompositionModel} was obtained by applying the rules above to the model depicted by Figure~\ref{fig:CIM:serviceprocess}.  
-
-The "securityLoginPolicy" consists of a set of {\sf Rules} that were transformed from the {\sf Assertions} in $\pi$-service process model. 
+The ``securityLoginPolicy'' consists of a set of {\sf Rules} that were transformed from the {\sf Assertions} in $\pi$-service process model. 
 The information about Facebook and Spotify (both of them {\sf Business
 Collaborators}) come from entity of type {\sc Package} in the $\pi$-use case
 model.
@@ -166,7 +165,7 @@ The A-Policies defined for the entities of a $\pi$-service composition model are
 The transformation of the rules expressed in a $\pi$-service composition is guided by the event types associated to these rules. 
 The variables associated to an A-Policy expressed in a $\pi$-service composition model as {\sf $<$Variable:name, Variable:type$>$} are transformed into entities  {\sf Variable} with attributes {\sf Name} and {\sf Type} directly specified from the elements {\sf Variable:name} and {\sf Variable:type} of a $\pi$-service composition model.
 
-Events of type {\sf Pre}, {\sf Post} and {\sf Time} generate, respectively, {\sf Preconditions}, {\sf Postcondition} and {\sf TimeRestrictions}.
+Events of type {\sf Pre}, {\sf Post} and {\sf Time} generate, respectively, {\sf Pre-conditions}, {\sf Post-condition} and {\sf TimeRestrictions}.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT6}
 Figure \ref{fig:piSOD-M} shows the $\pi$-PEWS code resulting from the $\pi$- service composition model  of our scenario example.
@@ -174,7 +173,7 @@ Figure \ref{fig:piSOD-M} shows the $\pi$-PEWS code resulting from the $\pi$- ser
 
 
 \subsection{Implementation}
-We have provided tools for aiding the user to define and transform the models for all the levels, except for the CIM into PIM level, which should be manually performed.
+We have developed tools for aiding the user to define and transform the models for all the levels, except for the CIM into PIM level, which should be manually performed.
 
 Our tool is implemented as a series of Eclipse plug-ins: 
 \begin{itemize}

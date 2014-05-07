@@ -1,9 +1,9 @@
 While Functional Requirements establish \textit{what} is computed by an application, Non-Functional Requirements (NFRs) are concerned with \textit{how} the task is preformed.  
 NFRs include aspects such as performance, authentication and quality constraints.
 These requirements are usually specified by conditions, called Non-functional Properties.
-Non-functional properties are also referred to as constraints, quality attributes, quality goals, quality of service requirements and non-behavioural requirements~\cite{Chung91,MylopoulosBook99,Chung2009}. 
+Non-functional properties are also referred to as constraints, quality attributes, quality goals, quality of service requirements and non-behavioral requirements~\cite{Chung91,MylopoulosBook99,Chung2009}. 
 Most research on NFRs focusses on the evaluation of compliance by the software system as a whole. %~\cite{BBKL78,FePf96,KiDa96,Lyu96,MuIO90}. 
-In the case of service-based applications, non-functional requirements concern the application itself as well as its component services. 
+In the case of service-based applications, non-functional requirements are related to the application itself as well as to its component services. 
 
 In~\cite{Babamir2010,Yeom2006} non-functional properties of web services are classified according to three points of view, namely,  
 \textit{service level}, \textit{system level} and \textit{business level}.
@@ -19,10 +19,10 @@ D'Ambrogio~\cite{DAmbrogio06} uses the term \textit{quality category} to group s
 \textit{Quality dimensions} are used to quantify an individual characteristic.
 For instance, the quality category \textit{performance} groups characteristics such as
 \textit{latency} and \textit{throughput}. 
-The development process is based on MDA and the authors also present a WSDL extension for describing the QoS of web services. A catalog of \textit{QoS characteristics} is provided for the web service domain, including properties as \textit{availability}, \textit{reliability} and \textit{access control}. 
+The development process is based on MDA and the authors also present a WSDL extension for describing the QoS of web services. A catalog of \textit{QoS characteristics} is provided for the web service domain, including properties such as \textit{availability}, \textit{reliability} and \textit{access control}. 
 
  
-Schmeling et al.~\cite{SchmelingCM11} present an approach and a toolset for specifying and implementing web service compositions with support to several NFRs. 
+Schmeling et al.~\cite{SchmelingCM11} present an approach and a toolkit for specifying and implementing web service compositions with support to several NFRs. 
 The approach defines abstraction levels, where the terms \textit{Non-Functional Concerns}, \textit{Non-Functional Actions} and \textit{Non-Functional Attributes} are used at each level (in decreasing order of abstraction).
 Non-functional concern is a general term used to describe non-functional requirements (such as  \textit{security}, \textit{reliability} or \textit{transactional behavior}). 
 Each concern is refined into a set of non-functional attributes.  
@@ -63,10 +63,8 @@ We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,Schmeling
 %The work  presents a development methodology, although this methodology is not centered on NFRs.
 The authors in~\cite{ThissenW06,ZhangPSP05} use formal methods to define a service-based development processes that take NFRs into account. 
 In~\cite{AgarwalLS09,PastranaPK11} ontologies are used to define and model NFRs, 
-whereas in~\cite{XiaoCZBOLH08,GutierrezRF10} Business Process Modelling is used for
+whereas in~\cite{XiaoCZBOLH08,GutierrezRF10} Business Process Modeling is used for
 system specification, including NFRs. 
-Most authors focus their work on modelling service compositions, although a significant number of approaches is focused on the definition of NFR models.
-
 In the method defined in~\cite{XiaoCZBOLH08}, each task and data item of the application can be 
 annotated with functional and non-functional attributes (NFAs). 
 Functional and non-functional attributes are independently defined.
@@ -93,8 +91,9 @@ For instance, the \textit{time} dimension is associated to the \textit{execution
 Rumpel et al.~\cite{Rumpel2012}  associate \textit{quality requirements} to  \textit{quality properties}. Quality requirements are intended to be specified as constraints. 
 
 \bigskip
-Most works agree on distinguishing three points of view, namely the point of view of the organization (or \textit{Business} view), of the individual service providers (or \textit{Service} view) and of the composition designer (or \textit{System} view).
+Most works agree on distinguishing three points of view, namely the point of view of the organization (\textit{Business} view), of the individual service providers (\textit{Service} view) and of the composition designer (\textit{System} view).
 The Business view is concerned with the business logic (\textit{i.e.}, an abstract level of tasks, defined by the guidelines and constraints imposed by the organization).
-Service and System views are concerned with the implementation of the software solution: The Service level is concerned with the building blocks of the application.
+Service and System views guides the implementation of the software solution: The Service level is related to the building blocks of the application.
 It may use web services provided by third party sources.
-The System level is concerned with the coordination of services, to implement the business logic.
+The System level deals with the coordination of services, to implement the business logic.
+Our proposal, shown in the next section, follows these ideas.

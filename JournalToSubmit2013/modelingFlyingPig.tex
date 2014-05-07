@@ -1,147 +1,3 @@
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-%\subsection{Platform-Specific Models}
-%
-%
-%This level focusses on the functionality, in the context of a particular implementation infrastructure.
-%Models at this level combine the platform-independent view with specific aspects of the application to be deployed. 
-%At the PSM level we have lower-level models that can be automatically translated into any service composition language. 
-%We have defined one meta-model at this level, called \textit{$\pi$-PEWS}.
-%
-%The \textit{$\pi$-PEWS} meta-model provides concepts for modelling service compositions, including non-functional features.
-%\textit{$\pi$-PEWS} models have two main parts:
-%\begin{itemizedTrivlist}
-%\item \textit{Service compositions (workflows)} formed by individual service operations and composite operations defined by the use of workflow operators, such as guarded operations ($[C]S$); sequential ($\ . \ $), parallel ($\ \| \ $) and alternative ($\ + \ $) compositions; as well as sequential ($*$) and parallel ($\{\dots\}$) repetitions.
-%
-%\item \textit{ECA Rules}, with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}. 
-%These rules are used to specify non-functional behaviour.
-%\end{itemizedTrivlist}
-%
-%The workflow constructors of \textit{$\pi$-PEWS} are similar to those of  most service orchestration languages, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
-%
-%
-%%%
-%%\begin{figure}[t]
-%%\centering
-%%\includegraphics[width=1.0\textwidth]{figs/PEWSMetamodel}
-%%\caption{$\pi$-{\sc Pews} Metamodel}
-%%\label{fig:metamodel}
-%%\end{figure}
-%%%
-%
-%\bigskip
-%The following example presents the \textit{$\pi$-PEWS} model for the ``To Publish Music'' application.
-%\begin{example}[To Publish Music (end)]\label{Colocar-o-label-correto-aqui}
-%The next code presents the \textit{$\pi$-PEWS}  model for our running example.\footnote{\color{red} Placido: Please change the pdf file as needed!}
-%
-%\begin{center}
-%\includegraphics[scale=0.7]{figs/pewsEspecificationContract.pdf}
-%\end{center}
-%
-%The initial part of the model consists of a workflow expression.
-%In the given code, the execution of \texttt{searchSong} is followed by \texttt{selectSong}.
-%At this point, the user may either buy, download and listen a song or just listen to a song (conditional workflow).
-%The last part of the workflow publishes the title of the song either on tweeter or facebook.
-%
-%ECA rules are specified as contracts~\cite{Meyer92}.
-%In our case, the \texttt{buySongContract} specifies conditions to be verified upon the execution of \texttt{buySong}.
-%This contract specifies pre and post-conditions, as well as time constraints.\footnote{\color{red} Placido: Please verify the pre-condition assertions!}
-%The precondition (EXPLAIN!)\dots
-%
-%In case of failure in verifying the precondition, the service \texttt{buySong} is retried.
-%
-%The postcondition ensures that the payment succeeds before .
-%
-%The time constraint indicates that the \texttt{sendConfirmation} service is invoked immediately after \texttt{buySong}.
-%\end{example}
-%
-%
-%
-%
-%Given a $\pi$-SCM model of a specific service based application (expressed according to the $\pi$-SCM meta-model), it is possible to generate its corresponding $\pi$-{\sc Pews} model. 
-%The following section describes the transformation rules between the $\pi$-SCM and $\pi$-{\sc Pews} meta-models.
-%
-%
-%
-%
-%
-%
-%
-%The {\em A-policy} based service composition ($\pi$-SCM) meta-model, shown in Figure \ref{fig:e-scomposition-metamodel},
-%provides meta-classes to represent workflows\footnote{Workflows will be transformed into implemented service compositions.} that model  business processes.
-%The meta-model identifies {\sc Business Collaborators}\footnote{We use {\sc capitals} for referring to meta-model meta-classes.} and the {\sc Actions} they perform. 
-%Instances of this meta-model are represented as UML activity diagrams. 
-%In Figure~\ref{fig:e-scomposition-metamodel}  coloured boxes illustrate classes  modelling  non-functional properties and 
-% white boxes represent classes modelling functional ones. 
-%
-%%In the meta-model of Figure~\ref{fig:e-scomposition-metamodel}:
-%\begin{itemizedTrivlist}
-%\item A {\sc Business Collaborator} meta-class represents the classes of entities that collaborate in  business processes by performing some  required action. 
-%An instance of this meta-class is graphically represented as a partition in the activity diagram. 
-%A collaborator can be either internal or external to the system. 
-%When the collaborator of the business is external to the system, the attribute {\sf IsExternal}\footnote{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} of the collaborator is set to \textbf{true}.
-%
-%\item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented in the model as a class activity instance of the meta-class Action. 
-%A class action represents some type of transformation or processing. 
-%There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
-%\begin{figure}[t]
-%\centering
-%\includegraphics[width=1.0\textwidth]{figs/E-service-composition-metamodel}
-%\caption{$\pi$-Service Composition ($\pi$-SCM) Metamodel.}
-%\label{fig:e-scomposition-metamodel}
-%\end{figure}
-%
-%\item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service and is composed by one or more executable nodes.
-%
-%\item In order to represent constraints types associated to services compositions, we extended introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-SCM meta-model in Figure \ref{fig:e-scomposition-metamodel}).
-%We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
-%An {\em A-policy} is defined by attributes and rules. 
-%Intuitively, the conditions of each rule will be checked.
-%In case of no compliance, the actions defined by the rule will be performed.
-%The {\sc Rule} meta-class represents the types of event - condition - action rules where the {\sc Event} part represents the moment in which a constraint  will be evaluated.
-%An {\em A-policy} defines variables and operations that can be shared by the rules and that can be used for expressing their Event and Condition parts. 
-%\end{itemizedTrivlist}
-%
-%\begin{figure}[t]%[htpb]
-%\centering
-%\includegraphics[width=0.95\textwidth]{figs/e-composition-model}
-%
-%{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
-%
-%\caption{$\pi$-SCM for the ``To publish music'' business service.}
-%\label{fig:servicecompositionmodel}
-%\end{figure}
-%
-%\begin{example}[To Publish Music]\label{ex:toPublicMusic}
-%To illustrate the use of the $\pi$-Service Composition Meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
-%In this model, there are three external business collaborators ({\em Spotify, Twitter} and {\em Facebook}).
-%% \footnote{We use {\em italics} to refer to concrete values of the classes of a model that are derived from the classes of a meta-model.}). 
-%The model also shows the business process of the application that consists of three service activities: {\em Listen Music}, {\em Publish Music} and {\em Confirmation}. 
-%Note that  the activity {\em Publish Music} calls the actions of two service collaborators namely {\em Facebook} and {\em Twitter}.
-%Both {\em Facebook} and {\em Twitter} services require authentication protocols in order to execute methods that will read and update the user space. 
-%%A call to such services must be part of the authentication protocol required by these services.
-%In the example we  associate two authentication policies, one for the open authentication protocol, represented by the class {\sf\small OAuthPolicy} at {\em Twitter}, that will be associated to the activity  {\sf\small UpdateTwitter} (see Figure \ref{fig:servicecompositionmodel}). 
-%In the same way, the {\em Facebook} class {\sf\small HTTPAuthPolicy}, for the http authentication protocol will be associated to the activity {\sf\small UpdateFacebook}.
-%
-%{\sf\small OAuthPolicy} will implement the open authentication protocol.
-%The {\em A-policy} {\sf\small OAuthPolicy} has a variable {\sf\small Token} that will be used to store the authentication token provided by the service.
-%This variable is imported through the library {\sf\small OAuthPolicy.Token}. 
-%The A-policy {\sf\small OAuthPolicy} defines two rules, both can be triggered by events of type {\sf\small ActivityPrepared}: (R$_1$): If no token has been associated to the variable {\sf\small token}, then a token is obtained ; and (R$_2$): if the token has expired, then it is renewed. 
-%Notice that the code in the actions profits from the imported {\sf\small OAuthPolicy.Token} for transparently obtaining or renewing a token from a third party.
-%
-%{\sf\small HTTPAuthPolicy} implements the HTTP-Auth protocol. 
-%The A-policy imports an http protocol library and it has two variables {\sf\small username} and {\sf\small password}.  
-%The event of type {\sf\small ActivityPrepared} is the triggering event of the rule {\sf\small R$_1$}. 
-%On the notification of an event of that type, a credential is obtained using the username and password. 
-%\hfill\openbox
-%\end{example}
-%
-%We propose the use of rules and policies to model and associate non-functional properties to service compositions.
-%These artifacts will be used to generate the actual programs that will implement the application:
-%Once the $\pi$-Service Composition Model has been defined, then it can be transformed into a lower level model (in our case, $\pi$-PEWS) that gives support to code generation. 
-%The $\pi$-PEWS  meta-model is described in the next section. 
-
-
-
 
 We validated our methodology by developing a use-case concerning risk assessment for financial companies as implemented by the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
 Risk assessment is implemented by an interactive business process based on the exchange of a series of questionnaires intended to evaluate the risks implied by the client business practice.
@@ -178,12 +34,12 @@ The values exchanged between ORCA and the brokers are:
 (ii) \textsl{Amendments} which are ORCA's recommendations, based on the data provided by the answers to questionnaires; 
 (iii) \textsl{Evaluation Reports} for the client companies; 
 and 
-(iv) the risk assessment \textsl{Fee}.
+(iv) the risk assessment \textsl{fee}.
 
-The dependency path in Figure~\ref{fig:E3valuemodel} initiates with the need of assessment emited by a particular company. 
+The dependency path in Figure~\ref{fig:E3valuemodel} initiates with the need of assessment emitted by a particular company. 
 Once this need has been declared, the value exchanges between ORCA and Broker are triggered. 
-The client company will provide ORCA with information (answers to a questionnaire), evidence (to support the information) and a fee (monetary value).
-ORCA will provide amendments (recommendations to change practices) and an evaluation report. 
+The client company provides ORCA with information (answers to a questionnaire), evidence (to support the information) and a fee (monetary value).
+Then, ORCA suggests amendments (recommendations to change practices) and provides an evaluation report. 
 
 \begin{figure}[t]
 \centering
@@ -203,19 +59,20 @@ This process  involves other members of the company as well.
 The risk assessment process starts after a request from a company.
 This corresponds to the value model, in which the start stimulus triggers the whole process.
 The request leads to the definition of a group of users that will answer questionnaires for evaluating risk.
-Questionnaires are considered tasks that users will have to perform. 
-Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecure access to the premises of the company. They can be also abstract  such as the protocol used for accessing data on the company's computer server.}.
+Questionnaires are considered tasks to be performed by users. 
+Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecured access to the premises of the company. 
+They can be also abstract  such as the protocol used for accessing data on the company's computer server.}.
 
-Once tasks have been completed, they are stored and analyzed to generate a list of noncompliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
-During the process of analyzing a questionnaire, the answers of some questions can trigger the generation of additional questionnaires or amendments, that will be scheduled as new tasks.  
+Once tasks have been completed, they are stored and analyzed to generate a list of non-compliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
+During the process of analyzing a questionnaire, the answers to some questions may trigger the generation of additional questionnaires or amendments, that will be scheduled as new tasks.  
 
 Business processes also have associated rules and constraints to define their non-functional requirements (NFR):
 \begin{numtrivlist}
-\item An acknowledgement is due less than 30 seconds after registering a task or demand for assessment. 
+\item An acknowledgement is due in less than 30 seconds after registering a task or demand for assessment. 
 \item The system should be able to deal with, at least, 200 users. 
 \item If the number of requests exceeds 200, \FlyingPig\ should implement a load balance strategy for processing the requests. 
-\item The proviledges of the Channel-Broker must be verified \textit{before} the execution of the actions associated to the \textsf{designate user in charge} $\pi$-use case.
-\item The privileges of Users must be verified \textit{before} the execution of the actions associated to the \textsf{answer questionnaire and add evidences} $\pi$-use case.
+\item The privileges of the Channel-Broker must be verified \textit{before} the execution of the actions associated to the \textsf{designate user in charge} $\pi$-use case.
+\item The privileges of users must be verified \textit{before} the execution of the actions associated to the \textsf{answer questionnaire and add evidences} $\pi$-use case.
 \item All questionnaires need to be fully answered, in order to consider that a task is completed.
 \item There is a time limit (in days) for each amendment required by the system.
 \end{numtrivlist}
@@ -247,10 +104,10 @@ The User also produces evidence to support facts and performs the necessary amen
 
 Each actor is associated to one or more $\pi$-use cases (depicted as white ovals in Figure~\ref{fig:piUseCaseModel}). 
 %Use cases 
-that describe the main functionalities of the system.
+that describe the main functionality of the system.
 The $\pi$-UseCase model for \FlyingPig\ defines six $\pi$-use cases. 
 
-In our model, each $\pi$-use case may be associated to one or more (non-functional) constraints (depicted as coloured ovals in Figure~\ref{fig:piUseCaseModel}). 
+In our model, each $\pi$-use case may be associated to one or more (non-functional) constraints (depicted as colored ovals in Figure~\ref{fig:piUseCaseModel}). 
 The model defines three types of constraints: \textit{value}, \textit{business} or \textit{exceptional behavior}. 
 Each constraint is identified by the word $<<$\textsf{constraint}$>>$ followed by its type.
 
@@ -271,7 +128,7 @@ The actions in this model were obtained by applying the $\pi$-use case transform
 
 The \textsf{Company}, \textsf{Broker-Channel} and \textsf{User} actors are transformed into lanes that represent the business collaborators.
 Use cases are transformed into \textit{actions} and are represented by white boxes.
-The restrictions associated to each $\pi$-use case are transformed into \textit{assertions} (represented by coloured boxes) and may be decorated with pre- and post-conditions. 
+The restrictions associated to each $\pi$-use case are transformed into \textit{assertions} (represented by colored boxes) and may be decorated with pre- and post-conditions. 
 We can see that this model refines the concepts defined in the $\pi$-UseCase model.
 The assertions specify those non-functional requirements, as they are seen by the actors. 
 The next step in the development is to add these assertions to the models that specify the \FlyingPig\ system.
@@ -287,7 +144,7 @@ The next step in the development is to add these assertions to the models that s
 The model presented in Figure~\ref{fig:PiServiceCompositionModel} 
 %offers a system-centric view of the application.
 %The previous model 
-is now  completed with the services that will provide some functions of the application  \FlyingPig\.
+is now  completed with the services that provides functions of the application  \FlyingPig\.
 The assertions in Figure~\ref{fig:PiServiceProcessModel} are implemented as \textit{policies}.
 These policies express the pre- and post-conditions of the previous model.
 They are associated to the actions of the system.
