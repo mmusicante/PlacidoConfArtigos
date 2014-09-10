@@ -1,0 +1,54 @@
+\begin{figure}[ht!]
+\tiny
+\centering
+
+\begin{lstlisting}[label=list:flyingPigPiPEWS,caption=pi-PEWS
+Specification: FlyingPig. ]
+
+//Namespaces specify service URI
+namespace orca = www.orca.mx/service.wsdl
+
+//Operations
+alias createCompanySpace = portType/createCompanySpace in orca
+alias generateQuestionnaire = portType/generateQuestionnaire in orca
+alias analizeAnswer = portType/analizeAnswer in orca
+alias storeData = portType/storeData in orca
+alias createReport = portType/createReport in orca
+alias callForAmendments = portType/callForAmendments in orca
+
+//Services
+service receiveRequest(R, Id) = createCompanySpace(R, Id)
+
+service generateNewInterface(Id, NULL) = ...
+
+service createQuestionnaire(Id, Q) = generateQuestionnaire(Id, Q)
+
+service notifyResponsable((Id, Q); NULL) = ...
+
+service receiveAnswers((Id, T); P) =
+								analizeAnswer((Id, T), NULL) 
+								. storeData((Id, T), NULL)
+								. (
+								  (createReport(Id, P) . return(P))
+								  + (callForAmendments(Id,T) . return(NULL))
+								  )
+								  
+//Path
+
+receiveRequest(R, Id)
+||
+( generateNewInterface(Id, NULL)
+  . createQuestionnaire(Id, Q)
+  .  notifyResponsable((Id, Q); NULL
+ )
+||
+ ( receiveAnswers((Id, T); P)
+ . [P != NULL] STOP
+ )*	
+ 
+//Policies 					  
+
+
+\end{lstlisting}
+\label{fig:crimeInformationPEWS}  
+\end{figure}  
