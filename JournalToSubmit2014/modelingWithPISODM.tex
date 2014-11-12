@@ -1,19 +1,19 @@
 
-This section presents \pisodm, an MDD-based methodology for building service compositions with non-functional requirements. 
-\pisodm provides meta-models for modeling functional and non-functional requirements organized in three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Platform Independent Models}) and PSM (\textit{Platform Specific Models}). 
+In this section we present \pisodm, an MDD-based methodology for building service compositions with non-functional requirements. 
+Our work provides meta-models for modeling functional and non-functional requirements organized in three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Plat\-form Independent Models}) and PSM (\textit{Platform Specific Models}). 
 Given  high-level models specified at the CIM level, \pisodm proposes the semi-automatic refinement of these models, for the generation of a set of models at the other levels of abstraction.
 The refinement process is driven by transformation rules specified between the meta-models.
 
-The next subsections present the meta-models from higher to lower levels of abstraction.
+In the next subsections we present the me\-ta-models from higher to lower levels of abstraction.
 The presentation is exemplified by a running example.
 The transformations between models are presented in section~\ref{sec:mmrules}.
 
-\begin{figure}[h]
+\begin{figure*}
 \centering
 \includegraphics[width=1.0\textwidth]{figs/piSOD-M_process.pdf}
 \caption{\pisodm Overview.}
 \label{fig:piSOD-M}
-\end{figure}
+\end{figure*}
 
 
 
@@ -37,12 +37,12 @@ A dependency path has a direction and consists of a sequence of linked dependenc
 It starts with a \textit{start stimulus} node and ends with an \textit{end stimulus} node (see Figure~\ref{fig:CIM:tpme3v}). 
 Dependency paths may also contain \textsl{OR} and \textsl{AND} elements (both for initiate and join alternative and parallel paths).
 
-\begin{figure}[htpb]
+\begin{figure*}
 \center
 \includegraphics[width=0.75\textwidth]{figs/e3value.pdf}
 \hspace*{5cm}\includegraphics[width=0.4\textwidth]{figs/3ValueKey.pdf}
 \caption{\label{fig:CIM:tpme3v} e3value model for ``To Publish Music''.}
-\end{figure}
+\end{figure*}
 
 \begin{example}[To Publish Music]\label{ex:toPublicMusic}
 Let us consider the scenario ``To Publish Music'', used as a running example in this section:
@@ -51,9 +51,9 @@ In this way, the user will have her status synchronized in  Twitter and Facebook
 The application is based on three external actors ({\em Spotify, Twitter} and {\em Facebook}).
 The following (external) services will be used by the application:
 \begin{itemize}
-\item The music service   Spotify exports a method for obtaining information  about the music a given user is listening:
+\item The  service   Spotify exports a meth\-od for obtaining information  about the music a given user is listening:
 \begin{itemize} \item {\sf\small get-Last-Song ( userid ): String} ; \end{itemize}
-\item Facebook and Twitter services export methods for  updating the status of a given user:
+\item The services Facebook and Twitter export meth\-ods for  updating the status of a given user:
 \begin{itemize} 
 %\item{\sf\small get-Status ( usedid ): String ; 
 \item {\sf\small update-Status ( userid, new-status ): String}; 
@@ -68,14 +68,14 @@ The e$^3$value value model shows Spotify and a private application (which is als
 We can see this interaction as non material benefit sharing (as users subscribe to their networks and are active on them thanks to the private application).
 \end{example}
 
-The e$^3$value  model is used to model the (economic) value exchange among the actors involved in an application. It is also necessary to understand the business process of the application and the conditions in which the different steps of this process are executed input/out data and the dependencies among these steps. Therefore, our methodology proposes the BPMN meta-model as a tool for modeling this aspect of the application.
+The e$^3$value  model is used to model the (economic) value exchange among the actors involved in an application. 
+However, the e$^3$val\-ue model does not help to understand the business process of the application nor the conditions in which the different steps of this process are executed. 
+In order to face this shortcoming, our methodology proposes the BPMN meta-model as a tool for modelling this aspect of the application.
 
 
-%Note that the models at this level show\dots 
-%{\color{red} Valeria and Placido: Please explain the CIM models for this example.}
-%\hfill\openbox
-% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
-\subsubsection{BPMN meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
+
+\subsubsection{BPMN meta-model}
+
 BPMN~\cite{BPMN}  is a graphical representation that establishes the business process of the application through a high-level workflow. 
 The next example illustrates the use of this meta-model.
 
@@ -85,9 +85,9 @@ It starts by contacting the music service Spotify for retrieving the user's  mus
 Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
 \end{example}
 %
-\begin{figure}[htpb]
+\begin{figure}
 \center
-\includegraphics[width=0.49\textwidth]{figs/SC.pdf}
+\includegraphics[width=0.45\textwidth]{figs/SC.pdf}
 \caption{\label{fig:CIM:tpmbpmn} BPMN model for ``To Publish Music''.}
 \end{figure}
 
@@ -101,37 +101,39 @@ Notice that, at this level, the models are (informally) used to describe both fu
 
 This level focuses on the system functionality, hiding the details of any particular platform.
 The specification defines those parts of the system that do not change from one platform to another. 
-Our methodology defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-ServiceProcess} and \textit{$\pi$-ServiceComposition}.
+Our methodology defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-Ser\-vice\-Pro\-cess} and \textit{$\pi$-ServiceComposition}.
  
  % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 \subsubsection{\textit{$\pi$-UseCase} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 
 Figure~\ref{fig:CIM:usecasemetamodel} presents the \textit{$\pi$-UseCase} meta-model.
-The goal of \textit{$\pi$-UseCase}  is to be the first representation of the application in terms of functionality, as well as to represent its non-functional requirements.
+The goal of \textit{$\pi$-UseCase}  is to be the first representation of the application in terms of functionality, as well as to represent its non-func\-tion\-al requirements.
 The notion of \textit{policy} is used to describe NFRs. 
-(In Figure~\ref{fig:CIM:usecasemetamodel}, we have highlighted the concepts related to NFRs).
-The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model for describing non-functional requirements with  the concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc non-functional requirement}, {\sc non-functional attribute} and {\sc Constraint}. An {\sc End Consumer} is represented by an {\sc Actor}. An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), while a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
+(Figure~\ref{fig:CIM:usecasemetamodel} highlights the concepts related to NFRs.)
+The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe non-functional requirements with  the following  concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc Non-\-Func\-tion\-al Requirement}, \ \ {\sc Non-Functional}\\ {\sc At\-tri\-bute} and {\sc Constraint}. 
+An {\sc End Consumer} is represented by an {\sc Actor}. 
+An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), while a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
 {\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
  The {\sc Business Collaborator} concept is represented  through {\sc Packages}. 
 A {\sc Business Collaborator} represents an external service or a system that interacts with the application that are being modeled. 
 Each {\sc Business Collaborator} combines the features described in each  {\sc Package}. 
-Thus, the services functions can be specified as being grouped into packages.
+%Thus, the services functions can be specified as being grouped into packages.
  
- \begin{figure}[htpb]
+ \begin{figure*}
 \center
 \includegraphics[width=0.9\textwidth]{figs/UseCaseMetaModel.pdf}
 \caption{\label{fig:CIM:usecasemetamodel} $\pi$-UseCase Meta-Model.}
-\end{figure}
+\end{figure*}
 
 
- The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented as part of description of {\sc Use Cases} and {\sc Constraints}. 
-A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has its name, description, and which ones should be checked during the execution of the application. 
-Each {\sc Constraint} is represented as a stereotyped ({\sf constraint}) use case. 
+ The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts \ are \\ represented by {\sc Use Cases} and {\sc Constraints}. 
+A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has a name, description, and a flag to indicate that it has to be  dynamically checked.
+Each {\sc Con\-straint} is represented as a stereotyped ({\sf constraint}) use case. 
 There are three kinds of constraint:
 \textit{(i)} A restriction may be associated to data ({\sc Value Constraint}), represented as the stereotype ``value''; 
 \textit{(ii)} A restriction may correspond to business rules (\textsc{Business Constraint}), represented as the stereotype {\sf ``business''}; and 
 \textit{(iii)} A restriction may describe {\sc Exceptional Behavior} constraints, represented as the stereotype {\sf ``exceptional\_behavior''}.
-These concepts are present in the following example.
+The use of these constraints is shown in the following example.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
 Figure~\ref{fig:CIM:piusecasetpm} shows a $\pi$-UseCase model for our example application.
@@ -143,20 +145,20 @@ Another restriction is that the minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example} 
 
-\begin{figure}[htpb]
+\begin{figure*}
 \center
 \includegraphics[width=0.9\textwidth]{figs/UseCase.pdf}
 \caption{\label{fig:CIM:piusecasetpm} $\pi$-UseCase model for ``To Publish Music''.}
-\end{figure}
+\end{figure*}
  
 
  % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 \subsubsection{\textit{$\pi$-ServiceProcess} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 
 The \textit{$\pi$-ServiceProcess} meta-model extends the UML activity diagram with the concept of \textit{contract} to represent constraints over data and actions. This concept is used to model 
-groups  of  constraints described in the \textit{$\pi$-UseCase}. 
-As shown in Figure~\ref{fig:CIM:serviceprocessmetamodel}, the concepts of the \textit{$\pi$-ServiceProcess} meta-model are: {\sc Contract}, {\sc Assertion}, {\sc Exceptional behavior}, {\sc Activity}, {\sc Service Activity}, {\sc Action} and {\sc Constraint}.
-The portion of the figure enclosed by a dotted line defines those concepts related to the representation of NFRs.
+groups  of  constraints  in the \textit{$\pi$-UseCase}. 
+In Figure~\ref{fig:CIM:serviceprocessmetamodel}, the concepts of the \textit{$\pi$-Ser\-vice\-Process} meta-model are: {\sc Contract}, {\sc Assertion}, {\sc Exceptional behavior}, \ {\sc Activity}, \ {\sc Ser\-vice Acti\-vi\-ty}, \\ {\sc Action} and {\sc Constraint}.
+The dotted part of the figure defines those concepts related to the representation of NFRs.
 
 A specific \textit{$\pi$-ServiceProcess} model shows the set of logically related activities to be performed in a service-based application. 
 So, the activities of this model represent a behavior that is part of the business logic of the application. 
@@ -164,11 +166,11 @@ A \textit{$\pi$-ServiceProcess}  model contains three main elements: (i) service
 An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf assertion}). 
 The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre-conditions and post-conditions.
 
-\begin{figure}[htpb]
+\begin{figure*}
 \center
 \includegraphics[width=0.9\textwidth]{figs/ServiceProcessMetaModel.pdf}
 \caption{\label{fig:CIM:serviceprocessmetamodel} $\pi$-Service Process Meta-Model.}
-\end{figure}
+\end{figure*}
 
 %According to the meta-model, a \textit{$\pi$-ServiceProcess} model represents the service processes and its contracts. It models the set of system activities and describe contracts for each activity or the process as a whole. Each service identified in the previous model (\textit{$\pi$-UseCase}) is mapped to an action. This model defines a workflow for  modeling business logic and the behaviour of the application being developed. The behaviour is represented by each action and the restrictions by the assertion description. All assertions are described by stereotyped actions.
 
@@ -184,16 +186,16 @@ To update Twitter a pre-condition is required, while to update Facebook it is ne
 As a pre-condition for ``twitter update'' it is necessary that (i) the music format is correct and (ii) the twitter login and password are correct for the update.
 \end{example}
 
-\begin{figure}[htpb]
+\begin{figure*}
 \center
 \includegraphics[width=0.9\textwidth]{figs/ServiceProcess.pdf}
 \caption{\label{fig:CIM:serviceprocess} $\pi$-ServiceProcess model for ``To Publish Music''.}
-\end{figure}
+\end{figure*}
 
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 \subsubsection{\textit{$\pi$-ServiceComposition} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   . 
 
-As shown in Figure \ref{fig:e-scomposition-metamodel}, the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model 
+In Figure \ref{fig:e-scomposition-metamodel}, the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model 
 provides meta-classes to represent workflows\footnote{Workflows are transformed into implemented service compositions.} that model  business processes.
 The \textit{$\pi$-Serv\-ice\-Com\-po\-si\-tion} meta-model extends the UML activity  meta-model with the concept of  \textit{A-Policy}
 to group contracts with similar non-functional requirements.
@@ -210,35 +212,36 @@ When the collaborator of the business is external to the system, the attribute {
 A class action represents some type of transformation or processing. 
 There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
 
-\begin{figure}[t]
+\begin{figure*}
 \centering 
 \includegraphics[width=1.0\textwidth]{figs/PiServiceComposition} 
 \caption{$\pi$-Service Composition Meta-model.}
 \label{fig:e-scomposition-metamodel}
-\end{figure}
+\end{figure*}
 
-\item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service and is composed by one or more executable nodes.
+\item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service and is composed by one or more execu\-ta\-ble nodes.
 
-\item In order to represent constraint types associated to services compositions, we introduced the meta-classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model in Figure \ref{fig:e-scomposition-metamodel}).
-We model non-functional constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
+\item In order to represent constraint types associated to services compositions, we defined the me\-ta- classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+We model non-func\-tion\-al constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
 An {\em A-policy} is defined by attributes and rules. 
-The conditions of each rule are evaluated and, if they are not verified, the actions of the rule will be performed.
-The {\sc Rule} meta-class represents the types of event-condition-action rules where the {\sc Event} part represents the moment in which a constraint  is evaluated.
+The conditions of each rule are evaluated.
+In case of failure, the actions of the rule will be performed.
+The meta-class {\sc Rule} represents event-condition-action rules where the {\sc Event} part represents the moment in which a constraint  is evaluated.
 An {\em A-policy} defines variables and operations that can be shared by the rules and that can be used for expressing their Event and Condition parts. 
 \end{itemizedTrivlist}
 Instances of this meta-model are represented as UML activity diagrams. 
-\begin{figure}[t]%[htpb]
+\begin{figure*}
 \centering
 \includegraphics[width=0.95\textwidth]{figs/piServiceComposition-toPublishMusic}
 %{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
 \caption{$\pi$-ServiceComposition Model for the ``To publish
 music'' business service.}
 \label{fig:servicecompositionmodel}
-\end{figure}
+\end{figure*}
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic4}
 To illustrate the use of the $\pi$-Service Composition meta-model, we define a model for the ``To Publish Music'' scenario (Figure \ref{fig:servicecompositionmodel}). 
- We model a business process that consists of three service activities: {\em Listen Music}, {\em Publish Music} and {\em Confirmation}. 
+ We model a business process with three service activities: {\em Listen Music}, {\em Publish Music} and {\em Confirmation}. 
 The {\em Publish Music} activity calls the {\em Facebook} and {\em Twitter} services.
 Both {\em Facebook} and {\em Twitter} require authentication. 
 Two authentication policies are required, one for {\em Twitter} and another for {\em Facebook}.
@@ -260,7 +263,6 @@ Notice that the code in the actions profits from the imported {\sf\small OAuthPo
 The A-policy imports an http protocol library and it has two variables {\sf\small username} and {\sf\small password}.  
 The event of type {\sf\small ActivityPrepared} is the triggering event of the rule {\sf\small R$_1$}. 
 On the notification of an event of that type, a credential is obtained using the username and password. 
-\hfill\openbox
 \end{example}
 
 %We propose the use of rules and policies to model and associate non-functional properties to service compositions.
@@ -274,10 +276,11 @@ The $\pi$-PEWS  meta-model is described in the next section.
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 This level focuses on the functionality, in the context of a particular implementation platform.
-Models at this level combine the platform-independent view with the specific aspects of the platform to implement the system. At the PSM level we have lower-level models that can be automatically translated into actual computer programs. 
+Models at this level put together the platform-independent view \ with \ the \ specific \\ aspects of the platform to implement the system. 
+Models at the PSM level can be automatically translated into actual computer programs. 
 We have defined one meta-model at this level.
 
-The \textit{$\pi$-PEWS} meta-model provides concepts for modeling service compositions. 
+\textit{$\pi$-PEWS} provides con\-cepts for modelling service compositions. 
 Instances of this meta-model are textual descriptions of service compositions that can be translated into any service composition language, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
 
 PEWS~\cite{BHM06,Placido2010LTPD} is a notation to express service compositions.
@@ -293,12 +296,12 @@ The language defines operators to denote guarded operations ($[C]S$); sequential
 A brief description of these classes is given next.
 \end{itemizedTrivlist}
 %
-\begin{figure}[t]
+\begin{figure*}
 \centering
 \includegraphics[width=0.75\textwidth]{figs/PEWSMetamodel}
 \caption{$\pi$-{\sc Pews} Meta-model.}
 \label{fig:PPEWSmetamodel}
-\end{figure}
+\end{figure*}
 
 Figure~\ref{fig:PPEWSmetamodel} shows that each {\sc A-Policy} is associated to a {\sc Scope} that can be either an {\sc Operation} (e.g., an authentication protocol associated to a method exported by a service),  an {\sc Operator} (e.g., a temporal constraint associated to a sequence of operators) or a {\sc Path}.  
 Each {\sc A-Policy} groups a set of ECA rules with a classic semantics, i.e, {\em when an event of type E occurs, if condition C is verified then execute the action A}.  
@@ -310,10 +313,10 @@ Figure \ref{fig:Specific-Contract-Representation} shows the $\pi$-PEWS code resu
 Notice that the code contains namespaces and definitions (obtained by using information about the business collaborators of the $\pi$-SCM model), a workflow expression \textit{(Path)} containing operation calls and contracts (derived from the \textit{A-Policies}).
 \end{example}
 
-\begin{figure} 
+\begin{figure*} 
 \centering
 \includegraphics[width=0.8\textwidth]{figs/pi-pewsSpecification-toPublishMusic}
 \caption{$\pi$-PEWS Specific and Policy Representation.}
 \label{fig:Specific-Contract-Representation}
-\end{figure}
+\end{figure*}
 

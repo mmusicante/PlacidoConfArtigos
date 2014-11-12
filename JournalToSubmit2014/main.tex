@@ -1,0 +1,167 @@
+\documentclass[twocolumn]{svjour3}
+
+\usepackage{geometry}
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{amssymb} 
+\usepackage{epstopdf}
+
+\usepackage{amssymb}
+
+%\usepackage{natbib}
+
+%%% OUR MACROS %%%
+\newcommand{\COMMENT}[1]{ }
+
+\usepackage[usenames,dvipsnames]{xcolor}
+
+
+\usepackage{amsmath}
+%\usepackage[thmmarks,amsmath]{ntheorem}
+
+\newcommand{\openbox}{\leavevmode
+  \hbox to.77778em{%
+  \hfil\vrule
+  \vbox to.675em{\hrule width.6em\vfil\hrule}%
+  \vrule\hfil}}
+
+%\theoremstyle{plain}
+%\theoremheaderfont{\normalfont\bfseries}
+%\theorembodyfont{\normalfont}
+%\theoremseparator{}
+%\theoremindent0cm
+%\theoremnumbering{arabic}
+%\newtheorem{algo}{Algorithm}
+%
+%%\theoremstyle{plain}
+%%%\theoremheaderfont{\normalfont\itshape}
+%%\theoremheaderfont{\normalfont\bfseries}
+%%\theorembodyfont{\normalfont}
+%%\theoremseparator{}
+%%\theoremindent0cm
+%%\theoremnumbering{arabic}
+%%\theoremsymbol{\ensuremath{\openbox}} 
+%%\newtheorem{example}{Example}
+%
+%
+%\theoremstyle{plain}
+%\theoremheaderfont{\normalfont\bfseries}
+%\theorembodyfont{\normalfont}
+%\theoremseparator{.}
+%\theoremindent0cm
+%\theoremnumbering{arabic}
+%\theoremsymbol{\ensuremath{\Box}} 
+%\newtheorem{defi}{Definition}
+%
+%\theoremstyle{plain} 
+%\theoremsymbol{\ensuremath{\Box}} 
+%\theoremseparator{.} 
+%\newtheorem{prop}{Property}
+
+\def\FlyingPig{\textsl{FlyingPig}}
+
+\newcounter{numberInTrivlist}
+
+\newenvironment{numtrivlist}{\begin{list}{\rm \arabic{numberInTrivlist})} 
+                                         {\usecounter{numberInTrivlist}
+                                          \setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{12pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+
+\newenvironment{itemizedTrivlist}{\begin{list}{\rm ~\hspace{2mm} $\bullet$\ } 
+                                         {\setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{12pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+
+\usepackage{listings}
+
+
+\lstset{numbers=right, numbersep=5pt, numberstyle=\tiny, stepnumber=1,escapechar=\!,columns=fullflexible,
+        morekeywords={procedure,let,for,do,if,then,else,add,choose,end,while,
+        true,false,rise,exception,extend,resume,to,return,function}}
+
+\newcommand{\pisodm}[0]{$\pi$SOD-M\xspace}
+
+\begin{document}
+
+\title{\pisodm: A New Methodology for Building Service-Oriented Applications}\thanks{\textsl{Contact author:}\\
+Martin A. Musicante\\
+UFRN - Cx Postal 1647, \\
+Campus Universitário Lagoa Nova \\
+59078-970, Natal, RN, Brazil\\[2mm]
+Telephone: +55 84 3215 3814 ext 1.208\\
+Mobile phone: +55 84 9653 4331\\
+Fax: +55 84 3215 3781}
+
+
+\author{Khalid Belhajjame \and Valeria~de~Castro \and Umberto~Souza~da~Costa \and Javier~A.~Espinosa-Oviedo \and Martin~A.~Musicante \and Pl\'acido~A.~Souza~Neto \and Genoveva~Vargas-Solar \and Jos\'e-Luis~Zechinelli-Martini}
+
+\institute{K. Belhajjame
+               \at Universit\'e de Paris - Dauphine -- Paris, France
+               \and
+               V. de Castro
+               \at Universidad Rey Juan Carlos -- M\'{o}stoles, Spain
+               \and
+               U.S.Costa \and M.A. Musicante
+               \at Universidade Federal do Rio Grande do Norte -- Natal, Brazil
+               \and
+               J.A. Espinosa-Oviedo, J-L Zechinelli-Martini
+               \at Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico
+               \and 
+               P. Souza Neto 
+               \at Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia do Rio Grande do Norte -- Natal, Brazil
+               \and
+               G. Vargas-Solar
+               \at CNRS, LIG-LAFMIA, Saint Martin d'H\`eres, France}
+
+\maketitle
+
+\begin{abstract}
+
+Specifying non-functional requirements (NFRs) is a complex task, being usually dealt with on the later phases of the software process.
+The late inclusion of NFRs in the development may compromise the quality of the deployed application.
+This paper presents \pisodm, a methodology and associated tools that 
+\textit{(i)}  allows the early specification of non-functional requirements in a principled way: users are abstracted away from low level details; 
+\textit{(ii)} embraces the MDA philosophy, generating models (code) whenever possible.
+The pro\-po\-sed solution has been utilized in the context of an industrial case study.
+\end{abstract}
+
+\keywords{MDA \and Non-Functional Requirements \and Service-based software process}
+
+
+%% main text
+%*********************************************************************************************************
+\section{Introduction}
+\label{sec:intro}
+\input{intro}
+
+\section{Related Works}
+\label{sec:relworks}
+\input{relworks}
+
+\section{Modeling reliable service compositions with \pisodm}\label{sec:motivation}
+\input{modelingWithPISODM}
+
+\section{Transformation rules}\label{sec:mmrules}
+\input{transformationRules}
+
+\section{Applying \pisodm: The \FlyingPig\ use case}
+\label{sec:flyingPig}
+
+\input{modelingFlyingPig}
+
+\section{Conclusions and future work}\label{sec:conclusions}
+\input{conclusions}
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+\end{document}
+
+
