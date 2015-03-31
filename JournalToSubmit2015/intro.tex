@@ -19,10 +19,10 @@ Non-functional properties, such as data privacy, exception handling, atomicity  
 
 Even if service-oriented computing benefits from reuse, this reuse is usually guided only by functional requirements.
 %
-%Furthermore,  often they are  not fully considered in the specification process of existing services' oriented development methods. Rather, 
-%They   are either ensured by the underlying execution platform, or they are programmed through ad-hoc protocols once the application has been programmed. 
+%Furthermore,  often they are  not fully considered in the specification process of existing services' oriented development methods. Rather,
+%They   are either ensured by the underlying execution platform, or they are programmed through ad-hoc protocols once the application has been programmed.
 Ideally, non-functional requirements should be considered in every phase of the software development.
-Yet,  they are partially or rarely methodologically derived from the specification, being usually added once the code has been im\-ple\-men\-ted. 
+Yet, they are partially or rarely methodologically derived from the specification, being usually added once the code has been im\-ple\-men\-ted.
 In consequence, the development process does not fully preserve the compliance and re\-use expectations provided by the service oriented computing methods.
 
 
@@ -30,22 +30,22 @@ In consequence, the development process does not fully preserve the compliance a
 %Most methods integrate them only after the application has been implemented.
 %This leads to service based applications that are partialy specified and, thereby, partialy compliant with the requirements of the application.
 
-% song title disseminated in the walls of the user's Facebook and Twitter accounts. 
+% song title disseminated in the walls of the user's Facebook and Twitter accounts.
 
 
 
 %The adoption of non-functional specifications from the early states of development can help the developer to produce applications that  can deal with the application context.
 
-The literature stresses the need for meth\-od\-ol\-o\-gies and techniques for service oriented analysis and design 
+The literature stresses the need for meth\-od\-ol\-o\-gies and techniques for service oriented analysis and design
 %since they are the cornerstone in the development of meaningful service based applications
-~\cite{Papazoglou2007}. 
-Existing approaches maintain that the convergence of model-driven soft\-ware development, service orientation,   and  busi\-ness processes improvement are key for developing accurate  software~\cite{watson}. 
+~\cite{Papazoglou2007}.
+Existing approaches maintain that the convergence of model-driven soft\-ware development, service orientation,   and  busi\-ness processes improvement are key for developing accurate  software~\cite{watson}.
 Model Driven Development (MDD)  for software systems is mainly characterized by the use of models as a product~\cite{Selic03}.
-These models are successively refined from abstract specifications into actual computer programs.
+These models are successively refined from abstract specifications into actual computer programs. A recent literature review study concludes there are a very scarce attention to non-functional requirements in the development of service-oriented applications using model-driven methodologies~\cite{Ameller201542}.
 
 Our work proposes, $\pi$-\textit{Service Oriented Development Method} (\pisodm) to support non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements early in software development.
-Our proposal is aligned with the MDD guidelines and proposes models, practices and techniques for the development of service-based applications.  The technique proposes  the use of \textit{models} to specify a software system at different levels of abstraction. 
-Models are organized according to the guidelines of the Model Driven Archi\-tec\-ture (MDA)~\cite{miller} approach. 
+Our proposal is aligned with the MDD guidelines and proposes models, practices and techniques for the development of service-based applications.  The technique proposes  the use of \textit{models} to specify a software system at different levels of abstraction.
+Models are organized according to the guidelines of the Model Driven Archi\-tec\-ture (MDA)~\cite{miller} approach.
 The goals of  \pisodm are to:
 %SOD-M does not provide support for the specification of non-functional requirements, such as
 %security, reliability, and efficiency.
@@ -54,11 +54,13 @@ The goals of  \pisodm are to:
 \item \textit{(ii)} Reduce the programming effort through the semi-automatic generation of  models for the application, in order to produce concrete implementations from higher-level models.
 \end{trivlist}
 
+The applicability of our proposal was tested with an industrial case study concerning risk assessment for financial companies as implemented by the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}. In this work we show the application of our method \pisodm to develop a service based application called \FlyingPig that provides risk assessment as a service.The models presented were generated as a result of interacting with software developers at GCP Global and trying to attend to all the non-functional requirements present in the application domain.
+
 This paper is organized as follows.
 Sec\-tion \ref{sec:relworks} summarizes the general principles of existing works for addressing NFP and associating them to service compositions.
-Sections~\ref{sec:motivation}  and~\ref{sec:mmrules} introduce respectively the meta-models of the \pisodm and transformation rules. 
-% Section~\ref{sec:implementation} describes the \pisodm environment that provides tools for building service based applications according to the \pisodm methodology. 
-Section~\ref{sec:flyingPig} describes the experiment that we conducted for validating our methodology and discusses lessons learned. 
+Sections~\ref{sec:motivation} and~\ref{sec:mmrules} introduce respectively the meta-models of the \pisodm and transformation rules.
+% Section~\ref{sec:implementation} describes the \pisodm environment that provides tools for building service based applications according to the \pisodm methodology.
+Section~\ref{sec:flyingPig} describes the \FlyingPig case study that we develop for validating our method and discusses lessons learned.
 Finally, Section~\ref{sec:conclusions} concludes the paper and gives research perspectives.
 
 
