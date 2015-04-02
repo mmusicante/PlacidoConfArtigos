@@ -180,12 +180,14 @@ service createQuestionnaire(Id, Q) = generateQuestionnaire(Id, Q)
 service notifyResponsable((Id, Q); NULL) = ...
 service receiveAnswers((Id, T); P) =
 	analizeAnswer((Id, T), NULL) . storeData((Id, T), NULL)
-	. ((createReport(Id, P) . return(P)) + (callForAmendments(Id,T) . return(NULL)))
+	. ((createReport(Id, P) . return(P)) 
+	    + (callForAmendments(Id,T) . return(NULL)))
 
 //Workflow
 receiveRequest(R, Id)
 ||
-(generateNewInterface(Id, NULL).createQuestionnaire(Id, Q).notifyResponsable((Id, Q); NULL))
+(generateNewInterface(Id, NULL)
+ . createQuestionnaire(Id, Q) . notifyResponsable((Id, Q); NULL))
 ||
  (receiveAnswers((Id, T); P) . [P != NULL] STOP)*	
 \end{verbatim}

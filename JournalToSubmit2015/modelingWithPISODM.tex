@@ -110,7 +110,7 @@ Figure~\ref{fig:CIM:usecasemetamodel} presents the \textit{$\pi$-UseCase} meta-m
 The goal of \textit{$\pi$-UseCase}  is to be the first representation of the application in terms of functionality, as well as to represent its non-func\-tion\-al requirements.
 The notion of \textit{policy} is used to describe NFRs.
 (Figure~\ref{fig:CIM:usecasemetamodel} highlights the concepts related to NFRs.)
-The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe non-functional requirements with  the following  concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc Non-\-Func\-tion\-al Requirement}, \ \ {\sc Non-Functional}\\ {\sc At\-tri\-bute} and {\sc Constraint}.
+The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe non-functional requirements with  the following  concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc Non-\-Func\-tion\-al Requirement}, {\sc Non-Functional} {\sc At\-tri\-bute} and {\sc Constraint}.
 An {\sc End Consumer} is represented by an {\sc Actor}.
 An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), while a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
 {\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
@@ -126,7 +126,7 @@ Each {\sc Business Collaborator} combines the features described in each  {\sc P
 \end{figure*}
 
 
- The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts \ are \\ represented by {\sc Use Cases} and {\sc Constraints}.
+ The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented by {\sc Use Cases} and {\sc Constraints}.
 A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has a name, description, and a flag to indicate that it has to be  dynamically checked.
 Each {\sc Con\-straint} is represented as a stereotyped ({\sf constraint}) use case.
 There are three kinds of constraint:
@@ -157,14 +157,15 @@ Another restriction is that the minimum payment value is 2 euros.
 
 The \textit{$\pi$-ServiceProcess} meta-model extends the UML activity diagram with the concept of \textit{contract} to represent constraints over data and actions. This concept is used to model
 groups  of  constraints  in the \textit{$\pi$-UseCase}.
-In Figure~\ref{fig:CIM:serviceprocessmetamodel}, the concepts of the \textit{$\pi$-Ser\-vice\-Process} meta-model are: {\sc Contract}, {\sc Assertion}, {\sc Exceptional behavior}, \ {\sc Activity}, \ {\sc Ser\-vice Acti\-vi\-ty}, \\ {\sc Action} and {\sc Constraint}.
+In Figure~\ref{fig:CIM:serviceprocessmetamodel}, the concepts of the \textit{$\pi$-Ser\-vice\-Process} meta-model are: {\sc Contract}, {\sc Assertion}, {\sc Exceptional behavior}, {\sc Activity}, {\sc Ser\-vice Acti\-vi\-ty}, {\sc Action} and {\sc Constraint}.
 The dotted part of the figure defines those concepts related to the representation of NFRs.
 
 A specific \textit{$\pi$-ServiceProcess} model shows the set of logically related activities to be performed in a service-based application.
 So, the activities of this model represent a behavior that is part of the business logic of the application.
 A \textit{$\pi$-ServiceProcess}  model contains three main elements: (i) service process, (ii) service activity and (iii) activity contract. A service activity represents an operation that is part of the execution flow, and it is modeled as an {\sc Action}.
 An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf assertion}).
-The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre-conditions and post-conditions.
+The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. 
+Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre-conditions and post-conditions.
 
 \begin{figure*}
 \center
@@ -276,7 +277,7 @@ The $\pi$-PEWS  meta-model is described in the next section.
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
 This level focuses on the functionality, in the context of a particular implementation platform.
-Models at this level put together the platform-independent view \ with \ the \ specific \\ aspects of the platform to implement the system.
+Models at this level put together the platform-independent view with the specific aspects of the platform to implement the system.
 Models at the PSM level can be automatically translated into actual computer programs.
 We have defined one meta-model at this level.
 
