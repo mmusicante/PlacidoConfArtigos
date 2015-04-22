@@ -1,6 +1,36 @@
-\documentclass{ws-ijseke}
+\documentclass[12pt,twoside]{article}
+\usepackage{Jcst}
+%Equations,theorems,lemmas,etc. are created using the traditional enviroment
+%
+
 \usepackage{xspace}
 
+\usepackage{amsmath}
+\usepackage[thmmarks,amsmath]{ntheorem}
+
+\newcommand{\openbox}{\leavevmode
+  \hbox to.77778em{%
+  \hfil\vrule
+  \vbox to.675em{\hrule width.6em\vfil\hrule}%
+  \vrule\hfil}}
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\newtheorem{algo}{Algorithm}
+
+\theoremstyle{plain}
+%\theoremheaderfont{\normalfont\itshape}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{\ensuremath{\openbox}} 
+\newtheorem{example}{Example}
 
 
 \newcommand{\pisodm}[0]{$\pi$SOD-M\xspace}
@@ -25,69 +55,45 @@
 
 \begin{document}
 
-\markboth{K.Belhajjame \textit{et al.}}
-{\pisodm: Building Service-Oriented Applications in the Presence of Non-Functional Requirements}
+\setcounter{page}{1}
 
-%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
-%
-\catchline{}{}{}{}{}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%Set Page Head%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setpageinformation
+%{Head of the first page} {Running head of odd pages}
+{}
+{ }{ }{}{Apr.}{2015}
+{\pisodm: Building Service-Oriented Applications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%===========================================================
+
+%\begin{CJK}{GBK}{song}
 
 \title{\pisodm: Building Service-Oriented Applications in the Presence of Non-Functional Requirements}
 
-\author{Khalid Belhajjame}
-\address{Universit\'e de Paris - Dauphine -- Paris, France\\
-\email{kbelhajj@googlemail.com}
+\author{Khalid Belhajjame$^1$, Valeria~de~Castro$^2$, Umberto~Souza~da~Costa$^3$, Javier~A.~Espinosa-Oviedo$^4$, Martin~A.~Musicante$^{3,*}$, Pl\'acido~A.~Souza~Neto$^5$, Genoveva~Vargas-Solar$^6$, \\ Jos\'e-Luis~Zechinelli-Martini$^4$}
+
+\footnotetext{$^*$.Corresponding author.}
+\footnotetext{$^1$.Universit\'e de Paris - Dauphine -- Paris, France.
+\textsl{kbelhajj@googlemail.com}.
+}
+\footnotetext{$^2$.Universidad Rey Juan Carlos -- M\'{o}stoles, Spain.
+\textsl{valeria.decastro@urjc.es}.
+}
+\footnotetext{$^3$.Universidade Federal do Rio Grande do Norte -- Natal, Brazil.
+\textsl{\{umberto,mam\}@dimap.ufrn.br}.
+}
+\footnotetext{$^4$.Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico.
+\textsl{javiera.espinosa@gmail.com}, \textsl{joseluis.zechinelli@udlap.mx}.
+}
+\footnotetext{$^5$.Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia do Rio Grande do Norte -- Natal, Brazil.
+\textsl{placido.neto@ifrn.edu.br}.
+}
+\footnotetext{$^6$.CNRS, LIG-LAFMIA, Saint Martin d'H\`eres, France.
+\textsl{genoveva.vargas@imag.fr}.
 }
 
-\author{Valeria~de~Castro} 
-\address{Universidad Rey Juan Carlos -- M\'{o}stoles, Spain\\
-\email{valeria.decastro@urjc.es}
-}
 
-\author{Umberto~Souza~da~Costa} 
-\address{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
-\email{umberto@dimap.ufrn.br}
-}
-
-\author{Javier~A.~Espinosa-Oviedo} 
-\address{Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico\\
-\email{javiera.espinosa@gmail.com}
-}
-
-\author{Martin~A.~Musicante} 
-\address{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
-\email{mam@dimap.ufrn.br}
-}
-
-\author{Pl\'acido~A.~Souza~Neto} 
-\address{Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia do Rio Grande do Norte -- Natal, Brazil\\
-\email{placido.neto@ifrn.edu.br}
-}
-
-\author{Genoveva~Vargas-Solar} 
-\address{CNRS, LIG-LAFMIA, Saint Martin d'H\`eres, France\\
-\email{genoveva.vargas@imag.fr}
-}
-
-\author{Jos\'e-Luis~Zechinelli-Martini}
-\address{Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico\\
-\email{joseluis.zechinelli@udlap.mx}
-}
-
-\maketitle
-
-\begin{history}
-\received{(Day Month Year)}
-\revised{(Day Month Year)}
-\accepted{(Day Month Year)}
-%\comby{(xxxxxxxxxx)}
-\end{history}
-
-
-
-
+%\maketitle
 
 
 \begin{abstract}
@@ -99,8 +105,10 @@ This paper presents \pisodm, a method and associated tools that
 The pro\-po\-sed solution has been utilized in the context of an industrial and real case study.
 \end{abstract}
 
-\keywords{MDA \and Non-Functional Requirements \and Service-based software process}
+\keywords{MDA , Non-Functional Requirements, Service-based software process}
 
+\begin{multicols}{2}
+\normalsize
 
 %% main text
 %*********************************************************************************************************
@@ -118,7 +126,7 @@ The pro\-po\-sed solution has been utilized in the context of an industrial and 
 
 In Service-Oriented Computing~\cite{Papazoglou2007}, pre-ex\-isting services are
 combined to build an application business logic.
-The selection of services is usually guided by the \textit{functional} requirements of the application being developed~\cite{2,decastro1,PapazoglouH06}\footnote{Functional properties of a computer system are characterized by the effect produced by the system when given a defined input.}.
+The selection of services is usually guided by the \textit{functional}$^7$\footnote{$^7$.Functional properties of a computer system are characterized by the effect produced by the system when given a defined input.} requirements of the application being developed~\cite{2,decastro1,PapazoglouH06}.
 An important challenge of service-o\-rien\-ted development is  to ensure the alignment between the functional requirements imposed by the business logic and the functions actually being developed.
 
 Functional properties are not the only aspect to be considered in the software development process.
@@ -147,7 +155,7 @@ The literature stresses the need for meth\-od\-ol\-o\-gies and techniques for se
 Existing approaches maintain that the convergence of model-driven soft\-ware development, service orientation,   and  busi\-ness processes improvement are key for developing quality software~\cite{watson}.
 Model Driven Development (MDD)  for software systems is mainly characterized by the use of models as a product~\cite{Selic03}.
 These models are successively refined from abstract specifications into actual computer programs. 
-A recent literature review study concludes that current development methods using model-driven methodologies seldom deal with non-functional requirements~\cite{Ameller201542}\footnote{The study in~\cite{Ameller201542} shows that only 48 of the 129 papers considered in their systematic mapping deal with NFR. Moreover, most of them consider just specific aspects of NFR, while only 5 papers (out of 129) propose a more general approach.}.
+A recent literature review study concludes that current development methods using model-driven methodologies seldom deal with non-functional requirements~\cite{Ameller201542}$^8$\footnote{$^8$.The study in~\cite{Ameller201542} shows that only 48 of the 129 papers considered in their systematic mapping deal with NFR. Moreover, most of them consider just specific aspects of NFR, while only 5 papers (out of 129) propose a more general approach.}.
 
 \bigskip
 Our work introduces $\pi$-\textit{Service Oriented Development Method} (\pisodm) to support non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements, early in the software development process.
@@ -163,7 +171,7 @@ The goals of  \pisodm are to:
 \item \textit{(iii)} Provide a general way of describing non-functional requirements.
 \end{trivlist}
 
-The applicability of our proposal was tested with an industrial case study concerning risk assessment for financial companies as implemented by the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}. In this work we show the application of our method \pisodm to develop a service based application called \FlyingPig that provides risk assessment as a service.
+The applicability of our proposal was tested with an industrial case study concerning risk assessment for financial companies as implemented by the ORCA System$^9$\footnote{$^9$.The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}. In this work we show the application of our method \pisodm to develop a service based application called \FlyingPig that provides risk assessment as a service.
 The models presented here were generated as a result of interacting with software developers at GCP Global and trying to attend to all the non-functional requirements present in the application domain.
 
 \bigskip
@@ -322,7 +330,7 @@ At this stage of the development, the structure and system processing details ar
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
 
 The e$^3$value model of an application identifies the value/information exchange between components of the system.
-It is a business model that represents a business case graphically as a set of value exchanges\footnote{See Figure~\ref{fig:CIM:tpme3v}.} ($\nabla$ $\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes).
+It is a business model that represents a business case graphically as a set of value exchanges$^{10}$\footnote{$^{10}$.See Figure~\ref{fig:CIM:tpme3v}.} ($\nabla$ $\triangle$) and value activities (rounded boxes) performed by business actors (squared boxes).
 The model is well suited to enhance the understanding of the environment in which an application is being developed.
 It defines \textit{dependency paths}, showing the value exchange between providers and end users when they ask for a service.
 A dependency path has a direction and consists of a sequence of linked dependency nodes.
@@ -372,7 +380,7 @@ BPMN~\cite{BPMN}  is a graphical representation that establishes the business pr
 The next example illustrates the use of this meta-model.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicBPMN}
-Figure \ref{fig:CIM:tpmbpmn} shows the BPMN model\footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario.
+Figure \ref{fig:CIM:tpmbpmn} shows the BPMN model$^{11}$\footnote{$^{11}$.Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario.
 It starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}).
 Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
 \end{example}
@@ -489,7 +497,7 @@ As a pre-condition for ``twitter update'' it is necessary that (i) the music for
 \subsubsection{\textit{$\pi$-ServiceComposition} meta-model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
 
 In Figure \ref{fig:e-scomposition-metamodel}, the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model
-provides meta-classes to represent workflows\footnote{Workflows are transformed into implemented service compositions.} that model  business processes.
+provides meta-classes to represent workflows$^{12}$\footnote{$^{12}$.Workflows are transformed into implemented service compositions.} that model  business processes.
 The \textit{$\pi$-Serv\-ice\-Com\-po\-si\-tion} meta-model extends the UML activity  meta-model with the concept of  \textit{A-Policy}
 to group contracts with similar non-functional requirements.
 For instance, security and privacy restrictions may be grouped into a security policy.
@@ -499,7 +507,7 @@ For instance, security and privacy restrictions may be grouped into a security p
 \item A {\sc Business Collaborator} meta-class, to represent the classes of entities that collaborate in  business processes by performing some  required action.
 An instance of this meta-class is graphically represented as a partition in the activity diagram.
 A collaborator can be either internal or external to the system.
-When the collaborator of the business is external to the system, the attribute {\sf IsExternal}\footnote{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} of the collaborator is set to \textbf{true}.
+When the collaborator of the business is external to the system, the attribute {\sf IsExternal}$^{13}$\footnote{$^{13}$.We use the {\sf sans serif} font for referring to classes defined using a meta-model.} of the collaborator is set to \textbf{true}.
 
 \item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented in the model as a class activity instance of the meta-class \textsc{Action}.
 A class action represents some type of transformation or processing.
@@ -684,7 +692,7 @@ A set of $n$ {\sc Use cases} is transformed into an  $n-1$ {\sf Object flow} ele
 Details of these transformations are not included here (due to space restrictions).
 They can be found in~\cite{SouzaNeto:2012}.
 
-\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT1} \\
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT1} 
 The transformation rules have been applied to the model in Figure~\ref{fig:piUseCaseModel}, in order to obtain the $\pi$-Service Process model for our running example (Figure~\ref{fig:CIM:serviceprocess}).
 
 The ``listen music'' use case is transformed into a Service Action. 
@@ -749,7 +757,7 @@ Finally, {\sf Actions} are grouped into  a {\sf Business collaborator}.
 %As the $\pi$-ServiceComposition model refines the $\pi$-ServiceProcess concepts at PIM level, a service previously defined as actions (source model) is refined as composition of those actions (target model) that are necessary to represent a business service, identifying who are the partners involved in the realization ({\sc Business collaborators}). 
 %In addition, $\pi$-SOD-M defines a platform specific model based on web services composition. This model is explicitly indicates those actions which are (or will be, if not yet implemented) supported by web services.
 
-\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT5}\\
+\begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT5}
 Considering the example scenario, the model in Figure~\ref{fig:PiServiceCompositionModel} was obtained by applying the rules above to the model depicted by Figure~\ref{fig:CIM:serviceprocess}.  
 The ``securityLoginPolicy'' consists of a set of {\sf Rules} that were transformed from the {\sf Assertions} in $\pi$-service process model. 
 The information about Facebook and Spotify (both of them {\sf Business
@@ -793,13 +801,13 @@ Figure \ref{fig:piSOD-M} shows the $\pi$-PEWS code resulting from the $\pi$- ser
 We have developed tools for aiding the user to define and transform the models for all the levels, except for the CIM into PIM level, which should be manually performed.
 Our tool is implemented as a series of Eclipse plug-ins: 
 \begin{itemize}
-\item 	We  used the Eclipse Modeling Framework (EMF)\footnote {The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}   to implement the  $\pi$-Service Composition and $\pi$-{\sc Pews}  meta-models. 
+\item 	We  used the Eclipse Modeling Framework (EMF)$^{14}$\footnote{$^{14}$.The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}   to implement the  $\pi$-Service Composition and $\pi$-{\sc Pews}  meta-models. 
 From these meta-models, we  developed plug-ins to support their graphical representation.
 
-\item	 We used  ATL\footnote{http://eclipse.org/atl/. An ATL program is basically a set of rules that define how source model elements are matched and navigated to create and initialize the elements of the target models.}
+\item	 We used  ATL$^{15}$\footnote{$^{15}$.http://eclipse.org/atl/. An ATL program is basically a set of rules that define how source model elements are matched and navigated to create and initialize the elements of the target models.}
 for implementing the  mappings between models.
 
-\item 	We  used Acceleo\footnote{http://www.acceleo.org/pages/home/en} to implement  the code generation plug-in to generate executable code. 
+\item 	We  used Acceleo$^{16}$\footnote{$^{16}$.http://www.acceleo.org/pages/home/en} to implement  the code generation plug-in to generate executable code. 
 It takes a $\pi$-PEWS model and generates the code to be executed by the {\em
 A-Policy} based service composition execution environment.
 \end{itemize}
@@ -809,7 +817,7 @@ A-Policy} based service composition execution environment.
 \label{sec:flyingPig}
 
 
-To validate the applicability of our method we have developed a case study concerning risk assessment for financial companies as implemented by the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
+To validate the applicability of our method we have developed a case study concerning risk assessment for financial companies as implemented by the ORCA System$^{17}$\footnote{$^{17}$.The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
 Risk assessment is implemented by an interactive business process based on the exchange of a series of questionnaires intended to evaluate the risks implied by the client business practice.
 Examples of business practices are: the conditions and protocols used to perform confidential transactions, the physical security to access reserved areas (such as computing server installations).
 The information gathered by the questionnaires is used to evaluate whether there are risky practices within the business processes of the company, as well as to propose amendments to these practices.
@@ -869,7 +877,7 @@ This process  involves other members of the company as well.
 The risk assessment process starts after a request from a company.
 This corresponds to the value model, in which the start stimulus triggers the whole process.
 The request leads to the definition of a group of users that will answer questionnaires to evaluate risk.
-Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecured access to the premises of the company.
+Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated$^{18}$\footnote{$^{18}$.Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecured access to the premises of the company.
 They can be also abstract  such as the protocol used for accessing data on the company's computer server.}.
 
 Once tasks have been completed, they are stored and analyzed to generate a list of non-compliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
@@ -1042,6 +1050,18 @@ The case study presented here is a simplified version of their application.
 \bibliographystyle{plain}
 \bibliography{biblio}
 
+%\begin{thebibliography}{00}
+%
+%\bibitem{1}
+%
+%\bibitem{2}
+%\end{thebibliography}
+
+
+
+\end{multicols}
+%\end{CJK}
 \end{document}
+
 
 
