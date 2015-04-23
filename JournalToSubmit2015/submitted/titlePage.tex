@@ -1,0 +1,159 @@
+\documentclass[12pt,twoside]{article}
+\usepackage{Jcst}
+%Equations,theorems,lemmas,etc. are created using the traditional enviroment
+%
+
+\usepackage{xspace}
+
+\usepackage{amsmath}
+\usepackage[thmmarks,amsmath]{ntheorem}
+
+\newcommand{\openbox}{\leavevmode
+  \hbox to.77778em{%
+  \hfil\vrule
+  \vbox to.675em{\hrule width.6em\vfil\hrule}%
+  \vrule\hfil}}
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\newtheorem{algo}{Algorithm}
+
+\theoremstyle{plain}
+%\theoremheaderfont{\normalfont\itshape}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{\ensuremath{\openbox}} 
+\newtheorem{example}{Example}
+
+
+\newcommand{\pisodm}[0]{$\pi$SOD-M\xspace}
+\def\FlyingPig{\textsl{FlyingPig}\xspace}
+
+\newcounter{numberInTrivlist}
+
+\newenvironment{numtrivlist}{\begin{list}{\rm \arabic{numberInTrivlist})}
+                                         {\usecounter{numberInTrivlist}
+                                          \setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{12pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+
+\newenvironment{itemizedTrivlist}{\begin{list}{\rm ~\hspace{2mm} $\bullet$\ }
+                                         {\setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{12pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+
+\begin{document}
+
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%Set Page Head%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setpageinformation
+%{Head of the first page} {Running head of odd pages}
+{}
+{ }{ }{}{Apr.}{2015}
+{\pisodm: Building Service-Oriented Applications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%===========================================================
+
+%\begin{CJK}{GBK}{song}
+
+\title{\pisodm: Building Service-Oriented Applications in the Presence of Non-Functional Requirements}
+
+\author{Khalid Belhajjame$^1$, Valeria~de~Castro$^2$, Umberto~Souza~da~Costa$^3$, Javier~A.~Espinosa-Oviedo$^4$, Martin~A.~Musicante$^{3,*}$, Pl\'acido~A.~Souza~Neto$^5$, Genoveva~Vargas-Solar$^6$, \\ Jos\'e-Luis~Zechinelli-Martini$^4$}
+
+\footnotetext{$^*$.Corresponding author.}
+\footnotetext{$^1$.Universit\'e de Paris - Dauphine -- Paris, France.
+\textsl{kbelhajj@googlemail.com}.
+}
+\footnotetext{$^2$.Universidad Rey Juan Carlos -- M\'{o}stoles, Spain.
+\textsl{valeria.decastro@urjc.es}.
+}
+\footnotetext{$^3$.Universidade Federal do Rio Grande do Norte -- Natal, Brazil.
+\textsl{\{umberto,mam\}@dimap.ufrn.br}.
+}
+\footnotetext{$^4$.Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico.
+\textsl{javiera.espinosa@gmail.com}, \textsl{joseluis.zechinelli@udlap.mx}.
+}
+\footnotetext{$^5$.Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia do Rio Grande do Norte -- Natal, Brazil.
+\textsl{placido.neto@ifrn.edu.br}.
+}
+\footnotetext{$^6$.CNRS, LIG-LAFMIA, Saint Martin d'H\`eres, France.
+\textsl{genoveva.vargas@imag.fr}.
+}
+
+
+%\maketitle
+
+
+\begin{abstract}
+Specifying non-functional requirements (NFRs) is a complex task, being usually dealt with on the later phases of the software process.
+The late inclusion of NFRs in the development may compromise the quality of the deployed application.
+This paper presents \pisodm, a method and associated tools that
+\textit{(i)}  allows the early specification of non-functional requirements in a principled way: users are abstracted away from low level details;
+\textit{(ii)} embraces the MDA philosophy, generating models (code) whenever possible.
+The pro\-po\-sed solution has been utilized in the context of an industrial and real case study.
+\end{abstract}
+
+\keywords{MDA , Non-Functional Requirements, Service-based software process}
+
+\begin{multicols}{2}
+\normalsize
+
+%% main text
+%*********************************************************************************************************
+\section{Introduction}
+\label{sec:intro}
+
+%Service oriented computing is at the origin of an evolution in the field of software development.
+%Service oriented methods advocates for the construction of software systems formed by the composition of heterogeneous, loosely coupled modules.
+%These modules (or services) communicate in order to achieve a common purpose.
+
+
+%(Moreover, IT systems need to evolve according to the business needs.)
+%Thus, organizations are seeking for mechanisms to bridge the gap between the actually developed systems and their business needs~\cite{bell}.
+
+
+In Service-Oriented Computing~\cite{Papazoglou2007}, pre-ex\-isting services are
+combined to build an application business logic.
+The selection of services is usually guided by the \textit{functional}$^7$\footnote{$^7$.Functional properties of a computer system are characterized by the effect produced by the system when given a defined input.} requirements of the application being developed~\cite{2,decastro1,PapazoglouH06}.
+An important challenge of service-o\-rien\-ted development is  to ensure the alignment between the functional requirements imposed by the business logic and the functions actually being developed.
+
+Functional properties are not the only aspect to be considered in the software development process.
+Non-functional properties, such as data privacy, exception handling, atomicity  and, data persistence, need to be addressed to fit in the application.
+%Adding non-functional properties and respecting services constraints while composing services is a complex task that implies implementing protocols for instance authentication protocols to call a service, and atomicity (exception handling and recovery) for ensuring a true synchronization of the results produced by the service methods calls.
+%Even if service-oriented computing benefits from reuse, this reuse is usually guided only by functional requirements.
+%
+%Furthermore,  often they are  not fully considered in the specification process of existing services' oriented development methods. Rather,
+%They   are either ensured by the underlying execution platform, or they are programmed through ad-hoc protocols once the application has been programmed.
+Ideally, Non-Functional Requirements (NFR) should be considered in every phase of the software development.
+Yet, they are partially or rarely methodologically derived from the specification, being usually added once the code has been im\-ple\-men\-ted.
+In the context of service oriented computing, the late consideration of non-functional requirements in the development process does not fully preserve the compliance and re\-use expectations promoted by the service oriented paradigm.
+
+
+%Yet, non-functional properties of  services, often expressed as requirements and constraints in general purpose methodologies, are not usually considered from the early phases of the (service) software process.
+%Most methods integrate them only after the application has been implemented.
+%This leads to service based applications that are partialy specified and, thereby, partialy compliant with the requirements of the application.
+
+% song title disseminated in the walls of the user's Facebook and Twitter accounts.
+
+
+
+
+
+\end{multicols}
+%\end{CJK}
+\end{document}
+
+
+
