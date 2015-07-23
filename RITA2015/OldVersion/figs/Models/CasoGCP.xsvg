@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:jgoxml="http://www.nwoods.com/jgoxml" xmlns:xlink="http://www.w3.org/1999/xlink" jgosvgversion="2.0">
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_diagram" editordate="January 6 2010" editorjgo="5.02" editorversion="3.48" savingdate="Tue Oct 29 18:18:56 CET 2013">
+<e3value_object E3Name="CasoGCP"/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDocument" defaultlayer="null" docheight="616" docleft="0" doctop="0" docwidth="705" modifiable="true" papercolor="rgbalpha(255,255,255,255)"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLayer" modifiable="true" transparency="1.0" visible="true"/>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195864" objheight="0" objwidth="0" objx="0" objy="0" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_object">
+<e3value_object E3Name="MONEY"/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="0" tooltiptext="MONEY"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4194842" objheight="0" objwidth="0" objx="0" objy="0" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195864" objheight="0" objwidth="0" objx="0" objy="0" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_actor">
+<e3value_object E3Name="Channel">
+<E3Formula stringrep="INVESTMENT=0"/>
+<E3Formula stringrep="EXPENSES=0"/>
+<E3Formula stringrep="INTEREST="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="4" tooltiptext="Channel"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoRectangle"/>
+<rect height="232" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(192,192,192);" width="289" x="412" y="104"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid1" drawablepen="jgoid2" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(192,192,192,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid1"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid2" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195358" objheight="232" objwidth="289" objx="412" objy="104" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Channel" textcolor="black" textflags="82033" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="423" y="119">Channel</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="16" objwidth="47" objx="423" objy="107" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_interface">
+<e3value_object E3Name="vi21">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="21" tooltiptext=""/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="15" arcwidth="15" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="60" rx="7.0" ry="7.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(255,255,255);" width="15" x="405" y="207"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid3" drawablepen="jgoid4" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,255,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid3"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid4" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="60" objwidth="15" objx="405" objy="207" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="4" partid="22" portstyle="2" tolinkspot="4"/>
+<ellipse cx="418" cy="237" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid5" drawablepen="jgoid6" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid5"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid6" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid115" obj_flags="61446" objheight="4" objwidth="4" objx="416" objy="235" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="false"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp20">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="4" partid="23" portstyle="3" tolinkspot="8"/>
+<path d="M 408 218 L 416 222 L 408 226 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid6"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid79" obj_flags="4222982" objheight="8" objwidth="8" objx="408" objy="218" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="false"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp92">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="4" partid="92" portstyle="3" tolinkspot="8"/>
+<path d="M 408 233 L 416 237 L 408 241 Z" style="stroke-width:1;stroke:rgb(64,64,64);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid7" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid7" pencolor="darkGray" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid84" obj_flags="4222982" objheight="8" objwidth="8" objx="408" objy="233" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="true"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp94">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="94" portstyle="3" tolinkspot="4"/>
+<path d="M 416 256 L 408 252 L 416 248 Z" style="stroke-width:1;stroke:rgb(64,64,64);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid7"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid89" obj_flags="4222982" objheight="8" objwidth="8" objx="408" objy="248" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="558" objheight="60" objwidth="15" objx="405" objy="207" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_market_segment">
+<e3value_object E3Name="Company">
+<E3Formula stringrep="COUNT=1"/>
+<E3Formula stringrep="INVESTMENT=0"/>
+<E3Formula stringrep="EXPENSES=0"/>
+<E3Formula stringrep="INTEREST="/>
+<E3Formula stringrep="MS_TYPE="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="118" tooltiptext="Company"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoRectangle"/>
+<rect height="127" style="stroke-width:2;stroke:rgb(64,64,64);fill:rgb(255,255,255);" width="175" x="483" y="177"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid8" drawablepen="jgoid9" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,255,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid8"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid9" pencolor="rgbalpha(64,64,64,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195330" objheight="127" objwidth="175" objx="483" objy="177" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoRectangle"/>
+<rect height="127" style="stroke-width:2;stroke:rgb(64,64,64);fill:rgb(255,255,255);" width="175" x="479" y="173"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid8" drawablepen="jgoid10" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid10" pencolor="rgbalpha(64,64,64,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195330" objheight="127" objwidth="175" objx="479" objy="173" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoRectangle"/>
+<rect height="127" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(192,192,192);" width="175" x="475" y="169"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid11" drawablepen="jgoid12" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(192,192,192,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid11"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid12" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195358" objheight="127" objwidth="175" objx="475" objy="169" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Company" textcolor="black" textflags="82033" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="482" y="186">Company</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="16" objwidth="53" objx="482" objy="174" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_start_stimulus">
+<e3value_object E3Name="ss119">
+<E3Formula stringrep="OCCURRENCES=1"/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="119" tooltiptext="ss119"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoEllipse"/>
+<ellipse cx="533" cy="241" rx="10" ry="10" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(255,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid13" drawablepen="jgoid14" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid13"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid14" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="20" objwidth="20" objx="523" objy="231" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="0" partid="120" portstyle="2" tolinkspot="0"/>
+<ellipse cx="533" cy="241" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid15" drawablepen="jgoid14" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid15"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid114" obj_flags="28678" objheight="4" objwidth="4" objx="531" objy="239" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ss119" textcolor="black" textflags="81952" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="523" y="223">ss119</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="12" objheight="16" objwidth="35" objx="523" objy="211" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="574" objheight="40" objwidth="35" objx="523" objy="211" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="135" objwidth="183" objx="475" objy="169" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="232" objwidth="296" objx="405" objy="104" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_actor">
+<e3value_object E3Name="ORCA">
+<E3Formula stringrep="INVESTMENT=0"/>
+<E3Formula stringrep="EXPENSES=0"/>
+<E3Formula stringrep="INTEREST="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="14" tooltiptext="ORCA"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoRectangle"/>
+<rect height="340" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(192,192,192);" width="200" x="28" y="47"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid16" drawablepen="jgoid17" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(192,192,192,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid16"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid17" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195358" objheight="340" objwidth="200" objx="28" objy="47" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ORCA" textcolor="black" textflags="82033" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="38" y="64">ORCA</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="16" objwidth="34" objx="38" objy="52" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_activity">
+<e3value_object E3Name="Identify amendments">
+<E3Formula stringrep="TOTAL_VARIABLE_EXPENSES="/>
+<E3Formula stringrep="INVESTMENT=0"/>
+<E3Formula stringrep="EXPENSES=0"/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="16" tooltiptext="Identify amendments"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="30" arcwidth="30" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="90" rx="15.0" ry="15.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(192,192,192);" width="146" x="48" y="103"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid18" drawablepen="jgoid19" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(192,192,192,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid18"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid19" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195358" objheight="90" objwidth="146" objx="48" objy="103" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Identify amendments" textcolor="black" textflags="82033" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="61" y="122">Identify amendments</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="16" objwidth="115" objx="61" objy="110" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_interface">
+<e3value_object E3Name="vi39">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="39" tooltiptext=""/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="15" arcwidth="15" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="30" rx="7.0" ry="7.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(255,255,255);" width="15" x="187" y="134"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid20" drawablepen="jgoid21" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,255,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid20"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid21" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="30" objwidth="15" objx="187" objy="134" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="40" portstyle="2" tolinkspot="8"/>
+<ellipse cx="189" cy="149" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid22" drawablepen="jgoid23" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid22"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid23" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid109" obj_flags="28678" objheight="4" objwidth="4" objx="187" objy="147" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="true"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp39">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="4" partid="42" portstyle="3" tolinkspot="8"/>
+<path d="M 190 145 L 198 149 L 190 153 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid23"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid53" obj_flags="4222982" objheight="8" objwidth="8" objx="190" objy="145" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="558" objheight="30" objwidth="15" objx="187" objy="134" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_interface">
+<e3value_object E3Name="vi83">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="83" tooltiptext=""/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="15" arcwidth="15" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="15" rx="7.0" ry="7.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(255,255,255);" width="30" x="109" y="186"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid24" drawablepen="jgoid25" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,255,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid24"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid25" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="15" objwidth="30" objx="109" objy="186" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="2" partid="84" portstyle="2" tolinkspot="2"/>
+<ellipse cx="124" cy="188" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid26" drawablepen="jgoid27" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid26"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid27" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid110" obj_flags="28678" objheight="4" objwidth="4" objx="122" objy="186" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="false"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp82">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="2" partid="85" portstyle="3" tolinkspot="6"/>
+<path d="M 120 197 L 124 189 L 128 197 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid27"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid74" obj_flags="4222982" objheight="8" objwidth="8" objx="120" objy="189" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="558" objheight="15" objwidth="30" objx="109" objy="186" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="98" objwidth="154" objx="48" objy="103" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_activity">
+<e3value_object E3Name="Assess risk situation">
+<E3Formula stringrep="TOTAL_VARIABLE_EXPENSES="/>
+<E3Formula stringrep="INVESTMENT=0"/>
+<E3Formula stringrep="EXPENSES=0"/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="18" tooltiptext="Assess risk situation"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="30" arcwidth="30" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="104" rx="15.0" ry="15.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(192,192,192);" width="142" x="51" y="249"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid28" drawablepen="jgoid29" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(192,192,192,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid28"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid29" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195358" objheight="104" objwidth="142" objx="51" objy="249" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Assess risk situation" textcolor="black" textflags="82033" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="64" y="342">Assess risk situation</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="16" objwidth="115" objx="64" objy="330" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_interface">
+<e3value_object E3Name="vi47">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="47" tooltiptext=""/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="15" arcwidth="15" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="45" rx="7.0" ry="7.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(255,255,255);" width="15" x="186" y="281"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid30" drawablepen="jgoid31" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,255,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid30"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid31" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="45" objwidth="15" objx="186" objy="281" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="48" portstyle="2" tolinkspot="8"/>
+<ellipse cx="188" cy="303" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid32" drawablepen="jgoid33" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid32"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid33" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid94" obj_flags="28678" objheight="4" objwidth="4" objx="186" objy="301" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="false"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp46">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="49" portstyle="3" tolinkspot="4"/>
+<path d="M 197 314 L 189 310 L 197 306 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid33"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid68" obj_flags="4222982" objheight="8" objwidth="8" objx="189" objy="306" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="true"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp47">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="4" partid="50" portstyle="3" tolinkspot="8"/>
+<path d="M 189 291 L 197 295 L 189 299 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid33"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid61" obj_flags="4222982" objheight="8" objwidth="8" objx="189" objy="291" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="558" objheight="45" objwidth="15" objx="186" objy="281" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_interface">
+<e3value_object E3Name="vi65">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="65" tooltiptext=""/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="15" arcwidth="15" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="15" rx="7.0" ry="7.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(255,255,255);" width="30" x="110" y="242"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid34" drawablepen="jgoid35" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,255,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid34"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid35" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="15" objwidth="30" objx="110" objy="242" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="6" partid="66" portstyle="2" tolinkspot="6"/>
+<ellipse cx="125" cy="255" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid36" drawablepen="jgoid37" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid36"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid37" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid105" obj_flags="28678" objheight="4" objwidth="4" objx="123" objy="253" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="true"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp65">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="2" partid="68" portstyle="3" tolinkspot="6"/>
+<path d="M 121 253 L 125 245 L 129 253 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid37"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid73" obj_flags="4222982" objheight="8" objwidth="8" objx="121" objy="245" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="558" objheight="15" objwidth="30" objx="110" objy="242" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_end_stimulus">
+<e3value_object E3Name="es103">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="103" tooltiptext="es103"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoEllipse"/>
+<ellipse cx="89" cy="299" rx="15" ry="15" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid38" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid38" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="30" objwidth="30" objx="74" objy="284" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoEllipse"/>
+<ellipse cx="89" cy="299" rx="10" ry="10" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(255,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid39" drawablepen="jgoid38" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid39"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="20" objwidth="20" objx="79" objy="289" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="0" partid="104" portstyle="2" tolinkspot="0"/>
+<ellipse cx="89" cy="299" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid40" drawablepen="jgoid38" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid40"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid100" obj_flags="28678" objheight="4" objwidth="4" objx="87" objy="297" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="es103" textcolor="black" textflags="81952" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="74" y="276">es103</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="12" objheight="16" objwidth="35" objx="74" objy="264" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="574" objheight="50" objwidth="35" objx="74" objy="264" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_e3value_OR" orientation="4"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_e3value_OR">
+<e3value_object E3Name="or105">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="105" tooltiptext=""/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoRectangle"/>
+<rect height="40" style="stroke:none;fill:none;" width="14" x="141" y="278"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid41" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid41" pencolor="black" penstyle="0" penwidth="0"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195354" objheight="40" objwidth="14" objx="141" objy="278" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="4" partid="106" portstyle="2" tolinkspot="4"/>
+<ellipse cx="153" cy="298" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid42" drawablepen="jgoid43" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid42"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid43" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid95" obj_flags="28678" objheight="4" objwidth="4" objx="151" objy="296" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="107" portstyle="2" tolinkspot="8"/>
+<ellipse cx="143" cy="288" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid42" drawablepen="jgoid43"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid104" obj_flags="28678" objheight="4" objwidth="4" objx="141" objy="286" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="108" portstyle="2" tolinkspot="8"/>
+<ellipse cx="143" cy="308" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid42" drawablepen="jgoid43"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid99" obj_flags="28678" objheight="4" objwidth="4" objx="141" objy="306" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="574" objheight="40" objwidth="14" objx="141" objy="278" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="111" objwidth="150" objx="51" objy="242" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_interface">
+<e3value_object E3Name="vi27">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="27" tooltiptext=""/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="15" arcwidth="15" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="30" rx="7.0" ry="7.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(255,255,255);" width="15" x="221" y="134"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid44" drawablepen="jgoid45" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,255,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid44"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid45" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="30" objwidth="15" objx="221" objy="134" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="28" portstyle="2" tolinkspot="8"/>
+<ellipse cx="223" cy="149" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid46" drawablepen="jgoid47" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid46"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid47" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="61446" objheight="4" objwidth="4" objx="221" objy="147" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="true"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp27">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="4" partid="30" portstyle="3" tolinkspot="8"/>
+<path d="M 224 145 L 232 149 L 224 153 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid47"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid54" obj_flags="4222982" objheight="8" objwidth="8" objx="224" objy="145" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="558" objheight="30" objwidth="15" objx="221" objy="134" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_interface">
+<e3value_object E3Name="vi53">
+<E3Formula stringrep="OCCURRENCES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoNode" partid="53" tooltiptext=""/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass archeight="15" arcwidth="15" class="com.nwoods.jgo.JGoRoundRect"/>
+<rect height="45" rx="7.0" ry="7.0" style="stroke-width:2;stroke:rgb(0,0,0);fill:rgb(255,255,255);" width="15" x="221" y="282"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid48" drawablepen="jgoid49" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,255,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid48"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid49" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195338" objheight="45" objwidth="15" objx="221" objy="282" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.ScenarioPort" fraction="1"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="54" portstyle="2" tolinkspot="8"/>
+<ellipse cx="223" cy="304" rx="2" ry="2" style="stroke-width:1;stroke:rgb(0,0,0);fill:rgb(0,0,0);"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid50" drawablepen="jgoid51" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(0,0,0,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid50"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid51" pencolor="rgbalpha(0,0,0,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="61446" objheight="4" objwidth="4" objx="221" objy="302" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="false"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp52">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="8" partid="55" portstyle="3" tolinkspot="4"/>
+<path d="M 232 315 L 224 311 L 232 307 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid51"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid67" obj_flags="4222982" objheight="8" objwidth="8" objx="224" objy="307" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port" outward="true"/>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_port">
+<e3value_object E3Name="vp53">
+<E3Formula stringrep="NORM_VALUE="/>
+<E3Formula stringrep="NORM_CARD="/>
+<E3Formula stringrep="OCCURRENCES="/>
+<E3Formula stringrep="VALUATION="/>
+<E3Formula stringrep="CARDINALITY="/>
+<E3Formula stringrep="EXPENSES="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPort" endsegmentlength="10" fromlinkspot="4" partid="56" portstyle="3" tolinkspot="8"/>
+<path d="M 224 292 L 232 296 L 224 300 Z" style="stroke-width:1;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablepen="jgoid51"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid62" obj_flags="4222982" objheight="8" objwidth="8" objx="224" objy="292" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="558" objheight="45" objwidth="15" objx="221" objy="282" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="30" objheight="340" objwidth="208" objx="28" objy="47" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<bundles/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<e3value_object E3Name="ve43">
+<E3Formula stringrep="VALUATION="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid52" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid53" linkflags="196611" partid="43" toport="jgoid54"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" embeddedhighlightpen="true" highlightpen="jgoid55" xpoints="198 223 199 224" ypoints="149 149 149 149">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid55" pencolor="white" penstyle="65535" penwidth="6"/>
+</g>
+</jgoxml:JGoClass>
+<path d="M 198 149 C 223 149 199 149 224 149" style="stroke-width:2;stroke:rgb(0,0,255);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid57" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="black" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid56"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid57" pencolor="rgbalpha(0,0,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid59" obj_flags="4199446" objheight="20" objwidth="46" objx="188" objy="139" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.editor.ExchangeLabel" drawAnnotation="true" drawValueExchangeLabel="false" drawValueObject="true" drawableBoxPen="jgoid41" drawableConnectorPen="jgoid58" embeddedConnectorPen="true" labeloffsetx="0" labeloffsety="0" labelsegment="3" labelsegmentdistance="50">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid58" pencolor="rgbalpha(255,255,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid59"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ve43" textcolor="black" textflags="81937" usertextflags="0" wrappingwidth="150"/>
+<g style="stroke-width:2;stroke:rgb(255,255,255);stroke:none;">
+<text x="198" y="153">ve43</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid52" obj_flags="1038" objheight="16" objwidth="26" objx="198" objy="141" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<bundles/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<e3value_object E3Name="ve57">
+<E3Formula stringrep="VALUATION="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid60" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid61" linkflags="196611" partid="57" toport="jgoid62"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="197 222 199 224" ypoints="295 295 296 296"/>
+<path d="M 197 295 C 222 295 199 296 224 296" style="stroke-width:2;stroke:rgb(0,0,255);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid63" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid63" pencolor="rgbalpha(0,0,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid65" obj_flags="4199446" objheight="21" objwidth="47" objx="187" objy="285" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.editor.ExchangeLabel" drawAnnotation="true" drawValueExchangeLabel="false" drawValueObject="true" drawableBoxPen="jgoid41" drawableConnectorPen="jgoid64" embeddedConnectorPen="true" labeloffsetx="148" labeloffsety="-79" labelsegment="1" labelsegmentdistance="0">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid64" pencolor="rgbalpha(255,255,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid65"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ve57" textcolor="black" textflags="81937" usertextflags="0" wrappingwidth="150"/>
+<g style="stroke-width:2;stroke:rgb(255,255,255);stroke:none;">
+<text x="357" y="220">ve57</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid60" obj_flags="1038" objheight="16" objwidth="26" objx="357" objy="208" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<bundles/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<e3value_object E3Name="ve58">
+<E3Formula stringrep="VALUATION="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid66" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid67" linkflags="196611" partid="58" toport="jgoid68"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="224 199 222 197" ypoints="311 311 310 310"/>
+<path d="M 224 311 C 199 311 222 310 197 310" style="stroke-width:2;stroke:rgb(0,0,255);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid69" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid69" pencolor="rgbalpha(0,0,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid71" obj_flags="4199446" objheight="21" objwidth="47" objx="187" objy="300" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.editor.ExchangeLabel" drawAnnotation="true" drawValueExchangeLabel="false" drawValueObject="true" drawableBoxPen="jgoid41" drawableConnectorPen="jgoid70" embeddedConnectorPen="true" labeloffsetx="0" labeloffsety="0" labelsegment="3" labelsegmentdistance="50">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid70" pencolor="rgbalpha(255,255,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid71"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ve58" textcolor="black" textflags="81937" usertextflags="0" wrappingwidth="150"/>
+<g style="stroke-width:2;stroke:rgb(255,255,255);stroke:none;">
+<text x="197" y="315">ve58</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid66" obj_flags="1038" objheight="16" objwidth="26" objx="197" objy="303" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<bundles/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<e3value_object E3Name="Risk situation">
+<E3Formula stringrep="CARDINALITY=1"/>
+<E3Formula stringrep="VALUATION="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid72" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid73" linkflags="196611" partid="87" toport="jgoid74"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="125 125 124 124" ypoints="245 220 222 197"/>
+<path d="M 125 245 C 125 220 124 222 124 197" style="stroke-width:2;stroke:rgb(0,0,255);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid75" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid75" pencolor="rgbalpha(0,0,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid77" obj_flags="4199446" objheight="68" objwidth="21" objx="114" objy="187" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.editor.ExchangeLabel" drawAnnotation="true" drawValueExchangeLabel="true" drawValueObject="true" drawableBoxPen="jgoid41" drawableConnectorPen="jgoid76" embeddedConnectorPen="true" labeloffsetx="-47" labeloffsety="-5" labelsegment="1" labelsegmentdistance="100">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid76" pencolor="rgbalpha(255,255,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid77"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Risk situation" textcolor="black" textflags="81969" usertextflags="0" wrappingwidth="150"/>
+<g style="stroke-width:2;stroke:rgb(255,255,255);stroke:none;">
+<text x="40" y="221">Risk situation</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid72" obj_flags="1038" objheight="16" objwidth="75" objx="40" objy="209" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<bundles/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<e3value_object E3Name="Amendments">
+<E3Formula stringrep="CARDINALITY=1"/>
+<E3Formula stringrep="VALUATION="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid78" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid54" linkflags="196611" partid="91" toport="jgoid79"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="232 257 382 407" ypoints="149 149 221 221"/>
+<path d="M 232 149 C 257 149 382 221 407 221" style="stroke-width:2;stroke:rgb(0,0,255);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid80" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid80" pencolor="rgbalpha(0,0,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid82" obj_flags="4199446" objheight="92" objwidth="195" objx="222" objy="139" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.editor.ExchangeLabel" drawAnnotation="true" drawValueExchangeLabel="true" drawValueObject="true" drawableBoxPen="jgoid41" drawableConnectorPen="jgoid81" embeddedConnectorPen="true" labeloffsetx="22" labeloffsety="-37" labelsegment="1" labelsegmentdistance="25">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid81" pencolor="rgbalpha(192,192,192,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid82"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Amendments" textcolor="black" textflags="81969" usertextflags="0" wrappingwidth="150"/>
+<g style="stroke-width:2;stroke:rgb(192,192,192);stroke:none;">
+<text x="273" y="134">Amendments</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid78" obj_flags="1038" objheight="16" objwidth="74" objx="273" objy="122" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<bundles/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<e3value_object E3Name="Evaluation report">
+<E3Formula stringrep="CARDINALITY=1"/>
+<E3Formula stringrep="VALUATION="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid83" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid62" linkflags="196611" partid="93" toport="jgoid84"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="232 257 382 407" ypoints="296 296 236 236"/>
+<path d="M 232 296 C 257 296 382 236 407 236" style="stroke-width:2;stroke:rgb(0,0,255);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid85" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid85" pencolor="rgbalpha(0,0,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid87" obj_flags="4199446" objheight="80" objwidth="195" objx="222" objy="226" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.editor.ExchangeLabel" drawAnnotation="true" drawValueExchangeLabel="true" drawValueObject="true" drawableBoxPen="jgoid41" drawableConnectorPen="jgoid86" embeddedConnectorPen="true" labeloffsetx="-20" labeloffsety="-42" labelsegment="1" labelsegmentdistance="48">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid86" pencolor="rgbalpha(192,192,192,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid87"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Evaluation report" textcolor="black" textflags="81969" usertextflags="0" wrappingwidth="150"/>
+<g style="stroke-width:2;stroke:rgb(192,192,192);stroke:none;">
+<text x="251" y="230">Evaluation report</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid83" obj_flags="1038" objheight="16" objwidth="92" objx="251" objy="218" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<bundles/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_value_exchange">
+<e3value_object E3Name="Company questionnaire&#10;and evidence &#10;">
+<E3Formula stringrep="CARDINALITY=1"/>
+<E3Formula stringrep="VALUATION="/>
+</e3value_object>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid88" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid89" linkflags="196611" partid="95" toport="jgoid67"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="407 382 257 232" ypoints="251 251 311 311"/>
+<path d="M 407 251 C 382 251 257 311 232 311" style="stroke-width:2;stroke:rgb(0,0,255);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid90" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid90" pencolor="rgbalpha(0,0,255,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid92" obj_flags="4199446" objheight="80" objwidth="195" objx="222" objy="241" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.editor.ExchangeLabel" drawAnnotation="true" drawValueExchangeLabel="true" drawValueObject="true" drawableBoxPen="jgoid41" drawableConnectorPen="jgoid91" embeddedConnectorPen="true" labeloffsetx="31" labeloffsety="65" labelsegment="1" labelsegmentdistance="73">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid91" pencolor="rgbalpha(192,192,192,255)" penstyle="65535" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid92"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Company questionnaire&#10;and evidence &#10;" textcolor="black" textflags="81969" usertextflags="0" wrappingwidth="150"/>
+<g style="stroke-width:2;stroke:rgb(192,192,192);stroke:none;">
+<text x="256" y="347">Company questionnaire</text>
+<text x="256" y="365">and evidence </text>
+<text x="256" y="383"/>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid88" obj_flags="1038" objheight="48" objwidth="132" objx="256" objy="335" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_connection_element">
+<e3value_object E3Name="ce109"/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid93" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid94" linkflags="196611" partid="109" toport="jgoid95"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="186 161 180 155" ypoints="303 303 298 298"/>
+<path d="M 186 303 C 161 303 180 298 155 298" style="stroke-width:2;stroke-dasharray:6,2;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid96" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid96" pencolor="rgbalpha(0,0,0,255)" penstyle="1" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid97" obj_flags="4199446" objheight="25" objwidth="51" objx="145" objy="288" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid97"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ce109" textcolor="black" textflags="81920" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="152" y="304">ce109</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid93" obj_flags="1028" objheight="16" objwidth="34" objx="152" objy="292" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_connection_element">
+<e3value_object E3Name="ce110"/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid98" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid99" linkflags="196611" partid="110" toport="jgoid100"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="141 116 104 89" ypoints="308 308 299 299"/>
+<path d="M 141 308 C 116 308 104 299 89 299" style="stroke-width:2;stroke-dasharray:6,2;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid101" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid101" pencolor="rgbalpha(0,0,0,255)" penstyle="1" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid102" obj_flags="4199446" objheight="29" objwidth="72" objx="79" objy="289" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid102"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ce110" textcolor="black" textflags="81920" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="94" y="307">ce110</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid98" obj_flags="1028" objheight="16" objwidth="34" objx="94" objy="295" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_connection_element">
+<e3value_object E3Name="ce111"/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid103" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid104" linkflags="196611" partid="111" toport="jgoid105"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="141 116 125 125" ypoints="288 288 282 257"/>
+<path d="M 141 288 C 116 288 125 282 125 257" style="stroke-width:2;stroke-dasharray:6,2;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid106" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid106" pencolor="rgbalpha(0,0,0,255)" penstyle="1" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid107" obj_flags="4199446" objheight="51" objwidth="39" objx="112" objy="247" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid107"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ce111" textcolor="black" textflags="81920" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="106" y="285">ce111</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid103" obj_flags="1028" objheight="16" objwidth="34" objx="106" objy="273" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_connection_element">
+<e3value_object E3Name="ce114"/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid108" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid109" linkflags="196611" partid="114" toport="jgoid110"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="187 162 124 124" ypoints="149 149 161 186"/>
+<path d="M 187 149 C 162 149 124 161 124 186" style="stroke-width:2;stroke-dasharray:6,2;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid111" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid111" pencolor="rgbalpha(0,0,0,255)" penstyle="1" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid112" obj_flags="4199446" objheight="57" objwidth="83" objx="114" objy="139" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid112"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ce114" textcolor="black" textflags="81920" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="128" y="162">ce114</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid108" obj_flags="1028" objheight="16" objwidth="34" objx="128" objy="150" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.model.E3tor_connection_element">
+<e3value_object E3Name="ce121"/>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLabeledLink" fromlabel="null" midlabel="jgoid113" tolabel="null"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLink" curviness="10" fromport="jgoid114" linkflags="196611" partid="121" toport="jgoid115"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoStroke" highlightpen="jgoid55" xpoints="533 518 445 420" ypoints="241 241 237 237"/>
+<path d="M 533 241 C 518 241 445 237 420 237" style="stroke-width:2;stroke-dasharray:6,2;stroke:rgb(0,0,0);fill:none;"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid56" drawablepen="jgoid116" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid116" pencolor="rgbalpha(0,0,0,255)" penstyle="1" penwidth="2"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid117" obj_flags="4199446" objheight="24" objwidth="133" objx="410" objy="227" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoLinkLabel" labeledlink="jgoid117"/>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="ce121" textcolor="black" textflags="81920" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="462" y="243">ce121</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid113" obj_flags="1028" objheight="16" objwidth="34" objx="462" objy="231" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass class="nl.vu.cs.gordijn.e3value.editor.Comment" label="jgoid119" partid="122" rectobj="jgoid118"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoArea"/>
+<g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGo3DNoteRect" flapsize="8" shadow="4"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoRectangle"/>
+<rect height="28" style="stroke-width:1;stroke:rgb(192,192,192);fill:rgb(255,255,204);" width="128" x="518" y="259"/>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoDrawable" drawablebrush="jgoid120" drawablepen="jgoid121" embeddedpenbrush="true">
+<g>
+<jgoxml:JGoClass brushcolor="rgbalpha(255,255,204,255)" brushstyle="65535" class="com.nwoods.jgo.JGoBrush" id="jgoid120"/>
+</g>
+<g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoPen" id="jgoid121" pencolor="rgbalpha(192,192,192,255)" penstyle="65535" penwidth="1"/>
+</g>
+</jgoxml:JGoClass>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid118" obj_flags="4195354" objheight="28" objwidth="128" objx="518" objy="259" user_flags="0"/>
+</g>
+<g>
+<jgoxml:JGoClass alignment="1" backcolor="white" class="com.nwoods.jgo.JGoText" facename="SansSerif" fontsize="12" text="Need of assessment" textcolor="black" textflags="82017" usertextflags="0" wrappingwidth="150"/>
+<g font-family="SansSerif" font-size="12">
+<text x="522" y="273">Need of assessment</text>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" id="jgoid119" obj_flags="1026" objheight="16" objwidth="116" objx="522" objy="261" user_flags="0"/>
+</g>
+</g>
+<jgoxml:JGoClass class="com.nwoods.jgo.JGoObject" obj_flags="4195854" objheight="28" objwidth="128" objx="518" objy="259" user_flags="0"/>
+</g>
+</g>
+</svg>

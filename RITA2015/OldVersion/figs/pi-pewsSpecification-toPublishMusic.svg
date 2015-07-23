@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2"
+   width="700"
+   height="720"
+   id="svg3164">
+  <defs
+     id="defs3166">
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="DotL"
+       style="overflow:visible">
+      <path
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         transform="matrix(0.8,0,0,0.8,5.92,0.8)"
+         id="path4305"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none;marker-end:none" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata3169">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-332.36218)"
+     id="layer1">
+    <flowRoot
+       transform="translate(-20.692884,206.04008)"
+       id="flowRoot3172"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><flowRegion
+         id="flowRegion3174"><rect
+           width="774.15729"
+           height="733.98877"
+           x="32.86517"
+           y="125.37453"
+           id="rect3176" /></flowRegion><flowPara
+         id="flowPara3178"
+         style="font-size:16px">--- pi-pews specification toPublishMusic</flowPara><flowPara
+         id="flowPara3194"
+         style="font-size:16px" /><flowPara
+         id="flowPara3180"
+         style="font-size:16px">ns bank = &quot;http:\\http://aws.amazon.com/fps/&quot; </flowPara><flowPara
+         id="flowPara3182"
+         style="font-size:16px">ns spotify = &quot;http://ws.spotify.com/&quot; </flowPara><flowPara
+         id="flowPara3184"
+         style="font-size:16px">ns twitter = &quot;https://dev.twitter.com/docs/api/&quot; </flowPara><flowPara
+         id="flowPara3186"
+         style="font-size:16px">ns facebook = &quot;https://api.facebook.com/method/&quot;</flowPara><flowPara
+         id="flowPara3196"
+         style="font-size:16px" /><flowPara
+         id="flowPara3198"
+         style="font-size:16px">alias searchMusic = portType/search/1/track in spotify </flowPara><flowPara
+         id="flowPara3200"
+         style="font-size:16px">alias selectMusic = portType/lookup/1/trackdetail in spotify </flowPara><flowPara
+         id="flowPara3202"
+         style="font-size:16px">alias downloadMusic = portType/lookup/1/downloadtrack in spotify </flowPara><flowPara
+         id="flowPara3204"
+         style="font-size:16px">alias listenMusic = portType/lookup/1/executetrack in spotify </flowPara><flowPara
+         id="flowPara3206"
+         style="font-size:16px">alias pay = portType/proceedPayment in bank </flowPara><flowPara
+         id="flowPara3208"
+         style="font-size:16px">alias sendConfirmation = portType/confirmation in bank </flowPara><flowPara
+         id="flowPara3210"
+         style="font-size:16px">alias publishTwitter = portType/oauth/authenticate in twitter </flowPara><flowPara
+         id="flowPara3212"
+         style="font-size:16px">alias publishFacebook = portType/lookup/1/downloadtrack in facebook</flowPara><flowPara
+         id="flowPara3214"
+         style="font-size:16px" /><flowPara
+         id="flowPara3216"
+         style="font-size:16px">def buyToken = ? def publishToken = ? </flowPara><flowPara
+         id="flowPara3218"
+         style="font-size:16px" /><flowPara
+         id="flowPara3220"
+         style="font-size:16px">service buyMusic = pay . sendConfirmation</flowPara><flowPara
+         id="flowPara3222"
+         style="font-size:16px" /><flowPara
+         id="flowPara3224"
+         style="font-size:16px">searchMusic . selectMusic . </flowPara><flowPara
+         id="flowPara3226"
+         style="font-size:16px">    ( [buyToken=1] (buyMusic . downloadMusic . listenMusic) +</flowPara><flowPara
+         id="flowPara3238"
+         style="font-size:16px">      [buyToken=0] listenMusic ) . </flowPara><flowPara
+         id="flowPara3230"
+         style="font-size:16px">    ( [publishToken='twitter']publishTwitter + </flowPara><flowPara
+         id="flowPara3232"
+         style="font-size:16px">      [publishToken='facebook']publishFacebook )</flowPara><flowPara
+         id="flowPara3242"
+         style="font-size:16px" /><flowPara
+         id="flowPara3244"
+         style="font-size:16px">def policy transactionPolicy{ </flowPara><flowPara
+         id="flowPara3246"
+         style="font-size:16px">     isAppliedTo: buyMusic; </flowPara><flowPara
+         id="flowPara3248"
+         style="font-size:16px">     requires: userName == ?? &amp;&amp; passW = ?? &amp;&amp; </flowPara><flowPara
+         id="flowPara3264"
+         style="font-size:16px">     valuePayment &lt; userBalance;</flowPara><flowPara
+         id="flowPara3254"
+         style="font-size:16px">         (onFailureDo: call(buyMusic)); </flowPara><flowPara
+         id="flowPara3268"
+         style="font-size:16px">     ensures : notification == 'payment ok' &amp;&amp;</flowPara><flowPara
+         id="flowPara3272"
+         style="font-size:16px">                     sendNotification('download authorized') &amp;&amp;</flowPara><flowPara
+         id="flowPara3276"
+         style="font-size:16px">                      paymentStatus == true; </flowPara><flowPara
+         id="flowPara3284"
+         style="font-size:16px">     timeConstraint : meet(pay,sendConfirmation);</flowPara><flowPara
+         id="flowPara3288"
+         style="font-size:16px">}</flowPara></flowRoot>    <text
+       x="333.5206"
+       y="25.561798"
+       transform="translate(0,402.36218)"
+       id="text3188"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><tspan
+         x="333.5206"
+         y="25.561798"
+         id="tspan3190"></tspan><tspan
+         x="333.5206"
+         y="48.061798"
+         id="tspan3192" /></text>
+    <path
+       d="m 244.66292,537.41573 c 34.43507,-11.56214 65.28886,-19.17969 92.57209,-23.9887 104.84255,-18.47984 156.95975,4.51304 156.95975,4.51304"
+       transform="translate(0,332.36218)"
+       id="path3290"
+       style="fill:none;stroke:#656565;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)" />
+    <flowRoot
+       transform="translate(-12.172285,332.36218)"
+       id="flowRoot4684"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><flowRegion
+         id="flowRegion4686"><rect
+           width="210.58052"
+           height="64.513107"
+           x="514.88763"
+           y="488.72659"
+           id="rect4688" /></flowRegion><flowPara
+         id="flowPara4690"
+         style="fill:#4d4d4d">policy</flowPara><flowPara
+         id="flowPara4692"
+         style="fill:#4d4d4d">definition</flowPara></flowRoot>    <path
+       d="m 327.43446,739.53446 c 34.43507,-11.56214 65.28886,-19.17969 92.57209,-23.9887 104.84255,-18.47984 156.95975,4.51304 156.95975,4.51304"
+       id="path4694"
+       style="fill:none;stroke:#656565;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)" />
+    <flowRoot
+       transform="translate(66.947565,216.72547)"
+       id="flowRoot4696"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><flowRegion
+         id="flowRegion4698"><rect
+           width="210.58052"
+           height="64.513107"
+           x="514.88763"
+           y="488.72659"
+           id="rect4700" /></flowRegion><flowPara
+         id="flowPara4704"
+         style="fill:#4d4d4d">path</flowPara></flowRoot>    <path
+       d="m 293.35206,661.63184 c 34.43507,-11.56214 74.60758,-12.7474 102.30992,-13.03364 107.3241,-1.10895 147.70185,-3.08251 147.22192,-6.44202"
+       id="path4708"
+       style="fill:none;stroke:#656565;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)" />
+    <flowRoot
+       transform="translate(38.95131,137.60562)"
+       id="flowRoot4710"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><flowRegion
+         id="flowRegion4712"><rect
+           width="210.58052"
+           height="64.513107"
+           x="514.88763"
+           y="488.72659"
+           id="rect4714" /></flowRegion><flowPara
+         id="flowPara4716"
+         style="fill:#4d4d4d">variable</flowPara></flowRoot>    <path
+       d="m 332.30337,694.49701 c 34.43507,-11.56214 74.60758,-12.7474 102.30992,-13.03364 107.3241,-1.10895 147.70185,-3.08251 147.22192,-6.44202"
+       id="path4718"
+       style="fill:none;stroke:#656565;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)" />
+    <flowRoot
+       transform="translate(77.902621,163.16742)"
+       id="flowRoot4720"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><flowRegion
+         id="flowRegion4722"><rect
+           width="210.58052"
+           height="64.513107"
+           x="514.88763"
+           y="488.72659"
+           id="rect4724" /></flowRegion><flowPara
+         id="flowPara4732"
+         style="fill:#4d4d4d">composite</flowPara><flowPara
+         id="flowPara4736"
+         style="fill:#4d4d4d">operation</flowPara></flowRoot>    <path
+       d="m 451.59176,483.91648 c 34.43507,-11.56214 11.73081,-5.79018 39.01404,-10.59919 104.84255,-18.47984 104.61892,13.03365 104.61892,13.03365"
+       id="path4738"
+       style="fill:none;stroke:#656565;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)" />
+    <path
+       d="m 463.76404,565.47079 c 75.07274,1.98375 59.20538,3.94853 86.48595,-0.86137 104.84166,-18.48486 62.01592,-32.00379 62.01592,-32.00379"
+       id="path4740"
+       style="fill:none;stroke:#656565;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)" />
+    <flowRoot
+       transform="translate(51.123594,-10.89625)"
+       id="flowRoot4742"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><flowRegion
+         id="flowRegion4744"><rect
+           width="210.58052"
+           height="64.513107"
+           x="514.88763"
+           y="488.72659"
+           id="rect4746" /></flowRegion><flowPara
+         id="flowPara4748"
+         style="fill:#4d4d4d" /><flowPara
+         id="flowPara4750"
+         style="fill:#4d4d4d">operations</flowPara></flowRoot>    <path
+       d="m 329.86892,401.14495 c 34.43507,-11.56214 39.72706,-8.22463 67.01029,-13.03364 104.84255,-18.47984 114.35675,15.4681 114.35675,15.4681"
+       id="path4752"
+       style="fill:none;stroke:#656565;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)" />
+    <flowRoot
+       transform="translate(-65.730339,-100.97116)"
+       id="flowRoot4754"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><flowRegion
+         id="flowRegion4756"><rect
+           width="210.58052"
+           height="64.513107"
+           x="514.88763"
+           y="488.72659"
+           id="rect4758" /></flowRegion><flowPara
+         id="flowPara4760"
+         style="fill:#4d4d4d" /><flowPara
+         id="flowPara4762"
+         style="fill:#4d4d4d">namespace</flowPara></flowRoot>    <path
+       d="m 305.52434,343.93522 c 34.43507,-11.56214 79.4765,10.37994 107.17884,10.0937 107.3241,-1.10895 62.49586,-4.29975 79.05713,-1.57311"
+       id="path4764"
+       style="fill:none;stroke:#656565;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DotL)" />
+    <flowRoot
+       transform="translate(-15.823972,-175.2221)"
+       id="flowRoot4766"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"><flowRegion
+         id="flowRegion4768"><rect
+           width="210.58051"
+           height="73.033691"
+           x="514.88763"
+           y="488.72659"
+           id="rect4770" /></flowRegion><flowPara
+         id="flowPara4772"
+         style="fill:#4d4d4d" /><flowPara
+         id="flowPara4774"
+         style="fill:#4d4d4d">pi-pews</flowPara><flowPara
+         id="flowPara4776"
+         style="fill:#4d4d4d">specificaion</flowPara><flowPara
+         id="flowPara4778"
+         style="fill:#4d4d4d" /></flowRoot>  </g>
+</svg>

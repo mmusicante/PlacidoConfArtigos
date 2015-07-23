@@ -1,0 +1,135 @@
+\documentclass{ws-ijseke}
+\usepackage{xspace}
+
+
+
+\newcommand{\pisodm}[0]{$\pi$SOD-M\xspace}
+\def\FlyingPig{\textsl{FlyingPig}\xspace}
+
+\newcounter{numberInTrivlist}
+
+\newenvironment{numtrivlist}{\begin{list}{\rm \arabic{numberInTrivlist})}
+                                         {\usecounter{numberInTrivlist}
+                                          \setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{12pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+
+\newenvironment{itemizedTrivlist}{\begin{list}{\rm ~\hspace{2mm} $\bullet$\ }
+                                         {\setlength{\leftmargin}{0pt}
+                                          \setlength{\rightmargin}{0pt}
+                                          \setlength{\itemindent}{12pt}
+                                          \setlength{\listparindent}{0pt}}}
+                            {\end{list}}
+
+\begin{document}
+
+\markboth{K.Belhajjame \textit{et al.}}
+{\pisodm: Building Service-Oriented Applications in the Presence of Non-Functional Requirements}
+
+%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
+%
+\catchline{}{}{}{}{}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\pisodm: Building Service-Oriented Applications in the Presence of Non-Functional Requirements}
+
+\author{Khalid Belhajjame}
+\address{Universit\'e de Paris - Dauphine -- Paris, France\\
+\email{kbelhajj@googlemail.com}
+}
+
+\author{Valeria~de~Castro} 
+\address{Universidad Rey Juan Carlos -- M\'{o}stoles, Spain\\
+\email{valeria.decastro@urjc.es}
+}
+
+\author{Umberto~Souza~da~Costa} 
+\address{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
+\email{umberto@dimap.ufrn.br}
+}
+
+\author{Javier~A.~Espinosa-Oviedo} 
+\address{Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico\\
+\email{javiera.espinosa@gmail.com}
+}
+
+\author{Martin~A.~Musicante} 
+\address{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
+\email{mam@dimap.ufrn.br}
+}
+
+\author{Pl\'acido~A.~Souza~Neto} 
+\address{Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia do Rio Grande do Norte -- Natal, Brazil\\
+\email{placido.neto@ifrn.edu.br}
+}
+
+\author{Genoveva~Vargas-Solar} 
+\address{CNRS, LIG-LAFMIA, Saint Martin d'H\`eres, France\\
+\email{genoveva.vargas@imag.fr}
+}
+
+\author{Jos\'e-Luis~Zechinelli-Martini}
+\address{Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico\\
+\email{joseluis.zechinelli@udlap.mx}
+}
+
+\maketitle
+
+\begin{history}
+\received{(Day Month Year)}
+\revised{(Day Month Year)}
+\accepted{(Day Month Year)}
+%\comby{(xxxxxxxxxx)}
+\end{history}
+
+
+
+
+
+
+\begin{abstract}
+Specifying non-functional requirements (NFRs) is a complex task, being usually dealt with on the later phases of the software process.
+The late inclusion of NFRs in the development may compromise the quality of the deployed application.
+This paper presents \pisodm, a method and associated tools that
+\textit{(i)}  allows the early specification of non-functional requirements in a principled way: users are abstracted away from low level details;
+\textit{(ii)} embraces the MDA philosophy, generating models (code) whenever possible.
+The pro\-po\-sed solution has been utilized in the context of an industrial and real case study.
+\end{abstract}
+
+\keywords{MDA \and Non-Functional Requirements \and Service-based software process}
+
+
+%% main text
+%*********************************************************************************************************
+\section{Introduction}
+\label{sec:intro}
+\input{intro}
+
+\section{Related Work}
+\label{sec:relworks}
+\input{relworks}
+
+\section{Modeling reliable service compositions with \pisodm}\label{sec:motivation}
+\input{modelingWithPISODM}
+
+\section{Transformation rules}\label{sec:mmrules}
+\input{transformationRules}
+
+\section{Applying \pisodm: The \FlyingPig\ case study}
+\label{sec:flyingPig}
+
+\input{modelingFlyingPig}
+
+\section{Conclusions and future work}\label{sec:conclusions}
+\input{conclusions}
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+\end{document}
+
+
