@@ -1,4 +1,0 @@
-Specifying non-functional requirements (NFRs) is a complex task, being usually dealt with on the later phases of the software process.
-The late inclusion of NFRs in the development may compromise the quality of the deployed application.
-This paper presents piSOD-M, a method and associated tools that (i)  allows the early specification of non-functional requirements in a principled way: users are abstracted away from low level details; (ii) embraces the MDA philosophy, generating models (code) whenever possible.
-The proposed solution has been utilized in the context of an industrial and real case study.
