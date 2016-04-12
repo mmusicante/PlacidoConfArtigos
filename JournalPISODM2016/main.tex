@@ -23,12 +23,16 @@
 \newtheorem{question}{Question}[section]
 \newtheorem{remark}{Remark}
 \newtheorem{scheme}{Scheme}
-\newtheorem{example}{Example}
 }
 
 \theoremstyle{THhit}{
 \newtheorem{case}{Case}[section]
 }
+
+\theoremstyle{THhsl}{
+\newtheorem{example}{Example}
+}
+
 
 %%%% Our commands %%%%
 
@@ -40,6 +44,11 @@
 \newcommand{\pisodm}[0]{$\pi$SOD-M\xspace}
 \def\FlyingPig{\textsl{FlyingPig}\xspace}
 
+\newcommand{\martin}[1]{\marginpar{\textcolor{magenta}{\textbf{Martin: }#1}}}
+\newcommand{\imartin}[1]{\textcolor{blue}{\textbf{Martin: }#1}}
+
+\newcommand{\umberto}[1]{\marginpar{\textcolor{orange}{\textbf{Umberto: }#1}}}
+\newcommand{\iumberto}[1]{\textcolor{orange}{\textbf{Umberto: }#1}}
 
 \makeatletter
 \def\theequation{\arabic{equation}}
@@ -157,18 +166,38 @@ Our solution has been used in the context of an industrial and real case study.
 
 \begin{bio}
 Khalid Belhajjame\dots Bio here.
+\vs{9}
 
 \noindent Valeria~de~Castro\dots Bio here.
+\vs{9}
 
-\noindent Umberto~Souza~da~Costa\dots Bio here.
+\noindent Umberto Costa received the BS degree in Computer Science from Federal University of Rio Grande do Norte in 1998. 
+He obtained the MS degree in Systems and Computation from Federal University of Rio Grande do Norte in 2000. 
+He received the PhD degree in Computer Science from University Federal de Minas Gerais in 2005. He is currently an associate professor in the Department of 
+Informatics and Applied Mathematics (DIMAp) at Federal University of Rio Grande do Norte. His academic interests include Programming Languages, 
+Service-Oriented Computing and Cloud Computing.
+\vs{9}
 
 \noindent Javier~A.~Espinosa-Oviedo\dots Bio here.
+\vs{9}
 
-\noindent Martin~A.~Musicante\dots Bio here.
+\noindent Martin A. Musicante received his B.Sc at ESLAI, Argentina, in 1988 and
+his M.Sc and PhD in Computer Science at Universidade Federal de
+Pernambuco, Brazil, in 1990 and 1996, respectively. He is an associate
+professor at Universidade Federal do Rio Grande do Norte-UFRN (Natal,
+Brazil). He is part of the graduate program in Computer Science at
+UFRN and holder of a research grant from CNPq (level 2). Martin was
+associate researcher at LI - Universit\'e Fran\c{c}ois Rabelais Tours
+(2002-2011) and at LIFO - Universit\'e d'Orl\'eans, France, since 2008.
+Martin A. Musicante's main current research topics are big data
+processing languages, Web Services and cloud computing.
+\vs{9}
 
 \noindent Pl\'acido~A.~Souza~Neto\dots Bio here.
+\vs{9}
 
 \noindent Genoveva~Vargas-Solar\dots Bio here.
+\vs{9}
 
 \noindent Jos\'e-Luis~Zechinelli-Martini\dots Bio here.
 \end{bio}
@@ -289,12 +318,12 @@ Our work introduces $\pi$-\textit{Service Oriented Development Method} (\pisodm)
 Our proposal follows the MDD guidelines and proposes models, practices and techniques for the development of service-based applications.  
 \pisodm proposes  the use of \textit{models} to specify a software system at different levels of abstraction.
 Models are organized according to the guidelines of the Model Driven Archi\-tec\-ture (MDA)~\cite{miller}.
-The goals of  \pisodm are to:
+The goals of  \pisodm are:
 
 \begin{compactenum}[i]
-\item Improve the development process by providing an abstract view of the application and aiding to ensure the conformance to its specification.
-\item Reduce the programming effort through the semi-automatic generation of  models for the application, in order to produce concrete implementations from higher-level models.
-\item Provide a general way of describing non-functional requirements.
+\item To improve the development process by providing an abstract view of the application and aiding to ensure the conformance to its specification.
+\item To reduce the programming effort through the semi-automatic generation of  models for the application, in order to produce concrete implementations from higher-level models.
+\item To provide a general way of describing non-functional requirements.
 \end{compactenum}
 
 The applicability of our proposal was tested with an industrial case study concerning risk assessment for financial companies as implemented by the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}. In this work we show the application of our method \pisodm to develop a service based application called \FlyingPig that provides risk assessment as a service.
@@ -333,7 +362,7 @@ The development process is based on MDA and the authors also present a WSDL exte
 
 
 Schmeling et al.~\cite{SchmelingCM11} present an approach and a toolkit for specifying and implementing web service compositions with support to several NFRs.
-Their approach defines abstraction levels, where the terms \textit{Non-Functional Concerns}, \textit{Non-Functional Actions} and \textit{Non-Functional Attributes} are used at each level (in decreasing order of abstraction).
+Their approach defines abstraction levels, where the terms \textit{Non-Functional Concerns}, \textit{Non-Functional Attributes} and \textit{Non-Functional Actions} are used at each level (in decreasing order of abstraction).
 A non-func\-tion\-al concern is a general term used to describe NFRs, such as  \textit{security}, \textit{reliability} or \textit{transactional behavior}.
 Each  concern is refined into a set of non-func\-tion\-al  at\-tri\-butes, where
 a non-func\-tion\-al at\-tri\-bute represents some behavior, to be refined into non-functional actions.
@@ -353,24 +382,6 @@ In this work the non-functional requirements considered are  \textit{authenticat
 Each NFR is associated with a service activity.
 
 
-Ceri et al.\cite{CeriDMF07} use the notions of \textit{policy}, \textit{rule}, \textit{condition} and \textit{action model} to specify NFRs.
-Agarwal et al.~\cite{AgarwalLS09} associate \textit{service policies} to services.
-Each service may also have \textit{properties}, such as \textit{security} and \textit{reliability}.
-Ovaska et al.~\cite{OvaskaEHPA10} use the terms \textit{quality attribute}, \textit{category}, \textit{conceptual layer} and \textit{importance} to organize and classify NFRs.
-Other authors do not define specific terms to refer to NFRs; they use terms such as \textit{attribute}~\cite{ZhangPSP05,BasinDL06,JeongCL09},
-\textit{property}~\cite{Fabra2011},
-\textit{factor}~\cite{MohantyRP10,GutierrezRF10},
-\textit{characteristic}~\cite{DiamadopoulouMPS08},
-\textit{qual\-i\-ty level} \cite{ModicaTV09}, and
-\textit{value}~\cite{ThissenW06,BasinDL06}.
-
-
-Despite of the different notations found in the literature for classifying NFRs, some NFRs are frequently considered, such as \textit{security}, \textit{performance}, \textit{reliability}, \textit{usability}, and \textit{availability}.
-However, distinct hierarchies and models are proposed for NFRs, according to different perspectives.
-We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,SchmelingCM11,BasinDL06,Fabra2011,OvaskaEHPA10} that use MDD (Model Driven Development) for designing and developing applications.
-
-Beside the existence of these works, it is important to remark that authors continue emphasizing the limited attention of the model-driven proposals for service development to NFRs~\cite{Ameller201542,Ameller2010}. As Ameller et al. realize in a recently published literature review, there are \textit{``Not many papers that presented a generic approach to deal with NFRs"}. Those authors also remark the lack of industrial use cases~\cite{Ameller201542}. 
-Our method to develop service-oriented applications aims to cover this lack of proposals dealing with NFRs and gives support to real needs, as presented in a company related to the risk assessment industry.
 
 
 %Fabra \textit{et al.}~\cite{Fabra2011} also describes the importance of  MDD for service-oriented applications.
@@ -408,6 +419,27 @@ Li et al.~\cite{Li2013} associate \textit{dimensions} to  \textit{QoS parameters
 For instance, the \textit{time} dimension is associated to the \textit{execution time} and \textit{communication time} parameters; the \textit{spatial} dimension is associated to the \textit{storage capacity} and \textit{message length} parameters; the \textit{reliability} dimension is associated to the \textit{availability} and \textit{reliability} parameters and the \textit{cost} dimension is associated to the \textit{service cost} parameter.
 Rumpel et al.~\cite{Rumpel2012}  associate \textit{quality requirements} to  \textit{quality properties}. Quality requirements are to be specified as constraints.
 
+Ceri et al.\cite{CeriDMF07} use the notions of \textit{policy}, \textit{rule}, \textit{condition} and \textit{action model} to specify NFRs.
+Agarwal et al.~\cite{AgarwalLS09} associate \textit{service policies} to services.
+Each service may also have \textit{properties}, such as \textit{security} and \textit{reliability}.
+Ovaska et al.~\cite{OvaskaEHPA10} use the terms \textit{quality attribute}, \textit{category}, \textit{conceptual layer} and \textit{importance} to organize and classify NFRs.
+Other authors do not define specific terms to refer to NFRs; they use terms such as \textit{attribute}~\cite{ZhangPSP05,BasinDL06,JeongCL09},
+\textit{property}~\cite{Fabra2011},
+\textit{factor}~\cite{MohantyRP10,GutierrezRF10},
+\textit{characteristic}~\cite{DiamadopoulouMPS08},
+\textit{qual\-i\-ty level} \cite{ModicaTV09}, and
+\textit{value}~\cite{ThissenW06,BasinDL06}.
+
+
+Despite of the different notations found in the literature for classifying NFRs, some NFRs are frequently considered, such as \textit{security}, \textit{performance}, \textit{reliability}, \textit{usability}, and \textit{availability}.
+However, distinct hierarchies and models are proposed for NFRs, according to different perspectives.
+We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,SchmelingCM11,BasinDL06,Fabra2011,OvaskaEHPA10} that use MDD (Model Driven Development) for designing and developing applications.
+
+Beside the existence of these works, it is important to remark that authors continue emphasizing the limited attention of the model-driven proposals for service development to NFRs~\cite{Ameller201542,Ameller2010,SouzaNeto201684}. 
+As Ameller et al. realize in a recently published literature review, there are \textit{``Not many papers that presented a generic approach to deal with NFRs"}. Those authors also remark the lack of industrial use cases~\cite{Ameller201542}. 
+Our method to develop service-oriented applications aims to cover this lack of proposals dealing with NFRs and gives support to real needs, as presented in a company related to the risk assessment industry.
+
+
 \section{Modeling Reliable Service Compositions with \pisodm}\label{sec:motivation}
 
 In this section we present \pisodm, an MDD-based method for building service compositions with NFRs.
@@ -415,12 +447,12 @@ Our work provides meta-models for modeling functional and non-functional require
 Given  high-level models specified at the CIM level, \pisodm proposes the semi-automatic refinement of these models, for the generation of a set of models at the other levels of abstraction.
 The refinement process is driven by transformation rules specified between the meta-models.
 %
-The me\-ta-models are presented from higher to lower levels of abstraction along with a running example.
-The transformations between models are presented in section~\ref{sec:mmrules}.
+The purpose of this section is to present the \pisodm me\-ta-models, from higher to lower level of abstraction, along with a running example.
+The transformations between models are presented next, in section~\ref{sec:mmrules}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.75\textwidth]{./figures/piSOD-M_process.pdf}
+\includegraphics[width=1\textwidth]{./figures/piSOD-M_process.pdf}
 \caption{\pisodm Overview.}
 \label{fig:piSOD-M}
 \end{figure}
@@ -449,9 +481,9 @@ Dependency paths may also contain \textsl{OR} and \textsl{AND} elements (both fo
 
 \begin{figure*}[h]
 \center
-\subfigure{\includegraphics[width=0.55\textwidth]{./figures/e3value.pdf}}
-~ 
-\subfigure{\includegraphics[width=0.4\textwidth]{./figures/3ValueKey.pdf}}
+\subfigure{\includegraphics[width=1\textwidth]{./figures/e3value.pdf}}
+ 
+\subfigure{\includegraphics[width=0.7\textwidth]{./figures/3ValueKey.pdf}}
 \caption{\label{fig:CIM:tpme3v} e3value model for ``To Publish Music''.}
 \end{figure*}
 
@@ -473,42 +505,44 @@ The following (external) services will be used by the application:
 
 
 The e$^3$value model for ``To Publish Music'' is shown in Figure~\ref{fig:CIM:tpme3v}.
-The e$^3$value value model shows Spotify and a private application (which is also a service) that directly interact with users for providing free services for listening and publishing information about music being listened by users. The private application interacts with Spotify for obtaining free information about the flow of music being listened by a user in return of a fee (i.e., premium subscription). Finally, the private application interacts with Facebook and Twitter for updating the user's status.
+The e$^3$value value model shows Spotify and a private application (which is also a service) that provide services for listening and publishing information about music being listened by users. 
+The private application interacts with Spotify for obtaining information about the flow of music being listened by a user in return of a fee for a premium subscription. 
+Finally, the private application interacts with Facebook and Twitter for updating the user's status.
 We can see this interaction as non material benefit sharing (as users subscribe to their networks and are active on them thanks to the private application).
 \end{example}
 
 The e$^3$value  model is used to model the (economic) value exchange among the actors involved in an application.
 However, the e$^3$val\-ue model does not help to understand the business process of the application nor the conditions in which the different steps of this process are executed.
-In order to face this shortcoming, our method proposes the BPMN meta-model as a tool for modelling this aspect of the application.
+In order to face this shortcoming, our method proposes the use of the BPMN meta-model as a tool for modelling this aspect of the application.
 
 
 
 \subsubsection{BPMN Meta-Model}
 
-BPMN~\cite{BPMN}  is a graphical representation that establishes the business process of the application through a high-level workflow.
+BPMN~\cite{BPMN}  is a graphical representation that establishes the business process of the application through a high-level workflow\footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/}.
 The next example illustrates the use of this meta-model.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicBPMN}
-Figure \ref{fig:CIM:tpmbpmn} shows the BPMN model\footnote{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/} of the scenario.
+Figure \ref{fig:CIM:tpmbpmn} shows the BPMN model of the scenario.
 It starts by contacting the music service Spotify for retrieving the user's  musical status (activity {\sf Get Song}).
 Twitter and Facebook services are then contacted in parallel for updating the user's status with the corresponding song title (activities {\sf Update Twitter} and {\sf Update Facebook}).
 \end{example}
 %
 \begin{figure}[h]
 \center
-\includegraphics[width=0.4\textwidth]{./figures/SC.pdf}
+\includegraphics[width=0.7\textwidth]{./figures/SC.pdf}
 \caption{\label{fig:CIM:tpmbpmn} BPMN model for ``To Publish Music''.}
 \end{figure}
 
-The CIM level models are the basis for the development of the application.
-The information presented at this level is (manually) refined into PIM-level models of the method \pisodm described next.
-Notice that, at this level, the models are (informally) used to describe both functional and non-functional requirements.
+CIM level models are the basis for the development of the application.
+The information presented at this level is (manually) refined into PIM-level models of \pisodm, as described next.
+Notice that the models are (informally) used to describe both functional and non-functional requirements.
 
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 \subsection{Platform Independent Models}
 %. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
 
-This level focuses on the system functionality, hiding the details of any particular platform.
+This level focuses on the system functionality, abstracting the details of any particular platform.
 The specification defines those parts of the system that do not change from one platform to another.
 Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-Ser\-vice\-Pro\-cess} and \textit{$\pi$-ServiceComposition}.
 
@@ -519,7 +553,7 @@ Figure~\ref{fig:CIM:usecasemetamodel} shows the \textit{$\pi$-UseCase} meta-mode
 This model is  to be the first representation of the application in terms of functionality, as well as to represent its non-func\-tion\-al requirements.
 The notion of \textit{policy} is used to describe NFRs.
 (Figure~\ref{fig:CIM:usecasemetamodel} highlights the concepts related to NFRs.)
-The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe NFRs with  the following  concepts:  {\sc Business service}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc Non-\-Func\-tion\-al Requirement}, {\sc Non-Functional} {\sc At\-tri\-bute} and {\sc Constraint}.
+The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe NFRs with  the following  concepts:  {\sc Business service}\footnote{We use the {\sc small caps} font for referring to classes of a meta-model.}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc Non-\-Func\-tion\-al Requirement}, {\sc Non-Functional} {\sc At\-tri\-bute} and {\sc Constraint}.
 An {\sc End Consumer} is represented by an {\sc Actor}.
 An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), as a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
 {\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
@@ -530,32 +564,36 @@ Each {\sc Business Collaborator} combines the features described in each  {\sc P
 
  \begin{figure*}[h]
 \center
-\includegraphics[width=0.8\textwidth]{./figures/UseCaseMetaModel.pdf}
+\includegraphics[width=1\textwidth]{./figures/UseCaseMetaModel.pdf}
 \caption{\label{fig:CIM:usecasemetamodel} $\pi$-UseCase Meta-Model.}
 \end{figure*}
 
 
  The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented by {\sc Use Cases} and {\sc Constraints}.
 A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has a name, description, and a flag to indicate that it has to be  dynamically checked.
-Each {\sc Con\-straint} is represented as a stereotyped ({\sf constraint}) use case.
-There are three kinds of constraint:
-\textit{(i)} A restriction may be associated to data ({\sc Value Constraint}), represented as the stereotype ``value'';
-\textit{(ii)} A restriction may correspond to business rules (\textsc{Business Constraint}), represented as the stereotype {\sf ``business''}; and
-\textit{(iii)} A restriction may describe {\sc Exceptional Behavior} constraints, represented as the stereotype {\sf ``exceptional\_behavior''}.
-These constraints are shown in the next example.
+Each {\sc Con\-straint} is represented as a stereotyped ({\sf constraint})\footnote{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} use case.
+There are three kinds of constraints:
+\textit{(i)} A data pair ({\sc Value Constraint}), represented as the stereotype ``value'';
+\textit{(ii)} Business rules (\textsc{Business Constraint}), represented as the stereotype {\sf ``business''}; and
+\textit{(iii)} An {\sc Exceptional Behavior} constraint, represented by the stereotype {\sf ``exceptional\_behavior''}.
+The use of these constraints is shown in the next example.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
 Figure~\ref{fig:CIM:piusecasetpm} shows a $\pi$-UseCase model for our example.
-We consider that, besides the service composition for implementing the application, it is necessary to model  other requirements that represent the (i) conditions imposed by services usage --for example, the fact that both Facebook and Twitter require authentication protocol in order to call their methods for updating the wall; (ii) the conditions stemming from the business rules of the application logic, (e.g., the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated).
+We consider that, besides the service composition for implementing the application, it is necessary to model  other requirements that represent the \textit{(i)} conditions imposed by services usage -- for example, the fact that both Facebook and Twitter require authentication in order to call their methods for updating the wall; \textit{(ii)}  conditions stemming from the business rules of the application logic, (e.g., the fact that the walls in Facebook and Twitter must show the same song title and if this is not possible then none of them is updated).
 
 \begin{figure*}[h]
 \center
-\includegraphics[width=0.8\textwidth]{./figures/UseCase.pdf}
+\includegraphics[width=1\textwidth]{./figures/UseCase.pdf}
 \caption{\label{fig:CIM:piusecasetpm} $\pi$-UseCase model for ``To Publish Music''.}
 \end{figure*}
 
 The ``To Publish Music'' Business Service expects  the Facebook or Twitter user status to be changed every time a user starts listening a new song.
-Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. The restriction is stereotyped as a value constraint, because the users id and password are verified.  Figure \ref{fig:CIM:piusecasetpm} shows the buy music, download music, listen music and pay use cases. The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as value and business constraint, respectively. For payment, the user must provide the data of payment card or PayPal account login and password, represented as value stereotype.
+Therefore, it is necessary to perform a social network authentication with the users data. Each social network uses different services and different forms of authentication. The authentication constraint is required to update a music status. 
+The restriction is stereotyped as a value constraint, because the user id and password are verified.  
+Figure~\ref{fig:CIM:piusecasetpm} shows the buy music, download music, listen music and pay use cases. 
+The process of buying a song requires the user private data for a Spotify account, and also a secure connection, represented as value and business constraint, respectively. 
+For payment, the user must provide the data of payment card or PayPal account login and password, represented by a value stereotype.
 Minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example}
@@ -570,7 +608,7 @@ The dotted part of the figure defines those concepts related to the representati
 
 \begin{figure*}[h]
 \center
-\includegraphics[width=0.8\textwidth]{./figures/ServiceProcessMetaModel.pdf}
+\includegraphics[width=1\textwidth]{./figures/ServiceProcessMetaModel.pdf}
 \caption{\label{fig:CIM:serviceprocessmetamodel} $\pi$-Service Process Meta-Model.}
 \end{figure*}
 
@@ -582,12 +620,14 @@ The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}.
 Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre- and post-conditions.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic3}
-Considering the example scenario, the contract based process of activities  is shown in Figure \ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions consist in verifying:
-(i) if the User data are correct;
-(ii) if the User is already logged in Spotify;
-(iii) if bank account information are correct and;
-(iv) if there are enough funds in the bank account to cover the payment.
-A post-condition ensures the complete transaction and verifies if a notification was sent to the user and Spotify, about the payment authorization. There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in the case of Twitter. In the case of Facebook, it is required that the user is already logged in Spotify and these data are the same as Facebook.
+Considering the example scenario, the contract based process of activities  is shown in Figure~\ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions consist in verifying:
+\textit{(i)} if the User data are correct;
+\textit{(ii)} if the User is already logged in Spotify;
+\textit{(iii)} if bank account information are correct and;
+\textit{(iv)} if there are enough funds in the bank account to cover the payment.
+A post-condition ensures the complete transaction and verifies if a notification about the payment authorization was sent both to the user and to Spotify. 
+There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. 
+To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in the case of Twitter. In the case of Facebook, it is required that the user is already logged in Spotify and these data are the same as Facebook.
 As post-condition, the application ensures that the Facebook service sends a notification of success.
 To update Twitter a pre-condition is required, while to update Facebook it is necessary to check a pre-condition and a confirmation notice (modeled as post-condition).
 As a pre-condition for ``twitter update'' it is necessary that (i) the music format is correct and (ii) the twitter login and password are correct for the update.
@@ -595,7 +635,7 @@ As a pre-condition for ``twitter update'' it is necessary that (i) the music for
 
 \begin{figure*}[h]
 \center
-\includegraphics[width=0.8\textwidth]{./figures/ServiceProcess.pdf}
+\includegraphics[width=1\textwidth]{./figures/ServiceProcess.pdf}
 \caption{\label{fig:CIM:serviceprocess} $\pi$-ServiceProcess model for ``To Publish Music''.}
 \end{figure*}
 
@@ -603,34 +643,34 @@ As a pre-condition for ``twitter update'' it is necessary that (i) the music for
 \subsubsection{\textit{$\pi$-ServiceComposition} Meta-Model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
 
 In Figure \ref{fig:e-scomposition-metamodel}, the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model
-provides meta-classes to represent workflows\footnote{Workflows are transformed into implemented service compositions.} that model  business processes.
+provides meta-classes to represent workflows%\footnote{Workflows will be transformed into (implemented) service compositions.} 
+ that model  business processes.
 The \textit{$\pi$-Serv\-ice\-Com\-po\-si\-tion} meta-model extends the UML activity  meta-model with the concept of  \textit{A-Policy}
 to group contracts with similar non-functional requirements.
-For instance, security and privacy restrictions may be grouped into a security policy.
+For instance, security and privacy restrictions may be grouped into a single policy.
  This meta-model defines:
 
 \begin{compactitem}
-
 \item A {\sc Business Collaborator} meta-class, to represent the classes of entities that collaborate in  business processes by performing some  action.
 An instance of this meta-class is graphically a partition in the activity diagram.
 A collaborator can be either internal or external to the system.
-When the collaborator of the business is external to the system, the attribute {\sf IsExternal}\footnote{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} of the collaborator is set to \textbf{true}.
+When the collaborator of the business is external to the system, the attribute {\sf IsExternal} of the collaborator is set to \textbf{true}.
 
 
 \item {\sc Action}s, a kind of {\sc ExecutableNode}, are represented as a class activity instance of the meta-class \textsc{Action}.
 A class action represents some type of transformation or processing.
-There are two types of actions: i) a WebService (attribute Type is {\sf WS}); and ii) a simple operation called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
+There are two types of actions: \textit{(i)} a WebService (attribute Type is {\sf WS}); and \textit{(ii)} a simple operation called an {\sc ActivityOperation} (attribute Type is {\sc AOP}).
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{./figures/PiServiceComposition}
+\includegraphics[width=1\textwidth]{./figures/PiServiceComposition}
 \caption{$\pi$-Service Composition Meta-model.}
 \label{fig:e-scomposition-metamodel}
 \end{figure*}
 
 \item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service,  composed by  execu\-ta\-ble nodes.
 
-\item In order to represent constraint types associated to services compositions, we defined the me\-ta- classes {\sc Rule} and {\sc A-policy} (see blue meta-classes in the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model in Figure \ref{fig:e-scomposition-metamodel}).
+\item In order to represent constraint types associated to services compositions, we defined the me\-ta- classes {\sc Rule} and {\sc A-policy} (see blue\martin{Placido: Mudar as cores... } meta-classes in the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model in Figure \ref{fig:e-scomposition-metamodel}).
 We model non-func\-tion\-al constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
 An {\em A-policy} is defined by attributes and rules.
 The conditions of each rule are evaluated.
@@ -642,7 +682,7 @@ An {\em A-policy} defines variables and operations that can be shared by the rul
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{./figures/piServiceComposition-toPublishMusic}
+\includegraphics[width=1\textwidth]{./figures/piServiceComposition-toPublishMusic}
 %{\color{red}\LARGE PLACIDO: Please change the names of the boxes in accordance to the explanation --Martin}
 \caption{$\pi$-ServiceComposition Model for the ``To publish music'' business service.}
 \label{fig:servicecompositionmodel}
@@ -659,14 +699,13 @@ In this model, there are three external business collaborators ({\em Spotify, Tw
 % \footnote{We use {\em italics} to refer to concrete values of the classes of a model that are derived from the classes of a meta-model.}).
 The model also shows the business process of the application that consists of three service activities: {\em Listen Music}, {\em Publish Music} and {\em Confirmation}.
 Note that  the activity {\em Publish Music} calls the actions of two service collaborators namely {\em Facebook} and {\em Twitter}.
-Both {\em Facebook} and {\em Twitter} services require authentication protocols in order to execute methods that read and update the user data.
+Both {\em Facebook} and {\em Twitter} services require authentication in order to execute methods that read and update the user data.
 %A call to such services must be part of the authentication protocol required by these services.
 In the example, we  associate two authentication policies, one for the open authentication protocol, represented by the class {\sf\small OAuthPolicy} at {\em Twitter}, associated to the activity  {\sf\small UpdateTwitter} (see Figure \ref{fig:servicecompositionmodel}).
 In the same way, the {\em Facebook} class {\sf\small HTTPAuthPolicy}, for the http authentication protocol is associated to the activity {\sf\small UpdateFacebook}.
-{\sf\small OAuthPolicy} implements the open authentication protocol.
 The {\em A-policy} {\sf\small OAuthPolicy} has a variable {\sf\small Token}, used to store the authentication token provided by the service.
 This variable is imported through the library {\sf\small OAuthPolicy.Token}.
-The A-policy {\sf\small OAuthPolicy} defines two rules, both can be triggered by events of type {\sf\small ActivityPrepared}: (R$_1$): If no token has been associated to the variable {\sf\small token}, then a token is obtained ; and (R$_2$): if the token has expired, then it is renewed.
+The A-policy {\sf\small OAuthPolicy} defines two rules, both can be triggered by events of type {\sf\small ActivityPrepared}: ({\sf\small R$_1$}): If no token has been associated to the variable {\sf\small token}, then a token is obtained ; and ({\sf\small R$_2$}): if the token has expired, then it is renewed.
 Notice that the code in the actions profits from the imported {\sf\small OAuthPolicy.Token} for transparently obtaining or renewing a token from a third party.
 {\sf\small HTTPAuthPolicy} implements the HTTP-Auth protocol.
 The A-policy imports an http protocol library and it has two variables {\sf\small username} and {\sf\small password}.
@@ -687,7 +726,7 @@ These models  can be automatically translated into actual computer programs.
 We have defined one meta-model at this level.
 
 \textit{$\pi$-PEWS} provides con\-cepts for modelling service compositions.
-Instances of this meta-model are textual descriptions of service compositions that can be translated into any service composition language, such as BPEL~\cite{bpel03} or PEWS~\cite{BaCAM05,Placido2010LTPD}.
+Instances of this meta-model are textual descriptions of service compositions that can be translated into any service composition language, such as BPEL~\cite{bpel03} or PEWS~\cite{Placido2010LTPD}.
 %
 PEWS~\cite{BHM06,Placido2010LTPD} is a notation to express service compositions.
 The language is based on the notion of Path Expressions~\cite{And79} and can easily be translated into any actual composition language, such as BPEL~\cite{bpel03}.
@@ -707,7 +746,7 @@ In this way, an {\em A-policy} represents a set of reactions to be possibly exec
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{./figures/PEWSMetamodel}
+\includegraphics[width=1\textwidth]{./figures/PEWSMetamodel}
 \caption{$\pi$-{\sc Pews} Meta-model.}
 \label{fig:PPEWSmetamodel}
 \end{figure*}
@@ -719,7 +758,7 @@ The code contains namespaces and definitions (obtained from the business collabo
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{./figures/pi-pewsSpecification-toPublishMusic}
+\includegraphics[width=1\textwidth]{./figures/pi-pewsSpecification-toPublishMusic}
 \caption{$\pi$-PEWS Specific and Policy Representation.}
 \label{fig:Specific-Contract-Representation}
 \end{figure*}
@@ -732,12 +771,12 @@ The code contains namespaces and definitions (obtained from the business collabo
 %\subsubsection{$\pi$-{\sc Pews}  meta-model}\label{sec:pewsmetamodel}
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
 
-\pisodm  proposes intra-level transformation rules between $\pi$-use case to $\pi$-service process models, $\pi$-service process to $\pi$-service composition  models, as well as inter-level transformation rules between $\pi$-service composition to $\pi$-PEWS models. 
-These rules are used to build a semi-automatic tool (the \pisodm  plugin for Eclipse).
-The transformations from CIM to PIM level models are not automatized, due to the informal nature of CIM level.
+\pisodm  proposes intra-level transformation rules from $\pi$-use case to $\pi$-service process models, $\pi$-service process to $\pi$-service composition  models, as well as inter-level transformation rules from $\pi$-service composition to $\pi$-PEWS models. 
+These rules were implemented into a semi-automatic tool (the \pisodm  plugin for Eclipse).
+The transformations from CIM to PIM level models are not automatized, due to the informal nature of the CIM level.
  
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
-\subsection{From $\pi$-UseCase to the $\pi$-ServiceProcess}
+\subsection{From $\pi$-UseCase to $\pi$-ServiceProcess}
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
 
 The refinement of a (composite) $\pi$-Use Case model into a $\pi$-Service Process model is driven by the principle of expressing a set of $\pi$-use cases (i.e., use cases with constraints)   in terms of  a business process.
@@ -749,12 +788,15 @@ Every {\sf Extend} relationship identified in a $\pi$-Use Case model is
 transformed into a  {\sf Fork node}~\cite{valeriaThesis,placidoPhDThesis2012}.
 If the {\sf Extend} relationship concerns just one {\sf use case}, it is transformed into an {\sf Action} inside one flow of the fork node. 
 Otherwise, several  {\sf use cases} are transformed into different {\sf Actions} that belong to different flows departing from the fork node.   
+\martin{Nao entendo muito o algoritmo proposto aqui e o exemplo eh vago.}
+
 %
 A {\sf Constraint} associated to a {\sf Use Case}  is transformed into an  {\sf Assertion}.  
 The set of resulting assertions  are grouped into a {\sf Contract}.
 Constraints are transformed according to their type:
 {\sc Business} constraints and {\sc Value} constraints with the {\sf  isExceptionalBehaviour} at\-tri\-bute set to false are transformed into {\sf Assertion}s;
 {\sc Value } constraints with the {\sf  isExceptionalBehaviour} attribute set to true are transformed into {\sf Exceptional behavior}s.
+\martin{E as outras constraints?}
 
 In order to transform constraints of type {\sf Value Constraint}, the designer specifies thresholds to be associated to the assertions of a contract.
 By default, value constraints are transformed into pre-conditions and business constraints are transformed into post-conditions. 
@@ -766,7 +808,7 @@ The generated workflow is composed by {\sf Fork} and {\sf Join} nodes,  {\sc Con
 A {\sc Use case} element is transformed into an {\sf Action}. 
 A set of $n$ {\sc Use cases} is transformed into an  $n-1$ {\sf Object flow} elements. 
 %
-Details of these transformations can be found in~\cite{SouzaNeto:2012}.
+Details of these transformations can be found in~\cite{placidoPhDThesis2012}.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicT1} 
 The transformation rules have been applied to the model in Figure~\ref{fig:CIM:piusecasetpm} to obtain the $\pi$-Service Process model for our example (Figure~\ref{fig:CIM:serviceprocess}).
@@ -784,6 +826,8 @@ The same rule is applied to the ``publish music'' use case, which has two extend
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
 \subsection{From $\pi$-ServiceProcess to $\pi$-ServiceComposition}
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
+
+\martin{Nesta secao e na seguinte tem transformacoes de constraints into apolicies e o inverso fica muito confuso.}
 
 The transformation  of a  $\pi$-Service Process model into a $\pi$-Service Composition model groups {\sf Contracts} into {\sf A-Policies} and {\sf Actions} into {\sf Service Activities}.   
 Each {\sf Assertion} of a {\sf Contract} is transformed into a {\sf Rule}. 
@@ -825,7 +869,7 @@ Single actions ({\sf Action} and {\sf
 Action:name}) are transformed into individual service {\sf Operations}.
 Complex actions (rep\-re\-sented by {\sf ServiceActivity}  and  {\sf
 ServiceActivity:name}) are transformed into (named) composite
-operations that defines a (named) workflow of the application.
+operations that define a (named) workflow of the application.
 Composition patterns expressed using  {\em merge, decision, fork} and {\em join} are transformed into their corresponding workflows of the $\pi$-PEWS model.
 
 A-Policies defined for the entities of a $\pi$-service composition model generate {\sf A-policy} entities, named according to the names expres\-sed in the source model.
@@ -859,7 +903,7 @@ A-Policy} based service composition execution environment.
 \label{sec:flyingPig}
 
 
-To validate the applicability of our method we have developed a case study concerning risk assessment for financial companies as implemented by the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.
+To validate the applicability of our method we have developed a case study concerning risk assessment for financial companies as implemented by the ORCA System\footnote{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.\martin{Is this a case study or a proof of concept?}
 Risk assessment is implemented by an interactive business process based on the exchange of questionnaires used to evaluate the risks implied by the client business practice.
 Examples of business practices are: the conditions and protocols used to perform confidential transactions, the physical security to access reserved areas (such as computing server installations).
 The information gathered by the questionnaires is used to evaluate whether there are risky practices within the business processes, as well as to propose amendments to these practices.
@@ -884,23 +928,23 @@ We identify two business actors: \textsl{ORCA} and \textsl{Broker}.
 Brokers emit requests for risk assessment for one or more companies.
 ORCA has two value activities which are services that provide an economical benefit:  \textsl{Identify Amendments} and \textsl{Assess Risk Situation}.
 The values exchanged between ORCA and the brokers are:
-(i) \textsl{Questionnaire and Evidences} filled with information about the client company;
-(ii) \textsl{Amendments} which are ORCA's rec\-om\-men\-da\-tions, based on the data provided by the answers to questionnaires;
-(iii) \textsl{Evaluation Reports} for the client companies;
+\textit{(i)} \textsl{Questionnaire and Evidences} filled with information about the client company;
+\textit{(ii)} \textsl{Amendments} which are ORCA's rec\-om\-men\-da\-tions, based on the data provided by the answers to questionnaires;
+\textit{(iii)} \textsl{Evaluation Reports} for the client companies;
 and
-(iv) the risk assessment \textsl{fee}.
+\textit{(iv)} the risk assessment \textsl{fee}.
 %
 The dependency path in Figure~\ref{fig:E3valuemodel} initiates with the need of assessment emitted by a particular company.
 Once this need has been declared, the value exchanges between ORCA and Broker are triggered.
 The client company provides ORCA with information (answers to a questionnaire), evidence (to support the information) and a fee (monetary value).
 In the next step, ORCA suggests amendments (recommendations to change practices) and provides an evaluation report.
 
-\begin{figure*}[h]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{./figures/3ValueModel.pdf}
+\includegraphics[width=1\textwidth]{./figures/3ValueModel.pdf}
 %\includegraphics[width=0.4\textwidth]{./figures/3ValueKey.pdf}
-\caption{E3value model for \FlyingPig.\label{fig:E3valuemodel}}
-\end{figure*}
+\caption{E$^3$value model for \FlyingPig.\label{fig:E3valuemodel}}
+\end{figure}
 
 Figure~\ref{fig:BPMNmodel} shows the BPMN model
 for the \FlyingPig\ scenario. This model is partitioned for better understanding the value exchanging process.
@@ -913,13 +957,13 @@ The risk assessment process starts after a request from a company.
 This corresponds to the value model, in which the start stimulus triggers the whole process.
 The request leads to the definition of a group of users that will answer questionnaires to evaluate risk.
 Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnote{Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecured access to the premises of the company.
-They can be also abstract  such as the protocol used for accessing data on the company's computer server.}.
+They can be also inmaterial restrictions such as the protocol used for accessing data on the company's computer server.}.
 
-\begin{figure*}[h]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.6\textwidth]{./figures/BPMN_GCP.pdf}
+\includegraphics[width=1\textwidth]{./figures/BPMN_GCP.pdf}
 \caption{BPMN model for \FlyingPig.\label{fig:BPMNmodel}}
-\end{figure*}
+\end{figure}
 
 Once tasks have been completed, they are stored and analyzed to generate a list of non-compliant situations, associated to their corresponding \textit{calls for amendment} (if needed) or a report specifying a compliance level, incidents and a risk map.
 During the process of analyzing a questionnaire, the answers to some questions may trigger the generation of additional questionnaires or amendments, that will be scheduled as new tasks.
@@ -941,6 +985,7 @@ Business processes also have rules and constraints to define their non-functiona
 
 %In Section~\ref{sec:modelingWithPISODM} we defined three models at the PIM level.
 The \pisodm models of the PIM level  for the \FlyingPig\ scenario are presented next.
+These models were manually obtained from the CIM level models.
 
 
 
@@ -956,15 +1001,15 @@ Each actor is associated to $\pi$-UseCases (white ovals in Fig.~\ref{fig:piUseCa
 that describe the main functionality of the system.
 The $\pi$-UseCase model for \FlyingPig\ defines six $\pi$-UseCases.
 %%
-Each $\pi$-UseCase may be associated to (non-functional) constraints (coloured ovals in Fig.~\ref{fig:piUseCaseModel}).
+Each $\pi$-UseCase may be associated to (non-functional) constraints (coloured ovals in Fig.~\ref{fig:piUseCaseModel}).\martin{colored?}
 Three types of constraints are defined: \textit{value}, \textit{business} or \textit{exceptional behavior}.
 Constraints are identified by the word $<<$\textsf{constraint}$>>$ followed by its type.
 
-\begin{figure*}[h]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.55\textwidth]{./figures/UseCaseGeneral.png}
+\includegraphics[width=1\textwidth]{./figures/UseCaseGeneral.png}
 \caption{$\pi$-UseCase model for \FlyingPig.\label{fig:piUseCaseModel}}
-\end{figure*}
+\end{figure}
 
 \subsubsection{$\pi$-ServiceProcess Model for \FlyingPig}
 
