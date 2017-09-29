@@ -1,0 +1,216 @@
+\documentclass[12pt,a4wide]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb} 
+%\usepackage{xcolor}
+\usepackage{color,soul}
+
+ 
+%%%% OUR MACROS %%%%
+\newcommand{\martin}[1]{\marginpar{\textcolor{magenta}{\textbf{Martin: }#1}}}
+\newcommand{\imartin}[1]{\textcolor{magenta}{\textbf{Martin: }#1}}
+
+\newcommand{\umberto}[1]{\marginpar{\textcolor{blue}{\textbf{Umberto: }#1}}}
+\newcommand{\iumberto}[1]{\textcolor{blue}{\textbf{Umberto: }#1}}
+
+\newcommand{\placido}[1]{\marginpar{\textcolor{purple}{\textbf{Placido: }#1}}}
+\newcommand{\iplacido}[1]{\textcolor{purple}{\textbf{Placido: }#1}}
+%%%%%%%%%%%
+
+
+\title{$\pi$SOD-M: Building SOC Applications in the Presence of Non-Functional Requirements\\[3mm]
+\textit{\large (List of changes and answers to the reviewers' observations)}}
+%\author{Pl\'acido A. Souza Neto \and Genoveva Vargas-Solar \and Umberto Souza da Costa \and Martin A. Musicante}
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+
+\paragraph*{Editor's remarks:}
+\begin{quotation}\sf\footnotesize
+
+We have received the review reports for your paper "pisodm: Building SOC Applications in the Presence of Non-Functional Requirements". 
+
+We require now that you implement in your submission the following recommendations made by the reviewers: 
+
+
+\end{quotation}
+
+\noindent 
+All the comments have been taken into account and they are addressed in the paper. 
+Our answers to the reviewers (below) explain how this has been done.
+
+The text included in the new version is \hl{highlighted} for a better identification of the changes to the document.
+
+\paragraph*{Reviewers' comments:}
+
+\paragraph*{Reviewer A:} 
+\begin{quotation}\sf\footnotesize
+\noindent 
+First of all, on the form: \\
+1.	Footnotes do not appear in the paper. 
+\end{quotation}
+
+\noindent 
+Fixed in the new version.
+
+
+\begin{quotation}\sf\footnotesize
+
+2.	On page 21, title 5.2.4 you have a missing reference. 
+\end{quotation}
+
+\noindent 
+Fixed in the new version.
+
+\begin{quotation}\sf\footnotesize
+
+3.	On page 23, second paragraph, you have an incomplete sentence: `` \dots are implemented according a the knowledge\dots ''
+\end{quotation}
+
+\noindent 
+Fixed in the new version.
+
+
+\begin{quotation}\sf\footnotesize
+
+\noindent On the content: 
+
+1.	On Section 2, the related works are cited as such. This section lucks of an evaluation of these works, and of the motivation of your proposed method. 
+\end{quotation}
+
+\noindent 
+\hl{TO BE COMPLETED.}
+
+\begin{quotation}\sf\footnotesize
+
+2.	This method can be fully automated? Is it appropriate to non-IT professionals? 
+\end{quotation}
+
+\noindent 
+\hl{TO BE COMPLETED.}
+
+\begin{quotation}\sf\footnotesize
+
+3.	While designing the application to develop using your models, how is the selection of services done? 
+\end{quotation}
+
+\noindent 
+\hl{TO BE COMPLETED.}
+
+\begin{quotation}\sf\footnotesize
+
+4.	The paper validates the method with an industrial use case, but it lacks of a real evaluation that shows how the proposed method improves the existing once. For instance, evaluating the satisfaction of the users of the method, and comparing their satisfaction with the use of another development method. 
+\end{quotation}
+
+\noindent 
+\hl{TO BE COMPLETED.}
+
+\begin{quotation}\sf\footnotesize
+
+5.	How the integration and the description of the constraints (Non-functional properties) improves the development process and the developed application? 
+\end{quotation}
+
+\noindent 
+\hl{TO BE COMPLETED.}
+
+\begin{quotation}\sf\footnotesize
+
+6.	These non-functional requirements can include other types of constraints? 
+\end{quotation}
+
+\noindent 
+\hl{TO BE COMPLETED.}
+
+\begin{quotation}\sf\footnotesize
+
+7.	On page 13, you specify that the model can be automatically translated into actual computer programs. Is this actually developed? If not, how is that can be possible? 
+\end{quotation}
+ 
+\noindent 
+\hl{TO BE COMPLETED.}
+ 
+ 
+\paragraph*{Reviewer B:} 
+\begin{quotation}\sf\footnotesize
+
+Changes which must be made before publication: 
++ Footnotes do not appear 
+\end{quotation}
+
+\noindent 
+Fixed in the new version.
+
+
+\begin{quotation}\sf\footnotesize
+
++ Some references are not inserted [?] 
+\end{quotation}
+
+\noindent 
+Fixed in the new version (Section 5.2.4).
+
+\begin{quotation}\sf\footnotesize
+
++ Page 4, section 3.1.1: what is "value activities"? operations on values? 
+\end{quotation}
+
+\noindent 
+We added a footnote explaning the value activity concept (according to~\cite{Gordijn02valuebased}).
+
+\begin{quotation}\sf\footnotesize
+
++ Page 5 , paragraph following items: e3 value value model... 
+\end{quotation}
+
+\noindent 
+Fixed in the new version.
+
+\begin{quotation}\sf\footnotesize
+
++ Page 22 paragraph on the bottom of the page: a too long sentence; I do not understand anything in this paragraph. 
+\end{quotation}
+
+\noindent 
+We have rewritten the paragraph.
+
+\begin{quotation}\sf\footnotesize
+
++ Page 23: service composition instead of services composition 
+\end{quotation}
+
+\noindent 
+Fixed in the new version.
+
+
+\begin{quotation}\sf\footnotesize
+
++ The method is an extension of SOD-M, but I was wondering why the new name is piSOD-M. If an explanation exists, it would be interesting to indicate (since there is nothing to do with pi-calculs sometimes used in the WS world) 
+\end{quotation}
+
+\noindent 
+There is no specific motivation behind the name. 
+It just sounded appropriate for an extension of the existing SOD-M approach.
+
+\begin{quotation}\sf\footnotesize
+
++ Section 6 does not mention any future work (except on its title!) 
+
+\end{quotation}
+
+\noindent 
+We have added a final paragraph describing directions of future work.
+
+
+
+\section*{Final remarks}
+
+We would like to acknowledge the anonymous referees for their useful and constructive critics to our paper.
+
+\bibliographystyle{plain}
+ \bibliography{biblio} 
+\end{document}
