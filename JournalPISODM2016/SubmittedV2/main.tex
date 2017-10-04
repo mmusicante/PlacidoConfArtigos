@@ -440,7 +440,21 @@ We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,Schmeling
 
 Beside the existence of these works, it is important to remark that authors continue emphasizing the limited attention of the model-driven proposals for service development to NFRs~\cite{Ameller201542,Ameller2010}.%,SouzaNeto201684}. 
 As Ameller et al. realize in a recently published literature review, there are \textit{``Not many papers that presented a generic approach to deal with NFRs"}. Those authors also remark the lack of industrial use cases~\cite{Ameller201542}. 
-Our method to develop service-oriented applications aims to cover this lack of proposals dealing with NFRs and gives support to real needs, as presented in a company related to the risk assessment industry.
+
+\hl{
+To the best of our knowledge, and based on the related work analysis, there are no proposals that define a service-oriented approach for the whole development of systems, considering
+non-functional requirements. Although the efforts that have been made to support the new
+technological proposals for the Web such as web services, in general, these
+development approaches focus their processes on traditional software
+engineering, with emphasis on the functional aspects of the
+application.} Our method to develop service-oriented applications aims to cover this lack of proposals dealing with NFRs and gives support to real needs, as presented in a company related to the risk assessment industry. \hl{Our approach targets to deal with characteristics of the 3
+areas\footnote{(i) Non-Functional Requirements; (ii) Methodology for Service-Oriented Development;
+and (iii) Model-Driven Engineering} in order to propose a method for
+developing service-oriented applications considering non-functional aspects.
+
+The motivation of our method is to target the specification of non-functional aspects in the early stages of development of service-oriented  applications. Our approach specifies \textit{policies} for modeling the non-functional requirements of a service separating the specification of non-functional requirements from the main functionalities of the application. This is interesting because once the policies for a given application have been defined they can be reused and/or specialized for another application with similar requirements.
+}
+
 
 
 \section{Modeling Reliable Service Compositions with \pisodm}\label{sec:motivation}
@@ -572,7 +586,7 @@ Each {\sc Business Collaborator} combines the features described in each  {\sc P
  \begin{figure*}[h]
 \center
 \includegraphics[width=1\textwidth]{./figures/UseCaseMetaModel.pdf}
-\caption{\label{fig:CIM:usecasemetamodel} $\pi$-UseCase Meta-Model.}
+\caption{\label{fig:CIM:usecasemetamodel} $\pi$-\hl{UseCase Meta-Model}.}
 \end{figure*}
 
 
@@ -623,12 +637,12 @@ The dotted part of the figure defines those concepts related to the representati
 \caption{\label{fig:CIM:serviceprocessmetamodel} $\pi$-Service Process Meta-Model.}
 \end{figure*}
 
-This model shows the set of logically related activities to be performed in a service-based application.
-The activities of this model represent a behavior that is part of the business logic of the application.
+\hl{This model shows the set of logically related activities to be performed in a service-based application.
+The activities of this model represent a behavior that is part of the business logic of the application.}
 A \textit{$\pi$-ServiceProcess}  model contains three main elements: (i) service process, (ii) service activity and (iii) activity contract. A service activity represents an operation that is part of the execution flow, and it is modeled as an {\sc Action}.
 An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf assertion}).
 The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. 
-Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre- and post-conditions.
+Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre- and post-conditions. \hl{The service that fits the {\sc Contract} and its {\sc Assertions} will be chosen and used in the execution flow.}
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic3}
 Considering the example scenario, the contract based process of activities  is shown in Figure~\ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions consist in verifying:
@@ -786,7 +800,7 @@ The code contains namespaces and definitions (obtained from the business collabo
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
 
 \pisodm  proposes intra-level transformation rules from $\pi$-use case to $\pi$-service process models, $\pi$-service process to $\pi$-service composition  models, as well as inter-level transformation rules from $\pi$-service composition to $\pi$-PEWS models. 
-These rules were implemented into a semi-automatic tool (the \pisodm  plugin for Eclipse).
+\hl{These rules were implemented into a semi-automatic tool} (the \pisodm  plugin\footnotemark \footnotetext{\hl{At each stage of transformation it is possible to include new constraints. In the more abstract stages of transformation there is complete automation in the models (i.e., from $\pi$-UseCase to $\pi$-ServiceProcess, and from $\pi$-ServiceProcess to $\pi$-ServiceComposition). On the other hand, to the transformation to specific platforms (i.e. from $\pi$-ServiceComposition to $\pi$-PEWS), a review by the analyst is required after the generation of the specification code. Thus, the method is more appropriate for those who have prior knowledge of Information Technology.}} for Eclipse).
 The transformations from CIM to PIM level models are not automatized, due to the informal nature of the CIM level.
  
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
@@ -907,7 +921,7 @@ From these meta-models, we  developed plug-ins to support their graphical repres
 \item	 We used  ATL\footnotemark \footnotetext{\hl{http://eclipse.org/atl/. An ATL program is basically a set of rules that define how source model elements are matched and navigated to create and initialize the elements of the target models.}}
 for implementing the  mappings between models.
 
-\item 	We  used Acceleo\footnotemark \footnotetext{\hl{http://www.acceleo.org/pages/home/en}} to implement  the code generation plug-in to generate executable code. 
+\item 	\hl{We  used Acceleo}\footnotemark \footnotetext{\hl{http://www.acceleo.org/pages/home/en}} \hl{to implement  the code generation plug-in to generate executable code.} 
 It takes a $\pi$-PEWS model and generates the code to be executed by the {\em
 A-Policy} based service composition execution environment.
 \end{compactitem}
