@@ -456,8 +456,9 @@ The motivation of our method is to target the specification of non-functional as
 }
 
 
-
+%**********************************************************************************
 \section{Modeling Reliable Service Compositions with \pisodm}\label{sec:motivation}
+%**********************************************************************************
 
 In this section we present \pisodm, an MDD-based method for building service compositions with NFRs.
 Our work provides meta-models for modeling functional and non-functional requirements organized in three levels (Figure~\ref{fig:piSOD-M}): CIM (\textit{Computational Independent Models}), PIM (\textit{Plat\-form Independent Models}) and PSM (\textit{Platform Specific Models}).
@@ -476,17 +477,17 @@ The transformations between models are presented next, in section~\ref{sec:mmrul
 
 
 
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 \subsection{Computation Independent Models}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 
 This level focuses on the highest-level view of the system, including its business and requirement specifications.
 At this stage of the development, the structure and system processing details are still unknown or undetermined.
 \pisodm uses the \textit{e$^3$value}~\cite{Gordijn02valuebased} and \textit{BPMN}~\cite{BPMN} meta-models for this purpose.
 
-% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   
 \subsubsection{E$^3$value Meta-Model}
-% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   
 
 The e$^3$value model  identifies the value/in\-for\-ma\-tion  exchange between system components (see Figure~\ref{fig:CIM:tpme3v}).
 This model  represents a business case graphically as a set of value exchanges  ($\nabla$ $\triangle$) and value activities (rounded boxes)\footnotemark \footnotetext{\hl{According to}~\cite{Gordijn02valuebased}\hl{, a value activity is defined as an activity expected to be profitable to one or more actors.}} performed by business actors (squared boxes).
@@ -533,8 +534,9 @@ However, the e$^3$val\-ue model does not help to understand the business process
 In order to face this shortcoming, our method proposes the use of the BPMN meta-model as a tool for modeling this aspect of the application.
 
 
-
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
 \subsubsection{BPMN Meta-Model}
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
 
 BPMN~\cite{BPMN}  is a graphical representation that establishes the business process of the application through a high-level workflow\footnotemark \footnotetext{\hl{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/}}.
 The next example illustrates the use of this meta-model.
@@ -555,16 +557,17 @@ CIM level models are the basis for the development of the application.
 The information presented at this level is (manually) refined into PIM-level models of \pisodm, as described next.
 Notice that the models are (informally) used to describe both functional and non-functional requirements.
 
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 \subsection{Platform Independent Models}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 
 This level focuses on the system functionality, abstracting the details of any particular platform.
 The specification defines those parts of the system that do not change from one platform to another.
 Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{$\pi$-Ser\-vice\-Pro\-cess} and \textit{$\pi$-ServiceComposition}.
 
- % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
-\subsubsection{\textit{$\pi$-UseCase} Meta-Model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
+ % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
+\subsubsection{\textit{$\pi$-UseCase} Meta-Model}
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
 
 Figure~\ref{fig:CIM:usecasemetamodel} shows the \textit{$\pi$-UseCase} meta-model.
 This model is  to be the first representation of the application in terms of functionality, as well as to represent its non-func\-tion\-al requirements.
@@ -623,8 +626,9 @@ Minimum payment value is 2 euros.
 %{\color{red} Talk about this model for the example.}
 \end{example}
 
- % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
-\subsubsection{\textit{$\pi$-ServiceProcess} Meta-Model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
+\subsubsection{\textit{$\pi$-ServiceProcess} Meta-Model}
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
 
 The \textit{$\pi$-ServiceProcess} meta-model extends the UML activity diagram with the concept of \textit{contract} to represent constraints over data and actions. This concept is used to model
 groups  of  constraints  in the \textit{$\pi$-UseCase}.
@@ -638,11 +642,11 @@ The dotted part of the figure defines those concepts related to the representati
 \end{figure*}
 
 \hl{This model shows the set of logically related activities to be performed in a service-based application.
-The activities of this model represent a behavior that is part of the business logic of the application.}
+The activities of this model represent a behavior that can  implement the business logic of the application.}
 A \textit{$\pi$-ServiceProcess}  model contains three main elements: (i) service process, (ii) service activity and (iii) activity contract. A service activity represents an operation that is part of the execution flow, and it is modeled as an {\sc Action}.
 An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf assertion}).
 The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. 
-Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre- and post-conditions. \hl{The service that fits the {\sc Contract} and its {\sc Assertions} will be chosen and used in the execution flow.}
+Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre- and post-conditions. \hl{The service that fulfils the {\sc Contract} and its {\sc Assertions} will be chosen and used in the execution flow.}
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic3}
 Considering the example scenario, the contract based process of activities  is shown in Figure~\ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions consist in verifying:
@@ -664,8 +668,9 @@ As a pre-condition for ``twitter update'' it is necessary that (i) the music for
 \caption{\label{fig:CIM:serviceprocess} $\pi$-ServiceProcess model for ``To Publish Music''.}
 \end{figure*}
 
-% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
-\subsubsection{\textit{$\pi$-ServiceComposition} Meta-Model}% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
+\subsubsection{\textit{$\pi$-ServiceComposition} Meta-Model}
+% .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
 
 In Figure \ref{fig:e-scomposition-metamodel}, the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model
 provides meta-classes to represent workflows%\footnotemark \footnotetext{\hl{Workflows will be transformed into (implemented) service compositions.}} 
@@ -743,9 +748,9 @@ On the notification of an event of that type, a credential is obtained using the
 Once the $\pi$-Service Composition Model is defined,  it can be transformed into a lower level model (in our case, $\pi$-PEWS) to support code generation as described in the next section.
 
 
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 \subsection{Platform Specific Models}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 
 This level focuses on the functionality, in the context of a particular implementation platform.
 Models at this level put together the platform-independent view with the specific aspects of the platform to implement the system.
@@ -873,8 +878,6 @@ A {\sf Package} in the $\pi$-use case model is transformed into a {\sf Business 
 These requirements are associated to a \textsf{Policy} (from the $\pi$-ServiceProcess model).
 
 
-
-
 {\sf Actions} and {\sf Service activity} of a $\pi$-Service Process model are transformed into their hom\-onym concepts of the $\pi$-Service Composition model.
 Finally, {\sf Actions} are grouped into  a {\sf Business collaborator}.
 
@@ -910,8 +913,10 @@ Events of type {\sf Pre}, {\sf Post} and {\sf Time} generate, respectively, {\sf
 Figure \ref{fig:Specific-Contract-Representation} shows the $\pi$-PEWS code resulting from the $\pi$- service composition model (Figure~\ref{fig:servicecompositionmodel}) of our scenario example.
 \end{example}
 
-
+% _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
 \subsection{Implementation}
+% _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
+
 We have developed tools for aiding the user to define and transform the models for all the levels, except for the CIM into PIM level, which should be manually performed.
 Our tool is implemented as a series of Eclipse plug-ins: 
 \begin{compactitem}
@@ -926,9 +931,10 @@ It takes a $\pi$-PEWS model and generates the code to be executed by the {\em
 A-Policy} based service composition execution environment.
 \end{compactitem}
 
-
+%*********************************************************************************
 \section{Applying \pisodm: The \FlyingPig\ Case Study}
 \label{sec:flyingPig}
+%*********************************************************************************
 
 
 To validate the applicability of our method we have developed a case study concerning risk assessment for financial companies as implemented by the ORCA System\footnotemark \footnotetext{\hl{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}}.%\martin{Is this a case study or a proof of concept?}
@@ -946,9 +952,9 @@ The models presented were generated as a result of interacting with software dev
 
 
 
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -.fig:E3valuemodel . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 \subsection{Computation-Independent Models (CIM)}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 
 Figure~\ref{fig:E3valuemodel} shows the value model for the \FlyingPig\ application.
 It is a business model that graphically represents a business case as a set of value exchanges ($\triangleright$ and $\triangleleft$) and value activities (rounded boxes) performed by business actors (squared boxes).
@@ -1007,9 +1013,9 @@ Business processes also have rules and constraints to define their non-functiona
 \item There is a time limit (in days) for amendments required by the system.
 \end{compactenum}
 
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 \subsection{Platform-Independent Models (PIM)}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 
 %In Section~\ref{sec:modelingWithPISODM} we defined three models at the PIM level.
 The \pisodm models of the PIM level  for the \FlyingPig\ scenario are presented next.
@@ -1017,8 +1023,9 @@ These models were manually obtained from the CIM level models.
 
 
 
-
+%. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 \subsubsection{$\pi$-UseCase Model for \FlyingPig}
+%. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 
 The $\pi$-UseCase model shown in Figure~\ref{fig:piUseCaseModel} describes the features and constraints of the \FlyingPig\ application.
 In this model, three actors are identified: \textit{Company}, \textit{User} and \textit {Broker} represented as stick figures.
@@ -1039,7 +1046,9 @@ Constraints are identified by the word $<<$\textsf{constraint}$>>$ followed by i
 \caption{$\pi$-UseCase model for \FlyingPig.\label{fig:piUseCaseModel}}
 \end{figure}
 
+%. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 \subsubsection{$\pi$-ServiceProcess Model for \FlyingPig}
+%. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 
 The $\pi$-ServiceProcess model presents the workflow for \FlyingPig (Figure~\ref{fig:PiServiceProcessModel}).
 Actions in this model were obtained by applying the $\pi$-use case transformation rules.
@@ -1056,8 +1065,9 @@ The next step in the development is to add these assertions to the models that s
 \caption{$\pi$-ServiceProcess model for \FlyingPig.\label{fig:PiServiceProcessModel}}
 \end{figure*}
 
-
+%. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 \subsubsection{$\pi$-ServiceComposition Model for \FlyingPig}
+%. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 
 The model in Figure~\ref{fig:PiServiceCompositionModel}
 shows  the services that provide the functions of \FlyingPig.
@@ -1071,10 +1081,9 @@ These policies express the pre- and post-conditions of the previous model, being
 \end{figure*}
 
 
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
-%\subsection{Platform-Specific Model (PSM)}
-%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -
+%. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 \subsubsection{$\pi$-PEWS Model for \FlyingPig}
+%. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 
 The  PSM of our case study is given in Figure~\ref{fig:piPEWSFlyingPig}. This model is obtained by transforming the $\pi$-service composition model into a workflow.
 Note that this workflow is implemented by using  \hl{BPEL constructors}~\cite{ws-bpel2} and \textit{policy} notions.
@@ -1110,8 +1119,9 @@ receiveRequest(R, Id)
 \end{figure*}
 
 
-
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 \subsection{Lessons Learned}
+%. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - -. . - 
 
 Through the example we underlined that every application implements functional aspects that describe its application logic.
 Recall that an application logic refers to routines that perform the activities to reach the application objective.
@@ -1119,7 +1129,7 @@ Also there are non-functional properties derived from NFR.
 They refer to strategies to be considered for the application execution such as security, isolation, adaptability, atomicity, and more.
 These non-functional properties must be ensured at execution time.
 
-\hl{In the context of service-oriented applications, ensuring non-functional properties is challenging owing to the nature of their components.
+\hl{In the context of service-oriented applications, ensuring non-functional properties is challenging due to the nature of their components.
 Those components are defined by APIs which do not necessarily export information about their internals.}
 
 Given a set of services with their exported methods, building service-based applications may consist on expressing an application logic as a service composition.
@@ -1129,8 +1139,16 @@ Software engineering methods (e.g., \cite{2,decastro1,PapazoglouH06}) can help t
 As WS-* and similar approaches, our work enables the specification and programming of crosscutting aspects (i.e., atomicity, security, exception handling, persistence).
 In contrast to these approaches, we specify policies for a \hl{service composition} in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented \hl{according to the knowledge} that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach,  the policies defined for a given application  can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints. 
 
+\hl{Wrapping up, the industrial use case presented here  provided a real validation context for testing the usability of our methodology. The software units acting as services providig specific functions and constraints that were combined to build the business logic, were representative of the kind of target systems of our methodology. The different types of business rules could be  modelled as first class citizens and clearly assciated to the business logic of the system. Thereby, we could show  how non-functional properties can be associated both to the components (i.e., services)  and to the global business logic of the system. The methodology allowed to derive these non-functional properties thanks to the specialization and transformation of the different meta-models. 
 
+We learned and showed that decoupling the description (specification) of non functional properties from the functional aspects, allows developers  to focus on the logic of their application, insulating them from the nitty-gritty aspects of non-functional aspects. Furthermore, it improves modularity by allowing the same application to be run under different non-functional settings, if needed. This can be interesting if business rules change or if constraints associated to services evolve.
+
+Finally, the system FlyingPig has been incrementaly built using classis software engineering techniques. It is difficult to compare the initial time to market versus the time to market using our methodology. The company could not estimate a realistic value of this measure. We intend to evaluate the quality of experience of programmers, when they will have to build a new module. The quality of experience will be given by measuring time to market and maintenability which are the two measures important to the company. }
+
+%****************************************************************************
 \section{Conclusions and Future Work}\label{sec:conclusions}
+%****************************************************************************
+
 We presented \pisodm, a model-driven method for designing and developing reliable service-based applications.
 \pisodm extends a previously defined method (called SOD-M) to include Non-Functional Requirements.
 These requirements are taken into account from the early stages of the software development process.
