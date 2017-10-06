@@ -151,11 +151,11 @@
 %
 
 \begin{abstract}
-Specifying non-functional requirements (NFRs) is a complex task, being usually dealt with on the later phases of the software process.
-The late inclusion of NFRs in the development may compromise the quality of the deployed application.
+Specifying non-functional requirements (NFRs) is a complex task, being usually addressed during the latter phases of the software development process.
+The late inclusion of NFRs during the software development  may compromise the quality of the resulting application.
 This paper presents \pisodm, a method and associated tools that
-\textit{(i)}  allows the early specification of NFRs in a principled way: users are abstracted away from low level details;
-\textit{(ii)} embraces the MDA philosophy, generating models (code) whenever possible.
+\textit{(i)}  allow the early specification of NFRs allowing users to them in an abstract way without having to  care about low level details;
+\textit{(ii)} embraces the MDA philosophy, generating models (code) whenever possible for reducing the specification and programming effort of the business application logic and its associated NFRs.
 Our solution has been used in the context of an industrial and real case study.
 \end{abstract}
 
@@ -302,7 +302,7 @@ Our solution has been used in the context of an industrial and real case study.
 
 In Service-Oriented Computing~\cite{Papazoglou2007}, pre-ex\-isting services are
 combined to build an application business logic.
-The selection of services is usually guided by the \textit{functional}\footnotemark \footnotetext{\hl{Functional properties of a computer system are characterized by the effects it produces when given a defined input.}} requirements of the application being developed~\cite{2,decastro1,PapazoglouH06}.
+The selection of services is usually guided by the \textit{functional}\footnotemark \footnotetext{\hl{Functional properties of a computer system are characterized by the effects they produce in the behavior of the system given a specific input.}} requirements of the application being developed~\cite{2,decastro1,PapazoglouH06}.
 An important challenge of service-o\-rien\-ted development is  to ensure the alignment between the functional requirements imposed by the business logic and the functions actually being developed.
 
 Functional properties are not the only aspect to be considered in the software development process.
@@ -312,25 +312,25 @@ Yet, they are partially or rarely methodologically derived from the specificatio
 In the context of service oriented computing, the late consideration of non-functional requirements in the development process does not fully preserve the compliance and re\-use expectations promoted by the service oriented paradigm.
 
 The literature emphasizes the need for meth\-od\-ol\-o\-gies and techniques for service oriented analysis and design~\cite{Papazoglou2007}.
-Existing approaches assert that the convergence of model-driven soft\-ware development, service orientation  and  busi\-ness processes improvement are key for developing quality software~\cite{watson}.
+Existing approaches note that the convergence of model-driven soft\-ware development, service orientation  and  busi\-ness processes improvement are key for developing quality software~\cite{watson}.
 Model Driven Development (MDD)  for software systems is mainly characterized by the use of models as a product~\cite{Selic03}.
 These models are successively refined from abstract specifications into actual computer programs. 
 A recent literature review  concludes that current MDD approaches rarely deal with NFRs~\cite{Ameller201542}\footnotemark \footnotetext{\hl{The study shows that only 48 of the 129 papers considered in their systematic mapping deal with NFR. Moreover, most of them consider just specific aspects of NFR, while only 5 papers (out of 129) propose a more general approach.}}.
 
-Our work introduces $\pi$-\textit{Service Oriented Development Method} (\pisodm) to support non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements, early in the software development process.
+Our work introduces $\pi$-\textit{Service Oriented Development Method} (\pisodm) to support the specification of non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements, early in the software development process.
 Our proposal follows the MDD guidelines and proposes models, practices and techniques for the development of service-based applications.  
 \pisodm proposes  the use of \textit{models} to specify a software system at different levels of abstraction.
 Models are organized according to the guidelines of the Model Driven Archi\-tec\-ture (MDA)~\cite{miller}.
 The goals of  \pisodm are:
 
 \begin{compactenum}[i]
-\item To improve the development process by providing an abstract view of the application and aiding to ensure the conformance to its specification.
-\item To reduce the programming effort through the semi-automatic generation of  models for the application, in order to produce concrete implementations from higher-level models.
+\item To improve the development process by providing an abstract view of the application and helping to ensure the conformance to its specification.
+\item To reduce the programming effort through the semi-automatic generation of  models for the application,  to produce concrete implementations from higher-level models.
 \item To provide a general way of describing non-functional requirements.
 \end{compactenum}
 
 The applicability of our proposal was tested with an industrial case study concerning risk assessment for financial companies as implemented by the ORCA System\footnotemark \footnotetext{\hl{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}}. In this work we show the application of our method \pisodm to develop a service based application called \FlyingPig that provides risk assessment as a service.
-The models presented here were generated as a result of interacting with software developers at GCP Global and trying to attend to all the non-functional requirements present in the application domain.
+The models presented here were generated as a result of interacting with software developers at GCP Global and trying to fulfil  all the non-functional requirements present in the application.
 
 This paper is organized as follows.
 Sec\-tion \ref{sec:relworks} summarizes the general principles of existing works for addressing NFP and associating them to service compositions.
@@ -339,9 +339,11 @@ Sections~\ref{sec:motivation} and~\ref{sec:mmrules} introduce respectively the m
 Section~\ref{sec:flyingPig} describes the \FlyingPig case study that we develop for validating our method and discusses lessons learned.
 Finally, Section~\ref{sec:conclusions} concludes the paper and gives research perspectives.
 
-
+%******************************************************************************
 \section{Related Work}
 \label{sec:relworks}
+%******************************************************************************
+
 While Functional Requirements establish \textit{what} is computed by an application, Non-Functional Requirements (NFRs) are concerned with \textit{how} the task is performed.
 NFRs include aspects such as performance, authentication and quality constraints.
 These requirements are usually specified by conditions, called non-functional properties.
@@ -438,21 +440,22 @@ Despite of the different notations found in the literature for classifying NFRs,
 However, distinct hierarchies and models are proposed for NFRs, according to different perspectives.
 We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,SchmelingCM11,BasinDL06,Fabra2011,OvaskaEHPA10} that use MDD (Model Driven Development) for designing and developing applications.
 
-Beside the existence of these works, it is important to remark that authors continue emphasizing the limited attention of the model-driven proposals for service development to NFRs~\cite{Ameller201542,Ameller2010}.%,SouzaNeto201684}. 
-As Ameller et al. realize in a recently published literature review, there are \textit{``Not many papers that presented a generic approach to deal with NFRs"}. Those authors also remark the lack of industrial use cases~\cite{Ameller201542}. 
+Besides the existence of these works, it is important to remark that authors continue emphasizing the limited attention of the model-driven proposals for service development to NFRs~\cite{Ameller201542,Ameller2010}.%,SouzaNeto201684}. 
+As Ameller et al. notes in a recently published literature review, there are \textit{``Not many papers that presented a generic approach to deal with NFRs"}. Those authors also remark the lack of industrial use cases~\cite{Ameller201542}. 
 
 \hl{
-To the best of our knowledge, and based on the related work analysis, there are no proposals that define a service-oriented approach for the whole development of systems, considering
-non-functional requirements. Although the efforts that have been made to support the new
-technological proposals for the Web such as web services, in general, these
-development approaches focus their processes on traditional software
-engineering, with emphasis on the functional aspects of the
-application.} Our method to develop service-oriented applications aims to cover this lack of proposals dealing with NFRs and gives support to real needs, as presented in a company related to the risk assessment industry. \hl{Our approach targets to deal with characteristics of the 3
-areas\footnote{(i) Non-Functional Requirements; (ii) Methodology for Service-Oriented Development;
-and (iii) Model-Driven Engineering} in order to propose a method for
-developing service-oriented applications considering non-functional aspects.
+To the best of our knowledge, and based on the related work analysis, there are no proposals that define a service-oriented approach for the whole development process of systems, considering
+non-functional requirements. Despite the efforts  made to support the new
+technological proposals for the Web, such as web services,  these
+development approaches address their development processes according to traditional software
+engineering, with emphasis on the functional aspect of the
+application.} 
 
-The motivation of our method is to target the specification of non-functional aspects in the early stages of development of service-oriented  applications. Our approach specifies \textit{policies} for modeling the non-functional requirements of a service separating the specification of non-functional requirements from the main functionalities of the application. This is interesting because once the policies for a given application have been defined they can be reused and/or specialized for another application with similar requirements.
+Our method for developing service-oriented applications aims to overcome  limitations of existing  proposals by dealing with NFRs.  \hl{Our approach targets the characteristics of  3
+areas\footnote{(i) Non-Functional Requirements; (ii) Methodology for Service-Oriented Development;
+and (iii) Model-Driven Engineering} to propose a method for
+developing service-oriented applications considering non-functional aspects.
+The motivation of our method is to target the specification of non-functional aspects in the early stages of development of service-oriented  applications. Our approach specifies \textit{policies} for modeling the non-functional requirements of a service. It separates the specification of non-functional requirements from the main functionalities of the application. This is interesting because once the policies for a given application have been defined they can be reused and/or specialized for another application with similar requirements. In order to show these characteristics this paper introduces a validation use case, which correponds to  a service based application provided  by the company ORCA. The application is related to the risk assessment industry.
 }
 
 
@@ -572,7 +575,7 @@ Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{
 Figure~\ref{fig:CIM:usecasemetamodel} shows the \textit{$\pi$-UseCase} meta-model.
 This model is  to be the first representation of the application in terms of functionality, as well as to represent its non-func\-tion\-al requirements.
 The notion of \textit{policy} is used to describe NFRs.
-(Figure~\ref{fig:CIM:usecasemetamodel} highlights the concepts related to NFRs.)
+Figure~\ref{fig:CIM:usecasemetamodel} highlights the concepts related to NFRs.
 The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe NFRs with  the following  concepts:  {\sc Business service}\footnotemark \footnotetext{\hl{We use the 
 %{\sc 
 small caps
@@ -805,7 +808,7 @@ The code contains namespaces and definitions (obtained from the business collabo
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
 
 \pisodm  proposes intra-level transformation rules from $\pi$-use case to $\pi$-service process models, $\pi$-service process to $\pi$-service composition  models, as well as inter-level transformation rules from $\pi$-service composition to $\pi$-PEWS models. 
-\hl{These rules were implemented into a semi-automatic tool} (the \pisodm  plugin\footnotemark \footnotetext{\hl{At each stage of transformation it is possible to include new constraints. In the more abstract stages of transformation there is complete automation in the models (i.e., from $\pi$-UseCase to $\pi$-ServiceProcess, and from $\pi$-ServiceProcess to $\pi$-ServiceComposition). On the other hand, to the transformation to specific platforms (i.e. from $\pi$-ServiceComposition to $\pi$-PEWS), a review by the analyst is required after the generation of the specification code. Thus, the method is more appropriate for those who have prior knowledge of Information Technology.}} for Eclipse).
+\hl{These rules were implemented into a semi-automatic tool} (the \pisodm  plugin\footnotemark \footnotetext{\hl{At each stage of transformation it is possible to include new constraints. In the more abstract stages of transformation there is complete automation in the models (i.e., from $\pi$-UseCase to $\pi$-ServiceProcess, and from $\pi$-ServiceProcess to $\pi$-ServiceComposition). On the other hand, in the case of the transformation to specific platforms (i.e. from $\pi$-ServiceComposition to $\pi$-PEWS), a review by the analyst is required after the generation of the specification code. Thus, the method is more appropriate for those who have background knowledge in Information Technology.}} for Eclipse).
 The transformations from CIM to PIM level models are not automatized, due to the informal nature of the CIM level.
  
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
@@ -1139,11 +1142,11 @@ Software engineering methods (e.g., \cite{2,decastro1,PapazoglouH06}) can help t
 As WS-* and similar approaches, our work enables the specification and programming of crosscutting aspects (i.e., atomicity, security, exception handling, persistence).
 In contrast to these approaches, we specify policies for a \hl{service composition} in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented \hl{according to the knowledge} that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach,  the policies defined for a given application  can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints. 
 
-\hl{Wrapping up, the industrial use case presented here  provided a real validation context for testing the usability of our methodology. The software units acting as services providig specific functions and constraints that were combined to build the business logic, were representative of the kind of target systems of our methodology. The different types of business rules could be  modelled as first class citizens and clearly assciated to the business logic of the system. Thereby, we could show  how non-functional properties can be associated both to the components (i.e., services)  and to the global business logic of the system. The methodology allowed to derive these non-functional properties thanks to the specialization and transformation of the different meta-models. 
+\hl{Wrapping up, the industrial use case presented here  provided a real validation context for testing the usability of our method $\pi$SOD-M. The software units acting as services provide specific functions and constraints that were combined to build the business logic of the FlyingPig application.  This application is  representative of the kind of target systems of $\pi$SOD-M. The different types of business rules could be  modelled as first class citizens and clearly associated to the business logic of the system. Thereby, we could show  how non-functional properties can be associated both to the components (i.e., services)  and to the global business logic of the system. $\pi$SOD-M allowed to derive these non-functional properties thanks to the specialization and transformation of the different meta-models. 
 
-We learned and showed that decoupling the description (specification) of non functional properties from the functional aspects, allows developers  to focus on the logic of their application, insulating them from the nitty-gritty aspects of non-functional aspects. Furthermore, it improves modularity by allowing the same application to be run under different non-functional settings, if needed. This can be interesting if business rules change or if constraints associated to services evolve.
+We learned and showed that decoupling the description (specification) of non functional properties from the functional aspects, allows developers  to focus on the logic of their application, isolating them from the   non-functional aspects. Furthermore, it improves modularity by allowing the same application to be run under different non-functional settings, if needed. This can be interesting if business rules change or if constraints associated to services evolve.
 
-Finally, the system FlyingPig has been incrementaly built using classis software engineering techniques. It is difficult to compare the initial time to market versus the time to market using our methodology. The company could not estimate a realistic value of this measure. We intend to evaluate the quality of experience of programmers, when they will have to build a new module. The quality of experience will be given by measuring time to market and maintenability which are the two measures important to the company. }
+Finally, the system FlyingPig had been incrementally built using classic software engineering techniques before applying $\pi$SOD-M. It is difficult to compare the initial time to market versus the time to market using our method. The company could not estimate a realistic value of this measure for the first version of the application. We intend to evaluate the quality of experience of programmers, when they will have to build a new version of FlyingPig. The quality of experience related to $\pi$SOD-M will be given by measuring time to market and maintainability which are the two measures important to the company. }
 
 %****************************************************************************
 \section{Conclusions and Future Work}\label{sec:conclusions}
