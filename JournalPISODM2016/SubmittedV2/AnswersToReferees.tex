@@ -95,7 +95,7 @@ We added 2 paragraphs at the end of Section 2: (i) considering the evaluation of
 \end{quotation}
 
 \noindent 
-We highlighted at the beginning of section 4, that the method is semi automatic, and we added a comment in as footnote explaining the reasons the method is not completely automatic.
+We highlighted at the beginning of section 4 (page 15), that the method is semi automatic. We explain the reasons the method is not completely automatic.
 
 \begin{quotation}\sf\footnotesize
 
@@ -111,7 +111,7 @@ We highlighted in section 3.2.2, how the service is chosen.  To be chosen and ex
 \end{quotation}
 
 \noindent 
-\hl{We intend to evaluate our solution as suggested by the reviewer in our future work. That said, it is worth mentioning that the effectiveness of the solution proposed was showcased in the paper using a real-world application that underlines the features of our solution. In page 24 Section 5.3 we discussed about the importance of the use case for validating the methodology and about the perspectives of evaluating (i) time to market when a new module will be designed and implemented in the system (ii) maintenability of the new module having a separated and clear vision of business logic and non-functional properties.}
+\hl{We intend to evaluate our solution as suggested by the reviewer in our future work. That said, it is worth mentioning that the effectiveness of the solution proposed was showcased in the paper using a real-world application that underlines the features of our solution. In page 24 Section 5.3  we discussed about the importance of the use case for validating the methodology and about the perspectives of evaluating (i) time to market when a new module will be designed and implemented in the system (ii) maintainability of the new module having a separated and clear vision of business logic and non-functional properties.}
 
 \begin{quotation}\sf\footnotesize
 
@@ -119,7 +119,7 @@ We highlighted in section 3.2.2, how the service is chosen.  To be chosen and ex
 \end{quotation}
 
 \noindent 
-\hl{ We believe that across the paper we have shown that decoupling  the description (specification) of non functional properties from the functional aspects, provides developers with the means to focus on the logic of their application. This isolates them from the nitty-gritty aspects of non-functional aspects. Furthermore, it improves modularity by allowing the same application to be run under different non-functional settings, if needed. 
+\hl{ We believe that across the paper we have shown that decoupling  the description (specification) of non functional properties from the functional aspects, provides developers with the means to focus on the logic of their application. This isolates them from the nitty-gritty aspects of non-functional aspects. Furthermore, it improves modularity by allowing the same application to be run under different non-functional settings, if needed. We explained this on page 24 paragraph starting with "We learned ..."
 }
 
 \begin{quotation}\sf\footnotesize
@@ -128,7 +128,11 @@ We highlighted in section 3.2.2, how the service is chosen.  To be chosen and ex
 \end{quotation}
 
 \noindent 
-As the non-functional requirements concept used in our method are related to business rules (constraints / contract rules) associated to the behavior of the application (services), it is possible include different types of constraints. The constraints are defined as pre- and post-conditions relates to services. So, during the design process, it is possible to include different kind of contracts related to services.  Figure 4 ($\pi$-UseCase Meta-Model.) presents the Policy View Concepts used to design the constraints.
+As the non-functional requirements concept used in our method is related to the following types of constraints (page 9): (i) business rules (constraints / contract rules) associated to the behaviour of the application (services); (ii) Value Constraint related to the data types associated to attributes (like in the relational model); (iii) exceptional behaviour associated to the behaviour of the application when an exception is produced. 
+
+%it is possible include different types of constraints. The constraints are defined as pre- and post-conditions relates to services. So, during the design process, it is possible to include different kind of contracts related to services.  
+
+Figure 4 ($\pi$-UseCase Meta-Model.) presents the Policy View Concepts used to design the constraints.
 
 \begin{quotation}\sf\footnotesize
 
@@ -136,8 +140,10 @@ As the non-functional requirements concept used in our method are related to bus
 \end{quotation}
  
 \noindent 
-Yes, it is automatically translated into $\pi$-PEWS \cite{MPC08,BaCAM05,BHM06,BHM06rep} specification programs. It is possible because of the PIM to PSM transformation rules described in sections 4.3 and 4.4 (using Acceleo specification programs) and also described in \cite{placidoPhDThesis2012}.
+%Yes, it is automatically translated into $\pi$-PEWS \cite{MPC08,BaCAM05,BHM06,BHM06rep} specification programs. It is possible because of the PIM to PSM transformation rules described in sections 4.3 and 4.4 (using Acceleo specification programs) and also described in \cite{placidoPhDThesis2012}.
  
+ 
+ Yes, at this time the $\pi$-PEWS model can be automatically translated into a $\pi$-PEWS executable program (this is already implemented using Acceleo platform).
  
 \paragraph*{Reviewer B:} 
 \begin{quotation}\sf\footnotesize
@@ -197,8 +203,9 @@ Fixed in the new version.
 \end{quotation}
 
 \noindent 
-There is no specific motivation behind the name. 
-It just sounded appropriate for an extension of the existing SOD-M approach.
+The motivation behind the name has nothing to do with $\pi$ - calculus which is indeed used for formalizing service coordinations. $\pi$ comes from Policy which is the central notion to represent  NFR's and the way they are enforced at runtime. As you have seen, NFR are at some point implemented by sets of Event - Reaction rules. In the domain of active databases sets of rules could define a Policy. $\pi$ stands of the pronunciation of the first letter of the word "policy" which is /p/. The explanation of the name appears in a footnote of page 1 as explanation, the first time the name $\pi$-SOD-M appears in the text. 
+
+%It just sounded appropriate for an extension of the existing SOD-M approach.
 
 \begin{quotation}\sf\footnotesize
 

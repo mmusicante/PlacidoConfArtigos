@@ -153,7 +153,7 @@
 \begin{abstract}
 Specifying non-functional requirements (NFRs) is a complex task, being usually addressed during the latter phases of the software development process.
 The late inclusion of NFRs during the software development  may compromise the quality of the resulting application.
-This paper presents \pisodm, a method and associated tools that
+This paper presents \pisodm \footnote{\hl{The letter $\pi$  of the name of the method comes from Policy which is the central notion to represent  NFR's and the way they are enforced at runtime.  $\pi$ stands of the pronunciation of the first letter of the word "policy" which is /p/.}}, a method and associated tools that
 \textit{(i)}  allow the early specification of NFRs allowing users to them in an abstract way without having to  care about low level details;
 \textit{(ii)} embraces the MDA philosophy, generating models (code) whenever possible for reducing the specification and programming effort of the business application logic and its associated NFRs.
 Our solution has been used in the context of an industrial and real case study.
@@ -573,7 +573,7 @@ Our method defines three PIM-level meta-models: \textit{$\pi$-UseCase}, \textit{
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
 
 Figure~\ref{fig:CIM:usecasemetamodel} shows the \textit{$\pi$-UseCase} meta-model.
-This model is  to be the first representation of the application in terms of functionality, as well as to represent its non-func\-tion\-al requirements.
+This model is  used to give the first representation of the application in terms of functionality, and of its non-func\-tion\-al requirements.
 The notion of \textit{policy} is used to describe NFRs.
 Figure~\ref{fig:CIM:usecasemetamodel} highlights the concepts related to NFRs.
 The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe NFRs with  the following  concepts:  {\sc Business service}\footnotemark \footnotetext{\hl{We use the 
@@ -585,7 +585,7 @@ An {\sc End Consumer} is represented by an {\sc Actor}.
 An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), as a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
 {\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
  The {\sc Business Collaborator} concept is represented  by {\sc Packages}.
-A {\sc Business Collaborator} denotes an external service or a system that interacts with the application that is being modeled.
+A {\sc Business Collaborator} denotes an external service or a system that interacts with the application that is being modelled.
 Each {\sc Business Collaborator} combines the features described in each  {\sc Package}.
 %Thus, the service functions can be specified as being grouped into packages.
 
@@ -595,7 +595,6 @@ Each {\sc Business Collaborator} combines the features described in each  {\sc P
 \caption{\label{fig:CIM:usecasemetamodel} $\pi$-\hl{UseCase Meta-Model}.}
 \end{figure*}
 
-
  The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented by {\sc Use Cases} and {\sc Constraints}.
 A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has a name, description, and a flag to indicate that it has to be  dynamically checked.
 Each {\sc Con\-straint} is represented as a stereotyped ({\sf constraint})\footnotemark \footnotetext{\hl{We use the 
@@ -603,10 +602,11 @@ Each {\sc Con\-straint} is represented as a stereotyped ({\sf constraint})\footn
 sans serif
 %}
  font for referring to classes defined using a meta-model.}} use case.
-There are three kinds of constraints:
+
+\hl{There are three kinds of constraints:}
 \textit{(i)} A data pair ({\sc Value Constraint}), represented as the stereotype ``value'';
 \textit{(ii)} Business rules (\textsc{Business Constraint}), represented as the stereotype {\sf ``business''}; and
-\textit{(iii)} An {\sc Exceptional Behavior} constraint, represented by the stereotype {\sf ``exceptional\_behavior''}.
+\textit{(iii)} An {\sc Exceptional Behaviour} constraint, represented by the stereotype {\sf ``exceptional\_behavior''}.
 The use of these constraints is shown in the next example.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic2}
@@ -808,7 +808,9 @@ The code contains namespaces and definitions (obtained from the business collabo
 %..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..
 
 \pisodm  proposes intra-level transformation rules from $\pi$-use case to $\pi$-service process models, $\pi$-service process to $\pi$-service composition  models, as well as inter-level transformation rules from $\pi$-service composition to $\pi$-PEWS models. 
-\hl{These rules were implemented into a semi-automatic tool} (the \pisodm  plugin\footnotemark \footnotetext{\hl{At each stage of transformation it is possible to include new constraints. In the more abstract stages of transformation there is complete automation in the models (i.e., from $\pi$-UseCase to $\pi$-ServiceProcess, and from $\pi$-ServiceProcess to $\pi$-ServiceComposition). On the other hand, in the case of the transformation to specific platforms (i.e. from $\pi$-ServiceComposition to $\pi$-PEWS), a review by the analyst is required after the generation of the specification code. Thus, the method is more appropriate for those who have background knowledge in Information Technology.}} for Eclipse).
+
+\hl{These rules were implemented into a semi-automatic tool, the $\pi$-SOD-M  plug in for Eclipse. At each stage of transformation it is possible to include new constraints.} 
+\hl{Transformation in the more abstract stages is completely automatic  (i.e., from $\pi$-UseCase to $\pi$-ServiceProcess, and from $\pi$-ServiceProcess to $\pi$-ServiceComposition). In contrast, the transformation to specific platforms (i.e. from $\pi$-ServiceComposition to $\pi$-PEWS), the analyst must intervene and check the generation of the specification code because there are programming details that can be interpreted in different manners depending on the target platform. In this sense, the method is more appropriate for those who have background knowledge in Information Technology.}.
 The transformations from CIM to PIM level models are not automatized, due to the informal nature of the CIM level.
  
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
@@ -1146,7 +1148,7 @@ In contrast to these approaches, we specify policies for a \hl{service compositi
 
 We learned and showed that decoupling the description (specification) of non functional properties from the functional aspects, allows developers  to focus on the logic of their application, isolating them from the   non-functional aspects. Furthermore, it improves modularity by allowing the same application to be run under different non-functional settings, if needed. This can be interesting if business rules change or if constraints associated to services evolve.
 
-Finally, the system FlyingPig had been incrementally built using classic software engineering techniques before applying $\pi$SOD-M. It is difficult to compare the initial time to market versus the time to market using our method. The company could not estimate a realistic value of this measure for the first version of the application. We intend to evaluate the quality of experience of programmers, when they will have to build a new version of FlyingPig. The quality of experience related to $\pi$SOD-M will be given by measuring time to market and maintainability which are the two measures important to the company. }
+Finally, the system FlyingPig had been incrementally built using classic software engineering techniques before applying $\pi$SOD-M. It is difficult to compare the initial time to market versus the time to market using our method. The company could not estimate a realistic value of this measure for the first version of the application. We intend to evaluate the quality of experience of programmers, when they will have to build a new version of FlyingPig. The quality of experience related to $\pi$SOD-M will be given by measuring (i) time to market when a new module will be designed and implemented in the system (ii) maintainability of the new module having a separated and clear vision of business logic and non-functional properties. Both two measures  are important to the company. }
 
 %****************************************************************************
 \section{Conclusions and Future Work}\label{sec:conclusions}
