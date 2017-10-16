@@ -96,7 +96,9 @@ We added 2 paragraphs at the end of Section 2: (i) considering the evaluation of
 
 \noindent 
 We highlighted at the beginning of section 4 (page 15), that the method is semi automatic. Transformation in the more abstract stages is completely automatic  (i.e., from $\pi$-UseCase to $\pi$-ServiceProcess, and from $\pi$-ServiceProcess to $\pi$-ServiceComposition). In contrast, the transformation to specific platforms (i.e. from $\pi$-ServiceComposition to $\pi$-PEWS), the analyst must intervene and check the generation of the specification code because there are programming details that can be interpreted in different manners depending on the target platform. In this sense, the method is more appropriate for those who have background knowledge in Information Technology.
-The transformations from CIM to PIM level models are not automatized, due to the informal nature of the CIM level..
+The transformations from CIM to PIM level models are not automatized, due to the informal nature of the CIM level.
+At the end of section 3.2.2 we mention that the selection of services that match the specification requires human intervention.
+
 
 \begin{quotation}\sf\footnotesize
 
@@ -105,6 +107,8 @@ The transformations from CIM to PIM level models are not automatized, due to the
 
 \noindent 
 We highlighted in section 3.2.2, how the service is chosen. In order for a service to be selected, it needs to fulfill contract (constraints). If a service fits the contract, then it will be used in the execution flow.
+As it is noted in section 3.2.2, this part of the process is not automatic. 
+Choosing the right service depends on the verification of a property that is done manually in the current version of the tool.
 
 \begin{quotation}\sf\footnotesize
 
@@ -204,7 +208,8 @@ Fixed in the new version.
 \end{quotation}
 
 \noindent 
-The motivation behind the name has nothing to do with $\pi$ - calculus which is indeed used for formalizing service coordinations. $\pi$ comes from Policy which is the central notion to represent  NFR's and the way they are enforced at runtime. As you have seen, NFR is at some point implemented by sets of Event - Reaction rules. In the domain of active databases sets of rules could define a Policy. $\pi$ stands of the pronunciation of the first letter of the word "policy" which is /p/. The explanation of the name appears in a footnote of page 1, the first time the name $\pi$-SOD-M appears in the text. 
+The motivation behind the name is not related to the $\pi$-calculus which is indeed used for formalizing service coordinations. 
+$\pi$ comes from Policy which is the central notion to represent  NFR's and the way they are enforced at runtime. As you have seen, NFR is at some point implemented by sets of Event - Reaction rules. In the domain of active databases sets of rules could define a Policy. $\pi$ stands of the pronunciation of the first letter of the word ``policy'' which is /p/. The explanation of the name now appears in a footnote of page 2, the first time the name $\pi$-SOD-M appears in the text. 
 
 %It just sounded appropriate for an extension of the existing SOD-M approach.
 

@@ -317,7 +317,7 @@ Model Driven Development (MDD)  for software systems is mainly characterized by 
 These models are successively refined from abstract specifications into actual computer programs. 
 A recent literature review  concludes that current MDD approaches rarely deal with NFRs~\cite{Ameller201542}\footnotemark \footnotetext{\hl{The study shows that only 48 of the 129 papers considered in their systematic mapping deal with NFR. Moreover, most of them consider just specific aspects of NFR, while only 5 papers (out of 129) propose a more general approach.}}.
 
-Our work introduces $\pi$-\textit{Service Oriented Development Method} (\pisodm) to support the specification of non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements, early in the software development process.
+Our work introduces $\pi$-\textit{Service Oriented Development Method} (\pisodm) to support the specification of non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements, early in the software development process\footnotemark. \footnotetext{\hl{The letter} $\pi$ \hl{stands of the pronunciation of the first letter of the word ``policy'' which is a central concept in the representation of Non-Functional Requirementsd.}}
 Our proposal follows the MDD guidelines and proposes models, practices and techniques for the development of service-based applications.  
 \pisodm proposes  the use of \textit{models} to specify a software system at different levels of abstraction.
 Models are organized according to the guidelines of the Model Driven Archi\-tec\-ture (MDA)~\cite{miller}.
@@ -649,7 +649,10 @@ The activities of this model represent a behavior that can  implement the busine
 A \textit{$\pi$-ServiceProcess}  model contains three main elements: (i) service process, (ii) service activity and (iii) activity contract. A service activity represents an operation that is part of the execution flow, and it is modeled as an {\sc Action}.
 An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf assertion}).
 The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. 
-Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre- and post-conditions. \hl{The service that fulfils the {\sc Contract} and its {\sc Assertions} will be chosen and used in the execution flow.}
+Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre- and post-conditions. 
+\hl{The service that fulfills the {\sc Contract} and its {\sc Assertions} will be chosen and used in the execution flow.
+This part of the process requires the verification of some logic conditions.
+In the present version of the tool, this step requires human intervention.}
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic3}
 Considering the example scenario, the contract based process of activities  is shown in Figure~\ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions consist in verifying:
