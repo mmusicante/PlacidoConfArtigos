@@ -47,7 +47,7 @@
 \newcommand{\pisodm}[0]{$\pi$SOD-M\xspace}
 \def\FlyingPig{\textsl{FlyingPig}\xspace}
 
-%\newcommand{\martin}[1]{\marginpar{\textcolor{magenta}{\textbf{Martin: }#1}}}
+\newcommand{\mm}[1]{\marginpar{\textcolor{magenta}{\textbf{Martin: }#1}}}
 %\newcommand{\imartin}[1]{\textcolor{blue}{\textbf{Martin: }#1}}
 %
 %\newcommand{\umberto}[1]{\marginpar{\textcolor{orange}{\textbf{Umberto: }#1}}}
@@ -56,22 +56,21 @@
 \makeatletter
 \def\theequation{\arabic{equation}}
 
-%\JOURNALNAME{\TEN{\it Int. J. System Control and Information
-%Processing,
-%Vol. \theVOL, No. \theISSUE, \thePUBYEAR\hfill\thepage}}%
-%
-%\def\BottomCatch{%
-%\vskip -10pt
-%\thispagestyle{empty}%
-%\begin{table}[b]%
-%\NINE\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr@{}}%
-%\\[-12pt]
-%Copyright \copyright\ 2012 Inderscience Enterprises Ltd. & &%
-%\end{tabular*}%
-%\vskip -30pt%
-%%%\vskip -35pt%
-%\end{table}%
-%}
+\JOURNALNAME{\TEN{\it Int. J. Web and Grid Services,
+Vol. \theVOL, No. \theISSUE, \thePUBYEAR\hfill\thepage}}%
+
+\def\BottomCatch{%
+\vskip -10pt
+\thispagestyle{empty}%
+\begin{table}[b]%
+\NINE\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr@{}}%
+\\[-12pt]
+Copyright \copyright\ 2017 Inderscience Enterprises Ltd. & &%
+\end{tabular*}%
+\vskip -30pt%
+%%\vskip -35pt%
+\end{table}%
+}
 \makeatother
 
 %%%%%%%%%%%%%%%%%
@@ -80,9 +79,9 @@
 
 \setcounter{page}{1}
 
-\LRH{  }%K. Belhajjame et~al.}
+\LRH{K. Belhajjame et~al.}
 
-\RRH{\pisodm: Building SOC Applications in the Presence of Non-Functional Requirements}
+\RRH{\pisodm: Building SOC Applications in the Presence of NFRs}
 
 \VOL{x}
 
@@ -94,66 +93,55 @@
 
 %\CLline
 
-\PUBYEAR{2016}
+\PUBYEAR{2017}
 
 \subtitle{}
 
 \title{\pisodm: Building SOC Applications in the Presence of Non-Functional Requirements}
 
-%%
-%\authorA{Khalid Belhajjame}
-%%
-%\affA{Universit\'e de Paris - Dauphine -- Paris, France\\
-%  E-mail: kbelhajj@googlemail.com}
-%%
-%%
-%\authorB{Valeria~de~Castro}
-%\affB{Universidad Rey Juan Carlos -- M\'{o}stoles, Spain\\
-%  E-mail: valeria.decastro@urjc.es}
-%\authorC{Umberto~Souza~da~Costa}
-%\affC{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
-%  E-mail: umberto@dimap.ufrn.br}
 %
-%\authorD{Javier~A.~Espinosa-Oviedo}
-%\affD{Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico\\
-%  E-mail: javiera.espinosa@gmail.com}
-%    
-%\authorE{Martin~A.~Musicante}
-%\affE{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
-%  E-mail: mam@dimap.ufrn.br}
-%
-%\authorF{Pl\'acido~A.~Souza~Neto}
-%\affF{Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia do Rio Grande do Norte -- Natal, Brazil\\
-%  E-mail: placido.neto@ifrn.edu.br}  
-%
-%\authorG{Genoveva~Vargas-Solar}
-%\affG{CNRS, LIG-LAFMIA, Saint Martin d'H\`eres, France\\
-%  E-mail: genoveva.vargas@imag.fr}  
-%
-%\authorH{Jos\'e-Luis~Zechinelli-Martini}
-%\affH{Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico\\
-%  E-mail: joseluis.zechinelli@udlap.mx}
-%
-%
-%%
-%%\authorA{Fusheng Wang\footnote{Work done while working at Siemens Corporate Research.} }
-%%
-%%\affA{Department of Biomedical Informatics, Emory University
-%%\newline
-%%36 Eagle Row, Ste 589, Atlanta, GA 30322, USA}
-%%
-%%
-%%
-%%\authorB{\footnotesize Cristobal Vergara-Niedermayr\footnote{Work done while working at Siemens Corporate Research.}}
-%%\affB{Oracle \newline
-% %New Jersey, USA}
-%%
-%
+\authorA{\sf Khalid Belhajjame}
+\affA{Universit\'e de Paris - Dauphine -- Paris, France\\
+  E-mail: kbelhajj@googlemail.com}
+  
+\authorB{\sf Valeria~de~Castro}
+\affB{Universidad Rey Juan Carlos -- M\'{o}stoles, Spain\\
+  E-mail: valeria.decastro@urjc.es}
+
+\authorC{\sf Javier~A.~Espinosa-Oviedo}
+\affC{Barcelona Supercomputing Centre (BSC), Spain and
+	French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), Mexico\\
+  E-mail: javiera.espinosa@gmail.com}
+    
+\authorD{\sf Martin~A.~Musicante}
+\affD{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
+  E-mail: mam@dimap.ufrn.br}
+
+\authorE{\sf Umberto~Souza~da~Costa}
+\affE{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
+  E-mail: umberto@dimap.ufrn.br}
+
+\authorF{\sf Pl\'acido~A.~Souza~Neto}
+\affF{Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia do Rio Grande do Norte -- Natal, Brazil\\
+  E-mail: placido.neto@ifrn.edu.br}  
+
+\authorG{\sf Genoveva~Vargas-Solar}
+\affG{Univ. Grenoble Alpes, CNRS, Institute of Engineering Univ. Grenoble Alpes (Grenoble INP), LIG, 38000 Grenoble, France
+	\\
+  E-mail: genoveva.vargas@imag.fr}  
+
+\authorH{\sf Jos\'e-Luis~Zechinelli-Martini}
+\affH{Universidad de las Am\'ericas-Puebla -- Cholula, Mexico and
+	French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), Mexico\\
+  E-mail: joseluis.zechinelli@udlap.mx}
+
+
+
 
 \begin{abstract}
 Specifying non-functional requirements (NFRs) is a complex task, being usually addressed during the latter phases of the software development process.
 The late inclusion of NFRs during the software development  may compromise the quality of the resulting application.
-This paper presents \pisodm \footnote{\hl{The letter $\pi$  of the name of the method comes from Policy which is the central notion to represent  NFR's and the way they are enforced at runtime.  $\pi$ stands of the pronunciation of the first letter of the word "policy" which is /p/.}}, a method and associated tools that
+This paper presents \pisodm, a method and associated tools that
 \textit{(i)}  allow the early specification of NFRs allowing users to them in an abstract way without having to  care about low level details;
 \textit{(ii)} embraces the MDA philosophy, generating models (code) whenever possible for reducing the specification and programming effort of the business application logic and its associated NFRs.
 Our solution has been used in the context of an industrial and real case study.
@@ -161,148 +149,44 @@ Our solution has been used in the context of an industrial and real case study.
 
 \KEYWORD{MDA, Non-Functional Requirements, Service-based software process.}
 
-%\REF{to this paper should be made as follows: Rodr\'{\i}guez
-%Bol\'{\i}var, M.P. and Sen\'{e}s Garc\'{\i}a, B. (xxxx) `The
-%corporate environmental disclosures on the internet: the case of
-%IBEX 35 Spanish companies', {\it International Journal of Metadata,
-%Semantics and Ontologies}, Vol. x, No. x, pp.xxx\textendash xxx.}
+\REF{to this paper should be made as follows: Rodr\'{\i}guez
+Khalid Belhajjame, Valeria~de~Castro, Javier~A.~Espinosa-Oviedo, Martin~A.~Musicante, Umberto~Souza~da~Costa, Pl\'acido~A.~Souza~Neto, Genoveva~Vargas-Solar, Jos\'e-Luis~Zechinelli-Martini (xxxx) `\pisodm: Building SOC Applications in the Presence of Non-Functional Requirements', {\it International Journal of Web and Grid Services}, Vol. x, No. x, pp.xxx\textendash xxx.}
 
-%\begin{bio}
-%Khalid Belhajjame\dots Bio here.
-%\vs{9}
-%
-%\noindent Valeria~de~Castro\dots Bio here.
-%\vs{9}
-%
-%\noindent Umberto Costa received the BS degree in Computer Science from Federal University of Rio Grande do Norte in 1998. 
-%He obtained the MS degree in Systems and Computation from Federal University of Rio Grande do Norte in 2000. 
-%He received the PhD degree in Computer Science from University Federal de Minas Gerais in 2005. He is currently an associate professor in the Department of 
-%Informatics and Applied Mathematics (DIMAp) at Federal University of Rio Grande do Norte. His academic interests include Programming Languages, 
-%Service-Oriented Computing and Cloud Computing.
-%\vs{9}
-%
-%\noindent Javier~A.~Espinosa-Oviedo\dots Bio here.
-%\vs{9}
-%
-%\noindent Martin A. Musicante received his B.Sc at ESLAI, Argentina, in 1988 and
-%his M.Sc and PhD in Computer Science at Universidade Federal de
-%Pernambuco, Brazil, in 1990 and 1996, respectively. He is an associate
-%professor at Universidade Federal do Rio Grande do Norte-UFRN (Natal,
-%Brazil). He is part of the graduate program in Computer Science at
-%UFRN and holder of a research grant from CNPq (level 2). Martin was
-%associate researcher at LI - Universit\'e Fran\c{c}ois Rabelais Tours
-%(2002-2011) and at LIFO - Universit\'e d'Orl\'eans, France, since 2008.
-%Martin A. Musicante's main current research topics are big data
-%processing languages, Web Services and cloud computing.
-%\vs{9}
-%
-%\noindent Pl\'acido~A.~Souza~Neto\dots Bio here.
-%\vs{9}
-%
-%\noindent Genoveva~Vargas-Solar\dots Bio here.
-%\vs{9}
-%
-%\noindent Jos\'e-Luis~Zechinelli-Martini\dots Bio here.
-%\end{bio}
+\begin{bio}
+Khalid Belhajjame is a lecturer (Maitre de Conférences) at the University Paris-Dauphine, where he is a member of the LAMSADE. His research interests lie in the areas of information and knowledge management. He has made key contributions to the areas of pay-as-you data integration, e-Science, scientific workflow management, provenance tracking and exploitation, and semantic web services.
+\vs{9}
+
+\noindent Valeria~de~Castro is associate professor in the Department of Computing Languages and Systems at the Rey Juan Carlos University sited in Madrid, Spain. She received her M.Sc. degree in Information Systems from the National Technological University, Argentine in 2003 and she got her Ph.D. in Computer Science by the Rey Juan Carlos University in 2007. She is member of Kybele Research Group where leads the Service Engineering research line. Her research interests include Services Engineering, Service Oriented Development, Web Engineering and Model Driven Engineering. She has co-authored several publications in national and international conferences and journals. She has participated in several research projects and has lead the main researcher at the Spanish Network of Service Science from 2010 to 2014.
+\vs{9}
+
+\noindent Javier Alfonso Espinosa-Oviedo is a computer scientist specialized in the domains of databases and distributed systems. His research focus mainly on large-scale data management and processing based on service oriented architectures. He currently works as postdoctoral researcher at the Barcelona Supercomputing Centre (BSC), in the Extreme Computing Group, and is researcher at the French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), in the Database Management Group. His research interests include: Stream Processing, Urban Computing, Digital Humanities, Data Visualization. He has participated in several national and European projects (CASES EU-FP7; S2EUNET FP7-IRSES; POLIWEB PEPS CNRS), and has been invited as visiting researcher in different institutions (POLITO, Italy; UdelaR, Uruguay; NUAA, China; UDLAP, Mexico) where he has lectured on selected topics of data management.
+\vs{9}
+
+\noindent Martin A. Musicante received his B.Sc at ESLAI, Argentina, in 1988 and his M.Sc and PhD in Computer Science at Universidade Federal de Pernambuco, Brazil, in 1990 and 1996, respectively. He is full professor at Universidade Federal do Rio Grande do Norte-UFRN (Natal, Brazil). He is part of the graduate program in Computer Science at UFRN. Martin was associate researcher at LI - Université François Rabelais Tours (2002-2011) and at LIFO - Université d'Orléans, France, since 2008. 
+\vs{9}
+
+\noindent Umberto Souza da Costa received the BS degree in Computer Science from Federal University of Rio Grande do Norte in 1998. He obtained the MS degree in Systems and Computation from Federal University of Rio Grande do Norte in 2000. He received the PhD degree in Computer Science from University Federal de Minas Gerais in 2005. He is currently an associate professor in the Department of Informatics and Applied Mathematics (DIMAp) at Federal University of Rio Grande do Norte. His academic interests include Programming Languages, Service-Oriented Computing and Cloud Computing.
+\vs{9}
+
+\noindent Pl\'acido~A.~Souza~Neto received his B.Sc at CEFET-RN, Brazil, in 2005 and his M.Sc and PhD in Computer Science at Universidade Federal de Rio Grande do Norte, Brazil, in 2007 and 2012, respectively. He is an associate professor at Instituto Federal do Rio Grande do Norte-IFRN (Natal, Brazil). He was part of LIG (Grenoble - France) between 2014-2015 for as a post-doc fellow. He is part of the graduate program in Software Analysis and Development at IFRN. Plácido A. Souza Neto main current research topics are Software Engineering, Data Analysis, Model Driven Development and Web Services.
+\vs{9}
+
+\noindent Genoveva Vargas-Solar (http://www.vargas-solar.com) is senior scientist of the French Council of Scientific Research (CNRS) and member of the HADAS group of the Informatics Laboratory of Grenoble, France. She is deputy director the Franco-Mexican Laboratory of Informatics and Automatic Control (LAFMIA). She is regular member of the Mexican Academia of Computing Science. Her research interests in Computer Science concern distributed and heterogeneous databases, reflexive systems and service based database systems. Particularly, she contributes to the construction of service based database management systems. The purpose is to provide methodologies, algorithms and tools for integrating, deploying and executing a service composition for programing data management functions. Data services composition must respect quality of service criteria (e.g., security, reliability, fault tolerance, evolution and dynamic adaptability) and behaviour properties (e.g., transactional execution) adapted to applications requirements. She conducts fundamental and applied research activities for addressing these challenges.
+\vs{9}
+
+\noindent Jos\'e-Luis~Zechinelli-Martini is Associate professor of the Department of Computing, Electronics and Mecatronics at the Universidad de las Américas Puebla since 2002 and he is currently senior researcher at LAFMIA. He is head of the Data and Knowledge Management Group (DBKM) of LAFMIA. In 2001 he obtained his Ph.D. in Computer Science and in 1997 he obtained his Master Degree in Computer Science at University Joseph Fourier, Grenoble, France. In 1993 he obtained his diploma on Computer Systems Engineering at UDLAP. Between 2003 and 2006 he was director of the CENTIA y coordinator of the Ph.D program on Computer Science. His research project concerns on the integration of heterogeneous data services accessible in heterogeneous networks.
+\end{bio}
 
 
 \maketitle
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%
-%\documentclass{RITA}
-%\usepackage[T1]{fontenc}
-%%\usepackage[latin1]{inputenc}
-%\usepackage[english]{babel}
-%
-%% Our packages and definitions
-%\usepackage{xspace}
-%\usepackage{graphicx}
-%\usepackage{paralist} % for compact lists: compactitem, compactenum, compactdesc
-%\usepackage{lipsum}  % for the example environment
-%\usepackage{amssymb} % for the \blacksquare symbol
-%\usepackage{subfigure}
-%
-%\newcounter{examplecounter}
-%\newenvironment{example}{%\begin{quote}%
-%    \refstepcounter{examplecounter}%
-%  \textbf{Example \arabic{examplecounter}}%
-%  \quad
-%}{%
-%%\end{quote}%
-%$\blacksquare$  
-%}
-%
-%\let\OLDthebibliography\thebibliography
-%\renewcommand\thebibliography[1]{
-%  \OLDthebibliography{#1}
-%  \setlength{\parskip}{0pt}
-%  \setlength{\itemsep}{0pt plus 0.7ex}
-%}
-%
-%\newcommand{\pisodm}[0]{$\pi$SOD-M\xspace}
-%\def\FlyingPig{\textsl{FlyingPig}\xspace}
-%
-%% RITA Preamble
-%
-%\title{\pisodm: Building SOC Applications in the Presence of Non-Functional Requirements}
-%\author{
-%Khalid Belhajjame
-%\footnote{Universit\'e de Paris - Dauphine -- Paris, France\\
-%  \texttt{\{kbelhajj@googlemail.com\}}}
-%\and
-%Valeria~de~Castro
-%\footnote{Universidad Rey Juan Carlos -- M\'{o}stoles, Spain\\
-%  \texttt{\{valeria.decastro@urjc.es\}}}
-%\and
-%Umberto~Souza~da~Costa
-%\footnote{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
-%  \texttt{\{\{umberto,mam\}@dimap.ufrn.br\}}}
-%\and
-%Javier~A.~Espinosa-Oviedo
-%\footnote{Universidad de las Am\'ericas-Puebla, LAFMIA -- Cholula, Mexico\
-%  \texttt{\{javiera.espinosa@gmail.com, joseluis.zechinelli@udlap.mx\}}}  
-%\and
-%Martin~A.~Musicante
-%\footnotemark[3]
-%\and
-%Pl\'acido~A.~Souza~Neto
-%\footnote{Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia do Rio Grande do Norte -- Natal, Brazil\
-%  \texttt{\{placido.neto@ifrn.edu.br\}}}  
-%\and
-%Genoveva~Vargas-Solar
-%\footnote{CNRS, LIG-LAFMIA, Saint Martin d'H\`eres, France\
-%  \texttt{\{genoveva.vargas@imag.fr\}}}  
-%\and  
-%Jos\'e-Luis~Zechinelli-Martini
-%\footnotemark[4]
-%}
-%\RITAvolume{22}
-%\RITAnumber{2}
-%\RITAyear{2015}
-%
-%\begin{document}
-%\maketitle
-%
-%%\begin{abstract}
-%%
-%%\end{abstract}
-%
-%\begin{abstractinenglish}
-%
-%\end{abstractinenglish}
-%
-%%\keywords{}
 
 \section{Introduction}
 \label{sec:intro}
 
 In Service-Oriented Computing~\cite{Papazoglou2007}, pre-ex\-isting services are
 combined to build an application business logic.
-The selection of services is usually guided by the \textit{functional}\footnotemark \footnotetext{\hl{Functional properties of a computer system are characterized by the effects they produce in the behavior of the system given a specific input.}} requirements of the application being developed~\cite{2,decastro1,PapazoglouH06}.
+The selection of services is usually guided by the \textit{functional}\footnotemark \footnotetext{Functional properties of a computer system are characterized by the effects they produce in the behavior of the system given a specific input.} requirements of the application being developed~\cite{2,decastro1,PapazoglouH06}.
 An important challenge of service-o\-rien\-ted development is  to ensure the alignment between the functional requirements imposed by the business logic and the functions actually being developed.
 
 Functional properties are not the only aspect to be considered in the software development process.
@@ -315,9 +199,9 @@ The literature emphasizes the need for meth\-od\-ol\-o\-gies and techniques for 
 Existing approaches note that the convergence of model-driven soft\-ware development, service orientation  and  busi\-ness processes improvement are key for developing quality software~\cite{watson}.
 Model Driven Development (MDD)  for software systems is mainly characterized by the use of models as a product~\cite{Selic03}.
 These models are successively refined from abstract specifications into actual computer programs. 
-A recent literature review  concludes that current MDD approaches rarely deal with NFRs~\cite{Ameller201542}\footnotemark \footnotetext{\hl{The study shows that only 48 of the 129 papers considered in their systematic mapping deal with NFR. Moreover, most of them consider just specific aspects of NFR, while only 5 papers (out of 129) propose a more general approach.}}.
+A recent literature review  concludes that current MDD approaches rarely deal with NFRs~\cite{Ameller201542}\footnotemark \footnotetext{The study shows that only 48 of the 129 papers considered in their systematic mapping deal with NFR. Moreover, most of them consider just specific aspects of NFR, while only 5 papers (out of 129) propose a more general approach.}.
 
-Our work introduces $\pi$-\textit{Service Oriented Development Method} (\pisodm) to support the specification of non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements, early in the software development process\footnotemark. \footnotetext{\hl{The letter} $\pi$ \hl{stands of the pronunciation of the first letter of the word ``policy'' which is a central concept in the representation of Non-Functional Requirementsd.}}
+Our work introduces $\pi$-\textit{Service Oriented Development Method} (\pisodm) to support the specification of non-functional aspects of service-oriented applications, taking into account both functional and non-functional requirements, early in the software development process\footnotemark \footnotetext{The letter $\pi$  of the name of the method comes from \textit{Policy} which is a central notion to represent  NFR's and the way they are enforced at runtime.  $\pi$ stands of the pronunciation of the first letter of the word ``policy'' which is /p/.}
 Our proposal follows the MDD guidelines and proposes models, practices and techniques for the development of service-based applications.  
 \pisodm proposes  the use of \textit{models} to specify a software system at different levels of abstraction.
 Models are organized according to the guidelines of the Model Driven Archi\-tec\-ture (MDA)~\cite{miller}.
@@ -329,7 +213,7 @@ The goals of  \pisodm are:
 \item To provide a general way of describing non-functional requirements.
 \end{compactenum}
 
-The applicability of our proposal was tested with an industrial case study concerning risk assessment for financial companies as implemented by the ORCA System\footnotemark \footnotetext{\hl{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}}. In this work we show the application of our method \pisodm to develop a service based application called \FlyingPig that provides risk assessment as a service.
+The applicability of our proposal was tested with an industrial case study concerning risk assessment for financial companies as implemented by the ORCA System\footnotemark \footnotetext{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}. In this work we show the application of our method \pisodm to develop a service based application called \FlyingPig that provides risk assessment as a service.
 The models presented here were generated as a result of interacting with software developers at GCP Global and trying to fulfil  all the non-functional requirements present in the application.
 
 This paper is organized as follows.
@@ -443,20 +327,20 @@ We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,Schmeling
 Besides the existence of these works, it is important to remark that authors continue emphasizing the limited attention of the model-driven proposals for service development to NFRs~\cite{Ameller201542,Ameller2010}.%,SouzaNeto201684}. 
 As Ameller et al. notes in a recently published literature review, there are \textit{``Not many papers that presented a generic approach to deal with NFRs"}. Those authors also remark the lack of industrial use cases~\cite{Ameller201542}. 
 
-\hl{
 To the best of our knowledge, and based on the related work analysis, there are no proposals that define a service-oriented approach for the whole development process of systems, considering
 non-functional requirements. Despite the efforts  made to support the new
 technological proposals for the Web, such as web services,  these
 development approaches address their development processes according to traditional software
 engineering, with emphasis on the functional aspect of the
-application.} 
+application.
 
-Our method for developing service-oriented applications aims to overcome  limitations of existing  proposals by dealing with NFRs.  \hl{Our approach targets the characteristics of  3
+Our method for developing service-oriented applications aims to overcome  limitations of existing  proposals by dealing with NFRs.  
+Our approach targets the characteristics of  3
 areas\footnote{(i) Non-Functional Requirements; (ii) Methodology for Service-Oriented Development;
 and (iii) Model-Driven Engineering} to propose a method for
 developing service-oriented applications considering non-functional aspects.
 The motivation of our method is to target the specification of non-functional aspects in the early stages of development of service-oriented  applications. Our approach specifies \textit{policies} for modeling the non-functional requirements of a service. It separates the specification of non-functional requirements from the main functionalities of the application. This is interesting because once the policies for a given application have been defined they can be reused and/or specialized for another application with similar requirements. In order to show these characteristics this paper introduces a validation use case, which correponds to  a service based application provided  by the company ORCA. The application is related to the risk assessment industry.
-}
+
 
 
 %**********************************************************************************
@@ -493,7 +377,7 @@ At this stage of the development, the structure and system processing details ar
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   
 
 The e$^3$value model  identifies the value/in\-for\-ma\-tion  exchange between system components (see Figure~\ref{fig:CIM:tpme3v}).
-This model  represents a business case graphically as a set of value exchanges  ($\nabla$ $\triangle$) and value activities (rounded boxes)\footnotemark \footnotetext{\hl{According to}~\cite{Gordijn02valuebased}\hl{, a value activity is defined as an activity expected to be profitable to one or more actors.}} performed by business actors (squared boxes).
+This model  represents a business case graphically as a set of value exchanges  ($\nabla$ $\triangle$) and value activities (rounded boxes)\footnotemark \footnotetext{According to~\cite{Gordijn02valuebased}, a value activity is defined as an activity expected to be profitable to one or more actors.} performed by business actors (squared boxes).
 The model is well suited to enhance the understanding of the environment in which an application is being developed.
 It defines \textit{dependency paths}, showing the value exchange between providers and end users when they ask for a service.
 A dependency path has a direction and consists of a sequence of linked dependency nodes.
@@ -526,7 +410,7 @@ The following (external) services will be used by the application:
 
 
 The e$^3$value model for ``To Publish Music'' is shown in Figure~\ref{fig:CIM:tpme3v}.
-The e$^3$\hl{value model} shows Spotify and a private application (which is also a service) that provide services for listening and publishing information about music being listened by users. 
+The e$^3${value model} shows Spotify and a private application (which is also a service) that provide services for listening and publishing information about music being listened by users. 
 The private application interacts with Spotify for obtaining information about the flow of music being listened by a user in return of a fee for a premium subscription. 
 Finally, the private application interacts with Facebook and Twitter for updating the user's status.
 We can see this interaction as non material benefit sharing (as users subscribe to their networks and are active on them thanks to the private application).
@@ -541,7 +425,7 @@ In order to face this shortcoming, our method proposes the use of the BPMN meta-
 \subsubsection{BPMN Meta-Model}
 % .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .   .  .
 
-BPMN~\cite{BPMN}  is a graphical representation that establishes the business process of the application through a high-level workflow\footnotemark \footnotetext{\hl{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/}}.
+BPMN~\cite{BPMN}  is a graphical representation that establishes the business process of the application through a high-level workflow\footnotemark \footnotetext{Details on BPMN (Business Process Management Notation) can be found in http://www.bpmn.org/}.
 The next example illustrates the use of this meta-model.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusicBPMN}
@@ -576,11 +460,9 @@ Figure~\ref{fig:CIM:usecasemetamodel} shows the \textit{$\pi$-UseCase} meta-mode
 This model is  used to give the first representation of the application in terms of functionality, and of its non-func\-tion\-al requirements.
 The notion of \textit{policy} is used to describe NFRs.
 Figure~\ref{fig:CIM:usecasemetamodel} highlights the concepts related to NFRs.
-The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe NFRs with  the following  concepts:  {\sc Business service}\footnotemark \footnotetext{\hl{We use the 
-%{\sc 
-small caps
-%} 
-font for referring to classes of a meta-model.}}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc Non-\-Func\-tion\-al Requirement}, {\sc Non-Functional} {\sc At\-tri\-bute} and {\sc Constraint}.
+The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe NFRs with  the following  concepts:  \textsc{Business service}\footnotemark 
+\mm{Small caps font does not appear as such!}\footnotetext{We use the 
+{\sc small caps} font for referring to classes of a meta-model.}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc Non-\-Func\-tion\-al Requirement}, {\sc Non-Functional} {\sc At\-tri\-bute} and {\sc Constraint}.
 An {\sc End Consumer} is represented by an {\sc Actor}.
 An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), as a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
 {\sc  Business Service} aggregates several {\sc Use Cases},  a service can be expressed by one or more use cases.
@@ -592,18 +474,14 @@ Each {\sc Business Collaborator} combines the features described in each  {\sc P
  \begin{figure*}[h]
 \center
 \includegraphics[width=1\textwidth]{./figures/UseCaseMetaModel.pdf}
-\caption{\label{fig:CIM:usecasemetamodel} $\pi$-\hl{UseCase Meta-Model}.}
+\caption{\label{fig:CIM:usecasemetamodel} $\pi$-{UseCase Meta-Model}.}
 \end{figure*}
 
  The {\sc Non-functional requirement} and {\sc Non-functional Attribute} concepts are represented by {\sc Use Cases} and {\sc Constraints}.
 A {\sc Use Case} may have several {\sc Constraints}. Each {\sc Constraint} has a name, description, and a flag to indicate that it has to be  dynamically checked.
-Each {\sc Con\-straint} is represented as a stereotyped ({\sf constraint})\footnotemark \footnotetext{\hl{We use the 
-%{\sf 
-sans serif
-%}
- font for referring to classes defined using a meta-model.}} use case.
+Each {\sc Con\-straint} is represented as a stereotyped ({\sf constraint})\footnotemark \footnotetext{We use the {\sf sans serif} font for referring to classes defined using a meta-model.} use case.
 
-\hl{There are three kinds of constraints:}
+{There are three kinds of constraints:}
 \textit{(i)} A data pair ({\sc Value Constraint}), represented as the stereotype ``value'';
 \textit{(ii)} Business rules (\textsc{Business Constraint}), represented as the stereotype {\sf ``business''}; and
 \textit{(iii)} An {\sc Exceptional Behaviour} constraint, represented by the stereotype {\sf ``exceptional\_behavior''}.
@@ -644,15 +522,15 @@ The dotted part of the figure defines those concepts related to the representati
 \caption{\label{fig:CIM:serviceprocessmetamodel} $\pi$-Service Process Meta-Model.}
 \end{figure*}
 
-\hl{This model shows the set of logically related activities to be performed in a service-based application.
-The activities of this model represent a behavior that can  implement the business logic of the application.}
+This model shows the set of logically related activities to be performed in a service-based application.
+The activities of this model represent a behavior that can  implement the business logic of the application.
 A \textit{$\pi$-ServiceProcess}  model contains three main elements: (i) service process, (ii) service activity and (iii) activity contract. A service activity represents an operation that is part of the execution flow, and it is modeled as an {\sc Action}.
 An activity contract represents the {\sc Non-functional Requirement}  that is also part of the execution flow of a service, identified  as a stereotyped activity ({\sf assertion}).
 The {\sc Assertion}s associated to an {\sc Action} compose a {\sc Contract}. 
 Using the concepts {\sc Contract} and {\sc Assertion} it is possible to specify each activity service, by defining its pre- and post-conditions. 
-\hl{The service that fulfills the {\sc Contract} and its {\sc Assertions} will be chosen and used in the execution flow.
+The service that fulfills the {\sc Contract} and its {\sc Assertions} will be chosen and used in the execution flow.
 This part of the process requires the verification of some logic conditions.
-In the present version of the tool, this step requires human intervention.}
+In the present version of the tool, this step requires human intervention.
 
 \begin{example}[To Publish Music \textit{(cont)}]\label{ex:toPublicMusic3}
 Considering the example scenario, the contract based process of activities  is shown in Figure~\ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions consist in verifying:
@@ -706,7 +584,7 @@ There are two types of actions: \textit{(i)} a WebService (attribute Type is {\s
 
 \item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service,  composed by  execu\-ta\-ble nodes.
 
-\item In order to represent constraint types associated to \hl{service compositions}, we defined the me\-ta- classes {\sc Rule} and {\sc A-policy} (see blue
+\item In order to represent constraint types associated to {service compositions}, we defined the me\-ta- classes {\sc Rule} and {\sc A-policy} (see blue
 %\martin{Placido: Mudar as cores... } 
  meta-classes in the $\pi$-Serv\-ice\-Com\-po\-si\-tion meta-model in Figure \ref{fig:e-scomposition-metamodel}).
 We model non-func\-tion\-al constraints by using the notion of {\em A-policy}~\cite{Espinosa-Oviedo2011a,CIC:eovszmc09c}.
@@ -812,8 +690,8 @@ The code contains namespaces and definitions (obtained from the business collabo
 
 \pisodm  proposes intra-level transformation rules from $\pi$-use case to $\pi$-service process models, $\pi$-service process to $\pi$-service composition  models, as well as inter-level transformation rules from $\pi$-service composition to $\pi$-PEWS models. 
 
-\hl{These rules were implemented into a semi-automatic tool, the $\pi$-SOD-M  plug in for Eclipse. At each stage of transformation it is possible to include new constraints.} 
-\hl{Transformation in the more abstract stages is completely automatic  (i.e., from $\pi$-UseCase to $\pi$-ServiceProcess, and from $\pi$-ServiceProcess to $\pi$-ServiceComposition). In contrast, the transformation to specific platforms (i.e. from $\pi$-ServiceComposition to $\pi$-PEWS), the analyst must intervene and check the generation of the specification code because there are programming details that can be interpreted in different manners depending on the target platform. In this sense, the method is more appropriate for those who have background knowledge in Information Technology.}.
+These rules were implemented into a semi-automatic tool, the $\pi$-SOD-M  plug in for Eclipse. At each stage of transformation it is possible to include new constraints.
+Transformation in the more abstract stages is completely automatic  (i.e., from $\pi$-UseCase to $\pi$-ServiceProcess, and from $\pi$-ServiceProcess to $\pi$-ServiceComposition). In contrast, the transformation to specific platforms (i.e. from $\pi$-ServiceComposition to $\pi$-PEWS), the analyst must intervene and check the generation of the specification code because there are programming details that can be interpreted in different manners depending on the target platform. In this sense, the method is more appropriate for those who have background knowledge in Information Technology.
 The transformations from CIM to PIM level models are not automatized, due to the informal nature of the CIM level.
  
 % _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ . _ .
@@ -928,13 +806,13 @@ Figure \ref{fig:Specific-Contract-Representation} shows the $\pi$-PEWS code resu
 We have developed tools for aiding the user to define and transform the models for all the levels, except for the CIM into PIM level, which should be manually performed.
 Our tool is implemented as a series of Eclipse plug-ins: 
 \begin{compactitem}
-\item 	We  used the Eclipse Modeling Framework (EMF)\footnotemark \footnotetext{\hl{The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}}   to implement the  $\pi$-Service Composition and $\pi$-{\sc Pews}  meta-models. 
+\item 	We  used the Eclipse Modeling Framework (EMF)\footnotemark \footnotetext{The EMF project is a modeling framework and code generation facility for building tools and other applications based on a structured data model.}  to implement the  $\pi$-Service Composition and $\pi$-{\sc Pews}  meta-models. 
 From these meta-models, we  developed plug-ins to support their graphical representation.
 
-\item	 We used  ATL\footnotemark \footnotetext{\hl{http://eclipse.org/atl/. An ATL program is basically a set of rules that define how source model elements are matched and navigated to create and initialize the elements of the target models.}}
+\item	 We used  ATL\footnotemark \footnotetext{http://eclipse.org/atl/. An ATL program is basically a set of rules that define how source model elements are matched and navigated to create and initialize the elements of the target models.}
 for implementing the  mappings between models.
 
-\item 	\hl{We  used Acceleo}\footnotemark \footnotetext{\hl{http://www.acceleo.org/pages/home/en}} \hl{to implement  the code generation plug-in to generate executable code.} 
+\item 	We  used Acceleo\footnotemark \footnotetext{http://www.acceleo.org/pages/home/en} to implement  the code generation plug-in to generate executable code.
 It takes a $\pi$-PEWS model and generates the code to be executed by the {\em
 A-Policy} based service composition execution environment.
 \end{compactitem}
@@ -945,7 +823,7 @@ A-Policy} based service composition execution environment.
 %*********************************************************************************
 
 
-To validate the applicability of our method we have developed a case study concerning risk assessment for financial companies as implemented by the ORCA System\footnotemark \footnotetext{\hl{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}}.%\martin{Is this a case study or a proof of concept?}
+To validate the applicability of our method we have developed a case study concerning risk assessment for financial companies as implemented by the ORCA System\footnotemark \footnotetext{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}.%\martin{Is this a case study or a proof of concept?}
 Risk assessment is implemented by an interactive business process based on the exchange of questionnaires used to evaluate the risks implied by the client business practice.
 Examples of business practices are: the conditions and protocols used to perform confidential transactions, the physical security to access reserved areas (such as computing server installations).
 The information gathered by the questionnaires is used to evaluate whether there are risky practices within the business processes, as well as to propose amendments to these practices.
@@ -998,8 +876,8 @@ This process  involves other members of the company as well.
 The risk assessment process starts after a request from a company.
 This corresponds to the value model, in which the start stimulus triggers the whole process.
 The request leads to the definition of a group of users that will answer questionnaires to evaluate risk.
-Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnotemark \footnotetext{\hl{Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecured access to the premises of the company.
-They can be also inmaterial restrictions such as the protocol used for accessing data on the company's computer server.}}.
+Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnotemark \footnotetext{Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecured access to the premises of the company.
+They can be also inmaterial restrictions such as the protocol used for accessing data on the company's computer server.}.
 
 \begin{figure}[h]
 \centering
@@ -1094,7 +972,7 @@ These policies express the pre- and post-conditions of the previous model, being
 %. .  .  .  .  .  .  .  .  .  .  .  .   .  .  .  .  .  .  .  .  .  .  .  .
 
 The  PSM of our case study is given in Figure~\ref{fig:piPEWSFlyingPig}. This model is obtained by transforming the $\pi$-service composition model into a workflow.
-Note that this workflow is implemented by using  \hl{BPEL constructors}~\cite{ws-bpel2} and \textit{policy} notions.
+Note that this workflow is implemented by using  {BPEL constructors}~\cite{ws-bpel2} and \textit{policy} notions.
 
 \begin{figure*}[h]
 \begin{scriptsize}
@@ -1137,21 +1015,21 @@ Also there are non-functional properties derived from NFR.
 They refer to strategies to be considered for the application execution such as security, isolation, adaptability, atomicity, and more.
 These non-functional properties must be ensured at execution time.
 
-\hl{In the context of service-oriented applications, ensuring non-functional properties is challenging due to the nature of their components.
-Those components are defined by APIs which do not necessarily export information about their internals.}
+In the context of service-oriented applications, ensuring non-functional properties is challenging due to the nature of their components.
+Those components are defined by APIs which do not necessarily export information about their internals.
 
 Given a set of services with their exported methods, building service-based applications may consist on expressing an application logic as a service composition.
 During this task, we must ensure the compliance between the specification and the resulting application.
 Software engineering methods (e.g., \cite{2,decastro1,PapazoglouH06}) can help to ensure this compliance, particularly when information systems include several sometimes complex business processes calling Web services or legacy applications exported as services.
 
 As WS-* and similar approaches, our work enables the specification and programming of crosscutting aspects (i.e., atomicity, security, exception handling, persistence).
-In contrast to these approaches, we specify policies for a \hl{service composition} in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented \hl{according to the knowledge} that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to ad-hoc solutions that can be difficult to reuse. In our approach,  the policies defined for a given application  can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints. 
+In contrast to these approaches, we specify policies for a {service composition} in an orthogonal way. Besides, these approaches suppose that non-functional properties are implemented {according to the knowledge} that a programmer has of a specific application requirements but they are not derived in a methodological way, leading to \textit{ad-hoc} solutions that can be difficult to reuse. In our approach,  the policies defined for a given application  can be reused and/or specialized for another one with the same requirements or that uses services that impose the same constraints. 
 
-\hl{Wrapping up, the industrial use case presented here  provided a real validation context for testing the usability of our method $\pi$SOD-M. The software units acting as services provide specific functions and constraints that were combined to build the business logic of the FlyingPig application.  This application is  representative of the kind of target systems of $\pi$SOD-M. The different types of business rules could be  modelled as first class citizens and clearly associated to the business logic of the system. Thereby, we could show  how non-functional properties can be associated both to the components (i.e., services)  and to the global business logic of the system. $\pi$SOD-M allowed to derive these non-functional properties thanks to the specialization and transformation of the different meta-models. 
+Wrapping up, the industrial use case presented here  provided a real validation context for testing the usability of our method $\pi$SOD-M. The software units acting as services provide specific functions and constraints that were combined to build the business logic of the FlyingPig application.  This application is  representative of the kind of target systems of $\pi$SOD-M. The different types of business rules could be  modelled as first class citizens and clearly associated to the business logic of the system. Thereby, we could show  how non-functional properties can be associated both to the components (i.e., services)  and to the global business logic of the system. $\pi$SOD-M allowed to derive these non-functional properties thanks to the specialization and transformation of the different meta-models. 
 
 We learned and showed that decoupling the description (specification) of non functional properties from the functional aspects, allows developers  to focus on the logic of their application, isolating them from the   non-functional aspects. Furthermore, it improves modularity by allowing the same application to be run under different non-functional settings, if needed. This can be interesting if business rules change or if constraints associated to services evolve.
 
-Finally, the system FlyingPig had been incrementally built using classic software engineering techniques before applying $\pi$SOD-M. It is difficult to compare the initial time to market versus the time to market using our method. The company could not estimate a realistic value of this measure for the first version of the application. We intend to evaluate the quality of experience of programmers, when they will have to build a new version of FlyingPig. The quality of experience related to $\pi$SOD-M will be given by measuring (i) time to market when a new module will be designed and implemented in the system (ii) maintainability of the new module having a separated and clear vision of business logic and non-functional properties. Both two measures  are important to the company. }
+Finally, the system FlyingPig had been incrementally built using classic software engineering techniques before applying $\pi$SOD-M. It is difficult to compare the initial time to market versus the time to market using our method. The company could not estimate a realistic value of this measure for the first version of the application. We intend to evaluate the quality of experience of programmers, when they will have to build a new version of FlyingPig. The quality of experience related to $\pi$SOD-M will be given by measuring (i) time to market when a new module will be designed and implemented in the system (ii) maintainability of the new module having a separated and clear vision of business logic and non-functional properties. Both two measures  are important to the company. 
 
 %****************************************************************************
 \section{Conclusions and Future Work}\label{sec:conclusions}
@@ -1169,12 +1047,12 @@ Our case study was developed together with our industrial partner GCP Global to 
 The Company is using \pisodm for the development of their product.
 The case study presented is a simplified version of their application. 
 
-\hl{In the future, we expect to:}
-\textit{(i)} \hl{select metrics for assessing the efficacy of} \pisodm;
+In the future, we expect to:
+\textit{(i)} select metrics for assessing the efficacy of \pisodm;
 %
-\textit{(ii)} \hl{use the feedback provided by our industrial partner to improve the methodology;}
+\textit{(ii)} use the feedback provided by our industrial partner to improve the methodology;
 %
-\textit{(iii)} \hl{assess the use of} \pisodm \hl{in other contexts, in order to investigate the generality of the approach. }
+\textit{(iii)} assess the use of \pisodm in other contexts, in order to investigate the generality of the approach. 
 
 \bibliographystyle{plain}
 \bibliography{biblio}
