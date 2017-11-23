@@ -5,6 +5,8 @@
 \usepackage{natbib,stfloats}
 \usepackage{mathrsfs}
 
+\usepackage[T1]{fontenc} 
+
 \def\newblock{\hskip .11em plus .33em minus .07em}
 
 \theoremstyle{TH}{
@@ -44,10 +46,13 @@
 \usepackage{color,soul} %for color text and highlighting
 
 
+
+
+
 \newcommand{\pisodm}[0]{$\pi$SOD-M\xspace}
 \def\FlyingPig{\textsl{FlyingPig}\xspace}
 
-\newcommand{\mm}[1]{\marginpar{\textcolor{magenta}{\textbf{Martin: }#1}}}
+%\newcommand{\mm}[1]{\marginpar{\textcolor{magenta}{\textbf{Martin: }#1}}}
 %\newcommand{\imartin}[1]{\textcolor{blue}{\textbf{Martin: }#1}}
 %
 %\newcommand{\umberto}[1]{\marginpar{\textcolor{orange}{\textbf{Umberto: }#1}}}
@@ -65,7 +70,7 @@ Vol. \theVOL, No. \theISSUE, \thePUBYEAR\hfill\thepage}}%
 \begin{table}[b]%
 \NINE\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr@{}}%
 \\[-12pt]
-Copyright \copyright\ 2017 Inderscience Enterprises Ltd. & &%
+Copyright \textcopyright\ 2017 Inderscience Enterprises Ltd. & &%
 \end{tabular*}%
 \vskip -30pt%
 %%\vskip -35pt%
@@ -109,9 +114,9 @@ Copyright \copyright\ 2017 Inderscience Enterprises Ltd. & &%
   E-mail: valeria.decastro@urjc.es}
 
 \authorC{\sf Javier~A.~Espinosa-Oviedo}
-\affC{Barcelona Supercomputing Centre (BSC), Spain and
-	French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), Mexico\\
-  E-mail: javiera.espinosa@gmail.com}
+\affC{Barcelona Supercomputing Center (BSC), Spain and\\
+	French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), Mexico/France\\
+  E-mail: javiera.espinosa@bsc.es}
     
 \authorD{\sf Martin~A.~Musicante}
 \affD{Universidade Federal do Rio Grande do Norte -- Natal, Brazil\\
@@ -126,13 +131,14 @@ Copyright \copyright\ 2017 Inderscience Enterprises Ltd. & &%
   E-mail: placido.neto@ifrn.edu.br}  
 
 \authorG{\sf Genoveva~Vargas-Solar}
-\affG{Univ. Grenoble Alpes, CNRS, Institute of Engineering Univ. Grenoble Alpes (Grenoble INP), LIG, 38000 Grenoble, France
+\affG{Univ. Grenoble Alpes, CNRS, Institute of Engineering Univ. Grenoble Alpes (Grenoble INP), LIG, 38000 Grenoble, France and
+	French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), Mexico/France
 	\\
   E-mail: genoveva.vargas@imag.fr}  
 
 \authorH{\sf Jos\'e-Luis~Zechinelli-Martini}
 \affH{Universidad de las Am\'ericas-Puebla -- Cholula, Mexico and
-	French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), Mexico\\
+	French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), Mexico/France\\
   E-mail: joseluis.zechinelli@udlap.mx}
 
 
@@ -149,32 +155,31 @@ Our solution has been used in the context of an industrial and real case study.
 
 \KEYWORD{MDA, Non-Functional Requirements, Service-based software process.}
 
-\REF{to this paper should be made as follows: Rodr\'{\i}guez
-Khalid Belhajjame, Valeria~de~Castro, Javier~A.~Espinosa-Oviedo, Martin~A.~Musicante, Umberto~Souza~da~Costa, Pl\'acido~A.~Souza~Neto, Genoveva~Vargas-Solar, Jos\'e-Luis~Zechinelli-Martini (xxxx) `\pisodm: Building SOC Applications in the Presence of Non-Functional Requirements', {\it International Journal of Web and Grid Services}, Vol. x, No. x, pp.xxx\textendash xxx.}
+\REF{to this paper should be made as follows: Khalid Belhajjame, Valeria~de~Castro, Javier~A.~Espinosa-Oviedo, Martin~A.~Musicante, Umberto~Souza~da~Costa, Pl\'acido~A.~Souza~Neto, Genoveva~Vargas-Solar, Jos\'e-Luis~Zechinelli-Martini (xxxx) `\pisodm: Building SOC Applications in the Presence of Non-Functional Requirements', {\it International Journal of Web and Grid Services}, Vol. x, No. x, pp.xxx\textendash xxx.}
 
 \begin{bio}
-Khalid Belhajjame is a lecturer (Maitre de Conférences) at the University Paris-Dauphine, where he is a member of the LAMSADE. His research interests lie in the areas of information and knowledge management. He has made key contributions to the areas of pay-as-you data integration, e-Science, scientific workflow management, provenance tracking and exploitation, and semantic web services.
+Khalid Belhajjame is a lecturer (Maitre de Conf\'erences) at the University Paris-Dauphine, where he is a member of the LAMSADE. His research interests lie in the areas of information and knowledge management. He has made key contributions to the areas of pay-as-you data integration, e-Science, scientific workflow management, provenance tracking and exploitation, and semantic web services.
 \vs{9}
 
 \noindent Valeria~de~Castro is associate professor in the Department of Computing Languages and Systems at the Rey Juan Carlos University sited in Madrid, Spain. She received her M.Sc. degree in Information Systems from the National Technological University, Argentine in 2003 and she got her Ph.D. in Computer Science by the Rey Juan Carlos University in 2007. She is member of Kybele Research Group where leads the Service Engineering research line. Her research interests include Services Engineering, Service Oriented Development, Web Engineering and Model Driven Engineering. She has co-authored several publications in national and international conferences and journals. She has participated in several research projects and has lead the main researcher at the Spanish Network of Service Science from 2010 to 2014.
 \vs{9}
 
-\noindent Javier Alfonso Espinosa-Oviedo is a computer scientist specialized in the domains of databases and distributed systems. His research focus mainly on large-scale data management and processing based on service oriented architectures. He currently works as postdoctoral researcher at the Barcelona Supercomputing Centre (BSC), in the Extreme Computing Group, and is researcher at the French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), in the Database Management Group. His research interests include: Stream Processing, Urban Computing, Digital Humanities, Data Visualization. He has participated in several national and European projects (CASES EU-FP7; S2EUNET FP7-IRSES; POLIWEB PEPS CNRS), and has been invited as visiting researcher in different institutions (POLITO, Italy; UdelaR, Uruguay; NUAA, China; UDLAP, Mexico) where he has lectured on selected topics of data management.
+\noindent Javier Alfonso Espinosa-Oviedo is a computer scientist specialized in the domains of databases and distributed systems. His research focuses mainly on large-scale data management and processing based on service oriented architectures. He currently works as postdoctoral researcher at the Barcelona Supercomputing Centre (BSC), in the Extreme Computing Group, and is researcher at the French-Mexican Laboratory of Informatics and Automatic Control (LAFMIA), in the Database Management Group. His research interests include: Stream Processing, Urban Computing, Digital Humanities, Data Visualization. He has participated in several national and European projects (CASES EU-FP7; S2EUNET FP7-IRSES; POLIWEB PEPS CNRS), and has been invited as visiting researcher in different institutions (POLITO, Italy; UdelaR, Uruguay; NUAA, China; UDLAP, Mexico) where he has lectured on selected topics of data management.
 \vs{9}
 
-\noindent Martin A. Musicante received his B.Sc at ESLAI, Argentina, in 1988 and his M.Sc and PhD in Computer Science at Universidade Federal de Pernambuco, Brazil, in 1990 and 1996, respectively. He is full professor at Universidade Federal do Rio Grande do Norte-UFRN (Natal, Brazil). He is part of the graduate program in Computer Science at UFRN. Martin was associate researcher at LI - Université François Rabelais Tours (2002-2011) and at LIFO - Université d'Orléans, France, since 2008. 
+\noindent Martin A. Musicante received his B.Sc at ESLAI, Argentina, in 1988 and his M.Sc and PhD in Computer Science at Universidade Federal de Pernambuco, Brazil, in 1990 and 1996, respectively. He is full professor at Universidade Federal do Rio Grande do Norte-UFRN (Natal, Brazil). He is part of the graduate program in Computer Science at UFRN. Martin was associate researcher at LI - Universit\'e Fran\c{c}ois Rabelais Tours (2002-2011) and at LIFO - Universit\'e d'Orl\'eans, France, since 2008. 
 \vs{9}
 
 \noindent Umberto Souza da Costa received the BS degree in Computer Science from Federal University of Rio Grande do Norte in 1998. He obtained the MS degree in Systems and Computation from Federal University of Rio Grande do Norte in 2000. He received the PhD degree in Computer Science from University Federal de Minas Gerais in 2005. He is currently an associate professor in the Department of Informatics and Applied Mathematics (DIMAp) at Federal University of Rio Grande do Norte. His academic interests include Programming Languages, Service-Oriented Computing and Cloud Computing.
 \vs{9}
 
-\noindent Pl\'acido~A.~Souza~Neto received his B.Sc at CEFET-RN, Brazil, in 2005 and his M.Sc and PhD in Computer Science at Universidade Federal de Rio Grande do Norte, Brazil, in 2007 and 2012, respectively. He is an associate professor at Instituto Federal do Rio Grande do Norte-IFRN (Natal, Brazil). He was part of LIG (Grenoble - France) between 2014-2015 for as a post-doc fellow. He is part of the graduate program in Software Analysis and Development at IFRN. Plácido A. Souza Neto main current research topics are Software Engineering, Data Analysis, Model Driven Development and Web Services.
+\noindent Pl\'acido~A.~Souza~Neto received his B.Sc at CEFET-RN, Brazil, in 2005 and his M.Sc and PhD in Computer Science at Universidade Federal de Rio Grande do Norte, Brazil, in 2007 and 2012, respectively. He is an associate professor at Instituto Federal do Rio Grande do Norte-IFRN (Natal, Brazil). He was part of LIG (Grenoble - France) between 2014-2015 for as a post-doc fellow. He is part of the graduate program in Software Analysis and Development at IFRN. Pl\'acido~A.~Souza~Neto's main current research topics are Software Engineering, Data Analysis, Model Driven Development and Web Services.
 \vs{9}
 
 \noindent Genoveva Vargas-Solar (http://www.vargas-solar.com) is senior scientist of the French Council of Scientific Research (CNRS) and member of the HADAS group of the Informatics Laboratory of Grenoble, France. She is deputy director the Franco-Mexican Laboratory of Informatics and Automatic Control (LAFMIA). She is regular member of the Mexican Academia of Computing Science. Her research interests in Computer Science concern distributed and heterogeneous databases, reflexive systems and service based database systems. Particularly, she contributes to the construction of service based database management systems. The purpose is to provide methodologies, algorithms and tools for integrating, deploying and executing a service composition for programing data management functions. Data services composition must respect quality of service criteria (e.g., security, reliability, fault tolerance, evolution and dynamic adaptability) and behaviour properties (e.g., transactional execution) adapted to applications requirements. She conducts fundamental and applied research activities for addressing these challenges.
 \vs{9}
 
-\noindent Jos\'e-Luis~Zechinelli-Martini is Associate professor of the Department of Computing, Electronics and Mecatronics at the Universidad de las Américas Puebla since 2002 and he is currently senior researcher at LAFMIA. He is head of the Data and Knowledge Management Group (DBKM) of LAFMIA. In 2001 he obtained his Ph.D. in Computer Science and in 1997 he obtained his Master Degree in Computer Science at University Joseph Fourier, Grenoble, France. In 1993 he obtained his diploma on Computer Systems Engineering at UDLAP. Between 2003 and 2006 he was director of the CENTIA y coordinator of the Ph.D program on Computer Science. His research project concerns on the integration of heterogeneous data services accessible in heterogeneous networks.
+\noindent Jos\'e-Luis~Zechinelli-Martini is titular professor of the Department of Computing, Electronics and Mecatronics at the Universidad de las Américas Puebla (UDLAP) since 2002 and he is currently senior researcher at LAFMIA. He is head of the Data and Knowledge Management Group (DBKM) of LAFMIA. In 2001 he obtained his Ph.D. in Computer Science and in 1997 he obtained his Master Degree in Computer Science at University Joseph Fourier, Grenoble, France. In 1993 he obtained his diploma on Computer Systems Engineering at UDLAP. Between 2003 and 2006 he was director of the CENTIA and head of the PhD program on Computer Science. His research project concerns on the integration of Big Data collections on different infrastructures and the specification of spatio-temporal and visualization query languages for retrieving multimedia and multiform data from distributed services.
 \end{bio}
 
 
@@ -207,14 +212,14 @@ Our proposal follows the MDD guidelines and proposes models, practices and techn
 Models are organized according to the guidelines of the Model Driven Archi\-tec\-ture (MDA)~\cite{miller}.
 The goals of  \pisodm are:
 
-\begin{compactenum}[i]
+\begin{compactenum}[i.]
 \item To improve the development process by providing an abstract view of the application and helping to ensure the conformance to its specification.
 \item To reduce the programming effort through the semi-automatic generation of  models for the application,  to produce concrete implementations from higher-level models.
 \item To provide a general way of describing non-functional requirements.
 \end{compactenum}
 
 The applicability of our proposal was tested with an industrial case study concerning risk assessment for financial companies as implemented by the ORCA System\footnotemark \footnotetext{The ORCA System is a trademark of GCP Global (www.gcpglobal.com).}. In this work we show the application of our method \pisodm to develop a service based application called \FlyingPig that provides risk assessment as a service.
-The models presented here were generated as a result of interacting with software developers at GCP Global and trying to fulfil  all the non-functional requirements present in the application.
+The models presented here were generated as a result of interacting with software developers at GCP Global and trying to fulfill  all the non-functional requirements present in the application.
 
 This paper is organized as follows.
 Sec\-tion \ref{sec:relworks} summarizes the general principles of existing works for addressing NFP and associating them to service compositions.
@@ -320,7 +325,7 @@ Other authors do not define specific terms to refer to NFRs; they use terms such
 \textit{value}~\cite{ThissenW06,BasinDL06}.
 
 
-Despite of the different notations found in the literature for classifying NFRs, some NFRs are frequently considered, such as \textit{security}, \textit{performance}, \textit{reliability}, \textit{usability}, and \textit{availability}.
+Despite the different notations found in the literature for classifying NFRs, some NFRs are frequently considered, such as \textit{security}, \textit{performance}, \textit{reliability}, \textit{usability}, and \textit{availability}.
 However, distinct hierarchies and models are proposed for NFRs, according to different perspectives.
 We have identified a number of approaches~\cite{DAmbrogio06,CholletL09,SchmelingCM11,BasinDL06,Fabra2011,OvaskaEHPA10} that use MDD (Model Driven Development) for designing and developing applications.
 
@@ -460,8 +465,7 @@ Figure~\ref{fig:CIM:usecasemetamodel} shows the \textit{$\pi$-UseCase} meta-mode
 This model is  used to give the first representation of the application in terms of functionality, and of its non-func\-tion\-al requirements.
 The notion of \textit{policy} is used to describe NFRs.
 Figure~\ref{fig:CIM:usecasemetamodel} highlights the concepts related to NFRs.
-The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe NFRs with  the following  concepts:  \textsc{Business service}\footnotemark 
-\mm{Small caps font does not appear as such!}\footnotetext{We use the 
+The \textit{$\pi$-UseCase} meta-model extends the UML Use Case meta-model to describe NFRs with  the following  concepts:  \textsc{Business service}\footnotemark \footnotetext{We use the 
 {\sc small caps} font for referring to classes of a meta-model.}, {\sc End consumer}, {\sc Requirement}, {\sc Use Case}, {\sc Composite Use Case}, {\sc Non-\-Func\-tion\-al Requirement}, {\sc Non-Functional} {\sc At\-tri\-bute} and {\sc Constraint}.
 An {\sc End Consumer} is represented by an {\sc Actor}.
 An  {\sc Actor} is related to {\sc Use Cases} (from the original UML definition), as a {\sc  Composite Use Case} is a set of actions performed by the system which can be broken into different {\sc Use Cases}.
@@ -536,11 +540,11 @@ In the present version of the tool, this step requires human intervention.
 Considering the example scenario, the contract based process of activities  is shown in Figure~\ref{fig:CIM:serviceprocess}. The buy music and publish music services (update Twitter and Facebook) have pre- and post-conditions assertions that are composed into a contract for each service. The buy music pre-conditions consist in verifying:
 \textit{(i)} if the User data are correct;
 \textit{(ii)} if the User is already logged in Spotify;
-\textit{(iii)} if bank account information are correct and;
+\textit{(iii)} if bank account information is correct and;
 \textit{(iv)} if there are enough funds in the bank account to cover the payment.
 A post-condition ensures the complete transaction and verifies if a notification about the payment authorization was sent both to the user and to Spotify. 
 There are four assertions for the buy music action, and each assertion has been detailed with the assertion property and predicate that must be verified. 
-To update services, depending of each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in the case of Twitter. In the case of Facebook, it is required that the user is already logged in Spotify and these data are the same as Facebook.
+To update services, depending on each service, there may be different restrictions. As an example, a new verification of user data and message format is appropriate (maximum 140 characters), in the case of Twitter. In the case of Facebook, it is required that the user is already logged in Spotify and these data are the same as Facebook.
 As post-condition, the application ensures that the Facebook service sends a notification of success.
 To update Twitter a pre-condition is required, while to update Facebook it is necessary to check a pre-condition and a confirmation notice (modeled as post-condition).
 As a pre-condition for ``twitter update'' it is necessary that (i) the music format is correct and (ii) the twitter login and password are correct for the update.
@@ -582,7 +586,7 @@ There are two types of actions: \textit{(i)} a WebService (attribute Type is {\s
 \label{fig:e-scomposition-metamodel}
 \end{figure*}
 
-\item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service,  composed by  execu\-ta\-ble nodes.
+\item The {\sc ServiceActivity} meta-class represents classes of composite activity types that must be carried out as part of a business service,  composed of  execu\-ta\-ble nodes.
 
 \item In order to represent constraint types associated to {service compositions}, we defined the me\-ta- classes {\sc Rule} and {\sc A-policy} (see blue
 %\martin{Placido: Mudar as cores... } 
@@ -721,7 +725,7 @@ In order to transform constraints of type {\sf Value Constraint}, the designer s
 By default, value constraints are transformed into pre-conditions and business constraints are transformed into post-conditions. 
   
 The relationships of type  {\sc Extend} and {\sc Include}  determine the way the business process is expressed as a workflow.  
-The generated workflow is composed by {\sf Fork} and {\sf Join} nodes,  {\sc Control flow} constructors, as well as entities of type {\sc Action}.
+The generated workflow is composed of {\sf Fork} and {\sf Join} nodes,  {\sc Control flow} constructors, as well as entities of type {\sc Action}.
 
 {\sf Include} use case entities are transformed into an {\sf Action} sequence.
 A {\sc Use case} element is transformed into an {\sf Action}. 
@@ -848,7 +852,7 @@ We identify two business actors: \textsl{ORCA} and \textsl{Broker}.
 Brokers emit requests for risk assessment for one or more companies.
 ORCA has two value activities which are services that provide an economical benefit:  \textsl{Identify Amendments} and \textsl{Assess Risk Situation}.
 The values exchanged between ORCA and the brokers are:
-\textit{(i)} \textsl{Questionnaire and Evidences} filled with information about the client company;
+\textit{(i)} \textsl{Questionnaire and Evidence} filled with information about the client company;
 \textit{(ii)} \textsl{Amendments} which are ORCA's rec\-om\-men\-da\-tions, based on the data provided by the answers to questionnaires;
 \textit{(iii)} \textsl{Evaluation Reports} for the client companies;
 and
@@ -877,7 +881,7 @@ The risk assessment process starts after a request from a company.
 This corresponds to the value model, in which the start stimulus triggers the whole process.
 The request leads to the definition of a group of users that will answer questionnaires to evaluate risk.
 Other tasks include amending a ``risky situation'' as well as producing evidence to show that a specific risk has been eliminated\footnotemark \footnotetext{Risky situations include  material facts such as not facilitating access to physically disabled people in a bank agency or having an unsecured access to the premises of the company.
-They can be also inmaterial restrictions such as the protocol used for accessing data on the company's computer server.}.
+They can be also immaterial restrictions such as the protocol used for accessing data on the company's computer server.}.
 
 \begin{figure}[h]
 \centering
@@ -894,7 +898,7 @@ Business processes also have rules and constraints to define their non-functiona
 \item The system should be able to deal with, at least, 200 users.
 \item If the number of requests exceeds 200, \FlyingPig\ should implement a load balance strategy for processing the requests.
 \item The privileges of the Channel-Broker must be verified \textit{before} the execution of the actions associated to the \textsf{designate user in charge} $\pi$-use case.
-\item The privileges of users must be verified \textit{before} the execution of the actions associated to the \textsf{answer questionnaire and add evidences} $\pi$-use case.
+\item The privileges of users must be verified \textit{before} the execution of the actions associated to the \textsf{answer questionnaire and add evidence} $\pi$-use case.
 \item All questionnaires need to be fully answered in order to consider a task as completed.
 \item There is a time limit (in days) for amendments required by the system.
 \end{compactenum}
@@ -1053,6 +1057,11 @@ In the future, we expect to:
 \textit{(ii)} use the feedback provided by our industrial partner to improve the methodology;
 %
 \textit{(iii)} assess the use of \pisodm in other contexts, in order to investigate the generality of the approach. 
+
+\section*{Acknowledgements}
+This research has been partially financed by the Government of the Autonomous Community of Madrid under the SICOMORo-CM project (S2013/ICE-3006), and by the ELASTIC project (TIN2014-52938-C2-1-R), financed by the Spanish Governments Ministry of Science and Innovation. 
+This work is partially supported by INES, grant CNPq/465614/2014-0 (Brazil).
+
 
 \bibliographystyle{plain}
 \bibliography{biblio}
